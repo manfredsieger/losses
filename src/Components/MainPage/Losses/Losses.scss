@@ -1,0 +1,131 @@
+@import './../../../common.scss';
+
+.losses {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  gap: 30px;
+  @include list_reset;
+  margin: 0 -40px 0 0;
+  padding: 0 0 30px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.losses__item:hover {
+  transform: scale(1.05);
+}
+
+/* color in a from of a filter generated here: https://codepen.io/sosuke/pen/Pjoqqp */
+.losses__itemImg {
+  width: 100px;
+  height: 95px;
+  @include object-fit;
+  filter: invert(18%) sepia(3%) saturate(151%) hue-rotate(52deg) brightness(92%) contrast(90%);
+}
+
+@media(max-width: 1030px) {
+  .losses {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.losses__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: ease-in-out 300ms;
+}
+
+@media(max-width: 775px) {
+  .losses {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .losses__item {
+    justify-content: center;
+  }
+
+  .losses__item:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+
+  .losses__textContainer {
+    margin: 0;
+  }
+}
+
+@media(max-width: 1170px) {
+  .losses__itemImg {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+  }
+
+  .losses__textNumber {
+    font-size: 40px;
+  }
+}
+
+.losses__textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media(max-width: 300px) {
+  .losses__textContainer {
+    margin: 0;
+  }
+}
+
+.losses__textNumber {
+  position: relative;
+  margin: 0;
+  font-size: 45px;
+  font-weight: 600;
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: 700;
+}
+
+@media(max-width: 270px) {
+  .losses__textNumber {
+    font-size: 30px;
+  }
+}
+
+.losses__textNumberDifference {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  font-size: 0.7rem;
+  font-weight: normal;
+  color: $yellow;
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: 400;
+}
+
+.losses__textCaption {
+  width: 150px;
+  margin: 0;
+  padding: 0 5px;
+  word-break: break-word;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+@media(max-width: 300px) {
+  .losses__textNumberDifference {
+    top: -8px;
+    right: 0;
+  }
+
+  .losses__textCaption {
+    width: 100px;
+    font-size: 0.8rem;
+  }
+}

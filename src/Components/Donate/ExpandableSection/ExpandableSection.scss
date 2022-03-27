@@ -1,0 +1,55 @@
+.donate__move-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.donate__copyFields-container {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: ease-in-out 450ms;
+}
+
+.donate__copyFields-container--visible {
+  opacity: 1;
+  height: auto;
+}
+
+.donate__move-btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  width: 15px;
+  height: 2px;
+  background-color: rgb(88, 88, 88);
+}
+
+.donate__expand-btn::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  width: 2px;
+  height: 15px;
+  background-color: rgb(88, 88, 88);
+}
+
+@media(max-width: 330px) {
+  .donate__move-btn {
+    position: static;
+    transform: translate(0, 0);
+  }
+}

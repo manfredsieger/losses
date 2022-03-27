@@ -1,0 +1,51 @@
+@import './../../common.scss';
+
+.main__container {
+  display: grid;
+  justify-content: center;
+  min-height: 100vh;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: auto auto auto;
+  background-color: $red;
+  color: #ffffff;
+}
+
+.main__page-nav-wrapper {
+  position: absolute;
+  top: $pageNavDistance20;
+  left: $pageNavDistance20;
+}
+
+@media(max-width: 1170px) {
+  .main__container {
+    grid-template-columns: 15% 60% 15%;
+  }
+}
+
+@media(max-width: 545px) {
+  .main__page-nav-wrapper {
+    top: $pageNavDistance10;
+    left: $pageNavDistance10;
+  }
+}
+
+@media(max-width: 480px) {
+  .main__container {
+    grid-template-columns: 30px 1fr 30px;
+  }
+
+  .main__page-nav-wrapper {
+    top: $pageNavDistance5;
+    left: $pageNavDistance5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media(max-width: 270px) {
+  .main__container {
+    grid-template-columns: 10px 1fr 10px;
+  }
+}

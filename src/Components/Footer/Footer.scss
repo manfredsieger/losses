@@ -1,0 +1,35 @@
+@import './../../common.scss';
+
+.footer__container {
+  padding: 10px 0 10px 10px;
+}
+
+.footer__container--red-page {
+  background-color: $red;
+}
+
+.footer__list {
+  @include list_reset;
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.footer__text:not(:last-child) {
+  margin: 0 0 5px 0;
+}
+
+.footer__link {
+  color: #000000;
+}
+
+.footer__link:hover,
+.footer__link:active {
+  background-color: $yellow;
+}
+
+.footer__link:visited {
+  color: initial;
+}

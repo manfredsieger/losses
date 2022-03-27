@@ -1,0 +1,28 @@
+$yellow: rgb(255, 255, 9);
+$red: rgb(235, 64, 52);
+
+$header2_5: 2.5rem;
+$header2: 2rem;
+$header1_5: 1.5rem;
+
+$headerMaxWidth: 60%;
+
+$pageNavDistance20: 20px;
+$pageNavDistance10: 10px;
+$pageNavDistance5: 5px;
+
+@mixin object_fit {
+  object-fit: contain;
+  object-position: center;
+}
+
+@mixin list_reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin list_reset_number {
+  margin: 0;
+  padding: 0;
+}

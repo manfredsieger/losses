@@ -1,0 +1,18 @@
+.rotate__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rotate__img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.rotate__text {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}

@@ -1,0 +1,80 @@
+@import './../../../common.scss';
+
+.dateList {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: space-between;
+  @include list_reset;
+  padding: 40px 0;
+}
+
+.dateList__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  padding: 15px;
+  word-break: break-word;
+  text-align: center;
+  background-color: rgb(78, 78, 78, 0.2);
+  border-radius: 20px;
+}
+
+.dateList__first-item,
+.dateList__second-item {
+  margin: 0;
+}
+
+.dateList__important-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $yellow;
+}
+
+@media(max-width: 1170px) {
+  .dateList__item {
+    width: 150px;
+  }
+}
+
+@media(max-width: 940px) {
+  .dateList__item {
+    width: 100px;
+  }
+}
+
+@media(max-width: 775px) {
+  .dateList {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .dateList__item {
+    width: 200px;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media(max-width: 380px) {
+  .dateList__item {
+    width: 150px;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin: 0 0 10px 0;
+  }
+
+  .dateList__important-text {
+    font-size: 1.3rem;
+  }
+
+  .dateList__caption {
+    font-size: 0.9rem;
+  }
+}
