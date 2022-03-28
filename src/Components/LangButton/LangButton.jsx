@@ -17,16 +17,17 @@ export default function LangButton() {
   }
 
   return (
-    <button
-      className={`lang__wrapper ${websiteLanguage === languages.eng
+    <div
+      className={`lang__wrapper ${(websiteLanguage === languages.eng)
         ? 'lang__wrapper--circle-left'
         : 'lang__wrapper--circle-right'}`}
       onClick={changeLanguage}
-      type="button"
+      role="button"
+      tabIndex={0}
     >
       <span className="lang__circle" id="circle" />
       <span className="lang__text lang__text--eng">en</span>
       <span className="lang__text lang__text--ua">ua</span>
-    </button>
+    </div>
   );
 }

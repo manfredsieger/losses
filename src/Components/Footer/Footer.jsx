@@ -1,5 +1,7 @@
 import React from 'react';
+import * as htmlToImage from 'html-to-image';
 import './Footer.scss';
+import download from 'downloadjs';
 import { useSelector } from 'react-redux';
 import translation from '../../utils/translation';
 import { pages } from '../../redux/activePage';
@@ -23,8 +25,15 @@ export default function Footer() {
     });
   }
 
+  function capture() {
+    htmlToImage.toPng(document.querySelector('.main__container'))
+      .then((dataUrl) => {
+        download(dataUrl, 'my-node.png');
+      });
+  }
+
   return (
-    <footer className={(activePage === pages.losses || activePage === pages.charts) ? 'footer__container footer__container--red-page' : 'footer__container'}>
+    <footer id="num" className={(activePage === pages.losses || activePage === pages.charts) ? 'footer__container footer__container--red-page' : 'footer__container'}>
       <ul className="footer__list">
         <li className="footer__text">
           {`${translation[websiteLanguage].main.footer.developedBy} `}
@@ -43,6 +52,14 @@ export default function Footer() {
         <li className="footer__text">
           {`${translation[websiteLanguage].main.footer.iconsFrom} `}
           {renderSvgSources()}
+        </li>
+        <li>
+          <button
+            type="button"
+            onClick={capture}
+          >
+            Click
+          </button>
         </li>
       </ul>
     </footer>
