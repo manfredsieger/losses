@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CopyField from './CopyField/CopyField';
 import ExpandableSection from './ExpandableSection/ExpandableSection';
 import PageNav from '../MainPage/PageNav/PageNav';
+import LangButton from '../LangButton/LangButton';
 import {
   donationsCBA,
   donationsEastSOS,
@@ -38,6 +39,7 @@ export default function Donate() {
   return (
     <>
       <div className="donate__page-nav-wrapper">
+        <LangButton />
         <PageNav
           className="pageNav pageNav__red"
           to="/"

@@ -12,8 +12,9 @@
 
 .main__page-nav-wrapper {
   position: absolute;
-  top: $pageNavDistance20;
-  left: $pageNavDistance20;
+  top: $pageNavDistance15;
+  left: $pageNavDistance15;
+  @include flex_column_top_center;
 }
 
 @media(max-width: 1170px) {
@@ -37,10 +38,11 @@
   .main__page-nav-wrapper {
     top: $pageNavDistance5;
     left: $pageNavDistance5;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: center;
     gap: 10px;
+    @include flex_row_left_center;
   }
 }
 

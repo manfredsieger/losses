@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import PageNav from '../MainPage/PageNav/PageNav';
 import RotateWarning from './RotateWarning/RotateWarning';
+import LangButton from '../LangButton/LangButton';
 import './Charts.scss';
 import losses from '../../utils/losses';
 import { getLatestLossesObject, getWordWithBigFirstLetter } from '../../utils/helpers';
@@ -108,6 +109,7 @@ export default function Charts() {
       <h1 className="charts__header">{translation[websiteLanguage].charts.header}</h1>
 
       <div className="charts__page-nav-wrapper">
+        <LangButton />
         <PageNav
           className="pageNav pageNav__light"
           to="/"

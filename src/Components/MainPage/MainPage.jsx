@@ -4,6 +4,7 @@ import Header from './Header/Header';
 import Dates from './Dates/Dates';
 import Losses from './Losses/Losses';
 import PageNav from './PageNav/PageNav';
+import LangButton from '../LangButton/LangButton';
 import losses from '../../utils/losses';
 import { getLastDataUpdateDate } from '../../utils/helpers';
 import './MainPage.scss';
@@ -19,6 +20,7 @@ export default function MainPage() {
     <main className="main__container">
 
       <div className="main__page-nav-wrapper">
+        <LangButton />
         <PageNav
           className="pageNav pageNav__yellow"
           to="/donate"
@@ -31,6 +33,13 @@ export default function MainPage() {
           to="/charts"
           ariaLabel="Show charts"
           value={translation[websiteLanguage].main.chartsBtn}
+        />
+
+        <PageNav
+          className="pageNav pageNav__light"
+          to="/screenshot"
+          ariaLabel="Save infographic"
+          value={translation[websiteLanguage].main.infographicBtn}
         />
       </div>
 

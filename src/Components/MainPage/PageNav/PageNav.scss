@@ -1,3 +1,5 @@
+@import '../../../common.scss';
+
 .pageNav {
   position: relative;
   width: 80px;
@@ -10,7 +12,7 @@
 }
 
 .pageNav:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: $pageNavGap15;
 }
 
 .pageNav__yellow {
@@ -74,7 +76,7 @@
   }
 
   .pageNav:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: $pageNavGap5;
   }
 
   .pageNav__link {
@@ -86,7 +88,7 @@
 /* Allows pageNav link to be placed on one line when pageNav wrapper becomes horizontal, not vertical */
 @media (max-width: 480px) {
   .pageNav:not(:last-child) {
-    margin-bottom: 0;
+    margin-bottom: $pageNavGap0;
   }
 }
 

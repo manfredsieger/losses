@@ -3,6 +3,7 @@ export default {
     main: {
       helpBtn: 'How can I help?',
       chartsBtn: 'Charts',
+      infographicBtn: 'Save infographic',
       header: {
         header: 'Losses of russian invaders in Ukraine',
         updateDate: 'Last updated:',
@@ -121,6 +122,7 @@ export default {
     main: {
       helpBtn: 'Як допомогти?',
       chartsBtn: 'Графіки',
+      infographicBtn: 'Зберегти інфографіку',
       header: {
         header: 'Втрати російських загарбників в Україні',
         updateDate: 'Дата останнього оновлення даних:',

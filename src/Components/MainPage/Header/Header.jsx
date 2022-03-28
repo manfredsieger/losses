@@ -12,12 +12,13 @@ export default function Header() {
   return (
     <div className="header">
       <h1 className="header__header">{translation[websiteLanguage].main.header.header}</h1>
-      <p className="header__update">
+      <p className="header__text header__update">
         {translation[websiteLanguage].main.header.updateDate}
         {' '}
         <span className="header__update-date">{getFullDate(new Date(lastDataUpdateDate), translation[websiteLanguage].main.header.language)}</span>
       </p>
-      <p className="header__warning">{translation[websiteLanguage].main.header.warning}</p>
+      <p className="header__text header__source">Numbers provided by the General Staff of the AFU</p>
+      <p className="header__text header__warning">{translation[websiteLanguage].main.header.warning}</p>
     </div>
   );
 }

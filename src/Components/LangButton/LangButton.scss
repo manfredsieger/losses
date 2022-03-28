@@ -1,11 +1,10 @@
 @import './../../common.scss';
 
 .lang__wrapper {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: relative;
   width: 80px;
   height: 40px;
+  margin-bottom: $pageNavGap15;
   background-color: $red;
   border: 1px solid #ffffff;
   border-radius: 1000px;
@@ -61,10 +60,9 @@
 
 @media(max-width: 545px) {
   .lang__wrapper {
-    top: 10px;
-    right: 10px;
     width: 55px;
     height: 30px;
+    margin-bottom: $pageNavGap5;
   }
 
   .lang__circle {
@@ -87,9 +85,6 @@
 
 @media(max-width: 390px) {
   .lang__wrapper {
-    position: absolute;
-    top: 5px;
-    right: 5px;
     padding: 2px 7px;
     width: 45px;
     height: 20px;
