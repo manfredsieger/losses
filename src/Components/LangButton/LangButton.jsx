@@ -2,9 +2,11 @@ import React from 'react';
 import './LangButton.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setWebsiteLanguage, languages } from '../../redux/changeLang';
+import { pages } from '../../redux/activePage';
 
 export default function LangButton() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
+  const { activePage } = useSelector((state) => state.activePage);
 
   const dispatch = useDispatch();
 
@@ -16,9 +18,16 @@ export default function LangButton() {
     }
   }
 
+  function getLightStyleIfApplicable() {
+    if (activePage === pages.donate) {
+      return 'lang__wrapper--light';
+    }
+    return '';
+  }
+
   return (
     <div
-      className={`lang__wrapper ${(websiteLanguage === languages.eng)
+      className={`lang__wrapper ${getLightStyleIfApplicable()} ${(websiteLanguage === languages.eng)
         ? 'lang__wrapper--circle-left'
         : 'lang__wrapper--circle-right'}`}
       onClick={changeLanguage}
