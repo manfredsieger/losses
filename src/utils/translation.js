@@ -8,6 +8,8 @@ export default {
         header: 'Losses of russian invaders in Ukraine',
         updateDate: 'Last updated:',
         language: 'en-us',
+        numbersProvided: 'Numbers provided by the ',
+        genStaff: 'General Staff of the AFU',
         warning: 'Some numbers are approximate and cannot be verified due to the high intensity of combat actions',
       },
       dates: {
@@ -126,7 +128,9 @@ export default {
       header: {
         header: 'Втрати російських загарбників в Україні',
         updateDate: 'Дата останнього оновлення даних:',
-        language: 'ua',
+        language: 'uk-Ua',
+        numbersProvided: 'Дані надано ',
+        genStaff: 'Генеральним Штабом ЗСУ',
         warning: 'Дані уточнюються. Підрахунок ускладнюється високою інтенсивністю бойових дій',
       },
       dates: {
