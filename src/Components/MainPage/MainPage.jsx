@@ -20,14 +20,14 @@ export default function MainPage() {
 
       <div className="main__page-nav-wrapper">
         <PageNav
-          class="pageNav pageNav__yellow"
+          className="pageNav pageNav__yellow"
           to="/donate"
           ariaLabel="Go to help Ukraine page button"
           value={translation[websiteLanguage].main.helpBtn}
         />
 
         <PageNav
-          class="pageNav pageNav__light"
+          className="pageNav pageNav__light"
           to="/charts"
           ariaLabel="Show charts"
           value={translation[websiteLanguage].main.chartsBtn}

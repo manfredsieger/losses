@@ -8,7 +8,6 @@ import LangButton from './Components/LangButton/LangButton';
 import Charts from './Components/Charts/Charts';
 
 export default function App() {
-
   return (
     <div>
       <LangButton />
