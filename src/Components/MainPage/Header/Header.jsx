@@ -17,7 +17,10 @@ export default function Header() {
         {' '}
         <span className="header__update-date">{getFullDate(new Date(lastDataUpdateDate), translation[websiteLanguage].main.header.language)}</span>
       </p>
-      <p className="header__text header__source">Numbers provided by the General Staff of the AFU</p>
+      <p className="header__text header__source">
+        {'Numbers provided by the '}
+        <a className="header__source-link" href="https://twitter.com/GeneralStaffUA" target="_blank" rel="noreferrer noopener">General Staff of the AFU</a>
+      </p>
       <p className="header__text header__warning">{translation[websiteLanguage].main.header.warning}</p>
     </div>
   );

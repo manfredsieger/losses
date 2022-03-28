@@ -15,8 +15,6 @@
   text-align: center;
 }
 
-
-
 .header__header {
   max-width: $headerMaxWidth60;
   margin: 0 0 10px 0;
@@ -40,8 +38,24 @@ p.header__text:not(:last-child) {
   font-weight: 600;
 }
 
-.header__warning {
-  border-bottom: 1px solid rgba(65, 65, 65, 0.7);
+// .header__warning {
+//   border-bottom: 1px solid rgba(65, 65, 65, 0.7);
+// }
+
+.header__source::after {
+  content: "";
+  display: inline-block;
+  margin: 0 0 0 5px;
+  width: 10px;
+  height: 10px;
+  background-image: url('../../../img/twitter.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__source-link:link,
+.header__source-link:visited {
+  color: #000000;
 }
 
 @media (max-width: 545px) {
