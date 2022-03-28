@@ -14,7 +14,7 @@ export default function ExpandableSection({ subHeader, copyFields }) {
         className="donate__sub-header donate__sub-header--expandable"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <span className="donate__text">{subHeader}</span>
+        <span className="donate__sub-header-text">{subHeader}</span>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           aria-label={isExpanded

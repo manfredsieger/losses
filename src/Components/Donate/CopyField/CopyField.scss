@@ -26,14 +26,14 @@
 .copyField__input {
   flex-grow: 1;
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid $donateLightGrey;
   margin: 0;
   padding: 10px 45px 10px 10px;
   border-radius: 15px;
   font-size: 0.9rem;
-  background-color: rgb(255, 255, 255);
   resize: none;
   word-break: break-word;
+  color: $donateDarkGrey;
 }
 
 .copyField__copyButton {
@@ -60,11 +60,11 @@
 }
 
 .copyField__copyIcon path {
-  fill: rgba(0, 0, 0, 0.3);
+  fill: $donateLightGrey;
 }
 
 .copyField__copyIcon:hover path {
-  fill: rgba(0, 0, 0, 0.6);
+  fill: $donateDarkGrey;
 }
 
 @media(max-width: 800px) {

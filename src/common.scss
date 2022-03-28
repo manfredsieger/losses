@@ -21,6 +21,9 @@ $pageNavGap15: 15px;
 $pageNavGap5: 5px;
 $pageNavGap0: 0;
 
+$donateLightGrey: rgb(212, 212, 212);
+$donateDarkGrey: rgb(133, 133, 133);
+
 @mixin object_fit {
   object-fit: contain;
   object-position: center;
