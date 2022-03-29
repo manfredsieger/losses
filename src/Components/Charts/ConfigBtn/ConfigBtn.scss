@@ -1,0 +1,65 @@
+@import './../../../common.scss';
+
+.configBtn__config-item {
+  width: 100%;
+  height: 100%;
+}
+
+.configBtn__config-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border: 0.3px solid rgb(0,0,0);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: ease-in-out 200ms;
+}
+
+.configBtn__config-wrapper--selected {
+  border-radius: 5px;
+  background-color: $yellow;
+  border: none;
+  transform: scale(0.95);
+  transition: ease-in-out 200ms;
+}
+
+.configBtn__config-itemImg {
+  width: 40px;
+  height: 40px;
+  @include object-fit;
+  filter: invert(18%) sepia(3%) saturate(151%) hue-rotate(52deg) brightness(92%) contrast(90%);
+}
+
+.configBtn__config-text {
+  margin: 0;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+@media(max-width: 1150px) {
+  .configBtn__config-item {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media(max-width: 450px) {
+  .configBtn__config-item {
+    width: 70px;
+    height: 70px;
+  }
+
+  .configBtn__config-itemImg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .configBtn__config-text {
+    font-size: 0.65rem;
+  }
+}

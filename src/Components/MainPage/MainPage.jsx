@@ -19,7 +19,7 @@ export default function MainPage() {
   return (
     <main className="main__container">
 
-      <div className="main__page-nav-wrapper">
+      <div className="main__page-nav-wrapper navigation-wrapper">
         <LangButton />
         <PageNav
           className="pageNav pageNav__yellow"

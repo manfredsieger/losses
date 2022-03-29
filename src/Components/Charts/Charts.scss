@@ -18,13 +18,6 @@
   font-weight: 700;
 }
 
-.charts__page-nav-wrapper {
-  position: absolute;
-  top: $pageNavDistance15;
-  left: $pageNavDistance15;
-  @include flex_column_top_center;
-}
-
 .charts__grid-container {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -42,47 +35,6 @@
   place-items: center;
   gap: 10px;
   @include list_reset;
-}
-
-.charts__config-item {
-  width: 100%;
-  height: 100%;
-}
-
-.charts__config-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-  border: 0.3px solid rgb(0,0,0);
-  border-radius: 5px;
-  background-color: transparent;
-  cursor: pointer;
-  transition: ease-in-out 200ms;
-}
-
-.charts__config-wrapper--selected {
-  border-radius: 5px;
-  background-color: $yellow;
-  border: none;
-  transform: scale(0.95);
-  transition: ease-in-out 200ms;
-}
-
-.charts__config-itemImg {
-  width: 40px;
-  height: 40px;
-  @include object-fit;
-  filter: invert(18%) sepia(3%) saturate(151%) hue-rotate(52deg) brightness(92%) contrast(90%);
-}
-
-.charts__config-text {
-  margin: 0;
-  font-size: 0.7rem;
-  text-align: center;
 }
 
 .charts__canvas-wrapper {
@@ -112,11 +64,6 @@
     align-items: flex-start;
     flex-wrap: wrap;
   }
-
-  .charts__config-item {
-    width: 90px;
-    height: 90px;
-  }
 }
 
 @media(max-width: 700px) {
@@ -126,11 +73,6 @@
 }
 
 @media(max-width: 545px) {
-  .charts__page-nav-wrapper {
-    top: $pageNavDistance10;
-    left: $pageNavDistance10;
-  }
-
   .charts__grid-container {
     margin: 0 20px;
   }
@@ -149,39 +91,15 @@
   .charts__header {
     margin-bottom: 20px;
   }
-
-  .charts__page-nav-wrapper {
-    @include flex_row_left_center;
-    gap: 10px;
-  }
 }
 
 @media(max-width: 450px) {
   .charts__config {
     grid-template-columns: 70px 70px 70px;
   }
-
-  .charts__config-item {
-    width: 70px;
-    height: 70px;
-  }
-
-  .charts__config-itemImg {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .charts__config-text {
-    font-size: 0.65rem;
-  }
 }
 
 @media(max-width: 400px) {
-  .charts__page-nav-wrapper {
-    top: $pageNavDistance5;
-    left: $pageNavDistance5;
-  }
-
   .charts__header {
     font-size: $header1_5;
   }

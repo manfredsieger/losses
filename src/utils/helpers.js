@@ -20,3 +20,11 @@ export function getPreviousDataUpdateDate(losses) {
 export function getLatestLossesObject(losses) {
   return losses[getLastDataUpdateDate(losses)];
 }
+
+export function getImage(imgName) {
+  try {
+    return require(`../img/${imgName}.svg`);
+  } catch (err) {
+    return require('../img/unknown.svg');
+  }
+}

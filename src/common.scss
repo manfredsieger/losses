@@ -53,3 +53,38 @@ $donateDarkGrey: rgb(133, 133, 133);
   justify-content: flex-start;
   align-items: center;
 }
+
+// Standard link: black when not active and yellow when hovered
+.standardLink:link,
+.standardLink:visited {
+  color: #000000;
+}
+
+.standardLink:hover {
+  color: $yellow;
+}
+
+// Wrapper for all navigation buttons on the left / top side of the page
+
+.navigation-wrapper {
+  position: absolute;
+  top: $pageNavDistance15;
+  left: $pageNavDistance15;
+  @include flex_column_top_center;
+}
+
+@media(max-width: 545px) {
+  .navigation-wrapper {
+    top: $pageNavDistance10;
+    left: $pageNavDistance10;
+  }
+}
+
+@media(max-width: 480px) {
+  .navigation-wrapper {
+    top: $pageNavDistance5;
+    left: $pageNavDistance5;
+    gap: 10px;
+    @include flex_row_left_center;
+  }
+}

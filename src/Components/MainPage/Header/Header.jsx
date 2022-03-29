@@ -21,7 +21,7 @@ export default function Header() {
       </p>
       <p className="header__text header__source">
         {numbersProvided}
-        <a className="header__source-link" href="https://twitter.com/GeneralStaffUA" target="_blank" rel="noreferrer noopener">{genStaff}</a>
+        <a className="header__source-link standardLink" href="https://twitter.com/GeneralStaffUA" target="_blank" rel="noreferrer noopener">{genStaff}</a>
       </p>
       <p className="header__text header__warning">{warning}</p>
     </div>

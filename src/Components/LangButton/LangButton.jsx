@@ -18,6 +18,18 @@ export default function LangButton() {
     }
   }
 
+  // function supportsLocalStorage() {
+  //   return 'localStorage' in window && window['localStorage'] !== null;
+  // }
+
+  // function ff() {
+  //   try {
+
+  //   } catch (err) {
+
+  //   }
+  // }
+
   function getLightStyleIfApplicable() {
     if (activePage === pages.donate) {
       return 'lang__wrapper--light';

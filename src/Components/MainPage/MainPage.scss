@@ -10,39 +10,15 @@
   color: #ffffff;
 }
 
-.main__page-nav-wrapper {
-  position: absolute;
-  top: $pageNavDistance15;
-  left: $pageNavDistance15;
-  @include flex_column_top_center;
-}
-
 @media(max-width: 1170px) {
   .main__container {
     grid-template-columns: 15% 60% 15%;
   }
 }
 
-@media(max-width: 545px) {
-  .main__page-nav-wrapper {
-    top: $pageNavDistance10;
-    left: $pageNavDistance10;
-  }
-}
-
 @media(max-width: 480px) {
   .main__container {
     grid-template-columns: 30px 1fr 30px;
-  }
-
-  .main__page-nav-wrapper {
-    top: $pageNavDistance5;
-    left: $pageNavDistance5;
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
-    gap: 10px;
-    @include flex_row_left_center;
   }
 }
 

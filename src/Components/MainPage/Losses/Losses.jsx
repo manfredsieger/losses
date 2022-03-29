@@ -3,7 +3,7 @@ import './Losses.scss';
 import { useSelector } from 'react-redux';
 import losses from '../../../utils/losses';
 import translation from '../../../utils/translation';
-import { getLastDataUpdateDate, getPreviousDataUpdateDate } from '../../../utils/helpers';
+import { getLastDataUpdateDate, getPreviousDataUpdateDate, getImage } from '../../../utils/helpers';
 
 export default function Losses() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
@@ -28,7 +28,7 @@ export default function Losses() {
         itemTranslation = translation[websiteLanguage].main.losses[itemName];
       return (
         <li key={itemName} className="losses__item">
-          <img className="losses__itemImg" src={require(`./../../../img/${itemName}.svg`)} alt={`${itemTranslation}-icon`} title={itemTranslation} />
+          <img className="losses__itemImg" src={getImage(itemName)} alt={`${itemTranslation}-icon`} title={itemTranslation} />
           <div className="losses__textContainer">
             <p className="losses__textNumber">
               {`${itemName === 'personnel' ? '>' : ''}${itemNumber.toLocaleString(websiteLanguage)}`}

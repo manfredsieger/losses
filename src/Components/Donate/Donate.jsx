@@ -38,7 +38,7 @@ export default function Donate() {
 
   return (
     <>
-      <div className="donate__page-nav-wrapper">
+      <div className="donate__page-nav-wrapper navigation-wrapper">
         <LangButton />
         <PageNav
           className="pageNav pageNav__red"
