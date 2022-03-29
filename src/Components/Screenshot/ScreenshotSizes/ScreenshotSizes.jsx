@@ -3,7 +3,7 @@ import PropsTypes from 'prop-types';
 import './ScreenshotSizes.scss';
 
 export default function ScreenshotSizes({
-  name, width, height, selectedSizeName, setSelectedSizeName, setSelectedSize,
+  name, iconName, width, height, selectedSizeName, setSelectedSizeName, setSelectedSize,
 }) {
   function saveSelectedData() {
     setSelectedSizeName(name);
@@ -19,6 +19,7 @@ export default function ScreenshotSizes({
       type="button"
       onClick={saveSelectedData}
     >
+      <img className="screenshot-sizes__img" src={require(`../../../img/${iconName}.svg`)} alt={`${iconName}-icon`} />
       <span className="screesnshot-sizes__media-name">{name}</span>
       <span className="screesnshot-sizes__size">{`${width}*${height}`}</span>
     </button>
@@ -27,6 +28,7 @@ export default function ScreenshotSizes({
 
 ScreenshotSizes.propTypes = {
   name: PropsTypes.string.isRequired,
+  iconName: PropsTypes.string.isRequired,
   width: PropsTypes.number.isRequired,
   height: PropsTypes.number.isRequired,
   selectedSizeName: PropsTypes.string.isRequired,

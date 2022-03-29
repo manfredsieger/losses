@@ -1,0 +1,41 @@
+.screenshot__picture-container {
+  .losses {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    margin: 0 30px;
+  }
+
+  .losses__item {
+    grid-column: span 2;
+  }
+
+  .losses__item:hover {
+    transform: scale(1);
+}
+
+  .losses__item:last-child:nth-child(3n - 1) {
+    grid-column-end: -2;
+  }
+
+  .losses__item:nth-last-child(2):nth-child(3n + 1) {
+    grid-column-end: 4;
+  }
+
+  .losses__itemImg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .losses__textNumber {
+    font-size: 2rem;
+  }
+
+  .losses__textCaption {
+    width: 120px;
+    font-size: 0.7rem;
+  }
+
+  .losses__textNumberDifference {
+    top: -5px;
+  }
+}

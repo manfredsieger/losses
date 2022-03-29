@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 import Header from '../../MainPage/Header/Header';
 import Logo from '../../Logo/Logo';
 import Dates from '../../MainPage/Dates/Dates';
+import Losses from '../../MainPage/Losses/Losses';
 import translation from '../../../utils/translation';
 import './ScreenshotPicture.scss';
 
 export default function ScreenshotPicture() {
-  const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
+  // const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
 
   return (
     <>
@@ -17,6 +18,7 @@ export default function ScreenshotPicture() {
       <Header />
       <Logo />
       <Dates />
+      <Losses />
     </>
   );
 }

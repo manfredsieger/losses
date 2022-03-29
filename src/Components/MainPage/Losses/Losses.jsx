@@ -1,5 +1,6 @@
 import React from 'react';
 import './Losses.scss';
+import '../../../screenshotSCSS/screenshotLosses.scss';
 import { useSelector } from 'react-redux';
 import losses from '../../../utils/losses';
 import translation from '../../../utils/translation';

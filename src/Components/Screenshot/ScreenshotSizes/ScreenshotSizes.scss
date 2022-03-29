@@ -2,18 +2,26 @@
 
 .screenshot-sizes__container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   margin: 0;
   padding: 10px 15px;
-  border: 1px solid #a8a8a8;
-  border-radius: 1000px;
-  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  background-color: $donateLightGrey;
+
   box-sizing: border-box;
   cursor: pointer;
 }
 
 .screenshot-sizes__container--selected {
   background-color: $yellow;
+  color: #000000;
+}
+
+.screenshot-sizes__img {
+  width: 15px;
+  height: 15px;
+  @include object_fit;
 }

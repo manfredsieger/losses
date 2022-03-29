@@ -53,6 +53,7 @@ export default function Screenshot() {
           <ScreenshotSizes
             key={screenschotConfig[item].name}
             name={screenschotConfig[item].name}
+            iconName={screenschotConfig[item].iconName}
             width={screenschotConfig[item].width}
             height={screenschotConfig[item].height}
             selectedSizeName={selectedSizeName}
