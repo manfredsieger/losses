@@ -34,6 +34,10 @@
   color: $yellow;
 }
 
+.dateList__caption {
+  font-size: 0.9rem;
+}
+
 @media(max-width: 1170px) {
   .dateList__item {
     width: 150px;
@@ -72,10 +76,10 @@
   }
 
   .dateList__important-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .dateList__caption {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }

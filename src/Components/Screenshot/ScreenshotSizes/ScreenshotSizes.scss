@@ -1,0 +1,19 @@
+@import '../../../common.scss';
+
+.screenshot-sizes__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px 15px;
+  border: 1px solid #a8a8a8;
+  border-radius: 1000px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.screenshot-sizes__container--selected {
+  background-color: $yellow;
+}

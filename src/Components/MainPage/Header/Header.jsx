@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.scss';
+import '../../../screenshotSCSS/screenshotHeader.scss';
 import { useSelector } from 'react-redux';
 import { getLastDataUpdateDate, getFullDate } from '../../../utils/helpers';
 import losses from '../../../utils/losses';

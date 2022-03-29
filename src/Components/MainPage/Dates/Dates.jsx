@@ -1,5 +1,6 @@
 import React from 'react';
 import './Dates.scss';
+import '../../../screenshotSCSS/screenshotDates.scss';
 import { useSelector } from 'react-redux';
 import { getFullDate } from '../../../utils/helpers';
 import translation from '../../../utils/translation';

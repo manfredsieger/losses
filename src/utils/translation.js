@@ -3,7 +3,7 @@ export default {
     main: {
       helpBtn: 'How can I help?',
       chartsBtn: 'Charts',
-      infographicBtn: 'Save infographic',
+      infographicBtn: 'Download infographic',
       header: {
         header: 'Losses of russian invaders in Ukraine',
         updateDate: 'Last updated:',
@@ -130,10 +130,10 @@ export default {
       infographicBtn: 'Зберегти інфографіку',
       header: {
         header: 'Втрати російських загарбників в Україні',
-        updateDate: 'Дата останнього оновлення даних:',
+        updateDate: 'Дані актуальні станом на:',
         language: 'uk-Ua',
-        numbersProvided: 'Дані надано ',
-        genStaff: 'Генеральним Штабом ЗСУ',
+        numbersProvided: 'Джерело: ',
+        genStaff: 'Генеральний Штаб ЗСУ',
         warning: 'Дані уточнюються. Підрахунок ускладнюється високою інтенсивністю бойових дій',
       },
       dates: {
