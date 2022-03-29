@@ -1,13 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './Logo.scss';
-import logo from '../../img/logo_CBA.svg';
 
 export default function Logo() {
+  const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
+
   return (
     <p className="logo__wrapper">
       <img
         className="logo__image"
-        src={logo}
+        src={require(`../../img/logo_CBA_${websiteLanguage}.svg`)}
         alt="Logo of the Come Back Alive Fund"
         title="Logo of the Come Back Alive Fund"
       />
