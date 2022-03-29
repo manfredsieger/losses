@@ -122,7 +122,7 @@ export default {
   },
   ua: {
     main: {
-      helpBtn: 'Як допомогти?',
+      helpBtn: 'Як я можу допомогти?',
       chartsBtn: 'Графіки',
       infographicBtn: 'Зберегти інфографіку',
       header: {

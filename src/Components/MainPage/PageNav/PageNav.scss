@@ -5,10 +5,12 @@
   width: 80px;
   height: 80px;
   margin: 0;
+  padding: 2px;
   border-radius: 1000px;
   word-break: break-word;
   transition: ease-in-out 200ms;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .pageNav:not(:last-child) {
@@ -65,7 +67,7 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: ease-in-out 200ms;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
 }
 
@@ -81,7 +83,7 @@
 
   .pageNav__link {
     padding: 7px;
-    font-size: 0.55rem;
+    font-size: 0.5rem;
   }
 }
 
@@ -99,7 +101,7 @@
   }
 
   .pageNav__link {
-    font-size: 0.5rem;
+    font-size: 0.45rem;
   }
 }
 
@@ -110,6 +112,6 @@
   }
 
   .pageNav__link {
-    font-size: 0.4rem;
+    font-size: 0.35rem;
   }
 }
