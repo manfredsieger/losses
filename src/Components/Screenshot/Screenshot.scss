@@ -1,0 +1,6 @@
+@import '../../common.scss';
+
+.screenshot__header {
+  margin: 0 auto $header_margin_bottom auto;
+  min-height: $headerMinHeight120;
+}

@@ -119,6 +119,9 @@ export default {
       header: 'Dynamics of Russia`s losses in Ukraine',
       rotateWarning: 'Please rotate your screen to the landscape mode',
     },
+    screenshot: {
+      header: 'Download infographic',
+    },
   },
   ua: {
     main: {
@@ -239,6 +242,9 @@ export default {
       mainPageBtn: 'Головна сторінка',
       header: 'Динамика втрат Росії в України',
       rotateWarning: 'Будь ласка, поверніть екран горизонтально',
+    },
+    screenshot: {
+      header: 'Завантажити інфографіку',
     },
   },
 };

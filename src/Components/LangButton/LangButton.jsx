@@ -31,7 +31,7 @@ export default function LangButton() {
   // }
 
   function getLightStyleIfApplicable() {
-    if (activePage === pages.donate) {
+    if (activePage === pages.donate || activePage === pages.screenshot) {
       return 'lang__wrapper--light';
     }
     return '';

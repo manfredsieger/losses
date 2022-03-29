@@ -6,7 +6,7 @@
   justify-self: center;
   min-height: $headerMinHeight120;
   margin-bottom: $header_margin_bottom;
-  padding: 30px 0 0 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -16,11 +16,7 @@
 }
 
 .header__header {
-  max-width: $headerMaxWidth60;
   margin: 0 0 10px 0;
-  text-transform: uppercase;
-  font-size: $header2_5;
-  font-weight: 700;
 }
 
 .header__text {
@@ -54,27 +50,7 @@ p.header__text:not(:last-child) {
   fill: rgb(29, 161, 242);
 }
 
-@media (max-width: 545px) {
-  .header__header {
-    font-size: $header2;
-  }
-}
-
-@media(max-width: 480px) {
-  .header {
-    padding: 80px 0 0 0;
-  }
-
-  .header__header {
-    max-width: $headerMaxWidth80;
-  }
-}
-
 @media (max-width: 360px) {
-  .header__header {
-    font-size: $header1_5;
-  }
-
   .header__text {
     font-size: 0.7rem;
   }

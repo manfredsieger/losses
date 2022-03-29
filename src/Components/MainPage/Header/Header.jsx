@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div className="header">
-      <h1 className="header__header">{header}</h1>
+      <h1 className="header__header standardHeader">{header}</h1>
       <p className="header__text header__update">
         {`${updateDate} `}
         <span className="header__update-date">{getFullDate(new Date(lastDataUpdateDate), language)}</span>

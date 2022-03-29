@@ -1,6 +1,6 @@
 @import './../../common.scss';
 
-.main__container {
+.main__page-container {
   display: grid;
   justify-content: center;
   min-height: 100vh;
@@ -11,19 +11,19 @@
 }
 
 @media(max-width: 1170px) {
-  .main__container {
+  .main__page-container {
     grid-template-columns: 15% 60% 15%;
   }
 }
 
 @media(max-width: 480px) {
-  .main__container {
+  .main__page-container {
     grid-template-columns: 30px 1fr 30px;
   }
 }
 
 @media(max-width: 270px) {
-  .main__container {
+  .main__page-container {
     grid-template-columns: 10px 1fr 10px;
   }
 }

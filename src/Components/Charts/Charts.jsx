@@ -59,7 +59,7 @@ export default function Charts() {
 
   return (
     <article className="charts__page-container">
-      <h1 className="charts__header">{translation[websiteLanguage].charts.header}</h1>
+      <h1 className="charts__header standardHeader">{translation[websiteLanguage].charts.header}</h1>
 
       <div className="charts__page-nav-wrapper navigation-wrapper">
         <LangButton />

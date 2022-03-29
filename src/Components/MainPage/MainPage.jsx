@@ -17,7 +17,7 @@ export default function MainPage() {
   useEffect(() => dispatch(setActivePage(pages.losses)));
 
   return (
-    <main className="main__container">
+    <main className="main__page-container">
 
       <div className="main__page-nav-wrapper navigation-wrapper">
         <LangButton />

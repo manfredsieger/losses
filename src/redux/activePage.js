@@ -4,6 +4,7 @@ export const pages = {
   losses: 'losses',
   donate: 'donate',
   charts: 'charts',
+  screenshot: 'screenshot',
 };
 
 export const activePageSlice = createSlice({

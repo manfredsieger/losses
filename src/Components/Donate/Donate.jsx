@@ -48,7 +48,7 @@ export default function Donate() {
         />
       </div>
 
-      <div className="donate__container">
+      <div className="donate__page-container">
         <section className="donate__section--military">
           <h2 className="donate__header">{military.header}</h2>
           <ol className="donate__list">

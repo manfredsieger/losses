@@ -64,8 +64,37 @@ $donateDarkGrey: rgb(133, 133, 133);
   color: $yellow;
 }
 
-// Wrapper for all navigation buttons on the left / top side of the page
+// Standard header, main on of the page
+.standardHeader {
+  max-width: $headerMaxWidth60;
+  padding-top: 30px;
+  text-transform: uppercase;
+  font-size: $header2_5;
+  font-weight: 700;
+  text-align: center;
+}
 
+@media (max-width: 545px) {
+  .standardHeader {
+    font-size: $header2;
+  }
+}
+
+@media(max-width: 480px) {
+  .standardHeader {
+    max-width: $headerMaxWidth80;
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 360px) {
+  .standardHeader {
+    font-size: $header1_5;
+  }
+}
+
+
+// Wrapper for all navigation buttons on the left / top side of the page
 .navigation-wrapper {
   position: absolute;
   top: $pageNavDistance15;
