@@ -99,7 +99,7 @@
 @media(max-width: 390px) {
   .lang__wrapper {
     padding: 2px 7px;
-    width: 45px;
+    width: 30px;
     height: 20px;
   }
 
@@ -109,15 +109,23 @@
   }
 
   .lang__wrapper--circle-left .lang__circle {
-    transform: translate(17%, -50%);
+    transform: translate(-24%, -50%);
   }
   
   .lang__wrapper--circle-right .lang__circle {
-    transform: translate(152%, -50%);
+    transform: translate(95%, -50%);
   }
 
   .lang__text {
-    font-size: 10px;
+    font-size: 9px;
+  }
+
+  .lang__text--eng {
+    left: 5px;
+  }
+  
+  .lang__text--ua {
+    right: 5px;
   }
 }
 

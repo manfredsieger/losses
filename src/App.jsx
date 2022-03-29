@@ -6,10 +6,12 @@ import Donate from './Components/Donate/Donate';
 import Footer from './Components/Footer/Footer';
 import Charts from './Components/Charts/Charts';
 import Screenshot from './Components/Screenshot/Screenshot';
+import Logo from './Components/Logo/Logo';
 
 export default function App() {
   return (
     <div>
+      <Logo />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/donate" element={<Donate />} />

@@ -38,24 +38,20 @@ p.header__text:not(:last-child) {
   font-weight: 600;
 }
 
-// .header__warning {
-//   border-bottom: 1px solid rgba(65, 65, 65, 0.7);
-// }
+.header__source-link:link,
+.header__source-link:visited {
+  color: #000000;
+}
 
-.header__source::after {
-  content: "";
+.header__twitter-icon {
   display: inline-block;
   margin: 0 0 0 5px;
   width: 10px;
   height: 10px;
-  background-image: url('../../../img/twitter.svg');
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.header__source-link:link,
-.header__source-link:visited {
-  color: #000000;
+.header__source-link:hover + .header__twitter-icon {
+  fill: rgb(29, 161, 242);
 }
 
 @media (max-width: 545px) {

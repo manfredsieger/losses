@@ -84,7 +84,7 @@ $donateDarkGrey: rgb(133, 133, 133);
   .navigation-wrapper {
     top: $pageNavDistance5;
     left: $pageNavDistance5;
-    gap: 10px;
+    gap: 5px;
     @include flex_row_left_center;
   }
 }
