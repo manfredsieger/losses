@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.73975a46.css",
+    "main.js": "/static/js/main.880e37f4.js",
+    "static/media/vessels.svg": "/static/media/vessels.08771e9f29493e430f2a.svg",
+    "static/media/armoredVehicles.svg": "/static/media/armoredVehicles.58b66d92dbea6ef53226.svg",
+    "static/media/cisterns.svg": "/static/media/cisterns.3add338c3fe2e9278021.svg",
+    "static/media/logo_CBA_ua.svg": "/static/media/logo_CBA_ua.7962afac22b9c3e7ca98.svg",
+    "static/media/mlrs.svg": "/static/media/mlrs.d935028d11b712094bf3.svg",
+    "static/media/specialVehicle.svg": "/static/media/specialVehicle.fbe435540db838137586.svg",
+    "static/media/vehicles.svg": "/static/media/vehicles.bad3c5b981464c5e2ac7.svg",
+    "static/media/logo_CBA_eng.svg": "/static/media/logo_CBA_eng.a852d4306086f4b1c45f.svg",
+    "static/media/tanks.svg": "/static/media/tanks.1954d6b93ef90e58bea1.svg",
+    "static/media/antiAir.svg": "/static/media/antiAir.52c2e228c7aef09de5e7.svg",
+    "static/media/helicopters.svg": "/static/media/helicopters.3f45350b8496726bf388.svg",
+    "static/media/personnel.svg": "/static/media/personnel.bd65c27a90480c73e620.svg",
+    "static/media/unknown.svg": "/static/media/unknown.676868b56dcfe08e94adc9c21bdbca60.svg",
+    "static/media/srmb.svg": "/static/media/srmb.34b74d9fb615bbbddd14.svg",
+    "static/media/artillery.svg": "/static/media/artillery.eb87832c53781d3eb5fc.svg",
+    "static/media/aircrafts.svg": "/static/media/aircrafts.b8ae73db3fb2c6faff1d.svg",
+    "static/media/instagram.svg": "/static/media/instagram.6c8a0de85855b75ec82a.svg",
+    "static/media/twitter.svg": "/static/media/twitter.cc265efaf6e3c40b3c4e.svg",
+    "static/media/rotate.svg": "/static/media/rotate.83f5e00d5b5feccbd3e5fbb71dc402da.svg",
+    "index.html": "/index.html",
+    "static/media/chart.svg": "/static/media/chart.13ac681f20e66c977fe3.svg",
+    "static/media/uav.svg": "/static/media/uav.0311d380170a011d17f6.svg",
+    "static/media/copy.svg": "/static/media/copy.736ef094c28a907af951.svg",
+    "static/media/facebook.svg": "/static/media/facebook.8d0999069b0ae02eb985.svg",
+    "main.73975a46.css.map": "/static/css/main.73975a46.css.map",
+    "main.880e37f4.js.map": "/static/js/main.880e37f4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73975a46.css",
+    "static/js/main.880e37f4.js"
+  ]
+}
