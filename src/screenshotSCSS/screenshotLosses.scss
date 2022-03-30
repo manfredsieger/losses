@@ -60,20 +60,20 @@
   }
 
   .losses__item {
-    // grid-column: unset;
+    grid-column: auto !important;
   }
 
   .losses__item:hover {
     transform: scale(1);
   }
 
-  // .losses__item:last-child:nth-child(3n-1) {
-  //   grid-column-end: unset;
-  // }
+  .losses__item:last-child:nth-child(3n-1) {
+    grid-column-end: auto !important;
+  }
 
-  // .losses__item:last-child:nth-child(3n+1) {
-  //   grid-column-end: unset;
-  // }
+  .losses__item:last-child:nth-child(3n+1) {
+    grid-column-end: auto !important;
+  }
 
   .losses__itemImg {
     width: 120px;
