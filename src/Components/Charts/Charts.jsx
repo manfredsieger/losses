@@ -72,9 +72,11 @@ export default function Charts() {
       </div>
 
       <div className="charts__grid-container">
-        <ul className="charts__config">
-          {renderConfigBtns()}
-        </ul>
+        <div className="charts__config-wrapper">
+          <ul className="charts__config">
+            {renderConfigBtns()}
+          </ul>
+        </div>
 
         <div className="charts__canvas-wrapper">
           {

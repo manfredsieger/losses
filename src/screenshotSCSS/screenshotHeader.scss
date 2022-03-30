@@ -30,7 +30,14 @@
   }
 
   .header__twitter-icon {
-    display: none;
+    margin: 0 0 0 10px;
+  }
+
+  .header__source::after {
+    content: "@GeneralStaffUA";
+    display: inline-block;
+    margin: 0 0 0 2px;
+    font-size: 0.65rem;
   }
 }
 

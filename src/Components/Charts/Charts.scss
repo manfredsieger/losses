@@ -22,13 +22,20 @@
   padding: 0 0 30px 0;
 }
 
-.charts__config {
+.charts__config-wrapper {
   grid-area: config;
+  display: flex;
+  justify-self: center;
+  align-items: flex-start;
+}
+
+.charts__config {
   display: grid;
-  grid-template-columns: 90px 90px 90px;
+  grid-template-columns: 93px 93px 93px;
   place-items: center;
   gap: 10px;
   @include list_reset;
+  box-sizing: border-box;
 }
 
 .charts__canvas-wrapper {
