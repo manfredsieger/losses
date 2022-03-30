@@ -51,17 +51,29 @@
 
 .screenshot__picture-container_1080_1920 {
   .losses {
-    grid-template-columns: 417px 417px;
-    grid-template-rows: repeat(7, 120px);
+    grid-template-columns: repeat(2, 417px);
+    grid-template-rows: repeat(8, 120px);
     gap: 45px;
     margin: 0 30px;
     padding: 0;
     border-bottom: none;
   }
 
+  .losses__item {
+    // grid-column: unset;
+  }
+
   .losses__item:hover {
     transform: scale(1);
   }
+
+  // .losses__item:last-child:nth-child(3n-1) {
+  //   grid-column-end: unset;
+  // }
+
+  // .losses__item:last-child:nth-child(3n+1) {
+  //   grid-column-end: unset;
+  // }
 
   .losses__itemImg {
     width: 120px;

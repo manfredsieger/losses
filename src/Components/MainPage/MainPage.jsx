@@ -6,7 +6,7 @@ import Losses from './Losses/Losses';
 import PageNav from './PageNav/PageNav';
 import LangButton from '../LangButton/LangButton';
 import losses from '../../utils/losses';
-import { getLastDataUpdateDate } from '../../utils/helpers';
+import { getLastDataUpdateDate, isUserDeviceDesktop } from '../../utils/helpers';
 import './MainPage.scss';
 import { setActivePage, pages } from '../../redux/activePage';
 import translation from '../../utils/translation';
@@ -35,12 +35,16 @@ export default function MainPage() {
           value={translation[websiteLanguage].main.chartsBtn}
         />
 
-        <PageNav
-          className="pageNav pageNav__light"
-          to="/screenshot"
-          ariaLabel="Save infographic"
-          value={translation[websiteLanguage].main.infographicBtn}
-        />
+        {isUserDeviceDesktop()
+          ? (
+            <PageNav
+              className="pageNav pageNav__light"
+              to="/screenshot"
+              ariaLabel="Save infographic"
+              value={translation[websiteLanguage].main.infographicBtn}
+            />
+          )
+          : null}
       </div>
 
       <Header

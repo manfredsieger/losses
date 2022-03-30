@@ -49,8 +49,8 @@ export default {
       mainPageBtn: 'Home page',
       copyIconTitle: 'Copy text',
       expandBtn: {
-        open: 'Open the section',
-        close: 'Close the section',
+        open: 'Open section',
+        close: 'Close section',
       },
       military: {
         header: 'Supporting Defenders of Ukraine',

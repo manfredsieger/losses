@@ -20,7 +20,6 @@
   grid-row: 1 / 2;
   text-align: center;
   margin: 0 0 10px 0;
-  @include grey_bottom_line;
 }
 
 .donate__section--military {
@@ -170,7 +169,7 @@
 }
 
 @media (hover: none) {
-  .donate__organization-header:before {
+  .donate__organization-header::before {
     content: "";
     top: 0;
     left: 0;
@@ -182,5 +181,9 @@
     background-color: $yellow;
     border-radius: 0;
     transition: ease-out 200ms;
+  }
+
+  .donate__organization-header:hover::before {
+    transform: translate(0, 0);
   }
 }

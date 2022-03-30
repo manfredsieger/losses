@@ -7,6 +7,11 @@ export const pages = {
   screenshot: 'screenshot',
 };
 
+export const stylePages = {
+  red: [pages.losses, pages.charts],
+  white: [pages.donate, pages.screenshot],
+};
+
 export const activePageSlice = createSlice({
   name: 'activePage',
   initialState: {

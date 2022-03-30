@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.scss';
 import { useSelector } from 'react-redux';
 import translation from '../../utils/translation';
-import { pages } from '../../redux/activePage';
+import { stylePages } from '../../redux/activePage';
 import svgSources from '../../utils/svgSources';
 
 export default function Footer() {
@@ -24,7 +24,7 @@ export default function Footer() {
   }
 
   return (
-    <footer id="num" className={(activePage === pages.losses || activePage === pages.charts) ? 'footer__container footer__container--red-page' : 'footer__container'}>
+    <footer id="num" className={`footer__container ${stylePages.red.includes(activePage) ? 'footer__container--red-page' : ''}`}>
       <ul className="footer__list">
         <li className="footer__text">
           {`${translation[websiteLanguage].main.footer.developedBy} `}

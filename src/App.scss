@@ -1,3 +1,5 @@
+@import './common.scss';
+
 :root {
   font-size: 16px;
 }
@@ -13,4 +15,20 @@
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+.app__line {
+  display: block;
+  height: 1px;
+  margin: 0;
+  border: none;
+  background-color: rgb(182, 182, 182);
+}
+
+.app__line--red {
+  background-color: rgb(212, 30, 17);
+}
+
+.app__line--grey {
+  background-color: rgb(214, 214, 214);
 }
