@@ -1,11 +1,20 @@
 .screenshot__picture-container_1024_512 {
   .dateList {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin: 0 90px 20px;
   }
 
   .dateList__item {
     width: 230px;
+    height: 36px;
+    margin-bottom: 0;
     padding: 10px;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin-right: 25px;
   }
 
   .dateList__important-text {
@@ -20,12 +29,21 @@
 
 .screenshot__picture-container_1080_1920 {
   .dateList {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin: 0 40px 80px;
   }
 
   .dateList__item {
     width: 200px;
+    height: 126px;
+    margin: 0;
     padding: 20px;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin-right: 55px;
   }
 
   .dateList__important-text {
@@ -40,12 +58,21 @@
 
 .screenshot__picture-container_1080_1080 {
   .dateList {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin: 0 60px 40px;
   }
 
   .dateList__item {
     width: 200px;
+    height: 43px;
     padding: 20px;
+    margin: 0;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin-right: 55px;
   }
 
   .dateList__important-text {
@@ -60,12 +87,21 @@
 
 .screenshot__picture-container_940_788 {
   .dateList {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin: 0 50px 30px;
   }
 
   .dateList__item {
     width: 200px;
+    height: 63px;
     padding: 15px;
+    margin: 0;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin-right: 55px;
   }
 
   .dateList__important-text {

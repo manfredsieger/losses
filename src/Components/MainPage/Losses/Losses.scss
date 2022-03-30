@@ -26,6 +26,10 @@
   filter: invert(18%) sepia(3%) saturate(151%) hue-rotate(52deg) brightness(92%) contrast(90%);
 }
 
+.losses__textNumber {
+  color: #ffffff;
+}
+
 @media(max-width: 1030px) {
   .losses {
     grid-template-columns: 1fr 1fr;

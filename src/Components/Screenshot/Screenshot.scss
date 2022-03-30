@@ -46,3 +46,29 @@
   background-color: $red;
   box-sizing: border-box;
 }
+
+@media(max-width: 1021px) {
+  .screenshot__header.standardHeader {
+    margin: 20px;
+  }
+}
+
+@media(max-width: 720px) {
+  .screenshot__sizes-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+@media(max-width: 480px) {
+  .screenshot__header.standardHeader {
+    margin: 0;
+  }
+}
+
+@media(max-width: 360px) {
+  .screenshot__header.standardHeader {
+    min-height: unset;
+    margin: 0 0 20px 0;
+  }
+}
