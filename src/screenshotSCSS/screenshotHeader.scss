@@ -1,4 +1,4 @@
-.screenshot__picture-container {
+.screenshot__picture-container_1024_512 {
   .header {
     margin: 0 0 20px 0;
     min-height: 0;
@@ -7,8 +7,8 @@
   .header__header {
     margin: 0;
     padding: 0;
-    font-size: 1.7rem;
-    max-width: 50%;
+    font-size: 1.9rem;
+    max-width: 65%;
   }
 
   p.header__text {
@@ -31,5 +31,134 @@
 
   .header__twitter-icon {
     display: none;
+  }
+}
+
+.screenshot__picture-container_1080_1920 {
+  .header {
+    margin: 0 0 60px 0;
+    min-height: 0;
+  }
+
+  .header__header {
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-size: 3.7rem;
+    max-width: 80%;
+  }
+
+  p.header__text {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  p.header__text:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .header__update-date {
+    font-style: normal;
+  }
+  
+  .header__source-link {
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .header__twitter-icon {
+    margin: 0 0 0 10px;
+  }
+
+  .header__source::after {
+    content: "@GeneralStaffUA";
+    display: inline-block;
+    margin: 0 0 0 2px;
+    font-size: 0.7rem;
+  }
+}
+
+.screenshot__picture-container_1080_1080 {
+  .header {
+    margin: 0 0 40px 0;
+    min-height: 0;
+  }
+
+  .header__header {
+    margin: 0;
+    padding: 0;
+    font-size: 2.3rem;
+    max-width: 60%;
+  }
+
+  p.header__text {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  p.header__text:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .header__source::after {
+    content: "@GeneralStaffUA";
+    display: inline-block;
+    margin: 0 0 0 2px;
+    font-size: 0.7rem;
+  }
+
+  .header__update-date {
+    font-style: normal;
+  }
+  
+  .header__source-link {
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .header__twitter-icon {
+    margin: 0 0 0 10px;
+  }
+}
+
+.screenshot__picture-container_940_788 {
+  .header {
+    margin: 0 0 30px 0;
+    min-height: 0;
+  }
+
+  .header__header {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 2rem;
+    max-width: 70%;
+  }
+
+  p.header__text {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  p.header__text:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .header__source::after {
+    content: "@GeneralStaffUA";
+    display: inline-block;
+    margin: 0 0 0 2px;
+    font-size: 0.7rem;
+  }
+
+  .header__update-date {
+    font-style: normal;
+  }
+  
+  .header__source-link {
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .header__twitter-icon {
+    margin: 0 0 0 10px;
   }
 }

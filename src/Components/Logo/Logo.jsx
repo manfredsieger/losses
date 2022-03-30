@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import './Logo.scss';
 import '../../screenshotSCSS/screenshotLogo.scss';
+import '../../screenshotSCSS/screenshotCommon.scss';
 
 export default function Logo() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);

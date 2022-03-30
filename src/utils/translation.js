@@ -121,6 +121,7 @@ export default {
     },
     screenshot: {
       header: 'Download infographic',
+      downloadBtn: 'Download',
     },
   },
   ua: {
@@ -245,6 +246,7 @@ export default {
     },
     screenshot: {
       header: 'Завантажити інфографіку',
+      downloadBtn: 'Завантажити',
     },
   },
 };

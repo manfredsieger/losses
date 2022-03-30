@@ -20,7 +20,7 @@
   grid-row: 1 / 2;
   text-align: center;
   margin: 0 0 10px 0;
-  border-bottom: 1px solid $donateLightGrey;
+  @include grey_bottom_line;
 }
 
 .donate__section--military {

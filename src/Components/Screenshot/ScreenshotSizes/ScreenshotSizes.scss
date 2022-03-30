@@ -8,11 +8,12 @@
   margin: 0;
   padding: 10px 15px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: $donateLightGrey;
-
+  box-shadow: $btnShadow;
   box-sizing: border-box;
   cursor: pointer;
+  transition: ease-in-out 200ms;
 }
 
 .screenshot-sizes__container--selected {
@@ -24,4 +25,9 @@
   width: 15px;
   height: 15px;
   @include object_fit;
+}
+
+.screesnshot-sizes__media-name,
+.screesnshot-sizes__size {
+  font-size: 0.7rem;
 }

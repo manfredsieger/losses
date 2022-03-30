@@ -5,10 +5,11 @@
   width: 80px;
   height: 40px;
   margin-bottom: $pageNavGap15;
+  padding: 2px 7px;
   background-color: $red;
   border: 1px solid #ffffff;
   border-radius: 1000px;
-  padding: 2px 7px;
+  box-shadow: $btnShadow;
   z-index: 1;
   cursor: pointer;
 }

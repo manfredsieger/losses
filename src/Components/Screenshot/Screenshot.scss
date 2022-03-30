@@ -6,6 +6,8 @@
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  overflow-x: scroll;
+  @include grey_bottom_line;
 }
 
 .screenshot__header {
@@ -13,26 +15,34 @@
   min-height: $headerMinHeight120;
 }
 
+.screenshot__header.standardHeader {
+  margin: 0;
+}
+
 .screenshot__sizes-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin: 0 0 20px 0;
 }
 
 .screenshot__download-btn {
+  margin: 0 0 20px 0;
   padding: 15px 25px;
   border: none;
-  border-radius: 1000px;
+  border-radius: 100px;
   background-color: $red;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
   color: #ffffff;
+  box-shadow: $btnShadow;
   cursor: pointer;
+  transition: ease-in-out 200ms;
 }
 
 .screenshot__picture-container {
   position: relative;
-  padding: 30px;
   background-color: $red;
   box-sizing: border-box;
 }

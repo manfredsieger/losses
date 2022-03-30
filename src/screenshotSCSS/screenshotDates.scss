@@ -1,4 +1,4 @@
-.screenshot__picture-container {
+.screenshot__picture-container_1024_512 {
   .dateList {
     margin: 0 90px 20px;
   }
@@ -14,6 +14,66 @@
 
   .dateList__caption {
     font-size: 0.75rem;
+    color: #ffffff;
+  }
+}
+
+.screenshot__picture-container_1080_1920 {
+  .dateList {
+    margin: 0 40px 80px;
+  }
+
+  .dateList__item {
+    width: 200px;
+    padding: 20px;
+  }
+
+  .dateList__important-text {
+    font-size: 1.7rem;
+  }
+
+  .dateList__caption {
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+}
+
+.screenshot__picture-container_1080_1080 {
+  .dateList {
+    margin: 0 60px 40px;
+  }
+
+  .dateList__item {
+    width: 200px;
+    padding: 20px;
+  }
+
+  .dateList__important-text {
+    font-size: 1.4rem;
+  }
+
+  .dateList__caption {
+    font-size: 1rem;
+    color: #ffffff;
+  }
+}
+
+.screenshot__picture-container_940_788 {
+  .dateList {
+    margin: 0 50px 30px;
+  }
+
+  .dateList__item {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .dateList__important-text {
+    font-size: 1.2rem;
+  }
+
+  .dateList__caption {
+    font-size: 0.85rem;
     color: #ffffff;
   }
 }

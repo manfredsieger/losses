@@ -28,7 +28,7 @@ export default function Screenshot() {
   };
 
   function capture() {
-    htmlToImage.toPng(document.querySelector('.screenshot__picture-container'))
+    htmlToImage.toPng(document.querySelector('.screenshot__picture-container'), config)
       .then((dataUrl) => {
         download(dataUrl, 'losses.png');
       });
@@ -63,10 +63,10 @@ export default function Screenshot() {
         ))}
       </section>
 
-      <button className="screenshot__download-btn" type="button" onClick={capture}>Download</button>
+      <button className="screenshot__download-btn" type="button" onClick={capture}>{translation[websiteLanguage].screenshot.downloadBtn}</button>
 
       <div
-        className="screenshot__picture-container"
+        className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height}`}
         style={{ width: selectedSize.width, height: selectedSize.height }}
       >
         <ScreenshotPicture />

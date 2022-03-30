@@ -1,0 +1,22 @@
+.screenshot__picture-container {
+  .losses {
+    border-bottom: none;
+  }
+}
+
+// padding for the whole picture
+.screenshot__picture-container.screenshot__picture-container_1024_512 {
+  padding: 30px;
+}
+
+.screenshot__picture-container.screenshot__picture-container_1080_1920 {
+  padding: 90px 70px;
+}
+
+.screenshot__picture-container.screenshot__picture-container_1080_1080 {
+  padding: 45px;
+}
+
+.screenshot__picture-container.screenshot__picture-container_940_788 {
+  padding: 40px;
+}

@@ -1,8 +1,35 @@
-.screenshot__picture-container {
+.screenshot__picture-container_1024_512 {
   .logo__wrapper {
     width: 100px;
+    top: 20px;
+    left: unset;
+    right: 20px;
+  }
+}
+
+.screenshot__picture-container_1080_1920 {
+  .logo__wrapper {
+    width: 140px;
     top: 30px;
     left: unset;
     right: 30px;
+  }
+}
+
+.screenshot__picture-container_1080_1080 {
+  .logo__wrapper {
+    width: 120px;
+    top: 30px;
+    left: unset;
+    right: 30px;
+  }
+}
+
+.screenshot__picture-container_940_788 {
+  .logo__wrapper {
+    width: 100px;
+    top: 20px;
+    left: unset;
+    right: 20px;
   }
 }

@@ -11,6 +11,7 @@
   transition: ease-in-out 200ms;
   text-align: center;
   box-sizing: border-box;
+  box-shadow: $btnShadow;
 }
 
 .pageNav:not(:last-child) {

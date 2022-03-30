@@ -24,6 +24,8 @@ $pageNavGap0: 0;
 $donateLightGrey: rgb(212, 212, 212);
 $donateDarkGrey: rgb(133, 133, 133);
 
+$btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
+
 @mixin object_fit {
   object-fit: contain;
   object-position: center;
@@ -54,6 +56,10 @@ $donateDarkGrey: rgb(133, 133, 133);
   align-items: center;
 }
 
+@mixin grey_bottom_line {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 // Standard link: black when not active and yellow when hovered
 .standardLink:link,
 .standardLink:visited {
@@ -61,7 +67,7 @@ $donateDarkGrey: rgb(133, 133, 133);
 }
 
 .standardLink:hover {
-  color: $yellow;
+  background-color: $yellow;
 }
 
 // Standard header, main on of the page
