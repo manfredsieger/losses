@@ -3,14 +3,14 @@
 .losses {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
-  gap: 30px;
   @include list_reset;
   margin: 0 -40px 0 0;
   padding: 0 0 30px 0;
-  display: grid;
+  display: flex;
   justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 60px 120px;
 }
 
 .losses__item:hover {
@@ -73,6 +73,12 @@
   color: #000000;
 }
 
+@media(max-width: 1370px) {
+  .losses {
+    gap: 50px 120px;
+  }
+}
+
 @media(max-width: 1170px) {
   .losses__itemImg {
     width: 80px;
@@ -89,33 +95,21 @@
   }
 }
 
-@media(min-width: 1031px) {
+@media(max-width: 934px) {
   .losses {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .losses__item {
-    grid-column: span 2;
-  }
-
-  .losses__item:last-child:nth-child(3n - 1) {
-    grid-column-end: -2;
-  }
-
-  .losses__item:nth-last-child(2):nth-child(3n + 1) {
-    grid-column-end: 4;
+    gap: 30px 60px;
   }
 }
 
-@media(max-width: 1030px) {
+@media(max-width: 834px) {
   .losses {
-    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
   }
 }
 
 @media(max-width: 775px) {
   .losses {
-    grid-template-columns: 1fr;
+    gap: 0 20px;
     margin: 0;
   }
 
