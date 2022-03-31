@@ -22,14 +22,8 @@
   padding: 0 0 30px 0;
 }
 
-.charts__config-wrapper {
-  grid-area: config;
-  display: flex;
-  justify-self: center;
-  align-items: flex-start;
-}
-
 .charts__config {
+  grid-area: config;
   display: grid;
   grid-template-columns: 93px 93px 93px;
   place-items: center;
@@ -61,9 +55,10 @@
 
   .charts__config {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
+    flex-grow: 1;
   }
 }
 

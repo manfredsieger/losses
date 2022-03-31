@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2c4a981b.css",
-    "main.js": "/static/js/main.d3211a75.js",
+    "main.css": "/static/css/main.d07f5d78.css",
+    "main.js": "/static/js/main.ca6b5cf0.js",
     "static/media/vessels.svg": "/static/media/vessels.08771e9f29493e430f2a.svg",
     "static/media/logo_CBA_eng.svg": "/static/media/logo_CBA_eng.2b10288d67376a9de9ab.svg",
     "static/media/armoredVehicles.svg": "/static/media/armoredVehicles.58b66d92dbea6ef53226.svg",
@@ -26,11 +26,11 @@
     "static/media/uav.svg": "/static/media/uav.0311d380170a011d17f6.svg",
     "static/media/copy.svg": "/static/media/copy.736ef094c28a907af951.svg",
     "static/media/facebook.svg": "/static/media/facebook.8d0999069b0ae02eb985.svg",
-    "main.2c4a981b.css.map": "/static/css/main.2c4a981b.css.map",
-    "main.d3211a75.js.map": "/static/js/main.d3211a75.js.map"
+    "main.d07f5d78.css.map": "/static/css/main.d07f5d78.css.map",
+    "main.ca6b5cf0.js.map": "/static/js/main.ca6b5cf0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c4a981b.css",
-    "static/js/main.d3211a75.js"
+    "static/css/main.d07f5d78.css",
+    "static/js/main.ca6b5cf0.js"
   ]
 }

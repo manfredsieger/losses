@@ -117,7 +117,7 @@ export default {
     charts: {
       mainPageBtn: 'Home page',
       header: 'Dynamics of Russia`s losses in Ukraine',
-      rotateWarning: 'Please rotate your screen to the landscape mode',
+      rotateWarning: 'Please rotate your screen to the landscape mode or use device with screen wider than 300 px',
     },
     screenshot: {
       header: 'Download infographic',
@@ -242,7 +242,7 @@ export default {
     charts: {
       mainPageBtn: 'Головна сторінка',
       header: 'Динамика втрат Росії в України',
-      rotateWarning: 'Будь ласка, поверніть екран горизонтально',
+      rotateWarning: 'Будь ласка, поверніть екран горизонтально або використовуйте пристрій з шириною екрану більше 300 px',
     },
     screenshot: {
       header: 'Завантажити інфографіку',
