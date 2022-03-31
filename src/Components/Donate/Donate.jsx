@@ -38,7 +38,7 @@ export default function Donate() {
 
   return (
     <>
-      <div className="donate__page-nav-wrapper navigation-wrapper">
+      <nav className="donate__page-nav-wrapper navigation-wrapper">
         <LangButton />
         <PageNav
           className="pageNav pageNav__red"
@@ -46,9 +46,11 @@ export default function Donate() {
           ariaLabel="Go back to the main page button"
           value={translation[websiteLanguage].donate.mainPageBtn}
         />
-      </div>
+      </nav>
 
-      <div className="donate__page-container">
+      <main className="donate__page-container">
+        <h1 className="visually-hidden">Section providing banking details to support Defenders of Ukraine and Ukrainian civilians</h1>
+
         <section className="donate__section--military">
           <h2 className="donate__header">{military.header}</h2>
           <ol className="donate__list">
@@ -171,7 +173,7 @@ export default function Donate() {
           </ol>
 
         </section>
-      </div>
+      </main>
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function MainPage() {
   return (
     <main className="main__page-container">
 
-      <div className="main__page-nav-wrapper navigation-wrapper">
+      <nav className="main__page-nav-wrapper navigation-wrapper">
         <LangButton />
         <PageNav
           className="pageNav pageNav__yellow"
@@ -45,7 +45,7 @@ export default function MainPage() {
             />
           )
           : null}
-      </div>
+      </nav>
 
       <Header
         losses={losses}

@@ -15,7 +15,7 @@ export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
 
   return (
-    <div>
+    <>
       <Logo />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -26,6 +26,6 @@ export default function App() {
       </Routes>
       <hr className={`app__line ${stylePages.red.includes(activePage) ? 'app__line--red' : 'app__line--grey'}`} />
       <Footer />
-    </div>
+    </>
   );
 }

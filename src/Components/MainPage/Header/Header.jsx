@@ -15,7 +15,7 @@ export default function Header() {
   } = translation[websiteLanguage].main.header;
 
   return (
-    <div className="header">
+    <header className="header">
       <h1 className="header__header standardHeader">{header}</h1>
       <p className="header__text header__update">
         {`${updateDate} `}
@@ -41,6 +41,6 @@ export default function Header() {
         </svg>
       </p>
       <p className="header__text header__warning">{warning}</p>
-    </div>
+    </header>
   );
 }

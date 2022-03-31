@@ -38,7 +38,7 @@ export default function Screenshot() {
     <article className="screenshot__page-container">
       <h1 className="screenshot__header standardHeader">{translation[websiteLanguage].screenshot.header}</h1>
 
-      <div className="navigation-wrapper">
+      <nav className="navigation-wrapper">
         <LangButton />
         <PageNav
           className="pageNav pageNav__red"
@@ -46,9 +46,10 @@ export default function Screenshot() {
           ariaLabel="Go back to the main page button"
           value={translation[websiteLanguage].donate.mainPageBtn}
         />
-      </div>
+      </nav>
 
       <section className="screenshot__sizes-wrapper">
+        <h2 className="visually-hidden">Buttons allowing to customize the infographic to download</h2>
         {Object.keys(screenschotConfig).map((item) => (
           <ScreenshotSizes
             key={screenschotConfig[item].name}
@@ -65,12 +66,12 @@ export default function Screenshot() {
 
       <button className="screenshot__download-btn" type="button" onClick={capture}>{translation[websiteLanguage].screenshot.downloadBtn}</button>
 
-      <div
+      <main
         className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height}`}
         style={{ width: selectedSize.width, height: selectedSize.height }}
       >
         <ScreenshotPicture />
-      </div>
+      </main>
 
     </article>
   );

@@ -58,10 +58,10 @@ export default function Charts() {
   }
 
   return (
-    <article className="charts__page-container">
+    <main className="charts__page-container">
       <h1 className="charts__header standardHeader">{translation[websiteLanguage].charts.header}</h1>
 
-      <div className="charts__page-nav-wrapper navigation-wrapper">
+      <nav className="charts__page-nav-wrapper navigation-wrapper">
         <LangButton />
         <PageNav
           className="pageNav pageNav__light"
@@ -69,22 +69,25 @@ export default function Charts() {
           ariaLabel="Go back to the main page button"
           value={translation[websiteLanguage].charts.mainPageBtn}
         />
-      </div>
+      </nav>
 
-      <div className="charts__grid-container">
+      <article className="charts__grid-container">
+        <h2 className="visually-hidden">Charts and buttons allowing to customize charts output</h2>
+
         <ul className="charts__config">
           {renderConfigBtns()}
         </ul>
 
-        <div className="charts__canvas-wrapper">
+        <section className="charts__canvas-wrapper">
+          <h3 className="visually-hidden">Chart displaying russian invaders` losses in Ukraine</h3>
           {
             hasUserSmallLandscapeScreen
               ? <RotateWarning />
               : <Line className="charts__canvas" options={options} data={data} />
           }
-        </div>
-      </div>
+        </section>
+      </article>
 
-    </article>
+    </main>
   );
 }
