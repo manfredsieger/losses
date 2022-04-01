@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.scss';
 import { useSelector } from 'react-redux';
 import translation from '../../utils/translation';
-import { stylePages } from '../../redux/activePage';
+import { stylePages, pages } from '../../redux/activePage';
 import svgSources from '../../utils/svgSources';
 
 export default function Footer() {
@@ -34,15 +34,19 @@ export default function Footer() {
           <a className="footer__link standardLink" href="https://www.comebackalive.in.ua/" rel="noopener noreferrer" target="_blank">{fund}</a>
           {` ${team}`}
         </li>
-        {activePage === 'losses' ? (
-          <li className="footer__text">
-            {`${design} `}
-            <a className="footer__link standardLink" href="https://www.facebook.com/UkraineMFA" rel="noopener noreferrer" target="_blank">
-              {mfa}
-            </a>
-            {` ${facebook}`}
-          </li>
-        ) : null}
+        {
+          activePage === pages.losses
+            ? (
+              <li className="footer__text">
+                {`${design} `}
+                <a className="footer__link standardLink" href="https://www.facebook.com/UkraineMFA" rel="noopener noreferrer" target="_blank">
+                  {mfa}
+                </a>
+                {` ${facebook}`}
+              </li>
+            )
+            : null
+        }
         <li className="footer__text">
           {`${iconsFrom} `}
           {renderSvgSources()}

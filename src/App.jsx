@@ -1,5 +1,7 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import {
+  Routes, Route, Navigate,
+} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './App.scss';
 import MainPage from './Components/MainPage/MainPage';
@@ -26,7 +28,7 @@ export default function App() {
           ? <Route path="/screenshot" element={<Screenshot />} />
           : null
         }
-        <Route path="/:smthElse" element={<Navigate replace to="/" />} />
+        <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
       <hr className={`app__line ${stylePages.red.includes(activePage) ? 'app__line--red' : 'app__line--grey'}`} />
       <Footer />
