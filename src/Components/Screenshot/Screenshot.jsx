@@ -21,6 +21,8 @@ export default function Screenshot() {
     width: screenschotConfig.twitter.width,
     height: screenschotConfig.twitter.height,
   });
+  const { downloadBtn, header } = translation[websiteLanguage].screenshot;
+  const { mainPageBtn } = translation[websiteLanguage].donate;
 
   const config = {
     width: selectedSize.width,
@@ -36,7 +38,7 @@ export default function Screenshot() {
 
   return (
     <article className="screenshot__page-container">
-      <h1 className="screenshot__header standardHeader">{translation[websiteLanguage].screenshot.header}</h1>
+      <h1 className="screenshot__header standardHeader">{header}</h1>
 
       <nav className="navigation-wrapper">
         <LangButton />
@@ -44,7 +46,7 @@ export default function Screenshot() {
           className="pageNav pageNav__red"
           to="/"
           ariaLabel="Go back to the main page button"
-          value={translation[websiteLanguage].donate.mainPageBtn}
+          value={mainPageBtn}
         />
       </nav>
 
@@ -64,7 +66,7 @@ export default function Screenshot() {
         ))}
       </section>
 
-      <button className="screenshot__download-btn" type="button" onClick={capture}>{translation[websiteLanguage].screenshot.downloadBtn}</button>
+      <button className="screenshot__download-btn" type="button" onClick={capture}>{downloadBtn}</button>
 
       <main
         className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height}`}

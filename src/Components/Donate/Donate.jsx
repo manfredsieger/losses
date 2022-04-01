@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import './Donate.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import CopyField from './CopyField/CopyField';
@@ -94,7 +94,7 @@ export default function Donate() {
                 </p>
               </section>
 
-              <h4 className="donate__sub-header donate_sub-header--important">{military.comeBackAlive.donationsInside.header}</h4>
+              <h4 className="donate__sub-header donate__sub-header--important">{military.comeBackAlive.donationsInside.header}</h4>
               <ExpandableSection
                 subHeader={military.comeBackAlive.donationsInside.oschadbank}
                 copyFields={renderCopyField(donationsCBA.ukraine.oschadbank)}

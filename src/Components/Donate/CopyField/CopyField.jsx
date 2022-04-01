@@ -7,6 +7,7 @@ import './CopyField.scss';
 
 export default function CopyField({ value, label, isLabelVisible }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
+  const { copyIconTitle } = translation[websiteLanguage].donate;
 
   async function copyToClipboard() {
     copy(value);
@@ -27,7 +28,7 @@ export default function CopyField({ value, label, isLabelVisible }) {
           className="copyField__copyButton"
           onClick={copyToClipboard}
           aria-label="Button to copy the data from input"
-          title={translation[websiteLanguage].donate.copyIconTitle}
+          title={copyIconTitle}
           type="button"
         >
           <svg className="copyField__copyIcon" x="0px" y="0px" viewBox="0 0 460 460">

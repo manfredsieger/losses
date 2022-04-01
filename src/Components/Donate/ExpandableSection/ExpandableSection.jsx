@@ -7,6 +7,7 @@ import translation from '../../../utils/translation';
 export default function ExpandableSection({ subHeader, copyFields }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
+  const { open, close } = translation[websiteLanguage].donate.expandBtn;
 
   return (
     <section className="donate__section">
@@ -17,13 +18,9 @@ export default function ExpandableSection({ subHeader, copyFields }) {
         <span className="donate__sub-header-text">{subHeader}</span>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          aria-label={isExpanded
-            ? translation[websiteLanguage].donate.expandBtn.close
-            : translation[websiteLanguage].donate.expandBtn.open}
+          aria-label={isExpanded ? close : open}
           className={`donate__move-btn ${isExpanded ? 'donate__shrink-btn' : 'donate__expand-btn'}`}
-          title={isExpanded
-            ? translation[websiteLanguage].donate.expandBtn.close
-            : translation[websiteLanguage].donate.expandBtn.open}
+          title={isExpanded ? close : open}
           type="button"
         />
       </h4>

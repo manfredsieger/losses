@@ -8,6 +8,9 @@ import svgSources from '../../utils/svgSources';
 export default function Footer() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const { activePage } = useSelector((state) => state.activePage);
+  const {
+    developedBy, team, design, mfa, facebook, iconsFrom, fund,
+  } = translation[websiteLanguage].main.footer;
 
   function renderSvgSources() {
     return Object.values(svgSources).map((source, index, arr) => {
@@ -27,21 +30,21 @@ export default function Footer() {
     <footer id="num" className={`footer__container ${stylePages.red.includes(activePage) ? 'footer__container--red-page' : ''}`}>
       <ul className="footer__list">
         <li className="footer__text">
-          {`${translation[websiteLanguage].main.footer.developedBy} `}
-          <a className="footer__link standardLink" href="https://www.comebackalive.in.ua/" rel="noopener noreferrer" target="_blank">{translation[websiteLanguage].main.footer.fund}</a>
-          {` ${translation[websiteLanguage].main.footer.team}`}
+          {`${developedBy} `}
+          <a className="footer__link standardLink" href="https://www.comebackalive.in.ua/" rel="noopener noreferrer" target="_blank">{fund}</a>
+          {` ${team}`}
         </li>
         {activePage === 'losses' ? (
           <li className="footer__text">
-            {`${translation[websiteLanguage].main.footer.design} `}
+            {`${design} `}
             <a className="footer__link standardLink" href="https://www.facebook.com/UkraineMFA" rel="noopener noreferrer" target="_blank">
-              {translation[websiteLanguage].main.footer.mfa}
+              {mfa}
             </a>
-            {` ${translation[websiteLanguage].main.footer.facebook}`}
+            {` ${facebook}`}
           </li>
         ) : null}
         <li className="footer__text">
-          {`${translation[websiteLanguage].main.footer.iconsFrom} `}
+          {`${iconsFrom} `}
           {renderSvgSources()}
         </li>
       </ul>

@@ -51,12 +51,12 @@ export const donationsCBA = {
       label: 'Name of the bank',
     },
     bankSwiftCode: {
-      value: 'PBANUA2X',
+      value: 'PBANUA2XXXX',
       isLabelVisible: true,
       label: 'Bank SWIFT Code',
     },
     purposeOfPayment: {
-      value: 'Charitable donation to defenders of Ukraine',
+      value: 'Charitable donation',
       isLabelVisible: true,
       label: 'Purpose of payment',
     },
@@ -76,6 +76,11 @@ export const donationsCBA = {
       value: 'TX9aNri16bSxVYi6oMnKDj5RMKAMBXWzon',
       isLabelVisible: true,
       label: 'TRC20 (tether)',
+    },
+    solana: {
+      value: '8icxpGYCoR8SRKqLYsSarcAjBjBPuXAuHkeJjJx5ju7a',
+      isLabelVisible: true,
+      label: 'Solana (sol)',
     },
   },
   ukraine: {

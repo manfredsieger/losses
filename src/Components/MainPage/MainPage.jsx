@@ -15,6 +15,7 @@ export default function MainPage() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const dispatch = useDispatch();
   useEffect(() => dispatch(setActivePage(pages.losses)));
+  const { helpBtn, chartsBtn, infographicBtn } = translation[websiteLanguage].main;
 
   return (
     <main className="main__page-container">
@@ -25,14 +26,14 @@ export default function MainPage() {
           className="pageNav pageNav__yellow"
           to="/donate"
           ariaLabel="Go to help Ukraine page button"
-          value={translation[websiteLanguage].main.helpBtn}
+          value={helpBtn}
         />
 
         <PageNav
           className="pageNav pageNav__light"
           to="/charts"
           ariaLabel="Show charts"
-          value={translation[websiteLanguage].main.chartsBtn}
+          value={chartsBtn}
         />
 
         {isUserDeviceDesktop()
@@ -41,7 +42,7 @@ export default function MainPage() {
               className="pageNav pageNav__light"
               to="/screenshot"
               ariaLabel="Save infographic"
-              value={translation[websiteLanguage].main.infographicBtn}
+              value={infographicBtn}
             />
           )
           : null}

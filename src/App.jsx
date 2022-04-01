@@ -21,8 +21,12 @@ export default function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/charts" element={<Charts />} />
-        {isUserDeviceDesktop() ? <Route path="/screenshot" element={<Screenshot />} /> : null}
-        <Route path="/*" element={<Navigate replace to="/" />} />
+        {
+        isUserDeviceDesktop()
+          ? <Route path="/screenshot" element={<Screenshot />} />
+          : null
+        }
+        <Route path="/:smthElse" element={<Navigate replace to="/" />} />
       </Routes>
       <hr className={`app__line ${stylePages.red.includes(activePage) ? 'app__line--red' : 'app__line--grey'}`} />
       <Footer />
