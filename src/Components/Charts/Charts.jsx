@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
-import PageNav from '../MainPage/PageNav/PageNav';
 import ConfigBtn from './ConfigBtn/ConfigBtn';
 import RotateWarning from './RotateWarning/RotateWarning';
-import LangButton from '../LangButton/LangButton';
 import './Charts.scss';
 import losses from '../../utils/losses';
 import { getLatestLossesObject } from '../../utils/helpers';
@@ -31,10 +29,10 @@ export default function Charts() {
   });
 
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
-  const [lossesToDisplay, setLossesToDisplay] = useState(['personnel']);
+  const [lossesToDisplay, setLossesToDisplay] = useState(['aircrafts', 'helicopters']);
 
   const dispatch = useDispatch();
-  useEffect(() => dispatch(setActivePage(pages.charts)));
+  useEffect(() => dispatch(setActivePage(pages.charts.name)));
 
   const data = {
     labels: getLabels(),
@@ -58,25 +56,10 @@ export default function Charts() {
   }
 
   return (
-    <main className="charts__page-container">
+    <main className="charts__page-container page-container">
       <h1 className="charts__header standardHeader">{translation[websiteLanguage].charts.header}</h1>
-
-      <nav className="charts__page-nav-wrapper navigation-wrapper">
-        <LangButton />
-        <PageNav
-          className="pageNav pageNav__light"
-          to="/"
-          ariaLabel="Go back to the main page button"
-          value={translation[websiteLanguage].charts.mainPageBtn}
-        />
-      </nav>
-
       <article className="charts__grid-container">
         <h2 className="visually-hidden">Charts and buttons allowing to customize charts output</h2>
-
-        <ul className="charts__config">
-          {renderConfigBtns()}
-        </ul>
 
         <section className="charts__canvas-wrapper">
           <h3 className="visually-hidden">Chart displaying russian invaders` losses in Ukraine</h3>
@@ -86,6 +69,10 @@ export default function Charts() {
               : <Line className="charts__canvas" options={options} data={data} />
           }
         </section>
+
+        <ul className="charts__config">
+          {renderConfigBtns()}
+        </ul>
       </article>
 
     </main>

@@ -4,12 +4,33 @@ import { createSlice } from '@reduxjs/toolkit';
  * Describes all pages the app has.
  * If one adds a new page, it shall
  * be added to this object.
+ * Bgc stands fro background color.
  */
 export const pages = {
-  losses: 'losses',
-  donate: 'donate',
-  charts: 'charts',
-  screenshot: 'screenshot',
+  donate: {
+    name: 'donate',
+    path: '/donate',
+    ariaLabel: 'Go to support Ukraine page',
+    yellowBgc: true,
+  },
+  losses: {
+    name: 'losses',
+    path: '/',
+    ariaLabel: 'Go back to the home page',
+    yellowBgc: false,
+  },
+  charts: {
+    name: 'charts',
+    path: '/charts',
+    ariaLabel: 'Go to page displaying russia`s losses on charts',
+    yellowBgc: false,
+  },
+  screenshot: {
+    name: 'screenshot',
+    path: '/screenshot',
+    ariaLabel: 'Go to page saving infographic',
+    yellowBgc: false,
+  },
 };
 
 /**
@@ -22,18 +43,18 @@ export const pages = {
  * or other pages.
  */
 export const stylePages = {
-  red: [pages.losses, pages.charts],
-  white: [pages.donate, pages.screenshot],
+  red: [pages.losses.name, pages.charts.name],
+  white: [pages.donate.name, pages.screenshot.name],
 };
 
 export const activePageSlice = createSlice({
   name: 'activePage',
   initialState: {
-    activePage: pages.losses,
+    activePage: pages.losses.name,
   },
   reducers: {
     setActivePage: (state, action) => {
-      if (Object.values(pages).includes(action.payload)) {
+      if (pages[action.payload].name) {
         state.activePage = action.payload;
       }
     },

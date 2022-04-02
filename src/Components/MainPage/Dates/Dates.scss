@@ -1,13 +1,11 @@
 @import './../../../common.scss';
 
 .dateList {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
   display: flex;
   justify-content: space-between;
   @include list_reset;
-  margin-bottom: $header_margin_bottom;
-  padding: 0;
+  margin-bottom: $header_margin_bottom50;
+  padding: 0 30px;
 }
 
 .dateList__item {
@@ -39,6 +37,10 @@
 }
 
 @media(max-width: 1170px) {
+  .dateList {
+    padding: 0;
+  }
+
   .dateList__item {
     width: 150px;
   }
@@ -46,7 +48,7 @@
 
 @media(max-width: 940px) {
   .dateList__item {
-    width: 100px;
+    width: 120px;
   }
 }
 

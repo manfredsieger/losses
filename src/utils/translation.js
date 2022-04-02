@@ -1,9 +1,12 @@
 export default {
   eng: {
+    nav: {
+      losses: 'Home page',
+      donate: 'How can I help?',
+      charts: 'Charts',
+      screenshot: 'Download infographic',
+    },
     main: {
-      helpBtn: 'How can I help?',
-      chartsBtn: 'Charts',
-      infographicBtn: 'Download infographic',
       header: {
         header: 'Losses of russian invaders in Ukraine',
         updateDate: 'Last updated:',
@@ -46,7 +49,6 @@ export default {
       },
     },
     donate: {
-      mainPageBtn: 'Home page',
       copyIconTitle: 'Copy text',
       expandBtn: {
         open: 'Open section',
@@ -125,10 +127,13 @@ export default {
     },
   },
   ua: {
+    nav: {
+      losses: 'Головна сторінка',
+      donate: 'Як я можу допомогти?',
+      charts: 'Графіки',
+      screenshot: 'Зберегти інфографіку',
+    },
     main: {
-      helpBtn: 'Як я можу допомогти?',
-      chartsBtn: 'Графіки',
-      infographicBtn: 'Зберегти інфографіку',
       header: {
         header: 'Втрати російських загарбників в Україні',
         updateDate: 'Дані актуальні станом на:',
@@ -171,7 +176,6 @@ export default {
       },
     },
     donate: {
-      mainPageBtn: 'Головна сторінка',
       copyIconTitle: 'Копіювати текст',
       expandBtn: {
         open: 'Розгорнути',

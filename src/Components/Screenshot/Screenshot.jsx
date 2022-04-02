@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as htmlToImage from 'html-to-image';
 import download from 'downloadjs';
-import PageNav from '../MainPage/PageNav/PageNav';
-import LangButton from '../LangButton/LangButton';
 import ScreenshotSizes from './ScreenshotSizes/ScreenshotSizes';
 import ScreenshotPicture from './ScreenshotPicture/ScreenshotPicture';
 import translation from '../../utils/translation';
@@ -14,7 +12,7 @@ import './Screenshot.scss';
 export default function Screenshot() {
   const dispatch = useDispatch();
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
-  useEffect(() => dispatch(setActivePage(pages.screenshot)));
+  useEffect(() => dispatch(setActivePage(pages.screenshot.name)));
 
   const [selectedSizeName, setSelectedSizeName] = useState(screenschotConfig.twitter.name);
   const [selectedSize, setSelectedSize] = useState({
@@ -22,7 +20,6 @@ export default function Screenshot() {
     height: screenschotConfig.twitter.height,
   });
   const { downloadBtn, header } = translation[websiteLanguage].screenshot;
-  const { mainPageBtn } = translation[websiteLanguage].donate;
 
   const config = {
     width: selectedSize.width,
@@ -37,18 +34,8 @@ export default function Screenshot() {
   }
 
   return (
-    <article className="screenshot__page-container">
+    <article className="screenshot__page-container page-container">
       <h1 className="screenshot__header standardHeader">{header}</h1>
-
-      <nav className="navigation-wrapper">
-        <LangButton />
-        <PageNav
-          className="pageNav pageNav__red"
-          to="/"
-          ariaLabel="Go back to the main page button"
-          value={mainPageBtn}
-        />
-      </nav>
 
       <section className="screenshot__sizes-wrapper">
         <h2 className="visually-hidden">Buttons allowing to customize the infographic to download</h2>

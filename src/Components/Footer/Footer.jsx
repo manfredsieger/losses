@@ -35,7 +35,7 @@ export default function Footer() {
           {` ${team}`}
         </li>
         {
-          activePage === pages.losses
+          activePage === pages.losses.name
             ? (
               <li className="footer__text">
                 {`${design} `}

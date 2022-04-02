@@ -5,12 +5,16 @@ $header2_5: 2.5rem;
 $header2: 2rem;
 $header1_5: 1.5rem;
 
-$header_margin_bottom: 50px;
+$header_margin_bottom50: 50px;
+$header_margin_bottom30: 30px;
+
+$header_padding_top30: 30px;
 
 $headerMinHeight120: 120px;
 
-$headerMaxWidth60: 60%;
+$headerMaxWidth90: 90%;
 $headerMaxWidth80: 80%;
+$headerMaxWidth60: 60%;
 
 $pageNavDistance20: 20px;
 $pageNavDistance15: 15px;
@@ -72,7 +76,6 @@ $btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
 
 // Standard header, main on of the page
 .standardHeader {
-  max-width: $headerMaxWidth60;
   padding-top: 30px;
   text-transform: uppercase;
   font-size: $header2_5;
@@ -88,7 +91,6 @@ $btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
 
 @media(max-width: 480px) {
   .standardHeader {
-    max-width: $headerMaxWidth80;
     padding-top: 80px;
   }
 }
@@ -99,6 +101,24 @@ $btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
   }
 }
 
+// Provides a page container for all website pages. It has a padding allowing
+// the page navigation to look good and not to be overlapped by other site components
+.page-container {
+  padding: 0 130px;
+}
+
+@media(max-width: 545px) {
+  .page-container {
+    padding: 0 95px;
+  }
+}
+
+@media(max-width: 480px) {
+  .page-container {
+    padding: 0 10px;
+  }
+}
+
 
 // Wrapper for all navigation buttons on the left / top side of the page
 .navigation-wrapper {
@@ -106,6 +126,7 @@ $btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
   top: $pageNavDistance15;
   left: $pageNavDistance15;
   @include flex_column_top_center;
+  z-index: 1;
 }
 
 @media(max-width: 545px) {
