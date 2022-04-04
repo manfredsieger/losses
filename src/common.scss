@@ -1,10 +1,19 @@
-$yellow: rgb(255, 255, 9);
-$red: rgb(235, 64, 52);
+$yellow: #f8fc74;
+$red: #fd625c;
+$light_red: #ff736d;
+
+$sansSerifFont: "Roboto", "Segoe UI", "Oxygen",
+"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+sans-serif;
+$serifFont: "Roboto Slab", "Times", "Times New Roman", "Palatino", "Georgia", serif;
+
+$squareBoxShadow: 3px 3px 0 0 #000;
 
 $header2_5: 2.5rem;
 $header2: 2rem;
 $header1_5: 1.5rem;
 
+$header_margin_bottom80: 80px;
 $header_margin_bottom50: 50px;
 $header_margin_bottom30: 30px;
 
@@ -16,6 +25,7 @@ $headerMaxWidth90: 90%;
 $headerMaxWidth80: 80%;
 $headerMaxWidth60: 60%;
 
+$pageNavDistance40: 40px;
 $pageNavDistance20: 20px;
 $pageNavDistance15: 15px;
 $pageNavDistance10: 10px;
@@ -27,8 +37,6 @@ $pageNavGap0: 0;
 
 $donateLightGrey: rgb(212, 212, 212);
 $donateDarkGrey: rgb(133, 133, 133);
-
-$btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
 
 @mixin object_fit {
   object-fit: contain;
@@ -53,6 +61,13 @@ $btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
   align-items: center;
 }
 
+@mixin flex_column_top_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 @mixin flex_row_left_center {
   display: flex;
   flex-direction: row;
@@ -68,19 +83,22 @@ $btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
 .standardLink:link,
 .standardLink:visited {
   color: #000000;
+  font-weight: bold;
 }
 
 .standardLink:hover {
   background-color: $yellow;
 }
 
-// Standard header, main on of the page
+// Standard header, main header on each webpage except for donate webpage
 .standardHeader {
-  padding-top: 30px;
-  text-transform: uppercase;
+  max-width: 575px;
+  padding: 23px 0 0 0;
   font-size: $header2_5;
   font-weight: 700;
   text-align: center;
+  font-family: "Roboto Slab";
+  font-weight: 700;
 }
 
 @media (max-width: 545px) {
@@ -104,7 +122,7 @@ $btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
 // Provides a page container for all website pages. It has a padding allowing
 // the page navigation to look good and not to be overlapped by other site components
 .page-container {
-  padding: 0 130px;
+  margin: 0 209px 0 222px;
 }
 
 @media(max-width: 545px) {
@@ -116,31 +134,5 @@ $btnShadow: 2px 5px 28px -15px rgba(0,0,0,0.75);
 @media(max-width: 480px) {
   .page-container {
     padding: 0 10px;
-  }
-}
-
-
-// Wrapper for all navigation buttons on the left / top side of the page
-.navigation-wrapper {
-  position: absolute;
-  top: $pageNavDistance15;
-  left: $pageNavDistance15;
-  @include flex_column_top_center;
-  z-index: 1;
-}
-
-@media(max-width: 545px) {
-  .navigation-wrapper {
-    top: $pageNavDistance10;
-    left: $pageNavDistance10;
-  }
-}
-
-@media(max-width: 480px) {
-  .navigation-wrapper {
-    top: $pageNavDistance5;
-    left: $pageNavDistance5;
-    gap: 5px;
-    @include flex_row_left_center;
   }
 }

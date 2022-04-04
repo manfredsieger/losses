@@ -30,13 +30,20 @@ export default function Losses() {
         itemTranslation = translation[websiteLanguage].main.losses[itemName];
       return (
         <li key={itemName} className="losses__item">
-          <img className="losses__itemImg" src={getImage(itemName)} alt={`${itemTranslation}-icon`} title={itemTranslation} />
-          <div className="losses__textContainer">
-            <p className="losses__textNumber">
-              {`${itemName === 'personnel' ? '>' : ''}${itemNumber.toLocaleString(websiteLanguage)}`}
-              <span className="losses__textNumberDifference">{getLossesNumberDifference(itemNumber, itemName)}</span>
+          <div className={`losses__img-container ${itemName === 'personnel' ? 'losses__img-container--thin' : ''}`}>
+            <img
+              className={`losses__img ${itemName === 'personnel' ? 'losses__img--thin' : ''}`}
+              src={getImage(itemName)}
+              alt={`${itemTranslation}-icon`}
+              title={itemTranslation}
+            />
+          </div>
+          <div className={`losses__text-container ${itemName === 'personnel' ? 'losses__text-container--wide' : ''}`}>
+            <p className="losses__text-number-container">
+              <span className="losses__text-number">{`${itemName === 'personnel' ? '~' : ''}${itemNumber.toLocaleString(websiteLanguage)}`}</span>
+              <span className="losses__text-number-difference">{getLossesNumberDifference(itemNumber, itemName)}</span>
             </p>
-            <p className="losses__textCaption">{itemTranslation}</p>
+            <p className="losses__text-caption">{itemTranslation}</p>
           </div>
         </li>
       );

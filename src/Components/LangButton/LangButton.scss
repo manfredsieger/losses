@@ -2,60 +2,50 @@
 
 .lang__wrapper {
   position: relative;
-  width: 80px;
+
+  width: 77px;
   height: 40px;
-  margin-bottom: $pageNavGap15;
-  padding: 2px 7px;
-  background-color: $red;
-  border: 1px solid #ffffff;
-  border-radius: 1000px;
-  box-shadow: $btnShadow;
+  margin-bottom: 80px;
+  padding: 5px;
+  border: solid 1px #000;
+  
   z-index: 1;
   cursor: pointer;
 }
 
-.lang__wrapper--light {
-  background-color: transparent;
-  border: 1px solid $red;
-}
-
-.lang__circle {
+.lang__square {
   position: absolute;
+  top: 50%;
+
   display: inline-block;
+
   width: 30px;
   height: 30px;
-  top: 50%;
-  background-color: #fff;
-  border-radius: 1000px;
+  border: solid 1px #000000;
+  
+  background-color: $yellow;
+  
   transition: ease-in-out 400ms;
 }
 
-.lang__wrapper--light .lang__circle {
-  background-color: $red;
-}
-
-.lang__wrapper--circle-left .lang__circle {
+.lang__wrapper--circle-left .lang__square {
   transform: translateY(-50%);
 }
 
-.lang__wrapper--circle-right .lang__circle {
-  transform: translate(170%, -50%);
+.lang__wrapper--circle-right .lang__square {
+  transform: translate(122%, -50%);
 }
 
 .lang__text {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Arial';
-  text-transform: uppercase;
+  
+  font-family: $serifFont;
   font-size: 14px;
-  font-weight: 600;
-  transition: ease-in-out 500ms;
   color: #000000;
-}
 
-.lang__wrapper--light .lang__text {
-  color: #ffffff;
+  transform: translateY(-50%);
+  transition: ease-in-out 500ms;
 }
 
 .lang__text--eng {
@@ -79,16 +69,16 @@
     margin-bottom: $pageNavGap5;
   }
 
-  .lang__circle {
+  .lang__square {
     width: 20px;
     height: 20px;
   }
 
-  .lang__wrapper--circle-left .lang__circle {
+  .lang__wrapper--circle-left .lang__square {
     transform: translate(10%, -50%);
   }
   
-  .lang__wrapper--circle-right .lang__circle {
+  .lang__wrapper--circle-right .lang__square {
     transform: translate(175%, -50%);
   }
 
@@ -104,16 +94,16 @@
     height: 20px;
   }
 
-  .lang__circle {
+  .lang__square {
     width: 17px;
     height: 17px;
   }
 
-  .lang__wrapper--circle-left .lang__circle {
+  .lang__wrapper--circle-left .lang__square {
     transform: translate(-24%, -50%);
   }
   
-  .lang__wrapper--circle-right .lang__circle {
+  .lang__wrapper--circle-right .lang__square {
     transform: translate(95%, -50%);
   }
 

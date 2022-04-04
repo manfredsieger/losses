@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
  * Describes all pages the app has.
  * If one adds a new page, it shall
  * be added to this object.
- * Bgc stands fro background color.
+ * Bgc stands for background color.
  */
 export const pages = {
   donate: {

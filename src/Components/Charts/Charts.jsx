@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import ConfigBtn from './ConfigBtn/ConfigBtn';
 import RotateWarning from './RotateWarning/RotateWarning';
+import ChartModeButton from './ChartModeButton/ChartModeButton';
 import './Charts.scss';
 import losses from '../../utils/losses';
 import { getLatestLossesObject } from '../../utils/helpers';
@@ -17,16 +18,23 @@ const SMALL_LANDSCAPE_SCREEN = 290;
 const latestLossesObject = getLatestLossesObject(losses);
 
 export default function Charts() {
-  const [hasUserSmallLandscapeScreen, setUserScreenValidity] = useState(false);
+  const [hasUserSmallScreen, setUserScreenValidity] = useState(false);
+
+  function hasUserValidScreenSize() {
+    if (window.innerWidth < SMALL_LANDSCAPE_SCREEN) {
+      return setUserScreenValidity(true);
+    }
+    return setUserScreenValidity(false);
+  }
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      if (window.innerWidth < SMALL_LANDSCAPE_SCREEN) {
-        return setUserScreenValidity(true);
-      }
-      return setUserScreenValidity(false);
-    });
-  });
+    hasUserValidScreenSize();
+    window.addEventListener('resize', hasUserValidScreenSize);
+
+    return () => {
+      window.removeEventListener('resize', hasUserValidScreenSize);
+    };
+  }, []);
 
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const [lossesToDisplay, setLossesToDisplay] = useState(['aircrafts', 'helicopters']);
@@ -64,11 +72,13 @@ export default function Charts() {
         <section className="charts__canvas-wrapper">
           <h3 className="visually-hidden">Chart displaying russian invaders` losses in Ukraine</h3>
           {
-            hasUserSmallLandscapeScreen
+            hasUserSmallScreen
               ? <RotateWarning />
               : <Line className="charts__canvas" options={options} data={data} />
           }
         </section>
+
+        <ChartModeButton />
 
         <ul className="charts__config">
           {renderConfigBtns()}

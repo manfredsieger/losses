@@ -1,12 +1,15 @@
+@import './common.scss';
+
 *,
 *::before,
 *::after {
-  font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  box-sizing: border-box;
+  
+  font-family: $sansSerifFont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #000000;
+  font-weight: 400;
 }
 
 body {

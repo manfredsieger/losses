@@ -14,21 +14,14 @@
 
 .footer__text {
   margin: 0;
+
+  text-align: center;
   font-size: 0.7rem;
 }
 
 .footer__text:not(:last-child) {
-  margin: 0 0 5px 0;
+  margin: 0 0 7px 0;
 }
-
-// .footer__link {
-//   color: #000000;
-// }
-
-// .footer__link:hover,
-// .footer__link:active {
-//   background-color: $yellow;
-// }
 
 .footer__link:visited {
   color: initial;

@@ -4,8 +4,7 @@
   display: flex;
   justify-content: space-between;
   @include list_reset;
-  margin-bottom: $header_margin_bottom50;
-  padding: 0 30px;
+  margin-bottom: $header_margin_bottom80;
 }
 
 .dateList__item {
@@ -13,27 +12,40 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  padding: 15px;
+
+  width: 280px;
+  padding: 30px 50px 30px 50px;
+  border: solid 1px #000;
+
   word-break: break-word;
   text-align: center;
-  background-color: rgb(78, 78, 78, 0.2);
-  border-radius: 20px;
+  background-color: $light_red;
+  box-shadow: $squareBoxShadow;
 }
 
-.dateList__first-item,
-.dateList__second-item {
+.dateList__important-text,
+.dateList__important-text--bigger,
+.dateList__caption {
   margin: 0;
 }
 
-.dateList__important-text {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: $yellow;
+.dateList__important-text,
+.dateList__important-text--bigger {
+  margin-bottom: 15px;
+
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: $serifFont;
+  line-height: 0.83;
+}
+
+.dateList__important-text--bigger {
+  font-size: 34px;
 }
 
 .dateList__caption {
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
 @media(max-width: 1170px) {

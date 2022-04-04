@@ -17,18 +17,15 @@
   margin: -1px;
 }
 
-.app__line {
-  display: block;
-  height: 1px;
-  margin: 0;
-  border: none;
-  background-color: rgb(182, 182, 182);
+.website-background-red {
+  background-color: $red;
 }
 
-.app__line--red {
-  background-color: rgb(212, 30, 17);
-}
+.website-wrapper {
+  position: relative;
+  max-width: 1440px;
+  padding: 40px;
+  margin: 0 auto;
 
-.app__line--grey {
-  background-color: rgb(214, 214, 214);
+  border: 1px solid white;
 }

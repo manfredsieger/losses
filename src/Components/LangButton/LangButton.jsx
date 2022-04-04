@@ -46,7 +46,7 @@ export default function LangButton() {
       role="button"
       tabIndex={0}
     >
-      <span className="lang__circle" id="circle" />
+      <span className="lang__square" id="circle" />
       <span className="lang__text lang__text--eng">en</span>
       <span className="lang__text lang__text--ua">ua</span>
     </div>
