@@ -148,14 +148,14 @@ $donateDarkGrey: rgb(133, 133, 133);
   }
 }
 
-// @media(max-width: 545px) {
-//   .page-container {
-//     padding: 0 95px;
-//   }
-// }
+@media(max-width: 585px) {
+  .page-container {
+    margin: 0 30px $footerBottomGap100 30px;
+  }
+}
 
-// @media(max-width: 480px) {
-//   .page-container {
-//     padding: 0 10px;
-//   }
-// }
+@media(max-width: 440px) {
+  .page-container {
+    margin: 0 0 $footerBottomGap100 0;
+  }
+}

@@ -198,21 +198,11 @@
 //   }
 // }
 
-// @media(max-width: 300px) {
-//   .losses__text-container {
-//     margin: 0;
-//   }
-
-//   .losses__text-number-difference {
-//     top: -8px;
-//     right: 0;
-//   }
-
-//   .losses__text-caption {
-//     width: 100px;
-//     font-size: 0.8rem;
-//   }
-// }
+@media(max-width: 500px) {
+  .losses__item {
+    width: 100%;
+  }
+}
 
 // @media(max-width: 270px) {
 //   .losses__text-number {

@@ -101,30 +101,14 @@
     justify-content: flex-start;
     align-items: center;
   }
-
-  // .dateList__item {
-  //   width: 200px;
-  // }
-
-  // .dateList__item:not(:last-child) {
-  //   margin: 0 0 20px 0;
-  // }
 }
 
-@media(max-width: 380px) {
-  // .dateList__item {
-  //   width: 150px;
-  // }
-
-  // .dateList__item:not(:last-child) {
-  //   margin: 0 0 10px 0;
-  // }
-
-  .dateList__important-text {
-    font-size: 1.2rem;
+@media(max-width: 500px) {
+  .dateList {
+    align-items: stretch;
   }
 
-  .dateList__caption {
-    font-size: 0.7rem;
+  .dateList__item {
+    width: auto;
   }
 }

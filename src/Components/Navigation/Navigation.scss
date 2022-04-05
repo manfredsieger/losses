@@ -86,18 +86,8 @@
   }
 }
 
-@media(max-width: 545px) {
-  .navigation-wrapper {
-    top: $pageNavDistance10;
-    left: $pageNavDistance10;
-  }
-}
-
-@media(max-width: 480px) {
-  .navigation-wrapper {
-    top: $pageNavDistance5;
-    left: $pageNavDistance5;
-    gap: 5px;
-    @include flex_row_left_center;
+@media(max-width: 370px) {
+  .navigation-wrapper.navigation-wrapper--opened .pageNav {
+    width: 100%;
   }
 }

@@ -30,6 +30,10 @@
   max-width: 1440px;
   padding: 40px;
   margin: 0 auto;
+}
 
-  border: 1px solid white;
+@media(max-width: 500px) {
+  .website-wrapper {
+    padding: 30px 20px;
+  }
 }

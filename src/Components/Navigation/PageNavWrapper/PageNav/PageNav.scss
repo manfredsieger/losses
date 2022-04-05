@@ -94,42 +94,4 @@
     width: 60px;
     height: 60px;
   }
-
-  .pageNav:not(:last-child) {
-    margin-bottom: $pageNavGap5;
-  }
-
-  .pageNav__link {
-    padding: 7px;
-    font-size: 0.5rem;
-  }
-}
-
-/* Allows pageNav link to be placed on one line when pageNav wrapper becomes horizontal, not vertical */
-@media (max-width: 480px) {
-  .pageNav:not(:last-child) {
-    margin-bottom: $pageNavGap0;
-  }
-}
-
-@media (max-width: 390px) {
-  .pageNav {
-    width: 50px;
-    height: 50px;
-  }
-
-  .pageNav__link {
-    font-size: 0.45rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .pageNav {
-    width: 45px;
-    height: 45px;
-  }
-
-  .pageNav__link {
-    font-size: 0.35rem;
-  }
 }

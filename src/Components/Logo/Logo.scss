@@ -17,21 +17,13 @@
 
 @media(max-width: 545px) {
   .logo__wrapper {
-    top: $pageNavDistance10;
-    right: $pageNavDistance10;
-    width: 80px;
+    width: 90px;
   }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 500px) {
   .logo__wrapper {
-    top: $pageNavDistance5;
-    right: $pageNavDistance5;
-  }
-}
-
-@media(max-width: 290px) {
-  .logo__wrapper {
-    width: 70px;
+    top: 30px;
+    right: 20px;
   }
 }
