@@ -4,12 +4,23 @@ import './PageNav.scss';
 import { Link } from 'react-router-dom';
 
 export default function PageNav({
-  className, to, ariaLabel, value,
+  className, to, ariaLabel, value, icon,
 }) {
   return (
-    <p className={className}>
-      <Link className="pageNav__link" to={to} aria-label={ariaLabel}>{value}</Link>
-    </p>
+    <Link
+      className={className}
+      to={to}
+      aria-label={ariaLabel}
+    >
+      <img
+        className="pageNav__icon"
+        src={require(`../../../../img/${icon}`)}
+        alt={value}
+      />
+      <span className="pageNav__link">
+        {value}
+      </span>
+    </Link>
   );
 }
 
@@ -18,4 +29,5 @@ PageNav.propTypes = {
   to: PropsTypes.string.isRequired,
   ariaLabel: PropsTypes.string.isRequired,
   value: PropsTypes.string.isRequired,
+  icon: PropsTypes.string.isRequired,
 };

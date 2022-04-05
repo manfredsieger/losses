@@ -15,11 +15,29 @@ export default function Footer() {
   function renderSvgSources() {
     return Object.values(svgSources).map((source, index, arr) => {
       if (index === arr.length - 1) {
-        return <a className="footer__link standardLink" key={source.text} href={source.href} rel="noopener noreferrer" target="_blank">{source.text}</a>;
+        return (
+          <a
+            className="footer__link standardLink"
+            key={source.text}
+            href={source.href}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {source.text}
+          </a>
+        );
       }
       return (
         <>
-          <a className="footer__link standardLink" key={source.text} href={source.href} rel="noopener noreferrer" target="_blank">{source.text}</a>
+          <a
+            className="footer__link standardLink"
+            key={source.text}
+            href={source.href}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {source.text}
+          </a>
           {', '}
         </>
       );
@@ -27,11 +45,23 @@ export default function Footer() {
   }
 
   return (
-    <footer id="num" className={`footer__container ${stylePages.red.includes(activePage) ? 'footer__container--red-page' : ''}`}>
+    <footer
+      id="num"
+      className={`footer__container ${stylePages.red.includes(activePage) ? 'footer__container--red-page' : ''}`}
+    >
       <ul className="footer__list">
-        <li className="footer__text">
+        <li
+          className={`footer__text ${activePage === pages.losses.name ? 'footer__text--developed-by' : ''}`}
+        >
           {`${developedBy} `}
-          <a className="footer__link standardLink" href="https://www.comebackalive.in.ua/" rel="noopener noreferrer" target="_blank">{fund}</a>
+          <a
+            className="footer__link standardLink"
+            href="https://www.comebackalive.in.ua/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {fund}
+          </a>
           {` ${team}`}
         </li>
         {

@@ -6,15 +6,18 @@
 
 .visually-hidden {
   position: absolute;
-  white-space: nowrap;
+  
   width: 1px;
   height: 1px;
-  overflow: hidden;
+  
   border: 0;
+  margin: -1px;
   padding: 0;
+
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  margin: -1px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .website-background-red {
@@ -23,6 +26,7 @@
 
 .website-wrapper {
   position: relative;
+
   max-width: 1440px;
   padding: 40px;
   margin: 0 auto;

@@ -19,6 +19,7 @@ module.exports = {
         "import/no-dynamic-require": 1,
         "global-require": 1,
         "jsx-a11y/no-noninteractive-element-interactions": 1,
-        "jsx-a11y/click-events-have-key-events": 1
+        "jsx-a11y/click-events-have-key-events": 1,
+        "eol-last": 0
     }
 }

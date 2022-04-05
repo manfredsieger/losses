@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Routes, Route, Navigate,
 } from 'react-router-dom';
@@ -10,23 +10,28 @@ import Footer from './Components/Footer/Footer';
 import Charts from './Components/Charts/Charts';
 import Screenshot from './Components/Screenshot/Screenshot';
 import Logo from './Components/Logo/Logo';
-import LangButton from './Components/LangButton/LangButton';
-import PageNavWrapper from './Components/PageNavWrapper/PageNavWrapper';
+import Navigation from './Components/Navigation/Navigation';
+import BurgerButton from './Components/BurgerButton/BurgerButton';
+import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButton';
 import { isUserDeviceDesktop } from './utils/helpers';
-import { stylePages } from './redux/activePage';
+import { pages, stylePages } from './redux/activePage';
 
 export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
+  const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
 
   return (
     <div className={stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-white'}>
       <div className="website-wrapper">
         <Logo />
 
-        <nav className="navigation-wrapper">
-          <LangButton />
-          <PageNavWrapper />
-        </nav>
+        <BurgerButton
+          setIsSliderMenuShown={setIsSliderMenuShown}
+        />
+        <Navigation
+          isSliderMenuShown={isSliderMenuShown}
+          setIsSliderMenuShown={setIsSliderMenuShown}
+        />
 
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -39,6 +44,12 @@ export default function App() {
           }
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
+
+        {
+          activePage === pages.donate.name
+            ? null
+            : <DonateBottomButton />
+        }
 
         <Footer />
       </div>

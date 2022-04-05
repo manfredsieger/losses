@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PageNav from './PageNav/PageNav';
-import { pages } from '../../redux/activePage';
-import { isUserDeviceDesktop } from '../../utils/helpers';
-import translation from '../../utils/translation';
+import { pages } from '../../../redux/activePage';
+import { isUserDeviceDesktop } from '../../../utils/helpers';
+import translation from '../../../utils/translation';
 import './PageNavWrapper.scss';
 
 export default function PageNavWrapper() {
@@ -31,6 +31,7 @@ export default function PageNavWrapper() {
               to={pages[item].path}
               ariaLabel={pages[item].ariaLabel}
               value={translation[websiteLanguage].nav[pages[item].name]}
+              icon={pages[item].icon}
             />
           );
         }

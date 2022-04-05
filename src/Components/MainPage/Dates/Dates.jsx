@@ -42,15 +42,15 @@ export default function Dates() {
 
   return (
     <ul className="dateList">
-      <li className="dateList__item">
+      <li className="dateList__item dateList__item--start">
         <p className="dateList__important-text">{getFullDate(startWarDate, language)}</p>
         <p className="dateList__caption">{start}</p>
       </li>
-      <li className="dateList__item">
+      <li className="dateList__item dateList__item--days">
         <p className="dateList__important-text--bigger">{daysOfAggression}</p>
         <p className="dateList__caption">{getAdaptedSentenceIfLangIsUA()}</p>
       </li>
-      <li className="dateList__item">
+      <li className="dateList__item dateList__item--end">
         <p className="dateList__important-text">{getFullDate(endDateToCountOnWebsite, language)}</p>
         <p className="dateList__caption">{endWarDate ? endOfWar : today}</p>
       </li>

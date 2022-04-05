@@ -8,7 +8,6 @@
   gap: 80px 40px;
 
   @include list_reset;
-  margin: 0 0 160px 0;
 }
 
 .losses__item {
@@ -82,6 +81,9 @@
 }
 
 .losses__text-number-difference {
+  position: relative;
+  bottom: 3px;
+
   font-size: 20px;
   font-weight: normal;
   color: $yellow;
@@ -90,9 +92,9 @@
 }
 
 .losses__text-caption {
-  width: 150px;
   margin: 0;
-  padding: 0 5px;
+  padding: 0;
+  width: 100%;
 
   text-align: left;
   word-break: break-word;
@@ -101,77 +103,119 @@
   color: #000000;
 }
 
+@media(max-width: 1480px) {
+  .losses {
+    gap: 70px 10px;
+  }
+}
+
 @media(max-width: 1370px) {
   .losses {
-    gap: 50px 120px;
+    justify-content: space-between;
+
+    margin: 0 5%;
   }
 }
 
 @media(max-width: 1170px) {
   .losses__img {
     width: 80px;
-    height: 80px;
-    margin: 0;
   }
 
   .losses__text-number {
-    font-size: 40px;
-  }
-
-  .losses__text-caption {
-    font-size: 0.85rem;
-  }
-}
-
-@media(max-width: 934px) {
-  .losses {
-    gap: 30px 60px;
-  }
-}
-
-@media(max-width: 834px) {
-  .losses {
-    gap: 30px 20px;
-  }
-}
-
-@media(max-width: 775px) {
-  .losses {
-    gap: 0 20px;
-    margin: 0;
-  }
-
-  .losses__item {
-    justify-content: center;
-  }
-
-  .losses__item:not(:last-child) {
-    margin: 0 0 20px 0;
-  }
-
-  .losses__text-container {
-    margin: 0;
-  }
-}
-
-@media(max-width: 300px) {
-  .losses__text-container {
-    margin: 0;
+    font-size: 25px;
   }
 
   .losses__text-number-difference {
-    top: -8px;
-    right: 0;
+    font-size: 15px;
   }
 
   .losses__text-caption {
-    width: 100px;
-    font-size: 0.8rem;
+    font-size: 13px;
   }
 }
 
-@media(max-width: 270px) {
+@media(max-width: 1015px) {
+  .losses {
+    margin: 0;
+  }
+}
+
+@media(max-width: 855px) {
+  .losses {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .losses__item {
+    justify-content: flex-start;
+    align-items: center;
+    flex-basis: auto;
+
+    width: 350px;
+  }
+
+  .losses__img {
+    width: 100px;
+  }
+
   .losses__text-number {
     font-size: 30px;
   }
+
+  .losses__text-number-difference {
+    font-size: 20px;
+  }
+
+  .losses__text-caption {
+    font-size: 15px;
+  }
 }
+
+// @media(max-width: 834px) {
+//   .losses {
+//     gap: 30px 20px;
+//   }
+// }
+
+// @media(max-width: 775px) {
+//   .losses {
+//     gap: 0 20px;
+//     margin: 0;
+//   }
+
+//   .losses__item {
+//     justify-content: center;
+//   }
+
+//   .losses__item:not(:last-child) {
+//     margin: 0 0 20px 0;
+//   }
+
+//   .losses__text-container {
+//     margin: 0;
+//   }
+// }
+
+// @media(max-width: 300px) {
+//   .losses__text-container {
+//     margin: 0;
+//   }
+
+//   .losses__text-number-difference {
+//     top: -8px;
+//     right: 0;
+//   }
+
+//   .losses__text-caption {
+//     width: 100px;
+//     font-size: 0.8rem;
+//   }
+// }
+
+// @media(max-width: 270px) {
+//   .losses__text-number {
+//     font-size: 30px;
+//   }
+// }

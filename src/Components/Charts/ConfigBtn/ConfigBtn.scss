@@ -14,14 +14,13 @@
   height: 100%;
   padding: 5px;
   border: 0.3px solid rgb(0,0,0);
-  border-radius: 5px;
   background-color: transparent;
+  box-shadow: $squareBoxShadow;
   cursor: pointer;
   transition: ease-in-out 200ms;
 }
 
 .configBtn__config-wrapper--selected {
-  border-radius: 5px;
   background-color: $yellow;
   border: none;
   transform: scale(0.95);

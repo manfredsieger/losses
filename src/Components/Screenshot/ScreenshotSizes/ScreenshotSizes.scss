@@ -8,11 +8,14 @@
   margin: 0;
   padding: 10px 15px;
   border: none;
-  border-radius: 10px;
-  background-color: $donateLightGrey;
+  background-color: $light_red;
   box-sizing: border-box;
   cursor: pointer;
   transition: ease-in-out 200ms;
+}
+
+.screenshot-sizes__container:hover {
+  box-shadow: $squareBoxShadow;
 }
 
 .screenshot-sizes__container--selected {

@@ -45,6 +45,13 @@ p.header__text:not(:last-child) {
   fill: rgb(29, 161, 242);
 }
 
+@media(max-width: 1045px) {
+  .header {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
 @media (max-width: 360px) {
   .header__text {
     font-size: 0.7rem;

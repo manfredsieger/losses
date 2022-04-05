@@ -12,24 +12,28 @@ export const pages = {
     path: '/donate',
     ariaLabel: 'Go to support Ukraine page',
     yellowBgc: true,
+    icon: 'icon_heart.svg',
   },
   losses: {
     name: 'losses',
     path: '/',
     ariaLabel: 'Go back to the home page',
     yellowBgc: false,
+    icon: 'icon_home.svg',
   },
   charts: {
     name: 'charts',
     path: '/charts',
     ariaLabel: 'Go to page displaying russia`s losses on charts',
     yellowBgc: false,
+    icon: 'icon_chart.svg',
   },
   screenshot: {
     name: 'screenshot',
     path: '/screenshot',
     ariaLabel: 'Go to page saving infographic',
     yellowBgc: false,
+    icon: 'icon_download.svg',
   },
 };
 

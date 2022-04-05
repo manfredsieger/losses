@@ -9,6 +9,8 @@ $serifFont: "Roboto Slab", "Times", "Times New Roman", "Palatino", "Georgia", se
 
 $squareBoxShadow: 3px 3px 0 0 #000;
 
+$burgerMenuWidth: 950px;
+
 $header2_5: 2.5rem;
 $header2: 2rem;
 $header1_5: 1.5rem;
@@ -24,6 +26,9 @@ $headerMinHeight120: 120px;
 $headerMaxWidth90: 90%;
 $headerMaxWidth80: 80%;
 $headerMaxWidth60: 60%;
+
+$footerBottomGap160: 160px;
+$footerBottomGap100: 100px;
 
 $pageNavDistance40: 40px;
 $pageNavDistance20: 20px;
@@ -101,6 +106,12 @@ $donateDarkGrey: rgb(133, 133, 133);
   font-weight: 700;
 }
 
+@media(max-width: 950px) {
+  .standardHeader {
+    padding: 100px 0 0 0;
+  }
+}
+
 @media (max-width: 545px) {
   .standardHeader {
     font-size: $header2;
@@ -122,17 +133,29 @@ $donateDarkGrey: rgb(133, 133, 133);
 // Provides a page container for all website pages. It has a padding allowing
 // the page navigation to look good and not to be overlapped by other site components
 .page-container {
-  margin: 0 209px 0 222px;
+  margin: 0 209px $footerBottomGap160 222px;
 }
 
-@media(max-width: 545px) {
+@media(max-width: 1170px) {
   .page-container {
-    padding: 0 95px;
+    margin: 0 150px $footerBottomGap160 150px;
   }
 }
 
-@media(max-width: 480px) {
+@media(max-width: $burgerMenuWidth) {
   .page-container {
-    padding: 0 10px;
+    margin: 0 100px $footerBottomGap100 100px;
   }
 }
+
+// @media(max-width: 545px) {
+//   .page-container {
+//     padding: 0 95px;
+//   }
+// }
+
+// @media(max-width: 480px) {
+//   .page-container {
+//     padding: 0 10px;
+//   }
+// }

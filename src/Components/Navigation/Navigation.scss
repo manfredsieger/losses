@@ -1,0 +1,103 @@
+@import './../../common.scss';
+
+.navigation-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @include flex_column_top_left;
+
+  padding: 40px;
+}
+
+.navigation-wrapper__top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.navigation-wrapper__close-btn {
+  position: relative;
+
+  display: none;
+
+  width: 35px;
+  height: 35px;
+  border: none;
+
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.navigation-wrapper__close-btn::before,
+.navigation-wrapper__close-btn::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 140%;
+  height: 1px;
+
+  background-color: #000000;
+}
+
+.navigation-wrapper__close-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.navigation-wrapper__close-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media(max-width: $burgerMenuWidth) {
+  .navigation-wrapper {
+    left: -100%;
+  }
+
+  .navigation-wrapper.navigation-wrapper--opened {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    align-items: center;
+
+    background-color: $red;
+  }
+
+  .navigation-wrapper.navigation-wrapper--opened .navigation-wrapper__top-container {
+    margin-bottom: auto;
+  }
+
+  .navigation-wrapper__close-btn {
+    display: block;
+  }
+
+  .navigation-wrapper.navigation-wrapper--opened .pageNav {
+    width: 280px;
+  }
+}
+
+@media(max-width: 545px) {
+  .navigation-wrapper {
+    top: $pageNavDistance10;
+    left: $pageNavDistance10;
+  }
+}
+
+@media(max-width: 480px) {
+  .navigation-wrapper {
+    top: $pageNavDistance5;
+    left: $pageNavDistance5;
+    gap: 5px;
+    @include flex_row_left_center;
+  }
+}

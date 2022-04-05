@@ -26,3 +26,13 @@
 .footer__link:visited {
   color: initial;
 }
+
+@media(max-width: $burgerMenuWidth) {
+  .footer__container {
+    margin-bottom: 30px;
+  }
+
+  .footer__text.footer__text--developed-by {
+    margin-bottom: 20px;
+  }
+}
