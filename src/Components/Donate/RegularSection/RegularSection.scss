@@ -1,0 +1,51 @@
+@import '../../../common.scss';
+
+.regular-section {
+  display: flex;
+  align-items: center;
+  padding: 22px 25px;
+  border: 1px solid #000000;
+}
+
+.regular-section__text-wrapper {
+  width: 85%;
+  padding: 0 15px 0 0;
+}
+
+.regular-section__header {
+  margin: 0 0 10px 0;
+}
+
+.regular-section____paragraph {
+  margin: 0 0 14px 0;
+
+  font-size: 14px;
+}
+
+.regular-section__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 15%;
+}
+
+.regular-section__image {
+  height: 23px;
+  max-width: 60px;
+  @include object-fit;
+}
+
+
+
+@media(max-width: 450px) {
+  .regular-section__header {
+    font-size: 0.9rem;
+  }
+}
+
+@media(max-width: 330px) {
+  .regular-section__header {
+    font-size: 0.8rem;
+  }
+}

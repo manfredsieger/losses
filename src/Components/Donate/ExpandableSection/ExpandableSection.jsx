@@ -10,21 +10,22 @@ export default function ExpandableSection({ subHeader, copyFields }) {
   const { open, close } = translation[websiteLanguage].donate.expandBtn;
 
   return (
-    <section className="donate__section">
+    <section className="donate__block expandable-section__section">
       <h4
-        className="donate__sub-header donate__sub-header--expandable"
+        className="expandable-section__header expandable-section__header--expandable"
         onClick={() => setIsExpanded(!isExpanded)}
+        style={{ marginBottom: isExpanded ? '20px' : '0' }}
       >
-        <span className="donate__sub-header-text">{subHeader}</span>
+        <span className="donate-section__header expandable-section__sub-header-text">{subHeader}</span>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           aria-label={isExpanded ? close : open}
-          className={`donate__move-btn ${isExpanded ? 'donate__shrink-btn' : 'donate__expand-btn'}`}
+          className={`expandable-section__move-btn ${isExpanded ? 'expandable-section__shrink-btn' : 'expandable-section__expand-btn'}`}
           title={isExpanded ? close : open}
           type="button"
         />
       </h4>
-      <div className={`donate__copyFields-container ${isExpanded ? 'donate__copyFields-container--visible' : ''}`}>
+      <div className={`expandable-section__copyFields-container ${isExpanded ? 'expandable-section__copyFields-container--visible' : ''}`}>
         {copyFields}
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropsTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import PageNav from './PageNav/PageNav';
 import { pages } from '../../../redux/activePage';
@@ -6,12 +7,12 @@ import { isUserDeviceDesktop } from '../../../utils/helpers';
 import translation from '../../../utils/translation';
 import './PageNavWrapper.scss';
 
-export default function PageNavWrapper() {
+export default function PageNavWrapper({ setIsSliderMenuShown }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const { activePage } = useSelector((state) => state.activePage);
 
   function isPageNavValidToBeRendered(currentPage) {
-    if (currentPage.name === pages.screenshot && !isUserDeviceDesktop()) {
+    if (currentPage.name === pages.screenshot.name && !isUserDeviceDesktop()) {
       return false;
     }
     if (currentPage.name === activePage) {
@@ -27,11 +28,16 @@ export default function PageNavWrapper() {
           return (
             <PageNav
               key={pages[item].name}
-              className={`pageNav ${pages[item].yellowBgc ? 'pageNav__yellow' : 'pageNav__light'}`}
+              className={
+                `pageNav
+                ${pages[item].yellowBgc ? 'pageNav__yellow' : 'pageNav__simple'}
+                ${pages[item].name === pages.losses.name ? 'pageNav__losses' : ''}`
+              }
               to={pages[item].path}
               ariaLabel={pages[item].ariaLabel}
               value={translation[websiteLanguage].nav[pages[item].name]}
               icon={pages[item].icon}
+              setIsSliderMenuShown={setIsSliderMenuShown}
             />
           );
         }
@@ -40,3 +46,7 @@ export default function PageNavWrapper() {
     </>
   );
 }
+
+PageNavWrapper.propTypes = {
+  setIsSliderMenuShown: PropsTypes.func.isRequired,
+};

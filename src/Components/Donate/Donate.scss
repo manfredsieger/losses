@@ -1,191 +1,123 @@
 @import './../../common.scss';
 
 .donate__page-container {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
   min-height: 100vh;
-  padding: 30px 0 0 0;
-  grid-template-columns: 1fr 4fr 1fr 4fr 1fr;
-  grid-template-rows: auto;
+  padding: 0;
 }
 
-.donate__section {
-  padding: 10px;
-  border: 1px solid $donateLightGrey;
-  border-radius: 15px;
-}
-
-.donate__section--military,
-.donate__section--civil {
-  grid-row: 1 / 2;
-  text-align: center;
-  margin: 0 0 10px 0;
-}
-
-.donate__section--military {
-  grid-column: 2 / 3;
-}
-
-.donate__section--civil {
-  grid-column: 4 / 5;
+.donate__article--military,
+.donate__article--civil {
+  margin: 75px 0 0 0;
+  width: 47%;
 }
 
 .donate__header {
-  max-width: $headerMaxWidth90;
-  margin: 0 auto 40px auto;
-  padding-top: $header_padding_top30;
+  margin: 0 0 70px 0;
+
   font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  color: #000000;
+  font-size: 28px;
+  font-family: $serifFont;
 }
 
 .donate__list {
   @include list_reset_number;
+  list-style-position: inside;
   color: #000000;
   text-align: left;
 }
 
+.donate__item:not(:last-child) {
+  margin-bottom: 73px;
+}
+
 .donate__organization-header {
   position: relative;
+
   display: inline-block;
-  margin: 0 0 20px 0;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  color: #000000;
-  text-align: center;
+  margin: 0 0 52px 0;
+}
+
+.donate__organization-header-text {
+  position: relative;
+  z-index: 2;
+
+  font-family: $serifFont;
+  font-size: 22px;
+  font-weight: 700;
+  word-wrap: break-word;
 }
 
 .donate__organization-header:before {
   content: "";
+
   position: absolute;
   top: 50%;
-  right: -30px;
-  transform: translateY(-50%);
-  display: block;
-  width: 20px;
-  height: 20px;
-  z-index: -1;
-  background-color: $yellow;
-  border-radius: 1000px;
-  transition: ease-out 200ms;
-}
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-.donate__organization-header:hover:before {
-  right: 0;
-  transform: translateY(-50%);
   display: block;
   width: 100%;
-  height: 100%;
-  z-index: -1;
+  height: 140%;
+  z-index: 1;
+
   background-color: $yellow;
-  border-radius: 0;
 }
 
-.donate__section {
-  margin: 0 0 30px 0;
-}
-
-.donate__sub-header {
-  margin: 0 0 20px 0;
-  text-align: center;
-  font-size: 1rem;
-  color: #000000;
-  font-weight: 400;
-}
-
-.donate__sub-header--important {
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.donate__sub-header--expandable {
-  position: relative;
+.donate__block:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .donate__paragraph {
-  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  margin: 41px 0 0 0;
 }
 
-.donate__paragraph:not(:last-child) {
-  margin: 0 0 20px 0;
+.donate__strong {
+  margin-bottom: 22px;
+
+  font-size: 16px;
+  font-weight: bold;
 }
 
-@media(max-width: 1095px) {
+.donate__text {
+  font-size: 16px;
+  line-height: 1.38;
+}
+
+.donate__text:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.donate__link {
+  font-size: 18px;
+  line-height: 1.33;
+  background-color: $yellow;
+}
+
+@media(max-width: 1170px) {
   .donate__page-container {
-    padding: 100px 0 0 0;
-  }
-}
-
-@media(max-width: 700px) {
-  .donate__page-container {
-    grid-template-columns: 60px 1fr 60px;
-    grid-template-rows: auto auto;
-  }
-
-  .donate__section--military {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
   
-  .donate__section--civil {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+  .donate__article--military,
+  .donate__article--civil {
+    width: 80%;
   }
 }
 
-@media(max-width: 545px) {
-  .donate__page-container {
-    padding: 80px 0 0 0;
-  }
-}
-
-@media(max-width: 450px) {
-  .donate__page-container {
-    grid-template-columns: 30px 1fr 30px;
-  }
-}
-
-@media(max-width: 450px) {
-  .donate__organization-header {
-    font-size: 0.95rem;
-  }
-
-  .donate__sub-header {
-    font-size: 0.9rem;
-  }
-}
-
-@media(max-width: 330px) {
-  .donate__sub-header--expandable {
-    position: static;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .donate__sub-header {
-    font-size: 0.8rem;
-  }
-}
-
-@media (hover: none) {
-  .donate__organization-header::before {
-    content: "";
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    display: block;
+@media(max-width: 520px) {
+  .donate__article--military,
+  .donate__article--civil {
     width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: $yellow;
-    border-radius: 0;
-    transition: ease-out 200ms;
-  }
-
-  .donate__organization-header:hover::before {
-    transform: translate(0, 0);
   }
 }

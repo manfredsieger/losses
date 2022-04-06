@@ -57,9 +57,9 @@ export default {
       military: {
         header: 'Supporting Defenders of Ukraine',
         comeBackAlive: {
-          orgName: 'Come Back Alive Fund',
+          orgName: 'Come Back Alive Fund.',
           donationsOutside: {
-            header: 'Donations from abroad',
+            header: 'Donations from abroad:',
             fondy: {
               header: 'Donate via Fondy.eu',
               text: 'Fondy has the highest security rating – PCI DSS Level 1',
@@ -68,7 +68,7 @@ export default {
             crypto: 'Donate with cryptocurrencies',
           },
           donationsInside: {
-            header: 'Money transfers inside Ukraine',
+            header: 'Money transfers inside Ukraine:',
             oschadbank: 'Account in Oschadbank',
             privatbank: 'Account in Privatbank',
             crypto: 'Donate with cryptocurrencies',
@@ -87,7 +87,6 @@ export default {
             },
           },
           website: {
-            header: 'Website',
             text: 'For more information, including financial reporting, go to: ',
           },
         },
@@ -95,18 +94,18 @@ export default {
       civil: {
         header: 'Supporting Ukrainian civilians',
         eastSOS: {
-          header: 'Charity organization «East-SOS»',
+          header: 'Charity organization «East-SOS».',
           usd: 'Donate in USD',
           eur: 'Donate in EUR',
           uah: 'Donate in UAH',
         },
         proliska: {
-          header: 'Humanitarian Mission ‘Proliska’',
+          header: 'Humanitarian Mission «Proliska».',
           anyBank: 'From any bank',
           swift: 'SWIFT',
         },
         voicesOfChildren: {
-          header: 'The Voices of Children Foundation',
+          header: 'The Voices of Children Foundation.',
           patreon: 'Support us on Patreon',
           crypto: 'Donate in crypto',
           uah: 'Bank transfer in UAH',
@@ -218,7 +217,6 @@ export default {
             },
           },
           website: {
-            header: 'Сайт',
             text: 'Дізнайтеся більше інформації на нашому сайті включно з фінансовими звітами - ',
           },
         },

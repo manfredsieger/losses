@@ -17,7 +17,7 @@ export default function Navigation({ isSliderMenuShown, setIsSliderMenuShown }) 
           <span className="visually-hidden">Close navigation wrappers</span>
         </button>
       </div>
-      <PageNavWrapper />
+      <PageNavWrapper setIsSliderMenuShown={setIsSliderMenuShown} />
     </nav>
   );
 }

@@ -3,6 +3,7 @@ import './Donate.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import CopyField from './CopyField/CopyField';
 import ExpandableSection from './ExpandableSection/ExpandableSection';
+import RegularSection from './RegularSection/RegularSection';
 import {
   donationsCBA,
   donationsEastSOS,
@@ -38,16 +39,21 @@ export default function Donate() {
     <main className="donate__page-container page-container">
       <h1 className="visually-hidden">Section providing banking details to support Defenders of Ukraine and Ukrainian civilians</h1>
 
-      <section className="donate__section--military">
+      <article className="donate__article--military">
         <h2 className="donate__header">{military.header}</h2>
         <ol className="donate__list">
-          <li>
-            <h3 className="donate__organization-header">{military.comeBackAlive.orgName}</h3>
-            <h4 className="donate__sub-header donate__sub-header--important">{military.comeBackAlive.donationsOutside.header}</h4>
-            <section className="donate__section">
-              <h4 className="donate__sub-header"><a href="https://pay.fondy.eu/api/checkout?button=dc75627e73000f3b6fb87c83db2fc64767fe1b63" rel="noopener noreferrer" target="_blank">{military.comeBackAlive.donationsOutside.fondy.header}</a></h4>
-              <p className="donate__paragraph">{military.comeBackAlive.donationsOutside.fondy.text}</p>
-            </section>
+          <li className="donate__item">
+            <h3 className="donate__organization-header">
+              <span className="donate__organization-header-text">{military.comeBackAlive.orgName}</span>
+            </h3>
+            <h4 className="donate__sub-header-1">{military.comeBackAlive.donationsOutside.header}</h4>
+            <RegularSection
+              header={military.comeBackAlive.donationsOutside.fondy.header}
+              para={military.comeBackAlive.donationsOutside.fondy.text}
+              linkText="fondy.eu"
+              link="https://pay.fondy.eu/api/checkout?button=dc75627e73000f3b6fb87c83db2fc64767fe1b63"
+              image="fondy.svg"
+            />
             <ExpandableSection
               subHeader={military.comeBackAlive.donationsOutside.swift}
               copyFields={renderCopyField(donationsCBA.swift)}
@@ -56,32 +62,8 @@ export default function Donate() {
               subHeader={military.comeBackAlive.donationsOutside.crypto}
               copyFields={renderCopyField(donationsCBA.crypto)}
             />
-            <section className="donate__section">
-              <h4 className="donate__sub-header">{military.comeBackAlive.contacts.header}</h4>
-              <p className="donate__paragraph">
-                <strong>{military.comeBackAlive.contacts.address.header}</strong>
-                <br />
-                {military.comeBackAlive.contacts.address.text1}
-                <br />
-                {military.comeBackAlive.contacts.address.text2}
-              </p>
-              <p className="donate__paragraph">
-                <strong>{military.comeBackAlive.contacts.phone.header}</strong>
-                <br />
-                {military.comeBackAlive.contacts.phone.text1}
-                <br />
-                {military.comeBackAlive.contacts.phone.text2}
-              </p>
-            </section>
-            <section className="donate__section">
-              <h4 className="donate__sub-header">{military.comeBackAlive.website.header}</h4>
-              <p className="donate__paragraph">
-                {military.comeBackAlive.website.text}
-                <a href="https://www.comebackalive.in.ua" rel="noopener noreferrer" target="_blank">www.comebackalive.in.ua</a>
-              </p>
-            </section>
 
-            <h4 className="donate__sub-header donate__sub-header--important">{military.comeBackAlive.donationsInside.header}</h4>
+            <h4 className="donate__sub-header-1">{military.comeBackAlive.donationsInside.header}</h4>
             <ExpandableSection
               subHeader={military.comeBackAlive.donationsInside.oschadbank}
               copyFields={renderCopyField(donationsCBA.ukraine.oschadbank)}
@@ -94,20 +76,51 @@ export default function Donate() {
               subHeader={military.comeBackAlive.donationsInside.crypto}
               copyFields={renderCopyField(donationsCBA.crypto)}
             />
+
+            <section
+              className="donate__block"
+              style={{ marginTop: '100px' }}
+            >
+              <h4
+                className="donate__header"
+                style={{ marginBottom: '0' }}
+              >
+                {military.comeBackAlive.contacts.header}
+              </h4>
+              <p className="donate__paragraph">
+                <strong className="donate__strong">{military.comeBackAlive.contacts.address.header}</strong>
+                <span className="donate__text">{military.comeBackAlive.contacts.address.text1}</span>
+                <span className="donate__text">{military.comeBackAlive.contacts.address.text2}</span>
+              </p>
+              <p className="donate__paragraph">
+                <strong className="donate__strong">{military.comeBackAlive.contacts.phone.header}</strong>
+                <span className="donate__text">{military.comeBackAlive.contacts.phone.text1}</span>
+                <span className="donate__text">{military.comeBackAlive.contacts.phone.text2}</span>
+              </p>
+              <p className="donate__paragraph">
+                <span className="donate__text">{military.comeBackAlive.website.text}</span>
+                <a className="donate__link" href="https://www.comebackalive.in.ua" rel="noopener noreferrer" target="_blank">www.comebackalive.in.ua</a>
+              </p>
+            </section>
+
           </li>
         </ol>
-      </section>
+      </article>
 
-      <section className="donate__section--civil">
+      <article className="donate__article--civil">
         <h2 className="donate__header">{civil.header}</h2>
         <ol className="donate__list">
 
-          <li>
-            <h3 className="donate__organization-header">{civil.voicesOfChildren.header}</h3>
-            <section className="donate__section">
-              <h4 className="donate__sub-header">{civil.voicesOfChildren.patreon}</h4>
-              <p className="donate__paragraph" style={{ textAlign: 'center' }}><a href="https://www.patreon.com/voices_org_ua" rel="noopener noreferrer" target="_blank">Patreon</a></p>
-            </section>
+          <li className="donate__item">
+            <h3 className="donate__organization-header">
+              <span className="donate__organization-header-text">{civil.voicesOfChildren.header}</span>
+            </h3>
+            <RegularSection
+              header={civil.voicesOfChildren.patreon}
+              link="https://www.patreon.com/voices_org_ua"
+              linkText="patreon.com"
+              image="patreon.svg"
+            />
             <ExpandableSection
               subHeader={civil.voicesOfChildren.crypto}
               copyFields={renderCopyField(donationsVoicesOfChildren.crypto)}
@@ -124,14 +137,17 @@ export default function Donate() {
               subHeader={civil.voicesOfChildren.uah}
               copyFields={renderCopyField(donationsVoicesOfChildren.uah)}
             />
-            <section className="donate__section">
-              <h4 className="donate__sub-header">{civil.voicesOfChildren.other}</h4>
-              <p className="donate__paragraph" style={{ textAlign: 'center' }}><a href="https://voices.org.ua/en/donat/" rel="noopener noreferrer" target="_blank">voices.org.ua</a></p>
-            </section>
+            <RegularSection
+              header={civil.voicesOfChildren.other}
+              link="https://voices.org.ua/en/donat/"
+              linkText="voices.org.ua"
+            />
           </li>
 
-          <li>
-            <h3 className="donate__organization-header">{civil.eastSOS.header}</h3>
+          <li className="donate__item">
+            <h3 className="donate__organization-header">
+              <span className="donate__organization-header-text">{civil.eastSOS.header}</span>
+            </h3>
             <ExpandableSection
               subHeader={civil.eastSOS.usd}
               copyFields={renderCopyField(donationsEastSOS.usd)}
@@ -146,8 +162,10 @@ export default function Donate() {
             />
           </li>
 
-          <li>
-            <h3 className="donate__organization-header">{civil.proliska.header}</h3>
+          <li className="donate__item">
+            <h3 className="donate__organization-header">
+              <span className="donate__organization-header-text">{civil.proliska.header}</span>
+            </h3>
             <ExpandableSection
               subHeader={civil.proliska.anyBank}
               copyFields={renderCopyField(donationsProliska.anyBank)}
@@ -159,7 +177,7 @@ export default function Donate() {
           </li>
         </ol>
 
-      </section>
+      </article>
     </main>
   );
 }

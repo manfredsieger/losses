@@ -1,6 +1,8 @@
 $yellow: #f8fc74;
 $red: #fd625c;
 $light_red: #ff736d;
+$pink_light: #fcf7f7;
+$pink_dark: #ffd4d3;
 
 $sansSerifFont: "Roboto", "Segoe UI", "Oxygen",
 "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -13,6 +15,7 @@ $burgerMenuWidth: 950px;
 
 $header2_5: 2.5rem;
 $header2: 2rem;
+$header1_8: 1.8rem;
 $header1_5: 1.5rem;
 
 $header_margin_bottom80: 80px;
@@ -126,7 +129,7 @@ $donateDarkGrey: rgb(133, 133, 133);
 
 @media (max-width: 360px) {
   .standardHeader {
-    font-size: $header1_5;
+    font-size: $header1_8;
   }
 }
 

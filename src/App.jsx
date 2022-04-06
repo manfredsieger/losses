@@ -21,7 +21,7 @@ export default function App() {
   const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
 
   return (
-    <div className={stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-white'}>
+    <div className={stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-pink'}>
       <div className="website-wrapper">
         <Logo />
 

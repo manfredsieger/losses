@@ -1,6 +1,37 @@
 @import '../../../common.scss';
 
-.donate__move-btn {
+.expandable-section__section {
+  padding: 22px 25px;
+  border: 1px solid #000000;
+}
+
+.expandable-section__copyFields-container {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: ease-in-out 450ms;
+}
+
+.expandable-section__copyFields-container--visible {
+  opacity: 1;
+  height: auto;
+}
+
+.expandable-section__header {
+  margin: 0;
+}
+
+.expandable-section__header--expandable {
+  position: relative;
+
+  padding-right: 50px;
+}
+
+.expandable-section__sub-header-text {
+
+}
+
+.expandable-section__move-btn {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -13,47 +44,38 @@
   cursor: pointer;
 }
 
-.donate__copyFields-container {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-  transition: ease-in-out 450ms;
-}
-
-.donate__copyFields-container--visible {
-  opacity: 1;
-  height: auto;
-}
-
-.donate__move-btn::before,
-.donate__expand-btn::after {
+.expandable-section__move-btn::before,
+.expandable-section__expand-btn::after {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   content: "";
   display: block;
-  background-color: $donateLightGrey;
+  background-color: #000000;
 }
 
-.donate__move-btn:hover::before,
-.donate__expand-btn:hover::after {
-  background-color: $donateDarkGrey;
+.expandable-section__move-btn::before {
+  width: 24px;
+  height: 1px;
 }
 
-.donate__move-btn::before {
-  width: 15px;
-  height: 2px;
+.expandable-section__expand-btn::after {
+  width: 1px;
+  height: 24px;
 }
 
-.donate__expand-btn::after {
-  width: 2px;
-  height: 15px;
-}
+// @media(max-width: 330px) {
+//   .expandable-section__header--expandable {
+//     position: static;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//   }
 
-@media(max-width: 330px) {
-  .donate__move-btn {
-    position: static;
-    transform: translate(0, 0);
-  }
-}
+//   .expandable-section__move-btn {
+//     position: static;
+//     transform: translate(0, 0);
+//   }
+// }
+
