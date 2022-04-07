@@ -18,7 +18,17 @@ const SMALL_LANDSCAPE_SCREEN = 290;
 const latestLossesObject = getLatestLossesObject(losses);
 
 export default function Charts() {
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(setActivePage(pages.charts.name)), []);
+
+  const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const [hasUserSmallScreen, setUserScreenValidity] = useState(false);
+
+  const chartModes = {
+    multiple: 'multiple',
+    showOne: 'showOne',
+  };
+  const [selectedChartMode, setSelectedChartMode] = useState(chartModes.multiple);
 
   function hasUserValidScreenSize() {
     if (window.innerWidth < SMALL_LANDSCAPE_SCREEN) {
@@ -36,11 +46,14 @@ export default function Charts() {
     };
   }, []);
 
-  const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const [lossesToDisplay, setLossesToDisplay] = useState(['aircrafts', 'helicopters']);
 
-  const dispatch = useDispatch();
-  useEffect(() => dispatch(setActivePage(pages.charts.name)));
+  useEffect(() => {
+    if (selectedChartMode === chartModes.showOne) {
+      const copyArr = [...lossesToDisplay].splice(0, 1);
+      setLossesToDisplay(copyArr);
+    }
+  }, [selectedChartMode]);
 
   const data = {
     labels: getLabels(),
@@ -58,6 +71,8 @@ export default function Charts() {
           lossesToDisplay={lossesToDisplay}
           setLossesToDisplay={setLossesToDisplay}
           itemTranslation={itemTranslation}
+          selectedChartMode={selectedChartMode}
+          chartModes={chartModes}
         />
       );
     });
@@ -66,7 +81,7 @@ export default function Charts() {
   return (
     <main className="charts__page-container page-container">
       <h1 className="charts__header standardHeader">{translation[websiteLanguage].charts.header}</h1>
-      <article className="charts__grid-container">
+      <article className="charts__container">
         <h2 className="visually-hidden">Charts and buttons allowing to customize charts output</h2>
 
         <section className="charts__canvas-wrapper">
@@ -78,7 +93,11 @@ export default function Charts() {
           }
         </section>
 
-        <ChartModeButton />
+        <ChartModeButton
+          selectedChartMode={selectedChartMode}
+          setSelectedChartMode={setSelectedChartMode}
+          chartModes={chartModes}
+        />
 
         <ul className="charts__config">
           {renderConfigBtns()}

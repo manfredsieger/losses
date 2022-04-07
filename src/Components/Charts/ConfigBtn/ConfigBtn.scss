@@ -10,19 +10,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   height: 100%;
   padding: 5px;
   border: 0.3px solid rgb(0,0,0);
+
   background-color: transparent;
-  box-shadow: $squareBoxShadow;
   cursor: pointer;
   transition: ease-in-out 200ms;
 }
 
 .configBtn__config-wrapper--selected {
-  background-color: $yellow;
   border: none;
+
+  background-color: $yellow;
   transform: scale(0.95);
   transition: ease-in-out 200ms;
 }
@@ -30,12 +32,14 @@
 .configBtn__config-itemImg {
   width: 40px;
   height: 40px;
+
   @include object-fit;
   filter: invert(18%) sepia(3%) saturate(151%) hue-rotate(52deg) brightness(92%) contrast(90%);
 }
 
 .configBtn__config-text {
   margin: 0;
+  
   font-size: 0.7rem;
   text-align: center;
   line-height: 0.7rem;

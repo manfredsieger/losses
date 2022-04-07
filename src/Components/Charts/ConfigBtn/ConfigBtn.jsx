@@ -4,16 +4,30 @@ import PropsTypes from 'prop-types';
 import { getImage } from '../../../utils/helpers';
 
 export default function ConfigBtn({
-  itemName, lossesToDisplay, setLossesToDisplay, itemTranslation,
+  itemName, lossesToDisplay, setLossesToDisplay, itemTranslation, selectedChartMode, chartModes,
 }) {
+  function addItemMultipleMode(item) {
+    if (!lossesToDisplay.includes(item)) {
+      return setLossesToDisplay([...lossesToDisplay, item]);
+    }
+    const copyArr = [...lossesToDisplay];
+    copyArr.splice(copyArr.indexOf(item), 1);
+    return setLossesToDisplay(copyArr);
+  }
+
   function handleClick(evt) {
     const item = evt.currentTarget.getAttribute('data-name');
-    if (!lossesToDisplay.includes(item)) {
-      setLossesToDisplay([...lossesToDisplay, item]);
-    } else {
-      const copyArr = [...lossesToDisplay];
-      copyArr.splice(copyArr.indexOf(item), 1);
-      setLossesToDisplay(copyArr);
+    console.log(selectedChartMode);
+
+    switch (selectedChartMode) {
+      case chartModes.showOne:
+        setLossesToDisplay([item]);
+        console.log(lossesToDisplay);
+        return;
+      case chartModes.multiple:
+      default:
+        addItemMultipleMode(item);
+        console.log(lossesToDisplay);
     }
   }
 
@@ -45,4 +59,9 @@ ConfigBtn.propTypes = {
   lossesToDisplay: PropsTypes.arrayOf(PropsTypes.string).isRequired,
   setLossesToDisplay: PropsTypes.func.isRequired,
   itemTranslation: PropsTypes.string.isRequired,
+  selectedChartMode: PropsTypes.string.isRequired,
+  chartModes: PropsTypes.shape({
+    multiple: PropsTypes.string.isRequired,
+    showOne: PropsTypes.string.isRequired,
+  }).isRequired,
 };

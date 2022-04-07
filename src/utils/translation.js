@@ -120,8 +120,9 @@ export default {
       header: 'Dynamics of Russia`s losses in Ukraine',
       rotateWarning: 'Please rotate your screen to the landscape mode or use device with screen wider than 300 px',
       chartMode: {
-        showMultiple: 'Multiple lines on the chart at a time',
-        showOne: 'Only one line on the chart at a time',
+        header: 'How many lines to show on the chart:',
+        showMultiple: 'Multiple lines at a time',
+        showOne: 'Only one line at a time',
       },
     },
     screenshot: {
@@ -250,8 +251,9 @@ export default {
       header: 'Динамика втрат Росії в України',
       rotateWarning: 'Будь ласка, поверніть екран горизонтально або використовуйте пристрій з шириною екрану більше 300 px',
       chartMode: {
-        showMultiple: 'Одночасно лише одна лінія на графіку',
-        showOne: 'Одночасно декілька ліній на графіку',
+        header: 'Скількі ліній показувати на графіку:',
+        showMultiple: 'Декілька ліній',
+        showOne: 'Лише одну лінію',
       },
     },
     screenshot: {
