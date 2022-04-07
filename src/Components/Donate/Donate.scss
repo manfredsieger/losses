@@ -26,20 +26,12 @@
 .donate__list {
   @include list_reset;
 
-  // counter-reset: my-counter;
   list-style-position: inside;
 }
 
-// .donate__item {
-//   counter-increment: my-counter;
-// }
-
-// .donate__item::before {
-//   content: counter(my-counter) ". ";
-//   font-family: $serifFont;
-//   font-size: 22px;
-//   font-weight: 700;
-// }
+.donate__country-header {
+  margin: 0 0 32px 0;
+}
 
 .donate__item:not(:last-child) {
   margin-bottom: 73px;

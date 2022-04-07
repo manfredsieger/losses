@@ -46,7 +46,7 @@ export default function Donate() {
             <h3 className="donate__organization-header">
               <span className="donate__organization-header-text">{military.comeBackAlive.orgName}</span>
             </h3>
-            <h4 className="donate__sub-header-1">{military.comeBackAlive.donationsOutside.header}</h4>
+            <h4 className="donate__country-header">{military.comeBackAlive.donationsOutside.header}</h4>
             <RegularSection
               header={military.comeBackAlive.donationsOutside.fondy.header}
               para={military.comeBackAlive.donationsOutside.fondy.text}
@@ -63,7 +63,7 @@ export default function Donate() {
               copyFields={renderCopyField(donationsCBA.crypto)}
             />
 
-            <h4 className="donate__sub-header-1">{military.comeBackAlive.donationsInside.header}</h4>
+            <h4 className="donate__country-header">{military.comeBackAlive.donationsInside.header}</h4>
             <ExpandableSection
               subHeader={military.comeBackAlive.donationsInside.oschadbank}
               copyFields={renderCopyField(donationsCBA.ukraine.oschadbank)}
