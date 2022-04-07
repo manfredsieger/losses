@@ -41,7 +41,7 @@ export default function Donate() {
 
       <article className="donate__article--military">
         <h2 className="donate__header">{military.header}</h2>
-        <ol className="donate__list">
+        <ul className="donate__list">
           <li className="donate__item">
             <h3 className="donate__organization-header">
               <span className="donate__organization-header-text">{military.comeBackAlive.orgName}</span>
@@ -104,12 +104,12 @@ export default function Donate() {
             </section>
 
           </li>
-        </ol>
+        </ul>
       </article>
 
       <article className="donate__article--civil">
         <h2 className="donate__header">{civil.header}</h2>
-        <ol className="donate__list">
+        <ul className="donate__list">
 
           <li className="donate__item">
             <h3 className="donate__organization-header">
@@ -175,7 +175,7 @@ export default function Donate() {
               copyFields={renderCopyField(donationsProliska.swift)}
             />
           </li>
-        </ol>
+        </ul>
 
       </article>
     </main>

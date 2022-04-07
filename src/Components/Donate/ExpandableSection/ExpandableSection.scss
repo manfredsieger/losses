@@ -34,24 +34,32 @@
 .expandable-section__move-btn {
   position: absolute;
   top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
+  right: 0;
+
+  
   width: 20px;
   height: 20px;
   padding: 0;
-  background-color: transparent;
   border: none;
+
+  background-color: transparent;
+  transform: translateY(-50%);
   cursor: pointer;
 }
 
 .expandable-section__move-btn::before,
 .expandable-section__expand-btn::after {
+  content: "";
+
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  content: "";
+
   display: block;
+  width: 100%;
+
+  transform: translate(-50%, -50%);
+  
   background-color: #000000;
 }
 

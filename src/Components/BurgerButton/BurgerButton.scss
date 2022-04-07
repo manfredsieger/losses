@@ -1,6 +1,10 @@
 @import './../../common.scss';
 
 .burger__button {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -30,5 +34,11 @@
 @media(max-width: $burgerMenuWidth) {
   .burger__button {
     display: flex;
+  }
+}
+
+@media(max-width: 520px) {
+  .burger__button {
+    position: absolute;
   }
 }
