@@ -1,22 +1,26 @@
+// Don`t remove this import otherwise the html-to-image libriary won`t work well.
+// Right fonts won`t be loaded to the final image =)
 .screenshot__picture-container {
-  .losses {
-    border-bottom: none;
-  }
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@500;700&display=swap");
 }
 
-// padding for the whole picture
+// padding for the whole picture depending on the specific infographic
 .screenshot__picture-container.screenshot__picture-container_1024_512 {
   padding: 25px;
+  transform: scale(0.80);
 }
 
 .screenshot__picture-container.screenshot__picture-container_1080_1920 {
   padding: 90px 70px;
+  transform: scale(0.70);
 }
 
 .screenshot__picture-container.screenshot__picture-container_1080_1080 {
   padding: 45px;
+  transform: scale(0.8);
 }
 
 .screenshot__picture-container.screenshot__picture-container_940_788 {
   padding: 40px;
+  transform: scale(0.9);
 }

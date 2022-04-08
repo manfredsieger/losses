@@ -39,21 +39,29 @@ export default function Screenshot() {
 
       <section className="screenshot__sizes-wrapper">
         <h2 className="visually-hidden">Buttons allowing to customize the infographic to download</h2>
-        {Object.keys(screenschotConfig).map((item) => (
-          <ScreenshotSizes
-            key={screenschotConfig[item].name}
-            name={screenschotConfig[item].name}
-            iconName={screenschotConfig[item].iconName}
-            width={screenschotConfig[item].width}
-            height={screenschotConfig[item].height}
-            selectedSizeName={selectedSizeName}
-            setSelectedSizeName={setSelectedSizeName}
-            setSelectedSize={setSelectedSize}
-          />
-        ))}
+        {
+          Object.keys(screenschotConfig).map((item) => (
+            <ScreenshotSizes
+              key={screenschotConfig[item].name}
+              name={screenschotConfig[item].name}
+              iconName={screenschotConfig[item].iconName}
+              width={screenschotConfig[item].width}
+              height={screenschotConfig[item].height}
+              selectedSizeName={selectedSizeName}
+              setSelectedSizeName={setSelectedSizeName}
+              setSelectedSize={setSelectedSize}
+            />
+          ))
+        }
       </section>
 
-      <button className="screenshot__download-btn" type="button" onClick={capture}>{downloadBtn}</button>
+      <button
+        className="screenshot__download-btn"
+        type="button"
+        onClick={capture}
+      >
+        {downloadBtn}
+      </button>
 
       <main
         className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height}`}

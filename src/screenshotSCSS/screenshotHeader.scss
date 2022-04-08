@@ -1,3 +1,5 @@
+@import '../common.scss';
+
 .screenshot__picture-container_1024_512 {
   .header {
     margin: 0 0 20px 0;
@@ -5,10 +7,13 @@
   }
 
   .header__header {
-    margin: 0;
+    max-width: 55%;
+    margin: 0 0 15px 0;
     padding: 0;
+
+    font-family: $serifFont;
     font-size: 1.9rem;
-    max-width: 65%;
+    line-height: 1;
   }
 
   p.header__text {
@@ -80,7 +85,7 @@
     content: "@GeneralStaffUA";
     display: inline-block;
     margin: 0 0 0 2px;
-    font-size: 0.7rem;
+    font-size: 15px;
   }
 }
 
@@ -91,7 +96,7 @@
   }
 
   .header__header {
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
     font-size: 2.3rem;
     max-width: 60%;
@@ -134,10 +139,10 @@
   }
 
   .header__header {
-    margin: 0 0 5px 0;
+    margin: 0 0 10px 0;
     padding: 0;
     font-size: 2rem;
-    max-width: 70%;
+    max-width: 60%;
   }
 
   p.header__text {
