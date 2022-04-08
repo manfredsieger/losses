@@ -40,6 +40,10 @@
   transition: ease-in-out 200ms;
 }
 
+.screenshot__download-btn:hover {
+  box-shadow: $squareBoxShadow;
+}
+
 .screenshot__picture-container {
   position: relative;
   background-color: $red;
