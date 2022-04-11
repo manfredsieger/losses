@@ -32,8 +32,10 @@
   // }
 
   .losses {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 1px 4px;
+    gap: 5px 4px;
 
     margin: 0 5%;
   }
@@ -46,9 +48,16 @@
     transform: scale(1);
   }
 
-  .losses__img,
-  .losses__img--thin {
+  .losses__img {
     width: 70%;
+  }
+
+  .losses__img--thin {
+    width: 140%;
+  }
+
+  .losses__text-number-container {
+    margin: 0;
   }
 
   .losses__text-number {
@@ -65,106 +74,236 @@
 }
 
 .screenshot__picture-container_1080_1920 {
+  // .losses {
+  //   justify-content: center;
+  //   gap: 80px 30px;
+
+  //   margin: 0 5%;
+  // }
+
+  // .losses__item {
+  //   flex-basis: 400px;
+  // }
+
+  // .losses__item:hover {
+  //   transform: scale(1);
+  // }
+
+  // .losses__img,
+  // .losses__img--thin {
+  //   width: 70%;
+  // }
+
+  // .losses__text-number {
+  //   font-size: 45px;
+  // }
+
+  // .losses__text-number-difference {
+  //   bottom: 6px;
+  //   font-size: 25px;
+  // }
+
+  // .losses__text-caption {
+  //   font-size: 20px;
+  // }
+
+
+
   .losses {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 80px 30px;
+    gap: 30px 15px;
 
     margin: 0 5%;
   }
 
   .losses__item {
-    flex-basis: 400px;
+    flex-basis: 200px;
   }
 
   .losses__item:hover {
     transform: scale(1);
   }
 
-  .losses__img,
-  .losses__img--thin {
+  .losses__img {
     width: 70%;
   }
 
+  .losses__img--thin {
+    width: 90%;
+  }
+
   .losses__text-number {
-    font-size: 45px;
+    font-size: 22px;
   }
 
   .losses__text-number-difference {
-    bottom: 6px;
-    font-size: 25px;
+    bottom: 3px;
+    font-size: 12px;
   }
 
   .losses__text-caption {
-    font-size: 20px;
+    font-size: 10px;
   }
 }
 
 .screenshot__picture-container_1080_1080 {
+  // .losses {
+  //   gap: 60px 60px;
+    
+  //   margin: 0 5%;
+  //   border-bottom: none;
+  // }
+  
+  // .losses__item {
+  //   flex-basis: 250px;
+  // }
+  
+  // .losses__item:hover {
+  //   transform: scale(1);
+  // }
+  
+  // .losses__img,
+  // .losses__img--thin {
+  //   width: 77%;
+  // }
+
+  // .losses__text-number {
+  //   font-size: 30px;
+  // }
+
+  // .losses__text-number-difference {
+  //   bottom: 4px;
+  //   font-size: 20px;
+  // }
+
+  // .losses__text-caption {
+  //   font-size: 14px;
+  // }
+
+
+
+
+
   .losses {
-    gap: 60px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px 30px;
     
     margin: 0 5%;
     border-bottom: none;
   }
   
   .losses__item {
-    flex-basis: 250px;
+    flex-basis: 125px;
   }
   
   .losses__item:hover {
     transform: scale(1);
   }
   
-  .losses__img,
+  .losses__img {
+    width: 70%;
+  }
+
   .losses__img--thin {
-    width: 77%;
+    width: 130%;
   }
 
   .losses__text-number {
-    font-size: 30px;
+    font-size: 15px;
   }
 
   .losses__text-number-difference {
-    bottom: 4px;
-    font-size: 20px;
+    bottom: 2px;
+    font-size: 10px;
   }
 
   .losses__text-caption {
-    font-size: 14px;
+    font-size: 7px;
   }
 }
 
 .screenshot__picture-container_940_788 {
+  // .losses {
+  //   justify-content: center;
+  //   gap: 20px 0;
+    
+  //   margin: 0 5%;
+  // }
+
+  // .losses__item {
+  //   flex-basis: 225px;
+  // }
+
+  // .losses__item:hover {
+  //   transform: scale(1);
+  // }
+
+  // .losses__img,
+  // .losses__img--thin {
+  //   width: 65%;
+  // }
+
+  // .losses__text-number {
+  //   font-size: 27px;
+  // }
+
+  // .losses__text-number-difference {
+  //   bottom: 4px;
+  //   font-size: 17px;
+  // }
+
+  // .losses__text-caption {
+  //   font-size: 12px;
+  // }
+
+
+
+
+
+
   .losses {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 20px 0;
+    gap: 10px 0;
     
     margin: 0 5%;
   }
 
   .losses__item {
-    flex-basis: 225px;
+    flex-basis: 112px;
   }
 
   .losses__item:hover {
     transform: scale(1);
   }
 
-  .losses__img,
+  .losses__img {
+    width: 70%;
+  }
+
   .losses__img--thin {
-    width: 65%;
+    width: 120%;
   }
 
   .losses__text-number {
-    font-size: 27px;
+    font-size: 13px;
+  }
+
+  .losses__text-number-container {
+    margin-bottom: 2px;
   }
 
   .losses__text-number-difference {
-    bottom: 4px;
-    font-size: 17px;
+    bottom: 2px;
+    font-size: 8px;
   }
 
   .losses__text-caption {
-    font-size: 12px;
+    font-size: 6px;
   }
 }

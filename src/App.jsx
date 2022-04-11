@@ -13,7 +13,7 @@ import Logo from './Components/Logo/Logo';
 import Navigation from './Components/Navigation/Navigation';
 import BurgerButton from './Components/BurgerButton/BurgerButton';
 import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButton';
-import { isUserDeviceDesktop } from './utils/helpers';
+import { isUserDeviceValidForScreenshot } from './utils/helpers';
 import { pages, stylePages } from './redux/activePage';
 
 export default function App() {
@@ -41,7 +41,7 @@ export default function App() {
             <Route path="/donate" element={<Donate />} />
             <Route path="/charts" element={<Charts />} />
             {
-            isUserDeviceDesktop()
+            isUserDeviceValidForScreenshot()
               ? <Route path="/screenshot" element={<Screenshot />} />
               : null
             }

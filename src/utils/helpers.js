@@ -1,4 +1,4 @@
-const MIN_DESKTOP_SCREEN_WIDTH = 1090;
+const MIN_DESKTOP_SCREEN_WIDTH = 750;
 
 export function getWordWithBigFirstLetter(word) {
   return `${word[0].toUpperCase()}${word.slice(1)}`;
@@ -31,6 +31,6 @@ export function getImage(imgName) {
   }
 }
 
-export function isUserDeviceDesktop() {
+export function isUserDeviceValidForScreenshot() {
   return +window.screen.width >= MIN_DESKTOP_SCREEN_WIDTH;
 }

@@ -40,23 +40,27 @@
   // }
 
 
+
+
+
   .dateList {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
-    margin: 0 45px 10px;
+    gap: 20px;
+    margin: 0 10px 10px;
   }
 
   .dateList__item {
-    width: 110px;
-    // height: 36px;
-    margin-bottom: 0;
+    width: 90px;
+    margin: 0;
     padding: 5px;
   }
 
-  .dateList__item:not(:last-child) {
-    margin-right: 5px;
-  }
+  // .dateList__item:not(:last-child) {
+  //   margin-right: 5px;
+  // }
 
   .dateList__item--start {
     order: 1;
@@ -82,94 +86,207 @@
 }
 
 .screenshot__picture-container_1080_1920 {
+  // .dateList {
+  //   align-items: stretch;
+  //   margin: 0 40px 80px;
+  // }
+
+  // .dateList__item {
+  //   width: 200px;
+  //   margin: 0;
+  //   padding: 25px;
+  // }
+
+  // .dateList__item:not(:last-child) {
+  //   margin-right: 36px;
+  // }
+
+  // .dateList__important-text--bigger {
+  //   margin: 0 0 7px 0;
+  //   font-size: 40px;
+  // }
+
+  // .dateList__important-text {
+  //   font-size: 25px;
+  //   line-height: 1.3;
+  // }
+
+  // .dateList__caption {
+  //   font-size: 18px;
+  // }
+
+
+
+
+
+
+  //////// *2
   .dateList {
+    display: flex;
     align-items: stretch;
-    margin: 0 40px 80px;
+    margin: 0 20px 40px;
+    gap: 20px 20px;
   }
 
   .dateList__item {
-    width: 200px;
+    width: 100px;
     margin: 0;
-    padding: 25px;
-  }
-
-  .dateList__item:not(:last-child) {
-    margin-right: 36px;
+    padding: 12px;
   }
 
   .dateList__important-text--bigger {
-    margin: 0 0 7px 0;
-    font-size: 40px;
+    margin: 0 0 3px 0;
+    font-size: 20px;
   }
 
   .dateList__important-text {
-    font-size: 25px;
+    font-size: 13px;
     line-height: 1.3;
   }
 
+  .dateList__important-text--bigger,
+  .dateList__important-text {
+    margin-bottom: 5px;
+  }
+
   .dateList__caption {
-    font-size: 18px;
+    font-size: 9px;
   }
 }
 
 .screenshot__picture-container_1080_1080 {
+  // .dateList {
+  //   align-items: stretch;
+  //   margin: 0 60px 40px;
+  // }
+
+  // .dateList__item {
+  //   width: 200px;
+  //   padding: 25px;
+  //   margin: 0;
+  // }
+
+  // .dateList__item:not(:last-child) {
+  //   margin-right: 55px;
+  // }
+
+  // .dateList__important-text--bigger {
+  //   margin: 0 0 7px 0;
+  //   font-size: 35px;
+  // }
+
+  // .dateList__important-text {
+  //   font-size: 22px;
+  //   line-height: 1.3;
+  // }
+
+  // .dateList__caption {
+  //   font-size: 16px;
+  // }
+
+
+
+
+
   .dateList {
+    display: flex;
+    justify-content: center;
     align-items: stretch;
-    margin: 0 60px 40px;
+    margin: 0 20px 20px;
+    gap: 20px 20px;
   }
 
   .dateList__item {
-    width: 200px;
-    padding: 25px;
+    width: 95px;
+    padding: 17px;
     margin: 0;
   }
 
-  .dateList__item:not(:last-child) {
-    margin-right: 55px;
-  }
-
   .dateList__important-text--bigger {
-    margin: 0 0 7px 0;
-    font-size: 35px;
+    margin: 0 0 3px 0;
+    font-size: 17px;
   }
 
   .dateList__important-text {
-    font-size: 22px;
+    margin-bottom: 5px;
+
+    font-size: 11px;
     line-height: 1.3;
   }
 
   .dateList__caption {
-    font-size: 16px;
+    font-size: 8px;
   }
 }
 
 .screenshot__picture-container_940_788 {
+  // .dateList {
+  //   align-items: stretch;
+  //   margin: 0 20px 30px;
+  // }
+
+  // .dateList__item {
+  //   width: 200px;
+  //   padding: 10px;
+  //   margin: 0;
+  // }
+
+  // .dateList__item:not(:last-child) {
+  //   margin-right: 55px;
+  // }
+
+  // .dateList__important-text--bigger {
+  //   margin: 0 0 7px 0;
+  //   font-size: 30px;
+  // }
+
+  // .dateList__important-text {
+  //   font-size: 20px;
+  //   line-height: 1.3;
+  // }
+
+  // .dateList__caption {
+  //   font-size: 14px;
+  // }
+
+
+
+
+
+
+
+
   .dateList {
+    display: flex;
+    justify-content: center;
     align-items: stretch;
-    margin: 0 20px 30px;
+    margin: 0 10px 15px;
+    gap: 22px;
   }
 
   .dateList__item {
-    width: 200px;
-    padding: 10px;
+    width: 90px;
+    padding: 5px;
     margin: 0;
   }
 
-  .dateList__item:not(:last-child) {
-    margin-right: 55px;
-  }
+  // .dateList__item:not(:last-child) {
+  //   margin-right: 22px;
+  // }
 
   .dateList__important-text--bigger {
-    margin: 0 0 7px 0;
-    font-size: 30px;
+    margin: 0 0 3px 0;
+    font-size: 15px;
   }
 
   .dateList__important-text {
-    font-size: 20px;
+    margin-bottom: 5px;
+    
+    font-size: 10px;
     line-height: 1.3;
   }
 
   .dateList__caption {
-    font-size: 14px;
+    font-size: 7px;
   }
 }
