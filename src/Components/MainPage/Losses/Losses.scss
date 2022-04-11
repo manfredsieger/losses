@@ -120,6 +120,12 @@
   .losses {
     justify-content: space-between;
 
+    margin: 0 15%;
+  }
+}
+
+@media(max-width: 1220px) {
+  .losses {
     margin: 0 5%;
   }
 }
@@ -147,7 +153,7 @@
   }
 }
 
-@media(max-width: 1015px) {
+@media(max-width: 1040px) {
   .losses {
     margin: 0;
   }

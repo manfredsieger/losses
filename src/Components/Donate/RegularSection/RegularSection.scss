@@ -39,8 +39,8 @@
 }
 
 .regular-section__image {
-  height: 23px;
-  max-width: 60px;
+  max-height: 25px;
+  max-width: 70px;
   @include object-fit;
 }
 

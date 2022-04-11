@@ -14,6 +14,7 @@ export default function Screenshot() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   useEffect(() => dispatch(setActivePage(pages.screenshot.name)));
 
+  const [isScreenshotVisible, setIsScreenshotVisible] = useState(false);
   const [selectedSizeName, setSelectedSizeName] = useState(screenschotConfig.twitter.name);
   const [selectedSize, setSelectedSize] = useState({
     width: screenschotConfig.twitter.width,
@@ -22,15 +23,19 @@ export default function Screenshot() {
   const { downloadBtn, header } = translation[websiteLanguage].screenshot;
 
   const config = {
-    width: selectedSize.width,
-    height: selectedSize.height,
+    width: selectedSize.width / 2,
+    height: selectedSize.height / 2,
+    canvasWidth: selectedSize.width * 2,
+    canvasHeight: selectedSize.height * 2,
   };
 
   function capture() {
+    setIsScreenshotVisible(true);
     htmlToImage.toPng(document.querySelector('.screenshot__picture-container'), config)
       .then((dataUrl) => {
         download(dataUrl, 'losses.png');
       });
+    setIsScreenshotVisible(false);
   }
 
   return (
@@ -64,8 +69,8 @@ export default function Screenshot() {
       </button>
 
       <main
-        className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height}`}
-        style={{ width: selectedSize.width, height: selectedSize.height }}
+        className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height} ${isScreenshotVisible ? 'screenshot__picture-container--visible' : ''}`}
+        style={{ width: selectedSize.width / 2, height: selectedSize.height / 2 }}
       >
         <ScreenshotPicture />
       </main>

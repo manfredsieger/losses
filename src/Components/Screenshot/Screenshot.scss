@@ -49,8 +49,15 @@
 
 .screenshot__picture-container {
   position: relative;
-  background-color: $red;
+
+  // display: none;
   box-sizing: border-box;
+  
+  background-color: $red;
+}
+
+.screenshot__picture-container--visible {
+  display: block;
 }
 
 @media(max-width: 1021px) {

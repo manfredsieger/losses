@@ -1,20 +1,61 @@
 .screenshot__picture-container_1024_512 {
+  // .dateList {
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   align-items: stretch;
+  //   margin: 0 90px 20px;
+  // }
+
+  // .dateList__item {
+  //   width: 220px;
+  //   // height: 36px;
+  //   margin-bottom: 0;
+  //   padding: 10px;
+  // }
+
+  // .dateList__item:not(:last-child) {
+  //   margin-right: 10px;
+  // }
+
+  // .dateList__item--start {
+  //   order: 1;
+  // }
+
+  // .dateList__item--days {
+  //   order: 2;
+  // }
+
+  // .dateList__item--end {
+  //   order: 3;
+  // }
+
+  // .dateList__important-text--bigger,
+  // .dateList__important-text {
+  //   margin: 0 0 7px 0;
+  //   font-size: 17px;
+  // }
+
+  // .dateList__caption {
+  //   font-size: 13px;
+  // }
+
+
   .dateList {
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
-    margin: 0 90px 20px;
+    margin: 0 45px 10px;
   }
 
   .dateList__item {
-    width: 220px;
+    width: 110px;
     // height: 36px;
     margin-bottom: 0;
-    padding: 10px;
+    padding: 5px;
   }
 
   .dateList__item:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   .dateList__item--start {
@@ -31,12 +72,12 @@
 
   .dateList__important-text--bigger,
   .dateList__important-text {
-    margin: 0 0 7px 0;
-    font-size: 17px;
+    margin: 0 0 3px 0;
+    font-size: 8px;
   }
 
   .dateList__caption {
-    font-size: 13px;
+    font-size: 7px;
   }
 }
 
