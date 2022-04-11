@@ -22,36 +22,45 @@ export default function App() {
 
   return (
     <div className={stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-pink'}>
-      <div className="website-wrapper">
-        <Logo />
+      <div className="website__grid">
 
-        <BurgerButton
-          setIsSliderMenuShown={setIsSliderMenuShown}
-        />
-        <Navigation
-          isSliderMenuShown={isSliderMenuShown}
-          setIsSliderMenuShown={setIsSliderMenuShown}
-        />
+        <div className="website__grid-left">
+          <div className="website__fake-element" />
+          <BurgerButton
+            setIsSliderMenuShown={setIsSliderMenuShown}
+          />
+          <Navigation
+            isSliderMenuShown={isSliderMenuShown}
+            setIsSliderMenuShown={setIsSliderMenuShown}
+          />
+        </div>
 
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/charts" element={<Charts />} />
+        <div className="website__grid-center">
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/charts" element={<Charts />} />
+            {
+            isUserDeviceDesktop()
+              ? <Route path="/screenshot" element={<Screenshot />} />
+              : null
+            }
+            <Route path="*" element={<Navigate replace to="/" />} />
+          </Routes>
+
           {
-          isUserDeviceDesktop()
-            ? <Route path="/screenshot" element={<Screenshot />} />
-            : null
+            activePage === pages.donate.name
+              ? null
+              : <DonateBottomButton />
           }
-          <Route path="*" element={<Navigate replace to="/" />} />
-        </Routes>
 
-        {
-          activePage === pages.donate.name
-            ? null
-            : <DonateBottomButton />
-        }
+          <Footer />
+        </div>
 
-        <Footer />
+        <div className="website__grid-right">
+          <Logo />
+        </div>
+
       </div>
     </div>
   );

@@ -1,1 +1,27 @@
 @import '../../../common.scss';
+
+.pageNav_wrapper__container {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr;
+  // justify-content: flex-start;
+  // align-items: stretch;
+  // flex-wrap: wrap;
+  gap: 24px;
+
+  @include list_reset;
+}
+
+.pageNav_wrapper__item {
+  width: 140px;
+}
+
+@media(max-width: $burgerMenuWidth) {
+  .pageNav_wrapper__container {
+    width: 100%;
+  }
+
+  .pageNav_wrapper__item {
+    width: auto;
+  }
+}

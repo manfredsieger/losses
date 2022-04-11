@@ -1,13 +1,9 @@
 @import '../../common.scss';
 
 .logo__wrapper {
-  position: absolute;
-  top: $pageNavDistance40;
-  right: $pageNavDistance40;
-
   margin: 0;
-  width: 120px;
-  z-index: 1;
+  // width: 137px;
+  height: 57px;
 }
 
 .logo__image {
@@ -15,15 +11,14 @@
   height: auto;
 }
 
-@media(max-width: 545px) {
+@media(max-width: $burgerMenuWidth) {
   .logo__wrapper {
-    width: 90px;
+    width: auto;
+    height: 40px;
   }
-}
 
-@media(max-width: 500px) {
-  .logo__wrapper {
-    top: 30px;
-    right: 20px;
+  .logo__image {
+    width: auto;
+    height: 100%;
   }
 }

@@ -22,28 +22,30 @@ export default function PageNavWrapper({ setIsSliderMenuShown }) {
   }
 
   return (
-    <>
+    <ul className="pageNav_wrapper__container">
       {Object.keys(pages).map((item) => {
         if (isPageNavValidToBeRendered(pages[item])) {
           return (
-            <PageNav
-              key={pages[item].name}
-              className={
-                `pageNav
-                ${pages[item].yellowBgc ? 'pageNav__yellow' : 'pageNav__simple'}
-                ${pages[item].name === pages.losses.name ? 'pageNav__losses' : ''}`
-              }
-              to={pages[item].path}
-              ariaLabel={pages[item].ariaLabel}
-              value={translation[websiteLanguage].nav[pages[item].name]}
-              icon={pages[item].icon}
-              setIsSliderMenuShown={setIsSliderMenuShown}
-            />
+            <li className="pageNav_wrapper__item">
+              <PageNav
+                key={pages[item].name}
+                className={
+                  `pageNav
+                  ${pages[item].yellowBgc ? 'pageNav__yellow' : 'pageNav__simple'}
+                  ${pages[item].name === pages.losses.name ? 'pageNav__losses' : ''}`
+                }
+                to={pages[item].path}
+                ariaLabel={pages[item].ariaLabel}
+                value={translation[websiteLanguage].nav[pages[item].name]}
+                icon={pages[item].icon}
+                setIsSliderMenuShown={setIsSliderMenuShown}
+              />
+            </li>
           );
         }
         return null;
       })}
-    </>
+    </ul>
   );
 }
 

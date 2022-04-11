@@ -1,10 +1,15 @@
 import React from 'react';
 import './ConfigBtn.scss';
 import PropsTypes from 'prop-types';
-import { getImage } from '../../../utils/helpers';
+import { getImage, getWordWithBigFirstLetter } from '../../../utils/helpers';
 
 export default function ConfigBtn({
-  itemName, lossesToDisplay, setLossesToDisplay, itemTranslation, selectedChartMode, chartModes,
+  itemName,
+  lossesToDisplay,
+  setLossesToDisplay,
+  itemTranslation,
+  selectedChartMode,
+  chartModes,
 }) {
   function addItemMultipleMode(item) {
     if (!lossesToDisplay.includes(item)) {
@@ -17,17 +22,14 @@ export default function ConfigBtn({
 
   function handleClick(evt) {
     const item = evt.currentTarget.getAttribute('data-name');
-    console.log(selectedChartMode);
 
     switch (selectedChartMode) {
       case chartModes.showOne:
         setLossesToDisplay([item]);
-        console.log(lossesToDisplay);
         return;
       case chartModes.multiple:
       default:
         addItemMultipleMode(item);
-        console.log(lossesToDisplay);
     }
   }
 
@@ -43,12 +45,12 @@ export default function ConfigBtn({
         type="button"
       >
         <img
-          className="configBtn__config-itemImg"
+          className={`configBtn__config-itemImg configBtn__config-itemImg--${itemName}`}
           src={getImage(itemName)}
           alt={`${itemTranslation}-icon`}
           title={itemTranslation}
         />
-        <span className="configBtn__config-text">{itemTranslation}</span>
+        <span className="configBtn__config-text">{getWordWithBigFirstLetter(itemTranslation)}</span>
       </button>
     </li>
   );

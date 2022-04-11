@@ -31,13 +31,16 @@
   padding: 15px 25px;
   border: 1px solid #000000;
 
-  font-size: 0.8rem;
+  font-size: 14px;
+  font-weight: 500;
   text-transform: uppercase;
   color: #ffffff;
 
   background-color: $light_red;
   cursor: pointer;
-  transition: ease-in-out 200ms;
+  transition: $transition200ms;
+
+  @include scalableButtons0_05;
 }
 
 .screenshot__download-btn:hover {

@@ -5,17 +5,27 @@ import copy from 'copy-to-clipboard';
 import translation from '../../../utils/translation';
 import './CopyField.scss';
 
-export default function CopyField({ value, label, isLabelVisible }) {
+export default function CopyField({
+  value,
+  label,
+  isLabelVisible,
+  setIsModalVisible,
+}) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const { copyIconTitle } = translation[websiteLanguage].donate;
 
   async function copyToClipboard() {
     copy(value);
+    setIsModalVisible(true);
+    setTimeout(() => {
+      setIsModalVisible(false);
+    }, 1200);
   }
 
   // Keeping the svg code instead of an img tag to change the icon color without loading a new icon
   return (
     <div className="copyField__container">
+
       <span className={`copyField__label ${isLabelVisible ? '' : 'visually-hidden'}`}>
         {label}
         :
@@ -46,6 +56,7 @@ CopyField.propTypes = {
   value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   isLabelVisible: PropTypes.bool,
+  setIsModalVisible: PropTypes.func.isRequired,
 };
 
 CopyField.defaultProps = {

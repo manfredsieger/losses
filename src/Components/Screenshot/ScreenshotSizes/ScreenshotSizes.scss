@@ -14,6 +14,8 @@
   background-color: transparent;
   cursor: pointer;
   transition: ease-in-out 200ms;
+
+  @include scalableButtons0_05;
 }
 
 .screenshot-sizes__container:hover {
@@ -33,5 +35,5 @@
 
 .screesnshot-sizes__media-name,
 .screesnshot-sizes__size {
-  font-size: 0.7rem;
+  font-size: 13px;
 }

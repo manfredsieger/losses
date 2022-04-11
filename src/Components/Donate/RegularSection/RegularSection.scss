@@ -5,10 +5,17 @@
   align-items: center;
   padding: 22px 25px;
   border: 1px solid #000000;
+
+  text-decoration: none;
+}
+
+.regular-section--has-link:hover {
+  box-shadow: $squareBoxShadow;
+  transition: $transition200ms;
 }
 
 .regular-section__text-wrapper {
-  width: 85%;
+  width: 75%;
   padding: 0 15px 0 0;
 }
 
@@ -16,18 +23,19 @@
   margin: 0 0 10px 0;
 }
 
-.regular-section____paragraph {
+.regular-section__paragraph {
   margin: 0 0 14px 0;
 
   font-size: 14px;
+  line-height: 1.43;
 }
 
 .regular-section__image-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 
-  width: 15%;
+  width: 25%;
 }
 
 .regular-section__image {
@@ -36,16 +44,9 @@
   @include object-fit;
 }
 
-
-
-@media(max-width: 450px) {
-  .regular-section__header {
-    font-size: 0.9rem;
+@media(max-width: 500px) {
+  .regular-section {
+    padding: 22px 20px;
   }
 }
 
-@media(max-width: 330px) {
-  .regular-section__header {
-    font-size: 0.8rem;
-  }
-}

@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Donate.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import CopyField from './CopyField/CopyField';
 import ExpandableSection from './ExpandableSection/ExpandableSection';
 import RegularSection from './RegularSection/RegularSection';
+import Message from './Message/Message';
 import {
   donationsCBA,
   donationsEastSOS,
@@ -17,10 +18,12 @@ export default function Donate() {
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const { military } = translation[websiteLanguage].donate;
   const { civil } = translation[websiteLanguage].donate;
+  const { modal } = translation[websiteLanguage];
 
   const dispatch = useDispatch();
-
   useEffect(() => dispatch(setActivePage(pages.donate.name)));
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   function renderCopyField(objectToRender) {
     return (
@@ -30,6 +33,7 @@ export default function Donate() {
           value={objectToRender[item].value}
           isLabelVisible={objectToRender[item].isLabelVisible}
           label={objectToRender[item].label}
+          setIsModalVisible={setIsModalVisible}
         />
       ))
     );
@@ -38,6 +42,11 @@ export default function Donate() {
   return (
     <main className="donate__page-container page-container">
       <h1 className="visually-hidden">Section providing banking details to support Defenders of Ukraine and Ukrainian civilians</h1>
+
+      <Message
+        text={modal.copied}
+        className={isModalVisible ? 'message__container--visible' : 'message__container--hidden'}
+      />
 
       <article className="donate__article--military">
         <h2 className="donate__header">{military.header}</h2>
@@ -77,13 +86,10 @@ export default function Donate() {
               copyFields={renderCopyField(donationsCBA.crypto)}
             />
 
-            <section
-              className="donate__block"
-              style={{ marginTop: '100px' }}
-            >
+            <section className="donate__block donate__block--cda-contacts">
               <h4
                 className="donate__header"
-                style={{ marginBottom: '0' }}
+                style={{ marginBottom: '41px' }}
               >
                 {military.comeBackAlive.contacts.header}
               </h4>
@@ -94,8 +100,26 @@ export default function Donate() {
               </p>
               <p className="donate__paragraph">
                 <strong className="donate__strong">{military.comeBackAlive.contacts.phone.header}</strong>
-                <span className="donate__text">{military.comeBackAlive.contacts.phone.text1}</span>
-                <span className="donate__text">{military.comeBackAlive.contacts.phone.text2}</span>
+                <span className="donate__text">
+                  <a
+                    className="donate__tel-number"
+                    href={military.comeBackAlive.contacts.phone.tel1Tel}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {military.comeBackAlive.contacts.phone.tel1Caption}
+                  </a>
+                  {', '}
+                  <a
+                    className="donate__tel-number"
+                    href={military.comeBackAlive.contacts.phone.tel2Tel}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {military.comeBackAlive.contacts.phone.tel2Caption}
+                  </a>
+                </span>
+                <span className="donate__text">{military.comeBackAlive.contacts.phone.workingHours}</span>
               </p>
               <p className="donate__paragraph">
                 <span className="donate__text">{military.comeBackAlive.website.text}</span>

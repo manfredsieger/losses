@@ -18,7 +18,7 @@ export default function PageNav({
         src={require(`../../../../img/${icon}`)}
         alt={value}
       />
-      <span className="pageNav__link">
+      <span className="pageNav__text">
         {value}
       </span>
     </Link>

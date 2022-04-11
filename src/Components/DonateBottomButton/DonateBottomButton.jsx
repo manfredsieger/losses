@@ -9,22 +9,17 @@ export default function DonateBottomButton() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
 
   return (
-    <button
+    <Link
+      to="/donate"
       className="donate-bottom-button"
-      type="button"
+      aria-label="Link to donate section"
     >
       <img
         className="donate-bottom-button__icon"
         src={heart}
         alt="Heart icon"
       />
-      <Link
-        className="donate-bottom-button__link"
-        to="/donate"
-        aria-label="Link to donate section"
-      >
-        {translation[websiteLanguage].nav.donate}
-      </Link>
-    </button>
+      <span className="donate-bottom-button__text">{translation[websiteLanguage].nav.donate}</span>
+    </Link>
   );
 }

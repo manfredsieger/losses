@@ -1,0 +1,35 @@
+@import '../../../common.scss';
+
+.message__container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+
+  padding: 30px;
+  border: 1px solid #000000;
+
+  background-color: #ffffff;
+}
+
+.message__container--hidden {
+  display: none;
+}
+
+.message__container--visible {
+  display: block;
+}
+
+.message__text {
+  margin: 0;
+
+  font-size: 20px;
+  text-align: center;
+}
+
+@media(max-width: 600px) {
+  .message__text {
+    font-size: 15px;
+  }
+}

@@ -1,9 +1,8 @@
 @import './../../common.scss';
 
 .burger__button {
-  position: fixed;
-  top: 40px;
-  left: 40px;
+  position: sticky;
+  top: $websitePaddingTop40;
 
   display: none;
   flex-direction: column;
@@ -37,15 +36,9 @@
   }
 }
 
-@media(max-width: 520px) {
+@media(max-width: $stopBurgerScrollWidth) {
   .burger__button {
     position: absolute;
-  }
-}
-
-@media(max-width: 500px) {
-  .burger__button {
-    top: 30px;
-    right: 20px;
+    top: 0;
   }
 }

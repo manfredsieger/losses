@@ -10,7 +10,7 @@ export default function Footer() {
   const { activePage } = useSelector((state) => state.activePage);
   const {
     developedBy, team, design, mfa, facebook, iconsFrom, fund,
-  } = translation[websiteLanguage].main.footer;
+  } = translation[websiteLanguage].footer;
 
   function renderSvgSources() {
     return Object.values(svgSources).map((source, index, arr) => {
@@ -47,7 +47,7 @@ export default function Footer() {
   return (
     <footer
       id="num"
-      className={`footer__container ${stylePages.red.includes(activePage) ? 'footer__container--red-page' : ''}`}
+      className={`footer__container ${stylePages.red.includes(activePage) ? 'footer__container--red-page' : ''} ${activePage === pages.donate.name ? 'footer__container--donate' : ''}`}
     >
       <ul className="footer__list">
         <li

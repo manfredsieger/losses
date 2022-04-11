@@ -1,8 +1,8 @@
 @import './../../common.scss';
 
-.footer__container {
-  padding: 10px 0 10px 10px;
-}
+// .footer__container {
+//   padding: 10px 0 10px 10px;
+// }
 
 .footer__container--red-page {
   background-color: $red;
@@ -16,7 +16,7 @@
   margin: 0;
 
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 12px;
 }
 
 .footer__text:not(:last-child) {
@@ -29,7 +29,11 @@
 
 @media(max-width: $burgerMenuWidth) {
   .footer__container {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+  }
+
+  .footer__container--donate {
+    margin-bottom: 0;
   }
 
   .footer__text.footer__text--developed-by {

@@ -6,26 +6,20 @@ export default function RegularSection({
   header, para, linkText, link, image, alt,
 }) {
   return (
-    <section className="donate__block regular-section">
+    <a
+      className={`donate__block regular-section ${link ? 'regular-section--has-link' : ''}`}
+      href={link || '#'}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       <div className="regular-section__text-wrapper">
         <h4 className="regular-section__header donate-section__header">{header}</h4>
         {
-        para
-          ? (
-            <p className="regular-section__paragraph">
-              {para}
-            </p>
-          )
-          : null
+        para ? (<p className="regular-section__paragraph">{para}</p>) : null
         }
         {
         link
-          ? (
-            <a className="donate__link" href={link} rel="noopener noreferrer" target="_blank">
-              {linkText}
-            </a>
-          )
-          : null
+          ? (<span className="donate__link">{linkText}</span>) : null
         }
       </div>
       {
@@ -37,7 +31,7 @@ export default function RegularSection({
           )
           : null
       }
-    </section>
+    </a>
   );
 }
 

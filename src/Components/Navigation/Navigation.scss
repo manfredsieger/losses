@@ -1,14 +1,16 @@
 @import './../../common.scss';
 
 .navigation-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 3;
+  position: sticky;
+  top: $websitePaddingTop40;
+  z-index: 4;
 
-  @include flex_column_top_left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
 
-  padding: 40px;
+  width: 140px;
 
   transition: ease-in-out 300ms;
 }
@@ -61,12 +63,14 @@
 @media(max-width: $burgerMenuWidth) {
   .navigation-wrapper {
     position: fixed;
+    top: 0;
     left: -100%;
 
-    align-items: center;
+    align-items: flex-end;
 
-    width:100%;
+    width: 100%;
     height: 100%;
+    padding: 20px;
 
     background-color: $red;
   }
@@ -84,9 +88,9 @@
     display: block;
   }
 
-  .navigation-wrapper.navigation-wrapper--opened .pageNav {
-    width: 280px;
-  }
+  // .navigation-wrapper.navigation-wrapper--opened .pageNav {
+  //   width: 280px;
+  // }
 }
 
 @media(max-width: 370px) {

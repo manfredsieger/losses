@@ -38,15 +38,6 @@ export default {
         specialVehicle: 'special equipment',
         srmb: 'mobile SRMB system',
       },
-      footer: {
-        developedBy: 'Developed by the',
-        fund: 'Come Back ALive Fund',
-        team: 'team',
-        design: 'Design of this page inspired by the similar reports of the',
-        mfa: 'Ukrainian MFA',
-        facebook: 'on Facebook',
-        iconsFrom: 'Icons: ',
-      },
     },
     donate: {
       copyIconTitle: 'Copy text',
@@ -82,8 +73,11 @@ export default {
             },
             phone: {
               header: 'Phone:',
-              text1: '+38(044)338-33-38, +38(068)500-88-00',
-              text2: 'Mon.-Fri.: 10:00-19:00',
+              tel1Caption: '+38 (044) 338-33-38',
+              tel1Tel: '+380443383338',
+              tel2Caption: '+38 (068) 500-88-00',
+              tel2Tel: '+380685008800',
+              workingHours: 'Mon.-Fri.: 10:00 - 19:00',
             },
           },
           website: {
@@ -129,6 +123,18 @@ export default {
       header: 'Download infographic',
       downloadBtn: 'Download',
     },
+    footer: {
+      developedBy: 'Developed by the',
+      fund: 'Come Back Alive Fund',
+      team: 'team',
+      design: 'Design of this page inspired by the similar reports of the',
+      mfa: 'Ukrainian MFA',
+      facebook: 'on Facebook',
+      iconsFrom: 'Icons: ',
+    },
+    modal: {
+      copied: 'Copied!',
+    },
   },
   ua: {
     nav: {
@@ -169,15 +175,6 @@ export default {
         specialVehicle: 'спеціальна техніка',
         srmb: 'ПУ ОТРК / ТРК',
       },
-      footer: {
-        developedBy: 'Розроблено командою фонду',
-        fund: 'Повернись Живим',
-        team: '',
-        design: 'Дизайн сторінки розроблений на основі відповідних звітів',
-        mfa: 'Міністерства закордонних справ України',
-        facebook: 'у фейсбуці',
-        iconsFrom: 'Іконки взято з',
-      },
     },
     donate: {
       copyIconTitle: 'Копіювати текст',
@@ -213,8 +210,11 @@ export default {
             },
             phone: {
               header: 'Телефон:',
-              text1: '+38(044)338-33-38, +38(068)500-88-00',
-              text2: 'Пн-Пт: 10:00-19:00',
+              tel1Caption: '+38 (044) 338-33-38',
+              tel1Tel: '+380443383338',
+              tel2Caption: '+38 (068) 500-88-00',
+              tel2Tel: '+380685008800',
+              workingHours: 'Пн-Пт: 10:00 - 19:00',
             },
           },
           website: {
@@ -259,6 +259,18 @@ export default {
     screenshot: {
       header: 'Завантажити інфографіку',
       downloadBtn: 'Завантажити',
+    },
+    footer: {
+      developedBy: 'Розроблено командою фонду',
+      fund: 'Повернись Живим',
+      team: '',
+      design: 'Дизайн сторінки розроблений на основі відповідних звітів',
+      mfa: 'Міністерства закордонних справ України',
+      facebook: 'у фейсбуці',
+      iconsFrom: 'Іконки взято з',
+    },
+    modal: {
+      copied: 'Скопійовано!',
     },
   },
 };

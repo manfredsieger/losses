@@ -73,6 +73,12 @@
   cursor: pointer;
 }
 
+@media(max-width: $burgerMenuWidth) {
+  .chartModeButton__wrapper {
+    align-self: flex-start;
+  }
+}
+
 @media(max-width: 450px) {
   .chartModeButton__header,
   .chartModeButton__label {

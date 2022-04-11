@@ -14,6 +14,7 @@
   word-wrap: break-word;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.43;
 }
 
 .copyField__input-wrapper {
@@ -32,7 +33,6 @@
   
   margin: 0;
   padding: 14px 63px 14px 12px;
-  border: 1px solid #000000;
   
   background-color: #f1eaea;
   font-size: 14px;
@@ -58,13 +58,13 @@
   transform: translateY(-50%);
 }
 
-.copyField__copyButton:active .copyField__copyIcon path {
-  fill: $red;
-}
-
 .copyField__copyIcon {
   width: 100%;
   height: auto;
+
+  @include scalableButtons0_1;
+
+  transition: $transition200ms;
 }
 
 .copyField__copyIcon path {

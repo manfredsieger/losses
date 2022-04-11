@@ -19,23 +19,30 @@
   width: 180px;
   padding: 30px 50px;
   border: solid 1px #000;
+  box-sizing: content-box;
 
   word-break: break-word;
   text-align: center;
+  
   background-color: $light_red;
-  box-shadow: $squareBoxShadow;
-
-  box-sizing: content-box;
 }
 
 .dateList__item:not(:last-child) {
   margin-right: calc((100% - (282px * 3)) / 2);
 }
 
+.dateList__item--end {
+  background-color: $pink_dark;
+}
+
 .dateList__important-text,
 .dateList__important-text--bigger,
 .dateList__caption {
   margin: 0;
+}
+
+.dateList__item--end .dateList__important-text {
+  color: #000000;
 }
 
 .dateList__important-text,
@@ -69,17 +76,28 @@
   .dateList__item:not(:last-child) {
     margin-right: 0;
   }
+}
+
+@media(max-width: 1285px) {
+  .dateList {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". start start end end ."
+                         ". . days days . .";
+    gap: 20px;
+  }
 
   .dateList__item--start {
-    order: 1;
+    grid-area: start;
   }
 
   .dateList__item--days {
-    order: 3;
+    grid-area: days;
   }
 
   .dateList__item--end {
-    order: 2;
+    grid-area: end;
   }
 }
 
@@ -87,32 +105,27 @@
   .dateList {
     padding: 0;
   }
-
-  // .dateList__item {
-  //   width: 150px;
-  // }
 }
 
-@media(max-width: 940px) {
-  // .dateList__item {
-  //   width: 120px;
-  // }
-}
-
-@media(max-width: 775px) {
+@media(max-width: 880px) {
   .dateList {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-}
-
-@media(max-width: 500px) {
-  .dateList {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-template-areas: "start"
+                         "end"
+                         "days";
+    justify-items: center;
     align-items: stretch;
   }
 
   .dateList__item {
-    width: auto;
+    width: 80%;
+  }
+}
+
+@media(max-width: 440px) {
+
+  .dateList__item {
+    width: 70%;
   }
 }

@@ -15,23 +15,24 @@
     justify-content: center;
     align-items: center;
 
-    padding: 16px 58px;
+    padding: 20px 58px;
     border: 1px solid #000000;
 
     background-color: $yellow;
+
+    text-decoration: none;
   }
 
   .donate-bottom-button__icon {
     width: 18px;
     height: 18px;
-    margin: 0 5px 0 0;
+    margin: 0 9px 0 0;
     @include object-fit;
   }
 
-  .donate-bottom-button__link {
+  .donate-bottom-button__text {
     font-family: $serifFont;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
-    text-decoration: none;
   }
 }

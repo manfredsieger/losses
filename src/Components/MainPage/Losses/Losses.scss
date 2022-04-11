@@ -25,10 +25,11 @@
 
 .losses__img-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 
   width: 50%;
+  padding: 0 15px 0 0;
 }
 
 .losses__img-container--thin {
@@ -37,7 +38,8 @@
 
 /* color in a from of a filter generated here: https://codepen.io/sosuke/pen/Pjoqqp */
 .losses__img {
-  width: 100px;
+  width: 80%;
+  max-width: 100px;
   height: auto;
 
   @include object-fit;
@@ -46,6 +48,11 @@
 
 .losses__img--thin {
   width: 80px;
+}
+
+.losses_img--helicopters,
+.losses_img--tanks {
+  max-width: 120px;
 }
 
 .losses__text-container {
@@ -66,11 +73,11 @@
   justify-content: flex-start;
   align-items: flex-end;
 
-  margin: 0;
+  margin: 0 0 5px 0;
 }
 
 .losses__text-number {
-  margin: 0 10px 0 0;
+  margin: 0 6px 0 0;
 
   text-align: left;
   font-size: 30px;
@@ -99,7 +106,7 @@
   text-align: left;
   word-break: break-word;
   font-size: 15px;
-  line-height: 1.33;
+  line-height: 1.43;
   color: #000000;
 }
 
@@ -119,7 +126,12 @@
 
 @media(max-width: 1170px) {
   .losses__img {
-    width: 80px;
+    // width: 80px;
+  }
+
+  .losses_img--helicopters,
+  .losses_img--tanks {
+    width: 100px;
   }
 
   .losses__text-number {
@@ -156,56 +168,33 @@
     width: 350px;
   }
 
-  .losses__img {
-    width: 100px;
+  .losses_img--helicopters,
+  .losses_img--tanks {
+    width: 120px;
   }
 
   .losses__text-number {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .losses__text-number-difference {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .losses__text-caption {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 
 @media(max-width: 834px) {
-  .losses__img {
-    width: 90px;
+  .losses_img--helicopters,
+  .losses_img--tanks {
+    width: 90%;
   }
 }
 
-// @media(max-width: 775px) {
-//   .losses {
-//     gap: 0 20px;
-//     margin: 0;
-//   }
-
-//   .losses__item {
-//     justify-content: center;
-//   }
-
-//   .losses__item:not(:last-child) {
-//     margin: 0 0 20px 0;
-//   }
-
-//   .losses__text-container {
-//     margin: 0;
-//   }
-// }
-
-@media(max-width: 500px) {
+@media(max-width: 650px) {
   .losses__item {
     width: 100%;
   }
 }
-
-// @media(max-width: 270px) {
-//   .losses__text-number {
-//     font-size: 30px;
-//   }
-// }

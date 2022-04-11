@@ -10,8 +10,17 @@ sans-serif;
 $serifFont: "Roboto Slab", "Times", "Times New Roman", "Palatino", "Georgia", serif;
 
 $squareBoxShadow: 3px 3px 0 0 #000;
+$transition200ms: ease-in-out 200ms;
 
+// The width of the screen when a burger menu shall be shown instead of navigation buttons
 $burgerMenuWidth: 950px;
+$stopBurgerScrollWidth: 440px;
+
+$websitePaddingTop40: 40px;
+$websitePaddingLeft40: 40px;
+
+$websitePaddingTop34: 34px;
+$websitePaddingLeft20: 20px;
 
 $header2_5: 2.5rem;
 $header2: 2rem;
@@ -30,7 +39,7 @@ $headerMaxWidth90: 90%;
 $headerMaxWidth80: 80%;
 $headerMaxWidth60: 60%;
 
-$footerBottomGap160: 160px;
+$footerBottomGap140: 140px;
 $footerBottomGap100: 100px;
 
 $pageNavDistance40: 40px;
@@ -41,6 +50,37 @@ $pageNavDistance5: 5px;
 
 $donateLightGrey: rgb(212, 212, 212);
 $donateDarkGrey: rgb(133, 133, 133);
+
+// The way buttons react to being hovered and pressed
+@mixin scalableButtons0_1 {
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+@mixin scalableButtons0_05 {
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@mixin scalableButtons0_03 {
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
 
 @mixin object_fit {
   object-fit: contain;
@@ -132,18 +172,18 @@ $donateDarkGrey: rgb(133, 133, 133);
 // Provides a page container for all website pages. It has a padding allowing
 // the page navigation to look good and not to be overlapped by other site components
 .page-container {
-  margin: 0 209px $footerBottomGap160 222px;
+  margin: 0 0 $footerBottomGap140 0;
 }
 
-@media(max-width: 1170px) {
-  .page-container {
-    margin: 0 150px $footerBottomGap160 150px;
-  }
-}
+// @media(max-width: 1170px) {
+//   .page-container {
+//     margin: 0 150px $footerBottomGap160 150px;
+//   }
+// }
 
 @media(max-width: $burgerMenuWidth) {
   .page-container {
-    margin: 0 100px $footerBottomGap100 100px;
+    margin: 0 0 $footerBottomGap100 0;
   }
 }
 

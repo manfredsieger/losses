@@ -16,10 +16,12 @@
 }
 
 .donate__header {
-  margin: 0 0 70px 0;
+  max-width: 75%;
+  margin: 0 0 50px 0;
 
   font-weight: 700;
   font-size: 28px;
+  line-height: 1.46;
   font-family: $serifFont;
 }
 
@@ -31,6 +33,19 @@
 
 .donate__country-header {
   margin: 0 0 32px 0;
+
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1;
+}
+
+.donate__block + .donate__country-header {
+  margin-top: 40px;
+}
+
+.donate__block--cda-contacts {
+  margin-top: 73px;
 }
 
 .donate__item:not(:last-child) {
@@ -44,34 +59,47 @@
   margin: 0 0 52px 0;
 }
 
-.donate__organization-header:before {
-  content: "";
+// .donate__organization-header:before {
+//   content: "";
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
 
-  display: block;
-  width: 100%;
-  height: 140%;
-  z-index: 1;
+//   display: block;
+//   width: 100%;
+//   height: 140%;
+//   z-index: 1;
 
-  background-color: $yellow;
-}
+//   background-color: $yellow;
+// }
 
 .donate__organization-header-text {
   position: relative;
   z-index: 2;
 
+  // display: inline-block;
+
   font-family: $serifFont;
   font-size: 22px;
   font-weight: 700;
+  line-height: 1.36;
   word-wrap: break-word;
+
+  box-shadow: inset 0 0 0 1000px $yellow, 0 0 0 5px $yellow;
+  
+  // background-color: $yellow;
 }
 
 .donate__block:not(:last-child) {
   margin-bottom: 20px;
+}
+
+.donate-section__header {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
 }
 
 .donate__paragraph {
@@ -80,7 +108,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  margin: 41px 0 0 0;
+  margin: 0 0 32px 0;
 }
 
 .donate__strong {
@@ -99,9 +127,15 @@
   margin-bottom: 5px;
 }
 
+.donate__tel-number {
+  text-decoration: none;
+}
+
 .donate__link {
   font-size: 18px;
   line-height: 1.33;
+  text-decoration: underline;
+
   background-color: $yellow;
 }
 

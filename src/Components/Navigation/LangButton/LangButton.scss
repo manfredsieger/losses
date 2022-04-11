@@ -41,9 +41,10 @@
   
   font-family: $serifFont;
   font-size: 14px;
-  color: #000000;
 
-  transform: translateY(-50%);
+  // It is 56 and not 50 because the "en"/"ua" did not look like
+  // they were positioned right in the middle of the box
+  transform: translateY(-56%);
   transition: ease-in-out 500ms;
 }
 
@@ -53,10 +54,4 @@
 
 .lang__text--ua {
   right: 10px;
-}
-
-.lang__wrapper--circle-right .lang__text--eng,
-.lang__wrapper--circle-left .lang__text--ua {
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.3);
 }

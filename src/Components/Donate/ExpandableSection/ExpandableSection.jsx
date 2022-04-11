@@ -16,7 +16,9 @@ export default function ExpandableSection({ subHeader, copyFields }) {
         onClick={() => setIsExpanded(!isExpanded)}
         style={{ marginBottom: isExpanded ? '20px' : '0' }}
       >
-        <span className="donate-section__header expandable-section__sub-header-text">{subHeader}</span>
+        <p className="expandable-section__sub-header-wrapper">
+          <span className="donate-section__header expandable-section__sub-header-text">{subHeader}</span>
+        </p>
         <button
           className={`expandable-section__move-btn ${isExpanded ? 'expandable-section__shrink-btn' : 'expandable-section__expand-btn'}`}
           onClick={() => setIsExpanded(!isExpanded)}
