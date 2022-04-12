@@ -46,7 +46,7 @@ export default function Charts() {
     };
   }, []);
 
-  const [lossesToDisplay, setLossesToDisplay] = useState(['aircrafts', 'helicopters']);
+  const [lossesToDisplay, setLossesToDisplay] = useState(['aircrafts', 'helicopters', 'uav']);
 
   useEffect(() => {
     if (selectedChartMode === chartModes.showOne) {

@@ -51,6 +51,8 @@
 
 .website__fake-element {
   height: 1px;
+
+  opacity: 0;
 }
 
 .website__grid-center {
@@ -79,6 +81,10 @@
                          "navigation main .";
   }
 
+  .website__grid-left {
+    padding: 0;
+  }
+
   .website__grid-right {
     display: flex;
     justify-content: flex-end;
@@ -86,9 +92,10 @@
   }
 }
 
+// 45px are provided instead of 40px for burger menu to have additional padding while scrolling
 @media(max-width: 650px) {
   .website__grid {
-    grid-template-columns: 45px 1fr 50px 40px;
+    grid-template-columns: 45px 1fr 55px 45px;
     grid-template-areas: "navigation . logo logo"
                          "navigation main main .";
     
