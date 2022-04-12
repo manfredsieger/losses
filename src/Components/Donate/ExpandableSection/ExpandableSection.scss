@@ -6,15 +6,17 @@
 }
 
 .expandable-section__copyFields-container {
-  opacity: 0;
   height: 0;
+
   overflow: hidden;
+  opacity: 0;
   transition: ease-in-out 450ms;
 }
 
 .expandable-section__copyFields-container--visible {
-  opacity: 1;
   height: auto;
+
+  opacity: 1;
 }
 
 .expandable-section__header {
@@ -36,6 +38,7 @@
 
 .expandable-section__sub-header-text {
   display: block;
+  
   width: 100%;
 }
 
@@ -85,18 +88,3 @@
     padding: 22px 20px;
   }
 }
-
-// @media(max-width: 330px) {
-//   .expandable-section__header--expandable {
-//     position: static;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-start;
-//   }
-
-//   .expandable-section__move-btn {
-//     position: static;
-//     transform: translate(0, 0);
-//   }
-// }
-

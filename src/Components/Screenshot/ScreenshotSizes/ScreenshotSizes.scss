@@ -13,13 +13,9 @@
 
   background-color: transparent;
   cursor: pointer;
-  transition: ease-in-out 200ms;
 
   @include scalableButtons0_05;
-}
-
-.screenshot-sizes__container:hover {
-  box-shadow: $squareBoxShadow;
+  @include hoverSquareBoxShadow;
 }
 
 .screenshot-sizes__container--selected {

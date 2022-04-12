@@ -10,7 +10,6 @@
 
   min-height: 100vh;
   padding: 0;
-  // background-color: $red;
   box-sizing: border-box;
 }
 
@@ -20,6 +19,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 50px;
+
   padding: 0 0 30px 0;
 }
 
@@ -35,6 +35,7 @@
   flex-wrap: wrap;
   flex-grow: 1;
   gap: 10px;
+
   @include list_reset;
   box-sizing: border-box;
 }
@@ -45,18 +46,13 @@
 
 .charts__canvas {
   max-width: 100% !important;
+  
   background-color: transparent;
 }
 
 @media(max-width: 1150px) {
   .charts__container {
     gap: 30px;
-  }
-}
-
-@media(max-width: 700px) {
-  .charts__header {
-    font-size: $header2;
   }
 }
 
@@ -70,11 +66,5 @@
 @media(max-width: 480px) {
   .charts__header {
     margin-bottom: 20px;
-  }
-}
-
-@media(max-width: 400px) {
-  .charts__header {
-    font-size: $header1_5;
   }
 }

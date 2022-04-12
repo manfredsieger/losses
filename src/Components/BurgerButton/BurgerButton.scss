@@ -16,12 +16,14 @@
   border: 1px solid #000000;
 
   background-color: transparent;
+  
   cursor: pointer;
 }
 
 .burger__button::before,
 .burger__button::after {
   content: "";
+
   display: block;
 
   width: 13px;

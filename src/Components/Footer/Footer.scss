@@ -1,9 +1,5 @@
 @import './../../common.scss';
 
-// .footer__container {
-//   padding: 10px 0 10px 10px;
-// }
-
 .footer__container--red-page {
   background-color: $red;
 }
@@ -44,6 +40,7 @@
 .testBTN,
 .testUL {
   display: inline-block;
+  
   margin: 0 auto;
 }
 

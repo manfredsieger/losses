@@ -5,8 +5,7 @@
   height: 100px;
 
   @include scalableButtons0_05;
-
-  transition: $transition200ms;
+  @include hoverSquareBoxShadow;
 }
 
 .configBtn__config-wrapper {
@@ -34,7 +33,6 @@
 .configBtn__config-itemImg {
   width: 50px;
   margin: 0 0 5px 0;
-  // height: 50px;
 
   @include object-fit;
   filter: invert(18%) sepia(3%) saturate(151%) hue-rotate(52deg) brightness(92%) contrast(90%);
@@ -43,7 +41,6 @@
 .configBtn__config-itemImg--helicopters,
 .configBtn__config-itemImg--tanks {
   width: 70px;
-  // height: 70px;
 }
 
 .configBtn__config-text {

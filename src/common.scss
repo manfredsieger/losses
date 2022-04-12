@@ -9,47 +9,28 @@ $sansSerifFont: "Roboto", "Segoe UI", "Oxygen",
 sans-serif;
 $serifFont: "Roboto Slab", "Times", "Times New Roman", "Palatino", "Georgia", serif;
 
+// Square shadow that all buttons shall have
 $squareBoxShadow: 3px 3px 0 0 #000;
+// Transition common for all transition-able elements on the screen
 $transition200ms: ease-in-out 200ms;
 
 // The width of the screen when a burger menu shall be shown instead of navigation buttons
 $burgerMenuWidth: 950px;
+// The width of the screen when a burger menu shall not be sticky anymore and shall be fixed in the left top corner
 $stopBurgerScrollWidth: 440px;
 
+// Website padding sets that shall be applied for big and small screens
 $websitePaddingTop40: 40px;
 $websitePaddingLeft40: 40px;
 
 $websitePaddingTop34: 34px;
 $websitePaddingLeft20: 20px;
 
-$header2_5: 2.5rem;
-$header2: 2rem;
-$header1_8: 1.8rem;
-$header1_5: 1.5rem;
-
-$header_margin_bottom80: 80px;
 $header_margin_bottom50: 50px;
-$header_margin_bottom30: 30px;
-
-$header_padding_top30: 30px;
 
 $headerMinHeight120: 120px;
 
-$headerMaxWidth90: 90%;
-$headerMaxWidth80: 80%;
-$headerMaxWidth60: 60%;
-
-$footerBottomGap140: 140px;
 $footerBottomGap100: 100px;
-
-$pageNavDistance40: 40px;
-$pageNavDistance20: 20px;
-$pageNavDistance15: 15px;
-$pageNavDistance10: 10px;
-$pageNavDistance5: 5px;
-
-$donateLightGrey: rgb(212, 212, 212);
-$donateDarkGrey: rgb(133, 133, 133);
 
 // The way buttons react to being hovered and pressed
 @mixin scalableButtons0_1 {
@@ -82,45 +63,25 @@ $donateDarkGrey: rgb(133, 133, 133);
   }
 }
 
+// When thisrule is applied, the element gets a shadow when hovered
+@mixin hoverSquareBoxShadow {
+  transition: $transition200ms;
+
+  &:hover {
+    box-shadow: $squareBoxShadow;
+  }
+}
+
 @mixin object_fit {
   object-fit: contain;
   object-position: center;
 }
 
+// Resets ul-tags
 @mixin list_reset {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-@mixin list_reset_number {
-  margin: 0;
-  padding: 0;
-}
-
-@mixin flex_column_top_center {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-@mixin flex_column_top_left {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-@mixin flex_row_left_center {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-@mixin grey_bottom_line {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 // Standard link: black when not active and yellow when hovered
@@ -138,7 +99,7 @@ $donateDarkGrey: rgb(133, 133, 133);
 .standardHeader {
   max-width: 575px;
   padding: 23px 0 0 0;
-  font-size: $header2_5;
+  font-size: 40px;
   font-weight: 700;
   text-align: center;
   font-family: "Roboto Slab";
@@ -153,7 +114,7 @@ $donateDarkGrey: rgb(133, 133, 133);
 
 @media (max-width: 545px) {
   .standardHeader {
-    font-size: $header2;
+    font-size: 32px;
   }
 }
 
@@ -165,21 +126,15 @@ $donateDarkGrey: rgb(133, 133, 133);
 
 @media (max-width: 360px) {
   .standardHeader {
-    font-size: $header1_8;
+    font-size: 28px;
   }
 }
 
 // Provides a page container for all website pages. It has a padding allowing
 // the page navigation to look good and not to be overlapped by other site components
 .page-container {
-  margin: 0 0 $footerBottomGap140 0;
+  margin: 0 0 140px 0;
 }
-
-// @media(max-width: 1170px) {
-//   .page-container {
-//     margin: 0 150px $footerBottomGap160 150px;
-//   }
-// }
 
 @media(max-width: $burgerMenuWidth) {
   .page-container {

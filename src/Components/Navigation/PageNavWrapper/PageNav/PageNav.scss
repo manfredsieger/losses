@@ -17,13 +17,8 @@
   text-decoration: none;
 
   transition: $transition200ms;
-
   @include scalableButtons0_03;
 }
-
-// .pageNav:not(:last-child) {
-//   margin-bottom: 24px;
-// }
 
 .pageNav__yellow {
   background-color: $yellow;
@@ -83,14 +78,8 @@
     top: 2px;
 
     margin-right: 12px;
+    
     @include object_fit;
     object-position: 50% 50%;
   }
 }
-
-// @media (max-width: 545px) {
-//   .pageNav {
-//     width: 60px;
-//     height: 60px;
-//   }
-// }

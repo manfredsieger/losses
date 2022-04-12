@@ -3,15 +3,19 @@
 .regular-section {
   display: flex;
   align-items: center;
+
   padding: 22px 25px;
   border: 1px solid #000000;
 
   text-decoration: none;
 }
 
-.regular-section--has-link:hover {
-  box-shadow: $squareBoxShadow;
+.regular-section--has-link {
   transition: $transition200ms;
+}
+
+.regular-section--has-link:hover {
+  @include hoverSquareBoxShadow;
 }
 
 .regular-section__text-wrapper {
@@ -41,6 +45,7 @@
 .regular-section__image {
   max-height: 25px;
   max-width: 70px;
+  
   @include object-fit;
 }
 

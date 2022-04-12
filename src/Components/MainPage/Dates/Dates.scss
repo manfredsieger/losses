@@ -7,7 +7,7 @@
   flex-wrap: wrap;
 
   @include list_reset;
-  margin-bottom: $header_margin_bottom80;
+  margin-bottom: 80px;
 }
 
 .dateList__item {

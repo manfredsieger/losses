@@ -5,7 +5,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
   min-height: 100vh;
+
   overflow-x: scroll;
 }
 
@@ -24,6 +26,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
+
   margin: 0 0 20px 0;
 }
 
@@ -39,19 +42,14 @@
 
   background-color: $light_red;
   cursor: pointer;
-  transition: $transition200ms;
 
   @include scalableButtons0_05;
-}
-
-.screenshot__download-btn:hover {
-  box-shadow: $squareBoxShadow;
+  @include hoverSquareBoxShadow;
 }
 
 .screenshot__picture-container {
   position: relative;
 
-  // display: none;
   box-sizing: border-box;
   
   background-color: $red;
