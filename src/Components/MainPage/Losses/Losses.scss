@@ -19,9 +19,13 @@
   transition: ease-in-out 300ms;
 }
 
-.losses__item:hover {
-  transform: scale(1.05);
+@media(min-width: $minDesktopWidth) {
+  .losses__item:hover {
+    transform: scale(1.05);
+  }
 }
+
+
 
 .losses__img-container {
   display: flex;

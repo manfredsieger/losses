@@ -14,8 +14,10 @@
   transition: $transition200ms;
 }
 
-.regular-section--has-link:hover {
-  @include hoverSquareBoxShadow;
+@media(min-width: $minDesktopWidth) {
+  .regular-section--has-link:hover {
+    @include hoverSquareBoxShadow;
+  }
 }
 
 .regular-section__text-wrapper {

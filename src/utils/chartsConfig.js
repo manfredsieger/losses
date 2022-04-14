@@ -54,8 +54,6 @@ function getData(item) {
 }
 
 export function getDatasets(lossesTypes, websiteLanguage) {
-  console.log('!!!!!!!');
-  console.log(lossesTypes);
   return lossesTypes.map((item, index) => ({
     label: getWordWithBigFirstLetter(translation[websiteLanguage].main.losses[item]),
     data: getData(item),

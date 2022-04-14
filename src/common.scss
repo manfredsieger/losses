@@ -14,6 +14,8 @@ $squareBoxShadow: 3px 3px 0 0 #000;
 // Transition common for all transition-able elements on the screen
 $transition200ms: ease-in-out 200ms;
 
+// The min width of a user device screen for this device to be deemed as a desktop device
+$minDesktopWidth: 1024px;
 // The width of the screen when a burger menu shall be shown instead of navigation buttons
 $burgerMenuWidth: 950px;
 // The width of the screen when a burger menu shall not be sticky anymore and shall be fixed in the left top corner
@@ -34,8 +36,10 @@ $footerBottomGap100: 100px;
 
 // The way buttons react to being hovered and pressed
 @mixin scalableButtons0_1 {
-  &:hover {
-    transform: scale(1.1);
+  @media(min-width: $minDesktopWidth) {
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &:active {
@@ -44,8 +48,10 @@ $footerBottomGap100: 100px;
 }
 
 @mixin scalableButtons0_05 {
-  &:hover {
-    transform: scale(1.05);
+  @media(min-width: $minDesktopWidth) {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &:active {
@@ -54,8 +60,10 @@ $footerBottomGap100: 100px;
 }
 
 @mixin scalableButtons0_03 {
-  &:hover {
-    transform: scale(1.03);
+  @media(min-width: $minDesktopWidth) {
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   &:active {
@@ -91,8 +99,10 @@ $footerBottomGap100: 100px;
   font-weight: bold;
 }
 
-.standardLink:hover {
-  background-color: $yellow;
+@media(min-width: $minDesktopWidth) {
+  .standardLink:hover {
+    background-color: $yellow;
+  }
 }
 
 // Standard header, main header on each webpage except for donate webpage

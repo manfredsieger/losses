@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Routes, Route, Navigate,
 } from 'react-router-dom';
@@ -16,9 +16,36 @@ import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButt
 import { isUserDeviceValidForScreenshot } from './utils/helpers';
 import { pages, stylePages } from './redux/activePage';
 
+const burgerMenuWidth = 950;
+
 export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
   const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
+
+  function preventScroll(evt) {
+    if (window.innerWidth <= burgerMenuWidth) {
+      console.log('PREVENTED');
+      evt.preventDefault();
+      evt.stopPropagation();
+      return false;
+    }
+    return true;
+  }
+
+  const navigationMenu = useRef(null);
+  useEffect(() => {
+    navigationMenu.current.addEventListener(
+      'wheel',
+      (evt) => preventScroll(evt),
+      { passive: false },
+    );
+
+    return navigationMenu.current.removeEventListener(
+      'wheel',
+      (evt) => preventScroll(evt),
+      { passive: false },
+    );
+  }, []);
 
   return (
     <div className={stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-pink'}>
@@ -32,6 +59,7 @@ export default function App() {
           <Navigation
             isSliderMenuShown={isSliderMenuShown}
             setIsSliderMenuShown={setIsSliderMenuShown}
+            refComponent={navigationMenu}
           />
         </div>
 

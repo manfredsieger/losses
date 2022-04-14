@@ -25,12 +25,14 @@
   box-shadow: $squareBoxShadow;
 }
 
-.pageNav:not(.pageNav__yellow):hover {
-  box-shadow: $squareBoxShadow;
-}
+@media(min-width: $minDesktopWidth) {
+  .pageNav:not(.pageNav__yellow):hover {
+    box-shadow: $squareBoxShadow;
+  }
 
-.pageNav__yellow:hover {
-  box-shadow: 7px 7px 0 0 #000;
+  .pageNav__yellow:hover {
+    box-shadow: 7px 7px 0 0 #000;
+  }
 }
 
 .website-background-red .pageNav__simple {
@@ -39,10 +41,6 @@
 
 .website-background-pink .pageNav__simple {
   background-color: $pink_dark;
-}
-
-.website-background-pink .pageNav__losses {
-  background-color: $pink_light;
 }
 
 .pageNav__red {
@@ -59,9 +57,10 @@
 
 .pageNav__text {
   text-decoration: none;
-  font-size: 15px;
   font-weight: 500;
   font-family: $serifFont;
+  font-size: 15px;
+  line-height: 1.33;
 
   transition: $transition200ms;
 }
@@ -81,5 +80,9 @@
     
     @include object_fit;
     object-position: 50% 50%;
+  }
+
+  .pageNav__text {
+    text-align: left;
   }
 }

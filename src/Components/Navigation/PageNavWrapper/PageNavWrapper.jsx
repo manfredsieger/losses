@@ -30,9 +30,7 @@ export default function PageNavWrapper({ setIsSliderMenuShown }) {
               <PageNav
                 key={pages[item].name}
                 className={
-                  `pageNav
-                  ${pages[item].yellowBgc ? 'pageNav__yellow' : 'pageNav__simple'}
-                  ${pages[item].name === pages.losses.name ? 'pageNav__losses' : ''}`
+                  `pageNav ${pages[item].yellowBgc ? 'pageNav__yellow' : 'pageNav__simple'}`
                 }
                 to={pages[item].path}
                 ariaLabel={pages[item].ariaLabel}

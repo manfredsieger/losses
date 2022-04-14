@@ -46,6 +46,10 @@ p.header__text:not(:last-child) {
   height: 10px;
 }
 
-.header__source-link:hover + .header__twitter-icon {
-  fill: $yellow;
+@media(min-width: $minDesktopWidth) {
+  .header__source-link:hover + .header__twitter-icon {
+    fill: $yellow;
+  }
 }
+
+
