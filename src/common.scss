@@ -19,7 +19,7 @@ $minDesktopWidth: 1024px;
 // The width of the screen when a burger menu shall be shown instead of navigation buttons
 $burgerMenuWidth: 950px;
 // The width of the screen when a burger menu shall not be sticky anymore and shall be fixed in the left top corner
-$stopBurgerScrollWidth: 440px;
+$stopBurgerScrollWidth: 600px;
 
 // Website padding sets that shall be applied for big and small screens
 $websitePaddingTop40: 40px;
@@ -44,6 +44,7 @@ $footerBottomGap100: 100px;
 
   &:active {
     transform: scale(0.9);
+    opacity: 0.7;
   }
 }
 
@@ -56,6 +57,7 @@ $footerBottomGap100: 100px;
 
   &:active {
     transform: scale(0.95);
+    opacity: 0.8;
   }
 }
 
@@ -68,6 +70,7 @@ $footerBottomGap100: 100px;
 
   &:active {
     transform: scale(0.97);
+    opacity: 0.8;
   }
 }
 

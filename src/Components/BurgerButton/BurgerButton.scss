@@ -32,17 +32,23 @@
   background-color: #000000;
 }
 
+@media(max-width: 650px) {
+  .burger__button {
+    top: $websitePaddingTop34;
+  }
+}
+
 @media(max-width: $burgerMenuWidth) {
   .burger__button {
     display: flex;
   }
 }
 
-@media(max-width: 650px) {
-  .burger__button {
-    top: 0;
-  }
-}
+// @media(max-width: 650px) {
+//   .burger__button {
+//     top: 0;
+//   }
+// }
 
 @media(max-width: $stopBurgerScrollWidth) {
   .burger__button {

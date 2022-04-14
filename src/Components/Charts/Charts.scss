@@ -56,6 +56,12 @@
   }
 }
 
+@media(max-width: 800px) {
+  .charts__canvas-wrapper {
+    height: 300px;
+  }
+}
+
 @media(max-width: 545px) {
   .charts__config {
     margin: 0 auto;

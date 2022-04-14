@@ -32,7 +32,7 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: calc(140px + 76px) 1fr 137px;
+  grid-template-columns: calc(140px + 70px) 1fr calc(140px + 70px);
   grid-template-rows: 1fr;
   grid-template-areas: "navigation main logo";
 
@@ -46,11 +46,12 @@
 
   grid-area: navigation;
 
-  padding: 0 76px 0 0;
+  padding: 0 70px 0 0;
 }
 
 .website__fake-element {
   height: 1px;
+  width: 100%;
 
   opacity: 0;
 }
@@ -61,24 +62,43 @@
 
 .website__grid-right {
   grid-area: logo;
+
+  padding: 0 0 0 70px;
 }
 
 @media(max-width: 1320px) {
   .website__grid {
-    grid-template-columns: calc(140px + 40px) 1fr 137px;
+    grid-template-columns: calc(140px + 40px) 1fr calc(140px + 40px);
   }
 
   .website__grid-left {
     padding: 0 40px 0 0;
   }
+
+  .website__grid-right {
+    padding: 0 0 0 40px;
+  }
+}
+
+// 45px are provided instead of 40px for burger menu to have additional padding while scrolling
+@media(max-width: 650px) {
+  .website__grid {
+    // grid-template-columns: 55px 1fr 55px;
+    
+    padding: $websitePaddingTop34 $websitePaddingLeft20;
+  }
+
+  .website__grid-right {
+    padding: 0 0 0 20px;
+  }
 }
 
 @media(max-width: $burgerMenuWidth) {
   .website__grid {
-    grid-template-columns: 96px 1fr 96px;
+    grid-template-columns: 110px 1fr 110px;
     grid-template-rows: 40px 1fr;
     grid-template-areas: "navigation . logo"
-                         "navigation main .";
+                         "navigation main logo";
   }
 
   .website__grid-left {
@@ -86,20 +106,8 @@
   }
 
   .website__grid-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: stretch;
-  }
-}
-
-// 45px are provided instead of 40px for burger menu to have additional padding while scrolling
-@media(max-width: 650px) {
-  .website__grid {
-    grid-template-columns: 45px 1fr 55px 45px;
-    grid-template-areas: "navigation . logo logo"
-                         "navigation main main .";
-    
-    padding: $websitePaddingTop34 $websitePaddingLeft20;
+    justify-self: end;
+    padding: 0 0 0 20px;
   }
 }
 

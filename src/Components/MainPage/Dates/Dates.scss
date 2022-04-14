@@ -1,10 +1,11 @@
 @import './../../../common.scss';
 
 .dateList {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "start days end";
+  gap: 20px;
 
   @include list_reset;
   margin-bottom: 80px;
@@ -16,10 +17,9 @@
   justify-content: center;
   align-items: center;
 
-  width: 180px;
+  width: 100%;
   padding: 30px 50px;
   border: solid 1px #000;
-  box-sizing: content-box;
 
   word-break: break-word;
   text-align: center;
@@ -31,7 +31,17 @@
   margin-right: calc((100% - (282px * 3)) / 2);
 }
 
+.dateList__item--start {
+  grid-area: start;
+}
+
+.dateList__item--days {
+  grid-area: days;
+}
+
 .dateList__item--end {
+  grid-area: end;
+
   background-color: $pink_dark;
 }
 
@@ -52,7 +62,7 @@
   font-size: 21px;
   font-weight: 700;
   font-family: $serifFont;
-  line-height: 0.83;
+  line-height: 1.2;
 }
 
 .dateList__important-text {
@@ -86,18 +96,6 @@
                          ". . days days . .";
     gap: 20px;
   }
-
-  .dateList__item--start {
-    grid-area: start;
-  }
-
-  .dateList__item--days {
-    grid-area: days;
-  }
-
-  .dateList__item--end {
-    grid-area: end;
-  }
 }
 
 @media(max-width: 1170px) {
@@ -106,7 +104,7 @@
   }
 }
 
-@media(max-width: 880px) {
+@media(max-width: 1080px) {
   .dateList {
     grid-template-columns: 1fr;
     grid-auto-rows: 1fr;

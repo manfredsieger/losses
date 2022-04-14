@@ -15,6 +15,7 @@ import {
 } from '../../utils/chartsConfig';
 
 const SMALL_LANDSCAPE_SCREEN = 290;
+const CHART_TO_GROW_SCREEN_WIDTH = 800;
 const latestLossesObject = getLatestLossesObject(losses);
 
 export default function Charts() {
@@ -89,7 +90,14 @@ export default function Charts() {
           {
             hasUserSmallScreen
               ? <RotateWarning />
-              : <Line className="charts__canvas" options={options} data={data} />
+              : (
+                <Line
+                  className="charts__canvas"
+                  options={window.innerWidth <= CHART_TO_GROW_SCREEN_WIDTH
+                    ? Object.assign(options, { maintainAspectRatio: false }) : options}
+                  data={data}
+                />
+              )
           }
         </section>
 

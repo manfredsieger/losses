@@ -16,15 +16,14 @@ import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButt
 import { isUserDeviceValidForScreenshot } from './utils/helpers';
 import { pages, stylePages } from './redux/activePage';
 
-const burgerMenuWidth = 950;
+const BURGER_MENU_WIDTH = 950;
 
 export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
   const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
 
   function preventScroll(evt) {
-    if (window.innerWidth <= burgerMenuWidth) {
-      console.log('PREVENTED');
+    if (window.innerWidth <= BURGER_MENU_WIDTH) {
       evt.preventDefault();
       evt.stopPropagation();
       return false;
@@ -77,15 +76,16 @@ export default function App() {
           </Routes>
 
           {
-            activePage === pages.donate.name
-              ? null
-              : <DonateBottomButton />
+            activePage !== pages.donate.name && !isSliderMenuShown
+              ? <DonateBottomButton />
+              : null
           }
 
           <Footer />
         </div>
 
         <div className="website__grid-right">
+          <div className="website__fake-element" />
           <Logo />
         </div>
 

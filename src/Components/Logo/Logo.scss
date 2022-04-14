@@ -1,8 +1,11 @@
 @import '../../common.scss';
 
 .logo__wrapper {
+  position: sticky;
+  top: $websitePaddingTop40;
+
   margin: 0;
-  height: 57px;
+  width: 100%;
 }
 
 .logo__image {
@@ -10,14 +13,19 @@
   height: auto;
 }
 
+@media(max-width: 650px) {
+  .logo__wrapper {
+    top: $websitePaddingTop34;
+  }
+}
+
 @media(max-width: $burgerMenuWidth) {
   .logo__wrapper {
+    // width: calc(100% - 20px);
     width: auto;
-    height: 40px;
   }
 
   .logo__image {
-    width: auto;
-    height: 100%;
+    width: 100%;
   }
 }
