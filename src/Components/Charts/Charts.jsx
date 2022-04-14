@@ -14,7 +14,17 @@ import {
   options, getLabels, getDatasets,
 } from '../../utils/chartsConfig';
 
+/*
+  TODO: write explanation for the 290 number
+*/
 const SMALL_LANDSCAPE_SCREEN = 290;
+/*
+  The chart`s width and height maintains aspect ratio automatically.
+  But when one has a device with small screen width the chart gets too small.
+  That is why the chart shall be handled differently before and after user`s
+  screen is 800px wide.
+  One came up with the number 800 by testing.
+*/
 const CHART_TO_GROW_SCREEN_WIDTH = 800;
 const latestLossesObject = getLatestLossesObject(losses);
 
@@ -61,6 +71,7 @@ export default function Charts() {
     datasets: getDatasets(lossesToDisplay, websiteLanguage),
   };
 
+  // FIXME: rewrite the function so that it returns a component
   function renderConfigBtns() {
     return Object.entries(latestLossesObject).map((item) => {
       const itemName = item[0]; const

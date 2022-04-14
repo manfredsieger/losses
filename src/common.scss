@@ -74,12 +74,14 @@ $footerBottomGap100: 100px;
   }
 }
 
-// When thisrule is applied, the element gets a shadow when hovered
+// When this rule is applied, the element gets a shadow when hovered
 @mixin hoverSquareBoxShadow {
   transition: $transition200ms;
 
-  &:hover {
-    box-shadow: $squareBoxShadow;
+  @media(min-width: $minDesktopWidth) {
+    &:hover {
+      box-shadow: $squareBoxShadow;
+    }
   }
 }
 
