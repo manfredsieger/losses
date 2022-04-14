@@ -15,9 +15,12 @@ import {
 } from '../../utils/chartsConfig';
 
 /*
-  TODO: write explanation for the 290 number
+  The chart is not suitable for to be rendered on small screens.
+  If the screen is too small it won't be readable. That is why
+  one has to introduce such variable and not to render the chart
+  on way to small screens.
 */
-const SMALL_LANDSCAPE_SCREEN = 290;
+const SMALL_LANDSCAPE_SCREEN = 300;
 /*
   The chart`s width and height maintains aspect ratio automatically.
   But when one has a device with small screen width the chart gets too small.
