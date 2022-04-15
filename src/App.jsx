@@ -29,30 +29,30 @@ export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
   const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
 
-  const navigationMenu = useRef(null);
+  // const navigationMenu = useRef(null);
 
-  function preventScroll() {
-    if (window.innerWidth <= BURGER_MENU_WIDTH) {
-      disableBodyScroll(navigationMenu);
-    } else {
-      enableBodyScroll(navigationMenu);
-    }
-  }
+  // function preventScroll() {
+  //   if (window.innerWidth <= BURGER_MENU_WIDTH) {
+  //     disableBodyScroll(navigationMenu);
+  //   } else {
+  //     enableBodyScroll(navigationMenu);
+  //   }
+  // }
 
-  useEffect(() => {
-    enableBodyScroll(navigationMenu);
-    navigationMenu.current.addEventListener(
-      'wheel',
-      () => preventScroll(),
-      { passive: false },
-    );
+  // useEffect(() => {
+  //   enableBodyScroll(navigationMenu);
+  //   navigationMenu.current.addEventListener(
+  //     'wheel',
+  //     () => preventScroll(),
+  //     { passive: false },
+  //   );
 
-    return navigationMenu.current.removeEventListener(
-      'wheel',
-      () => preventScroll(),
-      { passive: false },
-    );
-  }, [isSliderMenuShown]);
+  //   return navigationMenu.current.removeEventListener(
+  //     'wheel',
+  //     () => preventScroll(),
+  //     { passive: false },
+  //   );
+  // }, [isSliderMenuShown]);
 
   useEffect(() => {
     if (isSliderMenuShown) {
@@ -74,7 +74,7 @@ export default function App() {
           <Navigation
             isSliderMenuShown={isSliderMenuShown}
             setIsSliderMenuShown={setIsSliderMenuShown}
-            refComponent={navigationMenu}
+            // refComponent={navigationMenu}
           />
         </div>
 
