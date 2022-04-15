@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './App.scss';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import MainPage from './Components/MainPage/MainPage';
 import Donate from './Components/Donate/Donate';
 import Footer from './Components/Footer/Footer';
@@ -16,35 +17,42 @@ import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButt
 import { isUserDeviceValidForScreenshot } from './utils/helpers';
 import { pages, stylePages } from './redux/activePage';
 
+/**
+ * The width of the user device screen when the navigation section
+ * is hidden and user sees a burger menu instead. If you change it,
+ * you shall change the $burgerMenuWidth scss-variable in the
+ * src/common.scss as well.
+ */
 const BURGER_MENU_WIDTH = 950;
 
 export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
   const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
 
-  function preventScroll(evt) {
+  const navigationMenu = useRef(null);
+
+  function preventScroll() {
     if (window.innerWidth <= BURGER_MENU_WIDTH) {
-      evt.preventDefault();
-      evt.stopPropagation();
-      return false;
+      disableBodyScroll(navigationMenu);
+    } else {
+      enableBodyScroll(navigationMenu);
     }
-    return true;
   }
 
-  const navigationMenu = useRef(null);
   useEffect(() => {
+    enableBodyScroll(navigationMenu);
     navigationMenu.current.addEventListener(
       'wheel',
-      (evt) => preventScroll(evt),
+      () => preventScroll(),
       { passive: false },
     );
 
     return navigationMenu.current.removeEventListener(
       'wheel',
-      (evt) => preventScroll(evt),
+      () => preventScroll(),
       { passive: false },
     );
-  }, []);
+  }, [isSliderMenuShown]);
 
   return (
     <div className={stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-pink'}>
