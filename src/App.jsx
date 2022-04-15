@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './App.scss';
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import MainPage from './Components/MainPage/MainPage';
 import Donate from './Components/Donate/Donate';
 import Footer from './Components/Footer/Footer';
