@@ -54,6 +54,12 @@ export default function App() {
     );
   }, [isSliderMenuShown]);
 
+  useEffect(() => {
+    if (isSliderMenuShown) {
+      document.body.style.overflow = 'hidden';
+    }
+  }, [isSliderMenuShown]);
+
   return (
     <div className={stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-pink'}>
       <div className="website__grid">
