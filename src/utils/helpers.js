@@ -32,5 +32,5 @@ export function getImage(imgName) {
 }
 
 export function isUserDeviceValidForScreenshot() {
-  return +window.screen.width >= MIN_DESKTOP_SCREEN_WIDTH;
+  return +window.innerWidth >= MIN_DESKTOP_SCREEN_WIDTH;
 }
