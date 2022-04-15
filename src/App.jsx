@@ -57,6 +57,8 @@ export default function App() {
   useEffect(() => {
     if (isSliderMenuShown) {
       document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
     }
   }, [isSliderMenuShown]);
 
