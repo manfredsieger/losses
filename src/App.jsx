@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Routes, Route, Navigate,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './App.scss';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import MainPage from './Components/MainPage/MainPage';
 import Donate from './Components/Donate/Donate';
 import Footer from './Components/Footer/Footer';
@@ -17,42 +16,9 @@ import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButt
 import { isUserDeviceValidForScreenshot } from './utils/helpers';
 import { pages, stylePages } from './redux/activePage';
 
-/**
- * The width of the user device screen when the navigation section
- * is hidden and user sees a burger menu instead. If you change it,
- * you shall change the $burgerMenuWidth scss-variable in the
- * src/common.scss as well.
- */
-const BURGER_MENU_WIDTH = 950;
-
 export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
   const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
-
-  // const navigationMenu = useRef(null);
-
-  // function preventScroll() {
-  //   if (window.innerWidth <= BURGER_MENU_WIDTH) {
-  //     disableBodyScroll(navigationMenu);
-  //   } else {
-  //     enableBodyScroll(navigationMenu);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   enableBodyScroll(navigationMenu);
-  //   navigationMenu.current.addEventListener(
-  //     'wheel',
-  //     () => preventScroll(),
-  //     { passive: false },
-  //   );
-
-  //   return navigationMenu.current.removeEventListener(
-  //     'wheel',
-  //     () => preventScroll(),
-  //     { passive: false },
-  //   );
-  // }, [isSliderMenuShown]);
 
   useEffect(() => {
     if (isSliderMenuShown) {
@@ -74,7 +40,6 @@ export default function App() {
           <Navigation
             isSliderMenuShown={isSliderMenuShown}
             setIsSliderMenuShown={setIsSliderMenuShown}
-            // refComponent={navigationMenu}
           />
         </div>
 
