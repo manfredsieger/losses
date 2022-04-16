@@ -47,10 +47,25 @@
   @include hoverSquareBoxShadow;
 }
 
+.screenshot__download-btn:disabled {
+  color: #000000;
+  text-transform: initial;
+
+  background-color: $pink_dark;
+  cursor: auto;
+}
+
+.screenshot__download-btn:hover:disabled {
+  transform: scale(1);
+  box-shadow: none;
+}
+
 .screenshot__picture-container {
   position: relative;
 
+  // width: 100%;
   box-sizing: border-box;
+  // overflow-x:auto;
   
   background-color: $red;
 }

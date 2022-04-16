@@ -7,11 +7,11 @@ import './ScreenshotPicture.scss';
 
 export default function ScreenshotPicture() {
   return (
-    <>
+    <div className="scrollable">
       <Header />
       <Logo />
       <Dates />
       <Losses />
-    </>
+    </div>
   );
 }

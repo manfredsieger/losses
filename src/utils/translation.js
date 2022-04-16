@@ -122,6 +122,7 @@ export default {
     screenshot: {
       header: 'Download infographic',
       downloadBtn: 'Download',
+      noDownload: 'Please download infographic using other browser than Safari. For example, Google Chrome, Mozilla Firefox, Microsoft Edge etc.',
     },
     footer: {
       developedBy: 'Developed by the',
@@ -259,6 +260,7 @@ export default {
     screenshot: {
       header: 'Завантажити інфографіку',
       downloadBtn: 'Завантажити',
+      noDownload: 'Завантажте інфографіку, будь ласка, у іншому браузері ніж Safari. Наприклад Google Chrome, Mozilla Firefox, Microsoft Edge тощо.',
     },
     footer: {
       developedBy: 'Розроблено командою фонду',

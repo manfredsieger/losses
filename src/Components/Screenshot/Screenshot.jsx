@@ -7,6 +7,7 @@ import ScreenshotPicture from './ScreenshotPicture/ScreenshotPicture';
 import translation from '../../utils/translation';
 import screenschotConfig from '../../utils/screenschotConfig';
 import { setActivePage, pages } from '../../redux/activePage';
+import { isUserAgentSafari } from '../../utils/helpers';
 import './Screenshot.scss';
 
 export default function Screenshot() {
@@ -20,7 +21,7 @@ export default function Screenshot() {
     width: screenschotConfig.twitter.width,
     height: screenschotConfig.twitter.height,
   });
-  const { downloadBtn, header } = translation[websiteLanguage].screenshot;
+  const { downloadBtn, noDownload, header } = translation[websiteLanguage].screenshot;
 
   const config = {
     width: selectedSize.width / 2,
@@ -64,8 +65,9 @@ export default function Screenshot() {
         className="screenshot__download-btn"
         type="button"
         onClick={capture}
+        disabled={isUserAgentSafari()}
       >
-        {downloadBtn}
+        {isUserAgentSafari() ? noDownload : downloadBtn}
       </button>
 
       <main

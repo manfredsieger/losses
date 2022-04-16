@@ -31,10 +31,10 @@ export function getImage(imgName) {
   }
 }
 
-function isUserAgentSafari() {
+export function isUserAgentSafari() {
   return (typeof (chrome) !== 'object') && navigator.userAgent.toLowerCase().indexOf('safari') > -1;
 }
 
 export function isUserDeviceValidForScreenshot() {
-  return +window.innerWidth >= MIN_DESKTOP_SCREEN_WIDTH && !isUserAgentSafari();
+  return +window.innerWidth >= MIN_DESKTOP_SCREEN_WIDTH;
 }
