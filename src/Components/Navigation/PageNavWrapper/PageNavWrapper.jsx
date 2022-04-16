@@ -12,9 +12,9 @@ export default function PageNavWrapper({ setIsSliderMenuShown }) {
   const { activePage } = useSelector((state) => state.activePage);
 
   function isPageNavValidToBeRendered(currentPage) {
-    if (currentPage.name === pages.screenshot.name && !isUserDeviceValidForScreenshot()) {
-      return false;
-    }
+    // if (currentPage.name === pages.screenshot.name && !isUserDeviceValidForScreenshot()) {
+    //   return false;
+    // }
     if (currentPage.name === activePage) {
       return false;
     }
