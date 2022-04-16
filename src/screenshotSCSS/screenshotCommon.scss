@@ -2,31 +2,33 @@
 // Right fonts won`t be loaded to the final image =)
 .screenshot__picture-container {
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@500;700&display=swap");
+  box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 // padding for the whole picture depending on the specific infographic
-.screenshot__picture-container.screenshot__picture-container_1024_512 {
+.screenshot__picture-container.screenshot__picture-container_1024_512 .scrollable {
   position: relative;
 
   // padding: 25px;
   padding: 15px;
 }
 
-.screenshot__picture-container.screenshot__picture-container_1080_1920 {
+.screenshot__picture-container.screenshot__picture-container_1080_1920 .scrollable {
   position: relative;
 
   // padding: 90px 70px;
   padding: 45px 35px;
 }
 
-.screenshot__picture-container.screenshot__picture-container_1080_1080 {
+.screenshot__picture-container.screenshot__picture-container_1080_1080 .scrollable {
   position: relative;
 
   // padding: 45px;
   padding: 22px;
 }
 
-.screenshot__picture-container.screenshot__picture-container_940_788 {
+.screenshot__picture-container.screenshot__picture-container_940_788 .scrollable {
   position: relative;
 
   // padding: 40px;

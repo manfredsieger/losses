@@ -60,14 +60,17 @@
   box-shadow: none;
 }
 
+.screenshot__download-btn:active:disabled {
+  opacity: 1;
+}
+
 .screenshot__picture-container {
   position: relative;
 
-  // width: 100%;
-  box-sizing: border-box;
-  // overflow-x:auto;
+  display: grid;
+  justify-content: center;
   
-  background-color: $red;
+  box-sizing: border-box;
 }
 
 .screenshot__picture-container--visible {

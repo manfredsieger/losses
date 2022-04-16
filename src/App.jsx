@@ -48,11 +48,12 @@ export default function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/charts" element={<Charts />} />
-            {
+            {/* {
             isUserDeviceValidForScreenshot()
               ? <Route path="/screenshot" element={<Screenshot />} />
               : null
-            }
+            } */}
+            <Route path="/screenshot" element={<Screenshot />} />
             <Route path="*" element={<Navigate replace to="/" />} />
           </Routes>
 

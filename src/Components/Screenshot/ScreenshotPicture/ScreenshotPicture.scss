@@ -1,3 +1,18 @@
+@import '../../../common.scss';
+
 .scrollable {
-  // width: 200%;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  background-color: $red;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollable::-webkit-scrollbar {
+  display: none;
 }

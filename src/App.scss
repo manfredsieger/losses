@@ -58,6 +58,8 @@
 
 .website__grid-center {
   grid-area: main;
+
+  overflow-x: hidden;
 }
 
 .website__grid-right {
@@ -99,6 +101,7 @@
     grid-template-rows: 40px 1fr;
     grid-template-areas: "navigation . logo"
                          "navigation main logo";
+    width: 100%;
   }
 
   .website__grid-left {
@@ -111,12 +114,6 @@
   }
 }
 
-@media(max-width: 500px) {
-  .website__wrapper {
-    padding: 30px 20px;
-  }
-}
-
 @media(max-width: $stopBurgerScrollWidth) {
   .website__grid {
     grid-template-columns: 40px 1fr 50px 40px;
@@ -124,11 +121,18 @@
                          "main main main main";
   }
 
-  .website__grid-left {
+  .website__grid-left,
+  .website__grid-right {
     padding: 0;
   }
 
   .website__fake-element {
     display: none;
+  }
+}
+
+@media(max-width: 500px) {
+  .website__wrapper {
+    padding: 30px 20px;
   }
 }

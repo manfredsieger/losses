@@ -32,7 +32,7 @@ export default function Screenshot() {
 
   function capture() {
     setIsScreenshotVisible(true);
-    htmlToImage.toPng(document.querySelector('.screenshot__picture-container'), config)
+    htmlToImage.toPng(document.querySelector('.scrollable'), config)
       .then((dataUrl) => {
         download(dataUrl, 'losses.png');
       });
@@ -70,11 +70,11 @@ export default function Screenshot() {
         {isUserAgentSafari() ? noDownload : downloadBtn}
       </button>
 
-      <main
-        className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height} ${isScreenshotVisible ? 'screenshot__picture-container--visible' : ''}`}
-        style={{ width: selectedSize.width / 2, height: selectedSize.height / 2 }}
-      >
-        <ScreenshotPicture />
+      <main className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height} ${isScreenshotVisible ? 'screenshot__picture-container--visible' : ''}`}>
+        <ScreenshotPicture
+          width={selectedSize.width / 2}
+          height={selectedSize.height / 2}
+        />
       </main>
 
     </article>
