@@ -48,6 +48,10 @@
     transform: scale(1);
   }
 
+  .losses__img-container {
+    padding-right: 5px;
+  }
+
   .losses__img {
     width: 70%;
   }
@@ -126,6 +130,10 @@
     transform: scale(1);
   }
 
+  .losses__img-container {
+    padding-right: 10px;
+  }
+
   .losses__img {
     width: 70%;
   }
@@ -202,6 +210,10 @@
   
   .losses__item:hover {
     transform: scale(1);
+  }
+
+  .losses__img-container {
+    padding-right: 7px;
   }
   
   .losses__img {
@@ -288,6 +300,10 @@
 
   .losses__img--thin {
     width: 120%;
+  }
+
+  .losses__img-container {
+    padding-right: 7px;
   }
 
   .losses__text-number {
