@@ -47,13 +47,17 @@
 
 
   .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     margin: 0 0 10px 0;
     min-height: 0;
   }
 
   .header__header {
     max-width: 45%;
-    margin: 0 0 7px 0;
+    margin: 0 auto 7px auto;
     padding: 0;
 
     font-family: $serifFont;
@@ -142,12 +146,16 @@
 
 
   .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     margin: 0 0 30px 0;
     min-height: 0;
   }
 
   .header__header {
-    margin: 0 0 10px 0;
+    margin: 0 auto 10px auto;
     padding: 0;
     font-size: 28px;
     max-width: 80%;
@@ -234,12 +242,16 @@
 
 
   .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     margin: 0 0 20px 0;
     min-height: 0;
   }
 
   .header__header {
-    margin: 0 0 5px 0;
+    margin: 0 auto 5px auto;
     padding: 0;
     font-size: 25px;
     max-width: 60%;
@@ -328,12 +340,16 @@
 
 
   .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     margin: 0 0 15px 0;
     min-height: 0;
   }
 
   .header__header {
-    margin: 0 0 5px 0;
+    margin: 0 auto 5px auto;
     padding: 0;
     font-size: 16px;
     max-width: 55%;
