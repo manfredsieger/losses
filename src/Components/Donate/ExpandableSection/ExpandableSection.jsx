@@ -20,7 +20,7 @@ export default function ExpandableSection({ subHeader, copyFields }) {
           <span className="donate-section__header expandable-section__sub-header-text">{subHeader}</span>
         </p>
         <button
-          className={`expandable-section__move-btn ${isExpanded ? 'expandable-section__shrink-btn' : 'expandable-section__expand-btn'}`}
+          className={`expandable-section__move-btn ${isExpanded ? '' : 'expandable-section__expand-btn'}`}
           onClick={() => setIsExpanded(!isExpanded)}
           aria-label={isExpanded ? close : open}
           title={isExpanded ? close : open}

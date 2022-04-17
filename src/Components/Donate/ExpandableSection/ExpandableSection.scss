@@ -58,7 +58,7 @@
 }
 
 .expandable-section__move-btn::before,
-.expandable-section__expand-btn::after {
+.expandable-section__move-btn::after {
   content: "";
 
   position: absolute;
@@ -66,21 +66,18 @@
   left: 50%;
 
   display: block;
-  width: 100%;
+  width: 22px;
+  height: 1px;
 
   transform: translate(-50%, -50%);
   
   background-color: #000000;
-}
 
-.expandable-section__move-btn::before {
-  width: 24px;
-  height: 1px;
+  transition: $transition200ms;
 }
 
 .expandable-section__expand-btn::after {
-  width: 1px;
-  height: 24px;
+  transform: translate(-50%, -50%) rotate(-90deg);
 }
 
 @media(max-width: 500px) {
