@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './Donate.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import CopyField from './CopyField/CopyField';
 import ExpandableSection from './ExpandableSection/ExpandableSection';
 import RegularSection from './RegularSection/RegularSection';
-import Message from './Message/Message';
 import {
   donationsCBA,
   donationsEastSOS,
@@ -18,12 +17,9 @@ export default function Donate() {
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const { military } = translation[websiteLanguage].donate;
   const { civil } = translation[websiteLanguage].donate;
-  const { modal } = translation[websiteLanguage];
 
   const dispatch = useDispatch();
   useEffect(() => dispatch(setActivePage(pages.donate.name)));
-
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
   function renderCopyField(objectToRender) {
     return (
@@ -33,7 +29,6 @@ export default function Donate() {
           value={objectToRender[item].value}
           isLabelVisible={objectToRender[item].isLabelVisible}
           label={objectToRender[item].label}
-          setIsModalVisible={setIsModalVisible}
         />
       ))
     );
@@ -42,11 +37,6 @@ export default function Donate() {
   return (
     <main className="donate__page-container page-container">
       <h1 className="visually-hidden">Section providing banking details to support Defenders of Ukraine and Ukrainian civilians</h1>
-
-      <Message
-        text={modal.copied}
-        className={isModalVisible ? 'message__container--visible' : 'message__container--hidden'}
-      />
 
       <article className="donate__article--military">
         <h2 className="donate__header">{military.header}</h2>

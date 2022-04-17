@@ -4,10 +4,12 @@ import * as htmlToImage from 'html-to-image';
 import download from 'downloadjs';
 import ScreenshotSizes from './ScreenshotSizes/ScreenshotSizes';
 import ScreenshotPicture from './ScreenshotPicture/ScreenshotPicture';
+import ModalMessage from '../ModalMessage/ModalMessage';
 import translation from '../../utils/translation';
 import screenschotConfig from '../../utils/screenschotConfig';
 import { setActivePage, pages } from '../../redux/activePage';
 import { isUserAgentSafari } from '../../utils/helpers';
+import { setModalWindowText } from '../../redux/modalWindow';
 import './Screenshot.scss';
 
 export default function Screenshot() {
@@ -15,13 +17,13 @@ export default function Screenshot() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   useEffect(() => dispatch(setActivePage(pages.screenshot.name)));
 
-  const [isScreenshotVisible, setIsScreenshotVisible] = useState(false);
   const [selectedSizeName, setSelectedSizeName] = useState(screenschotConfig.twitter.name);
   const [selectedSize, setSelectedSize] = useState({
     width: screenschotConfig.twitter.width,
     height: screenschotConfig.twitter.height,
   });
   const { downloadBtn, noDownload, header } = translation[websiteLanguage].screenshot;
+  const { modal } = translation[websiteLanguage];
 
   const config = {
     width: selectedSize.width / 2,
@@ -31,17 +33,26 @@ export default function Screenshot() {
   };
 
   function capture() {
-    setIsScreenshotVisible(true);
     htmlToImage.toPng(document.querySelector('.scrollable'), config)
       .then((dataUrl) => {
+        dispatch(setModalWindowText(modal.downloadingImg));
         download(dataUrl, 'losses.png');
+      })
+      .catch(() => {
+        dispatch(setModalWindowText(modal.errorDownloadingImg));
+      })
+      .finally(() => {
+        setTimeout(() => {
+          dispatch(setModalWindowText(null));
+        }, 1200);
       });
-    setIsScreenshotVisible(false);
   }
 
   return (
     <article className="screenshot__page-container page-container">
       <h1 className="screenshot__header standardHeader">{header}</h1>
+
+      <ModalMessage />
 
       <section className="screenshot__sizes-wrapper">
         <h2 className="visually-hidden">Buttons allowing to customize the infographic to download</h2>
@@ -70,7 +81,7 @@ export default function Screenshot() {
         {isUserAgentSafari() ? noDownload : downloadBtn}
       </button>
 
-      <main className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height} ${isScreenshotVisible ? 'screenshot__picture-container--visible' : ''}`}>
+      <main className={`screenshot__picture-container screenshot__picture-container_${selectedSize.width}_${selectedSize.height}`}>
         <ScreenshotPicture
           width={selectedSize.width / 2}
           height={selectedSize.height / 2}

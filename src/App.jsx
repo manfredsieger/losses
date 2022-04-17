@@ -13,7 +13,6 @@ import Logo from './Components/Logo/Logo';
 import Navigation from './Components/Navigation/Navigation';
 import BurgerButton from './Components/BurgerButton/BurgerButton';
 import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButton';
-import { isUserDeviceValidForScreenshot } from './utils/helpers';
 import { pages, stylePages } from './redux/activePage';
 
 export default function App() {

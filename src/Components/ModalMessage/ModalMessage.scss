@@ -1,4 +1,4 @@
-@import '../../../common.scss';
+@import '../../common.scss';
 
 .message__container {
   position: fixed;
@@ -7,14 +7,11 @@
   transform: translate(-50%, -50%);
   z-index: 4;
 
+  display: none;
   padding: 30px;
   border: 1px solid #000000;
 
   background-color: #ffffff;
-}
-
-.message__container--hidden {
-  display: none;
 }
 
 .message__container--visible {

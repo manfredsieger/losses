@@ -111,7 +111,7 @@ export default {
     },
     charts: {
       mainPageBtn: 'Home page',
-      header: 'Dynamics of Russia`s losses in Ukraine',
+      header: 'Dynamics of russia`s losses in Ukraine',
       rotateWarning: 'Please rotate your screen to the landscape mode or use device with screen wider than 300 px',
       chartMode: {
         header: 'How many lines to show on the chart:',
@@ -135,6 +135,8 @@ export default {
     },
     modal: {
       copied: 'Copied!',
+      downloadingImg: 'Downloading infographic',
+      errorDownloadingImg: 'Error downloading infographic',
     },
   },
   ua: {
@@ -249,10 +251,10 @@ export default {
     },
     charts: {
       mainPageBtn: 'Головна сторінка',
-      header: 'Динамика втрат Росії в України',
+      header: 'Динамика втрат росії в України',
       rotateWarning: 'Будь ласка, поверніть екран горизонтально або використовуйте пристрій з шириною екрану більше 300 px',
       chartMode: {
-        header: 'Скількі ліній показувати на графіку:',
+        header: 'Скільки ліній показувати на графіку:',
         showMultiple: 'Декілька ліній',
         showOne: 'Лише одну лінію',
       },
@@ -273,6 +275,8 @@ export default {
     },
     modal: {
       copied: 'Скопійовано!',
+      downloadingImg: 'Завантажую інфографіку',
+      errorDownloadingImg: 'Помилка завантаження інфографіки',
     },
   },
 };

@@ -1,30 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import copy from 'copy-to-clipboard';
 import translation from '../../../utils/translation';
+import ModalMessage from '../../ModalMessage/ModalMessage';
+import { setModalWindowText } from '../../../redux/modalWindow';
 import './CopyField.scss';
 
 export default function CopyField({
   value,
   label,
   isLabelVisible,
-  setIsModalVisible,
 }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const { copyIconTitle } = translation[websiteLanguage].donate;
+  const { modal } = translation[websiteLanguage];
+
+  const dispatch = useDispatch();
 
   async function copyToClipboard() {
     copy(value);
-    setIsModalVisible(true);
+
+    dispatch(setModalWindowText(modal.copied));
     setTimeout(() => {
-      setIsModalVisible(false);
+      dispatch(setModalWindowText(null));
     }, 1200);
   }
 
   // Keeping the svg code instead of an img tag to change the icon color without loading a new icon
   return (
     <div className="copyField__container">
+
+      <ModalMessage />
 
       <span className={`copyField__label ${isLabelVisible ? '' : 'visually-hidden'}`}>
         {label}
@@ -56,7 +63,6 @@ CopyField.propTypes = {
   value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   isLabelVisible: PropTypes.bool,
-  setIsModalVisible: PropTypes.func.isRequired,
 };
 
 CopyField.defaultProps = {
