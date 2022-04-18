@@ -58,7 +58,13 @@
 
 .website__grid-center {
   grid-area: main;
+}
 
+/*
+* For infographics preview not to ruin the page layout when the opened page is screenshots page
+* Not the best realization. Probably to be refactored in the future
+*/
+.website__grid-center--overflow-hidden {
   overflow-x: hidden;
 }
 

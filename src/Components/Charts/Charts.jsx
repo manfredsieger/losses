@@ -88,6 +88,7 @@ export default function Charts() {
           itemTranslation={itemTranslation}
           selectedChartMode={selectedChartMode}
           chartModes={chartModes}
+          key={item}
         />
       );
     });

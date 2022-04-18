@@ -18,17 +18,12 @@ export default function LangButton() {
     }
   }
 
-  // function supportsLocalStorage() {
-  //   return 'localStorage' in window && window['localStorage'] !== null;
-  // }
-
-  // function ff() {
-  //   try {
-
-  //   } catch (err) {
-
-  //   }
-  // }
+  function handleKeyDown(evt) {
+    // 32 stands fro space key
+    if (evt.keyCode === 32) {
+      changeLanguage();
+    }
+  }
 
   function getLightStyleIfApplicable() {
     if (activePage === pages.donate.name || activePage === pages.screenshot.name) {
@@ -43,8 +38,9 @@ export default function LangButton() {
         ? 'lang__wrapper--circle-left'
         : 'lang__wrapper--circle-right'}`}
       onClick={changeLanguage}
+      onKeyDown={handleKeyDown}
       role="button"
-      tabIndex={0}
+      tabIndex="0"
     >
       <span className="lang__square" id="circle" />
       <span className="lang__text lang__text--eng">en</span>

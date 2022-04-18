@@ -1,10 +1,10 @@
 # The screenshotSCSS folder
 
-1. The screenshotSCSS folder has scss-files containing rules for 4 types of infographic on the Screenshot page.
+1. The screenshotSCSS folder has scss-files containing rules for 4 types of infographic on the Screenshot page - two for Facebook, one for Instagram and one for Twitter.
 
-2. All 4 types of infographic consist of components that are used on the home page of the website. This means, that both the home page and those 4 infographic types share common styles. 
+2. All 4 types of infographic consist of components that are already used on the home page of the website. This means, that both the home page and those 4 infographic types share common components and styles. 
 
-3. At the same time those 4 infographics have different dimensions. Although some styles stay unchanged, the others shall be altered for infographic to look good. So, one needed to:
+3. At the same time those 4 infographics have different dimensions. Although some styles stay unchanged, the others shall be altered for specific infographic to look good. So, one needed to:
     1. Keep using common global styles
     2. Add new scss rules to adjust all infographic elements to the new layout
 

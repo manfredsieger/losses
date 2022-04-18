@@ -3,7 +3,6 @@ import PropsTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import PageNav from './PageNav/PageNav';
 import { pages } from '../../../redux/activePage';
-import { isUserDeviceValidForScreenshot } from '../../../utils/helpers';
 import translation from '../../../utils/translation';
 import './PageNavWrapper.scss';
 
@@ -12,13 +11,7 @@ export default function PageNavWrapper({ setIsSliderMenuShown }) {
   const { activePage } = useSelector((state) => state.activePage);
 
   function isPageNavValidToBeRendered(currentPage) {
-    // if (currentPage.name === pages.screenshot.name && !isUserDeviceValidForScreenshot()) {
-    //   return false;
-    // }
-    if (currentPage.name === activePage) {
-      return false;
-    }
-    return true;
+    return currentPage.name !== activePage;
   }
 
   return (
@@ -26,12 +19,12 @@ export default function PageNavWrapper({ setIsSliderMenuShown }) {
       {Object.keys(pages).map((item) => {
         if (isPageNavValidToBeRendered(pages[item])) {
           return (
-            <li className="pageNav_wrapper__item">
+            <li
+              className="pageNav_wrapper__item"
+              key={pages[item].name}
+            >
               <PageNav
-                key={pages[item].name}
-                className={
-                  `pageNav ${pages[item].yellowBgc ? 'pageNav__yellow' : 'pageNav__simple'}`
-                }
+                className={`pageNav ${pages[item].yellowBgc ? 'pageNav__yellow' : 'pageNav__simple'}`}
                 to={pages[item].path}
                 ariaLabel={pages[item].ariaLabel}
                 value={translation[websiteLanguage].nav[pages[item].name]}

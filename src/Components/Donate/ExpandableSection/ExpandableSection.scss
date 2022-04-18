@@ -20,7 +20,14 @@
 }
 
 .expandable-section__header {
+  display: block;
+  width: 100%;
   margin: 0;
+  padding: 0;
+  border: 0;
+
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .expandable-section__header--expandable {
@@ -32,14 +39,11 @@
 }
 
 .expandable-section__sub-header-wrapper {
+  display: block;
   width: 70%;
   margin: 0;
-}
 
-.expandable-section__sub-header-text {
-  display: block;
-  
-  width: 100%;
+  text-align: left;
 }
 
 .expandable-section__move-btn {
@@ -52,7 +56,6 @@
 
   background-color: transparent;
   @include scalableButtons0_1;
-  cursor: pointer;
 
   transition: $transition200ms;
 }

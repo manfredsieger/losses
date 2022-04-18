@@ -1,48 +1,6 @@
+// ----------------- 1024 * 512 Twitter -----------------
+
 .screenshot__picture-container_1024_512 {
-  // .dateList {
-  //   flex-direction: row;
-  //   justify-content: center;
-  //   align-items: stretch;
-  //   margin: 0 90px 20px;
-  // }
-
-  // .dateList__item {
-  //   width: 220px;
-  //   // height: 36px;
-  //   margin-bottom: 0;
-  //   padding: 10px;
-  // }
-
-  // .dateList__item:not(:last-child) {
-  //   margin-right: 10px;
-  // }
-
-  // .dateList__item--start {
-  //   order: 1;
-  // }
-
-  // .dateList__item--days {
-  //   order: 2;
-  // }
-
-  // .dateList__item--end {
-  //   order: 3;
-  // }
-
-  // .dateList__important-text--bigger,
-  // .dateList__important-text {
-  //   margin: 0 0 7px 0;
-  //   font-size: 17px;
-  // }
-
-  // .dateList__caption {
-  //   font-size: 13px;
-  // }
-
-
-
-
-
   .dateList {
     display: flex;
     flex-direction: row;
@@ -57,10 +15,6 @@
     margin: 0;
     padding: 5px;
   }
-
-  // .dateList__item:not(:last-child) {
-  //   margin-right: 5px;
-  // }
 
   .dateList__item--start {
     order: 1;
@@ -85,42 +39,9 @@
   }
 }
 
+// ----------------- 1080 * 1920 Facebook stories -----------------
+
 .screenshot__picture-container_1080_1920 {
-  // .dateList {
-  //   align-items: stretch;
-  //   margin: 0 40px 80px;
-  // }
-
-  // .dateList__item {
-  //   width: 200px;
-  //   margin: 0;
-  //   padding: 25px;
-  // }
-
-  // .dateList__item:not(:last-child) {
-  //   margin-right: 36px;
-  // }
-
-  // .dateList__important-text--bigger {
-  //   margin: 0 0 7px 0;
-  //   font-size: 40px;
-  // }
-
-  // .dateList__important-text {
-  //   font-size: 25px;
-  //   line-height: 1.3;
-  // }
-
-  // .dateList__caption {
-  //   font-size: 18px;
-  // }
-
-
-
-
-
-
-  //////// *2
   .dateList {
     display: flex;
     align-items: stretch;
@@ -155,40 +76,9 @@
   }
 }
 
+// ----------------- 1080 * 1080 Instagram -----------------
+
 .screenshot__picture-container_1080_1080 {
-  // .dateList {
-  //   align-items: stretch;
-  //   margin: 0 60px 40px;
-  // }
-
-  // .dateList__item {
-  //   width: 200px;
-  //   padding: 25px;
-  //   margin: 0;
-  // }
-
-  // .dateList__item:not(:last-child) {
-  //   margin-right: 55px;
-  // }
-
-  // .dateList__important-text--bigger {
-  //   margin: 0 0 7px 0;
-  //   font-size: 35px;
-  // }
-
-  // .dateList__important-text {
-  //   font-size: 22px;
-  //   line-height: 1.3;
-  // }
-
-  // .dateList__caption {
-  //   font-size: 16px;
-  // }
-
-
-
-
-
   .dateList {
     display: flex;
     justify-content: center;
@@ -220,43 +110,9 @@
   }
 }
 
+// ----------------- 940 * 788 Facebook -----------------
+
 .screenshot__picture-container_940_788 {
-  // .dateList {
-  //   align-items: stretch;
-  //   margin: 0 20px 30px;
-  // }
-
-  // .dateList__item {
-  //   width: 200px;
-  //   padding: 10px;
-  //   margin: 0;
-  // }
-
-  // .dateList__item:not(:last-child) {
-  //   margin-right: 55px;
-  // }
-
-  // .dateList__important-text--bigger {
-  //   margin: 0 0 7px 0;
-  //   font-size: 30px;
-  // }
-
-  // .dateList__important-text {
-  //   font-size: 20px;
-  //   line-height: 1.3;
-  // }
-
-  // .dateList__caption {
-  //   font-size: 14px;
-  // }
-
-
-
-
-
-
-
-
   .dateList {
     display: flex;
     justify-content: center;
@@ -271,10 +127,6 @@
     margin: 0;
     border: 1px solid #000000;
   }
-
-  // .dateList__item:not(:last-child) {
-  //   margin-right: 22px;
-  // }
 
   .dateList__important-text--bigger {
     margin: 0 0 3px 0;

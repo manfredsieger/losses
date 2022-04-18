@@ -42,7 +42,7 @@ export default function App() {
           />
         </div>
 
-        <div className="website__grid-center">
+        <div className={`website__grid-center ${activePage === pages.screenshot.name ? 'website__grid-center--overflow-hidden' : ''}`}>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/donate" element={<Donate />} />

@@ -17,7 +17,7 @@ export default function ChartModeButton({ selectedChartMode, setSelectedChartMod
           className="chartModeButton__item"
           onClick={() => setSelectedChartMode(chartModes.multiple)}
         >
-          <input className="chartModeButton__input" id="showMultiple" type="radio" name="chartMode" checked />
+          <input className="chartModeButton__input" id="showMultiple" type="radio" name="chartMode" defaultChecked />
           <span
             className={`chartModeButton__custom-input ${selectedChartMode === chartModes.multiple ? 'chartModeButton__custom-input--selected' : ''}`}
             role="none"

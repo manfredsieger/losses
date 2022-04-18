@@ -13,40 +13,23 @@ export default function Footer() {
   } = translation[websiteLanguage].footer;
 
   function renderSvgSources() {
-    return Object.values(svgSources).map((source, index, arr) => {
-      if (index === arr.length - 1) {
-        return (
-          <a
-            className="footer__link standardLink"
-            key={source.text}
-            href={source.href}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {source.text}
-          </a>
-        );
-      }
-      return (
-        <>
-          <a
-            className="footer__link standardLink"
-            key={source.text}
-            href={source.href}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {source.text}
-          </a>
-          {', '}
-        </>
-      );
-    });
+    return Object.values(svgSources).map((source, index, arr) => (
+      <span key={source.text}>
+        <a
+          className="footer__link standardLink"
+          href={source.href}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {source.text}
+        </a>
+        {index === (arr.length - 1) ? '' : ', '}
+      </span>
+    ));
   }
 
   return (
     <footer
-      id="num"
       className={`footer__container ${stylePages.red.includes(activePage) ? 'footer__container--red-page' : ''} ${activePage === pages.donate.name ? 'footer__container--donate' : ''}`}
     >
       <ul className="footer__list">

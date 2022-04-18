@@ -36,12 +36,12 @@ export default function ConfigBtn({
   return (
     <li
       key={itemName}
-      data-name={itemName}
       className="configBtn__config-item"
-      onClick={handleClick}
     >
       <button
         className={`configBtn__config-wrapper ${lossesToDisplay.indexOf(itemName) >= 0 ? 'configBtn__config-wrapper--selected' : ''}`}
+        data-name={itemName}
+        onClick={handleClick}
         type="button"
       >
         <img

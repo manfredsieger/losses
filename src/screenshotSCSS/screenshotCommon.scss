@@ -3,35 +3,39 @@
 .screenshot__picture-container {
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@500;700&display=swap");
   box-sizing: border-box;
-  scrollbar-width: none;
 }
 
 // padding for the whole picture depending on the specific infographic
+
+// ----------------- 1024 * 512 Twitter -----------------
+
 .screenshot__picture-container.screenshot__picture-container_1024_512 .scrollable {
   position: relative;
 
-  // padding: 25px;
   padding: 15px;
 }
+
+// ----------------- 1080 * 1920 Facebook stories -----------------
 
 .screenshot__picture-container.screenshot__picture-container_1080_1920 .scrollable {
   position: relative;
 
-  // padding: 90px 70px;
   padding: 45px 35px;
 }
+
+// ----------------- 1080 * 1080 Instagram -----------------
 
 .screenshot__picture-container.screenshot__picture-container_1080_1080 .scrollable {
   position: relative;
 
-  // padding: 45px;
   padding: 22px;
 }
+
+// ----------------- 940 * 788 Facebook -----------------
 
 .screenshot__picture-container.screenshot__picture-container_940_788 .scrollable {
   position: relative;
 
-  // padding: 40px;
   padding: 20px;
 }
 

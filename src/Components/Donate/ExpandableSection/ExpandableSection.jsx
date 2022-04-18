@@ -11,22 +11,22 @@ export default function ExpandableSection({ subHeader, copyFields }) {
 
   return (
     <section className="donate__block expandable-section__section">
-      <h4
+      <button
         className="expandable-section__header expandable-section__header--expandable"
         onClick={() => setIsExpanded(!isExpanded)}
         style={{ marginBottom: isExpanded ? '20px' : '0' }}
+        type="button"
       >
-        <p className="expandable-section__sub-header-wrapper">
+        <span className="expandable-section__sub-header-wrapper">
           <span className="donate-section__header expandable-section__sub-header-text">{subHeader}</span>
-        </p>
-        <button
+        </span>
+        <span
           className={`expandable-section__move-btn ${isExpanded ? '' : 'expandable-section__expand-btn'}`}
-          onClick={() => setIsExpanded(!isExpanded)}
+          // onClick={() => setIsExpanded(!isExpanded)}
           aria-label={isExpanded ? close : open}
           title={isExpanded ? close : open}
-          type="button"
         />
-      </h4>
+      </button>
       <div className={`expandable-section__copyFields-container ${isExpanded ? 'expandable-section__copyFields-container--visible' : ''}`}>
         {copyFields}
       </div>

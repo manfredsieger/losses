@@ -74,7 +74,7 @@ $footerBottomGap100: 100px;
   }
 }
 
-// When this rule is applied, the element gets a shadow when hovered
+// Elements get a shadow when hovered
 @mixin hoverSquareBoxShadow {
   transition: $transition200ms;
 
@@ -97,7 +97,7 @@ $footerBottomGap100: 100px;
   list-style-type: none;
 }
 
-// Standard link: black when not active and yellow when hovered
+// Standard link: black font when not active and yellow background when hovered
 .standardLink:link,
 .standardLink:visited {
   color: #000000;
