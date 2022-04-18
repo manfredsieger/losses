@@ -14,13 +14,8 @@ export default function RegularSection({
     >
       <div className="regular-section__text-wrapper">
         <h4 className="regular-section__header donate-section__header">{header}</h4>
-        {
-        para ? (<p className="regular-section__paragraph">{para}</p>) : null
-        }
-        {
-        link
-          ? (<span className="donate__link">{linkText}</span>) : null
-        }
+        {para ? (<p className="regular-section__paragraph">{para}</p>) : null}
+        {link ? (<span className="donate__link">{linkText}</span>) : null}
       </div>
       {
         image

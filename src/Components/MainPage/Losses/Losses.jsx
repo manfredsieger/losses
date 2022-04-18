@@ -6,8 +6,7 @@ import { useSelector } from 'react-redux';
 import losses from '../../../utils/losses';
 import translation from '../../../utils/translation';
 import {
-  getLastDataUpdateDate,
-  getPreviousDataUpdateDate,
+  getPastDataUpdateDate,
   getImage,
   getWordWithBigFirstLetter,
 } from '../../../utils/helpers';
@@ -16,11 +15,11 @@ export default function Losses() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
 
   function getLatestLossesObject() {
-    return losses[getLastDataUpdateDate(losses)];
+    return losses[getPastDataUpdateDate(losses, -1)];
   }
 
   function getDayBeforeLossesObject() {
-    return losses[getPreviousDataUpdateDate(losses)];
+    return losses[getPastDataUpdateDate(losses, -2)];
   }
 
   function getLossesNumberDifference(todayNumber, lossesType) {

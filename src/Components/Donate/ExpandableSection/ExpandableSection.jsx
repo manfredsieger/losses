@@ -22,7 +22,6 @@ export default function ExpandableSection({ subHeader, copyFields }) {
         </span>
         <span
           className={`expandable-section__move-btn ${isExpanded ? '' : 'expandable-section__expand-btn'}`}
-          // onClick={() => setIsExpanded(!isExpanded)}
           aria-label={isExpanded ? close : open}
           title={isExpanded ? close : open}
         />

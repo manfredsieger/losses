@@ -3,17 +3,18 @@ import './Header.scss';
 import '../../../screenshotSCSS/screenshotHeader.scss';
 import '../../../screenshotSCSS/screenshotCommon.scss';
 import { useSelector } from 'react-redux';
-import { getLastDataUpdateDate, getFullDate } from '../../../utils/helpers';
+import { getPastDataUpdateDate, getFullDate } from '../../../utils/helpers';
 import losses from '../../../utils/losses';
 import translation from '../../../utils/translation';
 
 export default function Header() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
-  const lastDataUpdateDate = getLastDataUpdateDate(losses);
+  const lastDataUpdateDate = getPastDataUpdateDate(losses, -1);
   const {
     header, updateDate, warning, language, numbersProvided, genStaff,
   } = translation[websiteLanguage].main.header;
 
+  // Kept svg code right in the file in order to change the color of the svg directly
   return (
     <header className="header">
       <h1 className="header__header standardHeader">{header}</h1>

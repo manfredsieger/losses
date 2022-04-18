@@ -34,7 +34,8 @@ export default function LangButton() {
 
   return (
     <div
-      className={`lang__wrapper ${getLightStyleIfApplicable()} ${(websiteLanguage === languages.eng)
+      className={`lang__wrapper ${getLightStyleIfApplicable()} 
+      ${(websiteLanguage === languages.eng)
         ? 'lang__wrapper--circle-left'
         : 'lang__wrapper--circle-right'}`}
       onClick={changeLanguage}

@@ -29,9 +29,10 @@ const SMALL_LANDSCAPE_SCREEN = 300;
   One came up with the number 800 by testing.
 */
 const CHART_TO_GROW_SCREEN_WIDTH = 800;
-const latestLossesObject = getLatestLossesObject(losses);
+const DEFAULT_ACTIVE_CONFIG_BTNS = ['aircrafts', 'helicopters', 'uav'];
 
 export default function Charts() {
+  const latestLossesObject = getLatestLossesObject(losses);
   const dispatch = useDispatch();
   useEffect(() => dispatch(setActivePage(pages.charts.name)), []);
 
@@ -60,7 +61,7 @@ export default function Charts() {
     };
   }, []);
 
-  const [lossesToDisplay, setLossesToDisplay] = useState(['aircrafts', 'helicopters', 'uav']);
+  const [lossesToDisplay, setLossesToDisplay] = useState(DEFAULT_ACTIVE_CONFIG_BTNS);
 
   useEffect(() => {
     if (selectedChartMode === chartModes.showOne) {
