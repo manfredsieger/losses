@@ -65,7 +65,7 @@
 * Not the best realization. Probably to be refactored in the future
 */
 .website__grid-center--overflow-hidden {
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .website__grid-right {

@@ -8,7 +8,7 @@
 
   min-height: 100vh;
 
-  overflow-x: scroll;
+  // overflow-x: scroll;
 }
 
 .screenshot__header {
@@ -67,9 +67,12 @@
 .screenshot__picture-container {
   position: relative;
 
-  display: grid;
-  justify-content: center;
+  // display: flex;
+  // justify-content: flex-start;
+  align-self: flex-start;
+  overflow-x: scroll;
   
+  width: 100%;
   box-sizing: border-box;
 }
 
