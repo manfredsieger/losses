@@ -36,8 +36,14 @@ export const options = {
   },
 };
 
+// Colors for the lines on the chart
 const colors = ['#f1c40f', '#27ae60', '#ecf0f1', '#9b59b6', '#e74c3c', '#1abc9c', '#f39c12', '#7f8c8d', '#2c3e50', '#2980b9', '#bdc3c7'];
 
+/**
+ * Creates an array of lables - dates to be rendered in the bottom of the chart.
+ * @returns an array of dates in form of '24.02'. If the month consists of only one number
+ * like January - 1, a leading zero will be added automatically so we get 01 instead of 1.
+ */
 export function getLabels() {
   return Object.keys(losses).map((date) => {
     const dateObj = new Date(date);

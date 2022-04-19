@@ -28,10 +28,16 @@
     order: 3;
   }
 
-  .dateList__important-text--bigger,
   .dateList__important-text {
     margin: 0 0 3px 0;
+
     font-size: 8px;
+  }
+
+  .dateList__important-text--bigger {
+    margin: 0 0 1px 0;
+
+    font-size: 11px;
   }
 
   .dateList__caption {

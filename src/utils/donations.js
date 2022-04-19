@@ -1,3 +1,6 @@
+/**
+ * Banking details of the Come Back Alive
+ */
 export const donationsCBA = {
   swift: {
     name: {
@@ -131,6 +134,9 @@ export const donationsCBA = {
   },
 };
 
+/**
+ * Banking details of the East SOS
+ */
 export const donationsEastSOS = {
   usd: {
     receiver: {
@@ -290,6 +296,9 @@ export const donationsEastSOS = {
   },
 };
 
+/**
+ * Banking details of the Humanitarian Mission Proliska
+ */
 export const donationsProliska = {
   anyBank: {
     iban: {
@@ -347,6 +356,9 @@ export const donationsProliska = {
   },
 };
 
+/**
+ * Banking details of the Voices of Children Foundation
+ */
 export const donationsVoicesOfChildren = {
   crypto: {
     btc: {
