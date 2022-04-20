@@ -25,9 +25,14 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
 
   margin: 0 0 20px 0;
+}
+
+@supports(gap: 15px) {
+  .screenshot__sizes-wrapper {
+    gap: 15px;
+  }
 }
 
 .screenshot__download-btn {
@@ -67,8 +72,8 @@
 .screenshot__picture-container {
   position: relative;
 
-  // display: flex;
-  // justify-content: flex-start;
+  display: grid;
+  justify-content: center;
   align-self: flex-start;
   overflow-x: scroll;
   
@@ -83,6 +88,18 @@
 @media(max-width: 1021px) {
   .screenshot__header.standardHeader {
     margin: 40px;
+  }
+}
+
+/*
+* This rule is important. On small screens the width of infographics is larger
+* than the width of the screen. If you remove this rule, users won't be able to
+* scroll the infographic from the start to the end on a small screen. Only from
+* the middle of the infographic to the end.
+*/
+@media(max-width: 830px) {
+  .screenshot__picture-container {
+    justify-content: start;
   }
 }
 

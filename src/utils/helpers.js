@@ -1,3 +1,5 @@
+const { detect } = require('detect-browser');
+
 /**
  * Returns the word provided as an argument but with capitalized first letter
  * @param {String} word is any word
@@ -33,7 +35,8 @@ export function getFullDate(dateObject, language) {
  * @returns the date of the last added losses numbers as a string.
  */
 export function getPastDataUpdateDate(losses, dateFromEnd) {
-  return Object.keys(losses).at(dateFromEnd);
+  const datesArray = Object.keys(losses);
+  return datesArray[datesArray.length + dateFromEnd];
 }
 
 /**
@@ -66,5 +69,9 @@ export function getImage(imgName) {
  * @returns true if user agent is Safari
  */
 export function isUserAgentSafari() {
-  return (typeof (chrome) !== 'object') && navigator.userAgent.toLowerCase().indexOf('safari') > -1;
+  const browser = detect();
+  if (browser && browser.name) {
+    return browser.name === 'safari';
+  }
+  return false;
 }
