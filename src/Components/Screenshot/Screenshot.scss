@@ -29,6 +29,14 @@
   margin: 0 0 20px 0;
 }
 
+.screenshot__warning {
+  margin: 0 0 20px 0;
+
+  font-size: 16px;
+  color: $red;
+  text-align: center;
+}
+
 @supports(gap: 15px) {
   .screenshot__sizes-wrapper {
     gap: 15px;

@@ -23,7 +23,9 @@ export default function Screenshot() {
     width: screenshotConfig.twitter.width,
     height: screenshotConfig.twitter.height,
   });
-  const { downloadBtn, noDownload, header } = translation[websiteLanguage].screenshot;
+  const {
+    downloadBtn, noDownload, header, warning,
+  } = translation[websiteLanguage].screenshot;
   const { modal } = translation[websiteLanguage];
 
   const config = {
@@ -68,6 +70,8 @@ export default function Screenshot() {
           ))
         }
       </section>
+
+      <p className="screenshot__warning">{warning}</p>
 
       <button
         className="screenshot__download-btn"

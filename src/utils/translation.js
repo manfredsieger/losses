@@ -4,7 +4,7 @@ export default {
       losses: 'Home page',
       donate: 'How can I help?',
       charts: 'Charts',
-      screenshot: 'Download infographic',
+      screenshot: 'Download infographics',
     },
     main: {
       header: {
@@ -120,9 +120,10 @@ export default {
       },
     },
     screenshot: {
-      header: 'Download infographic',
+      header: 'Download infographics',
       downloadBtn: 'Download',
-      noDownload: 'Please download infographic using other browser than Safari. For example, Google Chrome, Mozilla Firefox, Microsoft Edge etc.',
+      noDownload: 'Please download infographics using any other browser than Safari. For example, Google Chrome, Mozilla Firefox, Microsoft Edge, etc.',
+      warning: 'Please prefer downloading infographics using a laptop, not a tablet or a smartphone',
     },
     footer: {
       developedBy: 'Developed by the',
@@ -263,6 +264,7 @@ export default {
       header: 'Завантажити інфографіку',
       downloadBtn: 'Завантажити',
       noDownload: 'Завантажте інфографіку, будь ласка, у іншому браузері ніж Safari. Наприклад Google Chrome, Mozilla Firefox, Microsoft Edge тощо.',
+      warning: 'Інфографіку краще завантажувати з ноутбука ніж з планшета чи смартфона',
     },
     footer: {
       developedBy: 'Розроблено командою фонду',
