@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import {
   Routes, Route, Navigate,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './App.scss';
+import { Loader } from 'semantic-ui-react';
 import MainPage from './Components/MainPage/MainPage';
-import Donate from './Components/Donate/Donate';
+// import Donate from './Components/Donate/Donate';
+// import Charts from './Components/Charts/Charts';
+// import Screenshot from './Components/Screenshot/Screenshot';
 import Footer from './Components/Footer/Footer';
-import Charts from './Components/Charts/Charts';
-import Screenshot from './Components/Screenshot/Screenshot';
 import Logo from './Components/Logo/Logo';
 import Navigation from './Components/Navigation/Navigation';
 import BurgerButton from './Components/BurgerButton/BurgerButton';
 import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButton';
 import { pages, stylePages } from './redux/activePage';
+
+const Donate = React.lazy(() => import('./Components/Donate/Donate'));
+const Charts = React.lazy(() => import('./Components/Charts/Charts'));
+const Screenshot = React.lazy(() => import('./Components/Screenshot/Screenshot'));
 
 export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
@@ -43,18 +48,15 @@ export default function App() {
         </div>
 
         <div className={`website__grid-center ${activePage === pages.screenshot.name ? 'website__grid-center--overflow-hidden' : ''}`}>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/charts" element={<Charts />} />
-            {/* {
-            isUserDeviceValidForScreenshot()
-              ? <Route path="/screenshot" element={<Screenshot />} />
-              : null
-            } */}
-            <Route path="/screenshot" element={<Screenshot />} />
-            <Route path="*" element={<Navigate replace to="/" />} />
-          </Routes>
+          <Suspense fallback={<Loader size="big" />}>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/charts" element={<Charts />} />
+              <Route path="/screenshot" element={<Screenshot />} />
+              <Route path="*" element={<Navigate replace to="/" />} />
+            </Routes>
+          </Suspense>
 
           {
             activePage !== pages.donate.name && !isSliderMenuShown

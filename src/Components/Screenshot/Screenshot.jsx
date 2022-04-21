@@ -34,9 +34,10 @@ export default function Screenshot() {
   };
 
   function capture() {
+    dispatch(setModalWindowText(modal.downloadingImg));
     htmlToImage.toJpeg(document.querySelector('.scrollable'), config)
       .then((dataUrl) => {
-        dispatch(setModalWindowText(modal.downloadingImg));
+        // dispatch(setModalWindowText(modal.downloadingImg));
         download(dataUrl, 'losses.jpeg');
       })
       .catch(() => {
