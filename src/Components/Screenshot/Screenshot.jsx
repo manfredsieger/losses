@@ -15,6 +15,7 @@ import './Screenshot.scss';
 export default function Screenshot() {
   const dispatch = useDispatch();
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
+  const { modalWindowText } = useSelector((state) => state.modalWindowText);
   useEffect(() => dispatch(setActivePage(pages.screenshot.name)));
 
   const [selectedSizeName, setSelectedSizeName] = useState(screenshotConfig.twitter.name);
@@ -33,18 +34,13 @@ export default function Screenshot() {
   };
 
   function capture() {
-    htmlToImage.toPng(document.querySelector('.scrollable'), config)
+    htmlToImage.toJpeg(document.querySelector('.scrollable'), config)
       .then((dataUrl) => {
         dispatch(setModalWindowText(modal.downloadingImg));
-        download(dataUrl, 'losses.png');
+        download(dataUrl, 'losses.jpeg');
       })
       .catch(() => {
         dispatch(setModalWindowText(modal.errorDownloadingImg));
-      })
-      .finally(() => {
-        setTimeout(() => {
-          dispatch(setModalWindowText(null));
-        }, 1200);
       });
   }
 
@@ -52,7 +48,7 @@ export default function Screenshot() {
     <article className="screenshot__page-container page-container">
       <h1 className="screenshot__header standardHeader">{header}</h1>
 
-      <ModalMessage />
+      {modalWindowText ? <ModalMessage displayTime={6000} showCloseBtn /> : null}
 
       <section className="screenshot__sizes-wrapper">
         <h2 className="visually-hidden">Buttons allowing to customize the infographic to download</h2>

@@ -135,7 +135,7 @@ export default {
     },
     modal: {
       copied: 'Copied!',
-      downloadingImg: 'Downloading infographic',
+      downloadingImg: 'If the image was downloaded with errors, please try again, download it using a laptop or another browser',
       errorDownloadingImg: 'Error downloading infographic',
     },
   },
@@ -275,7 +275,7 @@ export default {
     },
     modal: {
       copied: 'Скопійовано!',
-      downloadingImg: 'Завантажую інфографіку',
+      downloadingImg: 'Якщо картинка завантажилася з помилкою, спробуйте ще раз, завантажте з комп\'ютера або у іншому браузері',
       errorDownloadingImg: 'Помилка завантаження інфографіки',
     },
   },

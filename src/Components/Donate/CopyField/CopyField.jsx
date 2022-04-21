@@ -13,25 +13,23 @@ export default function CopyField({
   isLabelVisible,
 }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
+  const { modalWindowText } = useSelector((state) => state.modalWindowText);
+
   const { copyIconTitle } = translation[websiteLanguage].donate;
   const { modal } = translation[websiteLanguage];
 
   const dispatch = useDispatch();
 
-  async function copyToClipboard() {
+  function copyToClipboard() {
     copy(value);
-
     dispatch(setModalWindowText(modal.copied));
-    setTimeout(() => {
-      dispatch(setModalWindowText(null));
-    }, 1200);
   }
 
   // Keeping the svg code instead of an img tag to change the icon color without loading a new icon
   return (
     <div className="copyField__container">
 
-      <ModalMessage />
+      {modalWindowText ? <ModalMessage /> : null}
 
       <span className={`copyField__label ${isLabelVisible ? '' : 'visually-hidden'}`}>
         {label}

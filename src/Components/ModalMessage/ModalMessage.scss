@@ -7,15 +7,44 @@
   transform: translate(-50%, -50%);
   z-index: 4;
 
-  display: none;
   padding: 30px;
   border: 1px solid #000000;
 
   background-color: #ffffff;
 }
 
-.message__container--visible {
-  display: block;
+.message__closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 20px;
+  height: 20px;
+  border: none;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  @include scalableButtons0_1;
+}
+
+.message__closeBtn::before,
+.message__closeBtn::after {
+  content: "";
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+
+  width: 20px;
+  height: 1px;
+
+  background-color: #000000;
+}
+
+.message__closeBtn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .message__text {
