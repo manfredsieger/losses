@@ -13,18 +13,33 @@
   box-sizing: border-box;
 }
 
+.charts__header {
+  margin: 0 0 40px 0;
+}
+
 .charts__container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 50px;
 
   padding: 0 0 30px 0;
 }
 
-.charts__header {
-  margin: 0 0 40px 0;
+@supports(gap: 15px) {
+  .charts__container {
+    gap: 50px 0;
+  }
+}
+
+.charts__container > *:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+@supports(gap: 15px) {
+  .charts__container > *:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 .charts__config {
@@ -34,10 +49,15 @@
   align-items: flex-start;
   flex-wrap: wrap;
   flex-grow: 1;
-  gap: 10px;
 
   @include list_reset;
   box-sizing: border-box;
+}
+
+@supports(gap: 15px) {
+  .charts__config {
+    gap: 10px;
+  }
 }
 
 .charts__canvas-wrapper {
@@ -51,8 +71,21 @@
 }
 
 @media(max-width: 1150px) {
-  .charts__container {
-    gap: 30px;
+
+  @supports(gap: 15px) {
+    .charts__container {
+      gap: 30px 0;
+    }
+  }
+
+  .charts__container > *:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  @supports(gap: 15px) {
+    .charts__container > *:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 }
 

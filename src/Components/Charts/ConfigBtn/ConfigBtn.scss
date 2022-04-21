@@ -3,9 +3,16 @@
 .configBtn__config-item {
   width: 100px;
   height: 100px;
+  margin: 0 10px 10px 0;
 
   @include scalableButtons0_05;
   @include hoverSquareBoxShadow;
+}
+
+@supports(gap: 15px) {
+  .configBtn__config-item {
+    margin: 0;
+  }
 }
 
 .configBtn__config-wrapper {

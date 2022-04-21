@@ -5,11 +5,14 @@
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
-  // gap: 80px 40px;
-  column-gap: 80px;
-  row-gap: 40px;
 
   @include list_reset;
+}
+
+@supports (gap: 15px) {
+  .losses {
+    gap: 80px 40px;
+  }
 }
 
 .losses__item {
@@ -18,7 +21,15 @@
   align-items: stretch;
   flex-basis: 280px;
 
+  margin: 0 20px 40px 0;
+
   transition: ease-in-out 300ms;
+}
+
+@supports (gap: 15px) {
+  .losses__item:not(:last-child) {
+    margin: 0;
+  }
 }
 
 @media(min-width: $minDesktopWidth) {
@@ -26,8 +37,6 @@
     transform: scale(1.05);
   }
 }
-
-
 
 .losses__img-container {
   display: flex;
@@ -98,7 +107,6 @@
   bottom: 3px;
 
   font-size: 20px;
-  font-weight: normal;
   color: $yellow;
   font-family: $serifFont;
   font-weight: 400;
@@ -117,13 +125,10 @@
 }
 
 @media(max-width: 1480px) {
-  .losses {
-    // gap: 70px 10px;
-    -webkit-column-gap: 10px;
-    -moz-column-gap: 10px;
-    -o-column-gap: 10px;
-    column-gap: 10px;
-    row-gap: 70px;
+  @supports (gap: 15px) {
+    .losses {
+      gap: 70px 10px;
+    }
   }
 }
 
@@ -171,6 +176,13 @@
     flex-basis: auto;
 
     width: 350px;
+    margin-bottom: 70px;
+  }
+
+  @supports (gap: 15px) {
+    .losses__item {
+      margin: 0;
+    }
   }
 
   .losses_img--helicopters,

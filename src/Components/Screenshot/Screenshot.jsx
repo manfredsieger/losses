@@ -6,7 +6,7 @@ import ScreenshotSizes from './ScreenshotSizes/ScreenshotSizes';
 import ScreenshotPicture from './ScreenshotPicture/ScreenshotPicture';
 import ModalMessage from '../ModalMessage/ModalMessage';
 import translation from '../../utils/translation';
-import screenschotConfig from '../../utils/screenschotConfig';
+import screenshotConfig from '../../utils/screenshotConfig';
 import { setActivePage, pages } from '../../redux/activePage';
 import { isUserAgentSafari } from '../../utils/helpers';
 import { setModalWindowText } from '../../redux/modalWindow';
@@ -17,10 +17,10 @@ export default function Screenshot() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   useEffect(() => dispatch(setActivePage(pages.screenshot.name)));
 
-  const [selectedSizeName, setSelectedSizeName] = useState(screenschotConfig.twitter.name);
+  const [selectedSizeName, setSelectedSizeName] = useState(screenshotConfig.twitter.name);
   const [selectedSize, setSelectedSize] = useState({
-    width: screenschotConfig.twitter.width,
-    height: screenschotConfig.twitter.height,
+    width: screenshotConfig.twitter.width,
+    height: screenshotConfig.twitter.height,
   });
   const { downloadBtn, noDownload, header } = translation[websiteLanguage].screenshot;
   const { modal } = translation[websiteLanguage];
@@ -57,13 +57,13 @@ export default function Screenshot() {
       <section className="screenshot__sizes-wrapper">
         <h2 className="visually-hidden">Buttons allowing to customize the infographic to download</h2>
         {
-          Object.keys(screenschotConfig).map((item) => (
+          Object.keys(screenshotConfig).map((item) => (
             <ScreenshotSizes
-              key={screenschotConfig[item].name}
-              name={screenschotConfig[item].name}
-              iconName={screenschotConfig[item].iconName}
-              width={screenschotConfig[item].width}
-              height={screenschotConfig[item].height}
+              key={screenshotConfig[item].name}
+              name={screenshotConfig[item].name}
+              iconName={screenshotConfig[item].iconName}
+              width={screenshotConfig[item].width}
+              height={screenshotConfig[item].height}
               selectedSizeName={selectedSizeName}
               setSelectedSizeName={setSelectedSizeName}
               setSelectedSize={setSelectedSize}

@@ -877,6 +877,23 @@ const losses_22_04_20 = {
   srmb: 4,
 };
 
+const losses_22_04_21 = {
+  personnel: 21000,
+  aircrafts: 172,
+  helicopters: 151,
+  armoredVehicles: 2118,
+  vehicles: 1508,
+  tanks: 829,
+  artillery: 393,
+  mlrs: 136,
+  cisterns: 76,
+  antiAir: 67,
+  uav: 166,
+  vessels: 8,
+  specialVehicle: 27,
+  srmb: 4,
+};
+
 export default {
   '2022-02-25': losses_22_02_25,
   '2022-02-26': losses_22_02_26,
@@ -933,4 +950,5 @@ export default {
   '2022-04-18': losses_22_04_18,
   '2022-04-19': losses_22_04_19,
   '2022-04-20': losses_22_04_20,
+  '2022-04-21': losses_22_04_21,
 };
