@@ -44,18 +44,18 @@
 }
 
 .screenshot-sizes__img,
-.screesnshot-sizes__media-name {
+.screenshot-sizes__media-name {
   margin-right: 10px;
 }
 
 @supports(gap: 15px) {
   .screenshot-sizes__img,
-  .screesnshot-sizes__media-name {
+  .screenshot-sizes__media-name {
     margin-right: 0;
   }
 }
 
-.screesnshot-sizes__media-name,
-.screesnshot-sizes__size {
+.screenshot-sizes__media-name,
+.screenshot-sizes__size {
   font-size: 13px;
 }

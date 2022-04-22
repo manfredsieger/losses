@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
+// components
 import ConfigBtn from './ConfigBtn/ConfigBtn';
 import RotateWarning from './RotateWarning/RotateWarning';
 import ChartModeButton from './ChartModeButton/ChartModeButton';
 import './Charts.scss';
+// utils
 import losses from '../../utils/losses';
 import { getLatestLossesObject } from '../../utils/helpers';
 import translation from '../../utils/translation';
-import { setActivePage, pages } from '../../redux/activePage';
 import {
   options, getLabels, getDatasets,
 } from '../../utils/chartsConfig';
+// redux
+import { setActivePage, pages } from '../../redux/activePage';
 
 /*
   The chart is not suitable for to be rendered on small screens.
@@ -34,7 +37,10 @@ const DEFAULT_ACTIVE_CONFIG_BTNS = ['aircrafts', 'helicopters', 'uav'];
 export default function Charts() {
   const latestLossesObject = getLatestLossesObject(losses);
   const dispatch = useDispatch();
-  useEffect(() => dispatch(setActivePage(pages.charts.name)), []);
+  useEffect(() => {
+    dispatch(setActivePage(pages.charts.name));
+    window.scrollTo(0, 0);
+  }, []);
 
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const [hasUserSmallScreen, setUserScreenValidity] = useState(false);

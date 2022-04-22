@@ -20,8 +20,8 @@ export default function ScreenshotSizes({
       onClick={saveSelectedData}
     >
       <img className="screenshot-sizes__img" src={require(`../../../img/${iconName}`)} alt={`${iconName}-icon`} />
-      <span className="screesnshot-sizes__media-name">{name}</span>
-      <span className="screesnshot-sizes__size">{`${width}*${height}`}</span>
+      <span className="screenshot-sizes__media-name">{name}</span>
+      <span className="screenshot-sizes__size">{`${width}*${height}`}</span>
     </button>
   );
 }

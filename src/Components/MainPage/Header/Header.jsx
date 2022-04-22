@@ -3,6 +3,7 @@ import './Header.scss';
 import '../../../screenshotSCSS/screenshotHeader.scss';
 import '../../../screenshotSCSS/screenshotCommon.scss';
 import { useSelector } from 'react-redux';
+// utils
 import { getPastDataUpdateDate, getFullDate } from '../../../utils/helpers';
 import losses from '../../../utils/losses';
 import translation from '../../../utils/translation';

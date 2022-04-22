@@ -2,32 +2,41 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as htmlToImage from 'html-to-image';
 import download from 'downloadjs';
+import './Screenshot.scss';
+// components
 import ScreenshotSizes from './ScreenshotSizes/ScreenshotSizes';
 import ScreenshotPicture from './ScreenshotPicture/ScreenshotPicture';
 import ModalMessage from '../ModalMessage/ModalMessage';
+// utils
 import translation from '../../utils/translation';
 import screenshotConfig from '../../utils/screenshotConfig';
-import { setActivePage, pages } from '../../redux/activePage';
 import { isUserAgentSafari } from '../../utils/helpers';
+// redux
+import { setActivePage, pages } from '../../redux/activePage';
 import { setModalWindowText } from '../../redux/modalWindow';
-import './Screenshot.scss';
 
 export default function Screenshot() {
   const dispatch = useDispatch();
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const { modalWindowText } = useSelector((state) => state.modalWindowText);
-  useEffect(() => dispatch(setActivePage(pages.screenshot.name)));
+  useEffect(() => {
+    dispatch(setActivePage(pages.screenshot.name));
+    window.scrollTo(0, 0);
+  }, []);
 
   const [selectedSizeName, setSelectedSizeName] = useState(screenshotConfig.twitter.name);
   const [selectedSize, setSelectedSize] = useState({
     width: screenshotConfig.twitter.width,
     height: screenshotConfig.twitter.height,
   });
+
+  // Translation
   const {
     downloadBtn, noDownload, header, warning,
   } = translation[websiteLanguage].screenshot;
   const { modal } = translation[websiteLanguage];
 
+  // Config for infographics
   const config = {
     width: selectedSize.width / 2,
     height: selectedSize.height / 2,

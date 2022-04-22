@@ -19,7 +19,7 @@ export default function LangButton() {
   }
 
   function handleKeyDown(evt) {
-    // 32 stands fro space key
+    // 32 stands for space key
     if (evt.keyCode === 32) {
       changeLanguage();
     }

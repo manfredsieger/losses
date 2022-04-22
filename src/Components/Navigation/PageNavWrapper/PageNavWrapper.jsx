@@ -1,10 +1,13 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import PageNav from './PageNav/PageNav';
-import { pages } from '../../../redux/activePage';
-import translation from '../../../utils/translation';
 import './PageNavWrapper.scss';
+// components
+import PageNav from './PageNav/PageNav';
+// redux
+import { pages } from '../../../redux/activePage';
+// utils
+import translation from '../../../utils/translation';
 
 export default function PageNavWrapper({ setIsSliderMenuShown }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);

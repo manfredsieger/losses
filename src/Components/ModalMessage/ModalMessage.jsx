@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ModalMessage.scss';
 import { setModalWindowText } from '../../redux/modalWindow';
 
-export default function Message({ displayTime, showCloseBtn }) {
+export default function Message({ displayTime = 1500, showCloseBtn = false }) {
   const { modalWindowText } = useSelector((state) => state.modalWindowText);
   const dispatch = useDispatch();
 
@@ -30,11 +30,7 @@ export default function Message({ displayTime, showCloseBtn }) {
       {
         showCloseBtn
           ? (
-            <button
-              className="message__closeBtn"
-              type="button"
-              onClick={closeModal}
-            >
+            <button className="message__closeBtn" type="button" onClick={closeModal}>
               <span className="visually-hidden">Close modal window</span>
             </button>
           )

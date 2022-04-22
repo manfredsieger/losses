@@ -1,17 +1,20 @@
 import React, { useEffect } from 'react';
 import './Donate.scss';
 import { useDispatch, useSelector } from 'react-redux';
+// components
 import CopyField from './CopyField/CopyField';
 import ExpandableSection from './ExpandableSection/ExpandableSection';
 import RegularSection from './RegularSection/RegularSection';
+// utils
 import {
   donationsCBA,
   donationsEastSOS,
   donationsProliska,
   donationsVoicesOfChildren,
 } from '../../utils/donations';
-import { setActivePage, pages } from '../../redux/activePage';
 import translation from '../../utils/translation';
+// redux
+import { setActivePage, pages } from '../../redux/activePage';
 
 export default function Donate() {
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
@@ -19,7 +22,10 @@ export default function Donate() {
   const { civil } = translation[websiteLanguage].donate;
 
   const dispatch = useDispatch();
-  useEffect(() => dispatch(setActivePage(pages.donate.name)));
+  useEffect(() => {
+    dispatch(setActivePage(pages.donate.name));
+    window.scrollTo(0, 0);
+  }, []);
 
   function renderCopyField(objectToRender) {
     return (
