@@ -18,18 +18,16 @@
   @include hoverSquareBoxShadow;
 }
 
-.screenshot-sizes__container:not(:last-child) {
+.screenshot-sizes__container {
   margin-right: 15px;
 }
 
-@supports(gap: 15px) {
-  .screenshot-sizes__container {
-    gap: 10px;
-  }
+.flexGapIsSupported .screenshot-sizes__container {
+  gap: 10px;
+}
 
-  .screenshot-sizes__container:not(:last-child) {
-    margin-right: 0;
-  }
+.flexGapIsSupported .screenshot-sizes__container {
+  margin-right: 0;
 }
 
 .screenshot-sizes__container--selected {
@@ -48,14 +46,22 @@
   margin-right: 10px;
 }
 
-@supports(gap: 15px) {
-  .screenshot-sizes__img,
-  .screenshot-sizes__media-name {
-    margin-right: 0;
-  }
+.flexGapIsSupported .screenshot-sizes__img,
+.flexGapIsSupported .screenshot-sizes__media-name {
+  margin-right: 0;
 }
 
 .screenshot-sizes__media-name,
 .screenshot-sizes__size {
   font-size: 13px;
+}
+
+@media(max-width: 720px) {
+  .screenshot-sizes__container {
+    margin-bottom: 15px;
+  }
+
+  .flexGapIsSupported .screenshot-sizes__container {
+    margin-bottom: 0;
+  }
 }

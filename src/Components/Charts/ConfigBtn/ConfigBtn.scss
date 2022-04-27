@@ -9,10 +9,8 @@
   @include hoverSquareBoxShadow;
 }
 
-@supports(gap: 15px) {
-  .configBtn__config-item {
-    margin: 0;
-  }
+.flexGapIsSupported .configBtn__config-item {
+  margin: 0;
 }
 
 .configBtn__config-wrapper {

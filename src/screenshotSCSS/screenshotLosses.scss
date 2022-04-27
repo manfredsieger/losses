@@ -5,13 +5,14 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 5px 4px;
+    gap: 0;
 
-    margin: 0 5%;
+    margin: 0 20px;
   }
 
   .losses__item {
     flex-basis: 90px;
+    margin: 0 4px 5px 0;
   }
 
   .losses__item:hover {
@@ -51,6 +52,14 @@
   }
 }
 
+.flexGapIsSupported .screenshot__picture-container_1024_512 .losses {
+  gap: 5px 4px;
+}
+
+.flexGapIsSupported .screenshot__picture-container_1024_512 .losses__item {
+  margin: 0;
+}
+
 // ----------------- 1080 * 1920 Facebook stories -----------------
 
 .screenshot__picture-container_1080_1920 {
@@ -58,13 +67,14 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 30px 15px;
+    gap: 0;
 
-    margin: 0 5%;
+    margin: 0;
   }
 
   .losses__item {
     flex-basis: 200px;
+    margin: 0 15px 30px 0;
   }
 
   .losses__item:hover {
@@ -99,6 +109,14 @@
   }
 }
 
+.flexGapIsSupported .screenshot__picture-container_1080_1920 .losses {
+  gap: 30px 15px;
+}
+
+.flexGapIsSupported .screenshot__picture-container_1080_1920 .losses__item {
+  margin: 0;
+}
+
 // ----------------- 1080 * 1080 Instagram -----------------
 
 .screenshot__picture-container_1080_1080 {
@@ -106,14 +124,15 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 15px 30px;
+    gap: 0;
     
-    margin: 0 5%;
+    margin: 0 -30px 0 0;
     border-bottom: none;
   }
   
   .losses__item {
     flex-basis: 125px;
+    margin: 0 20px 15px 0;
   }
   
   .losses__item:hover {
@@ -148,6 +167,14 @@
   }
 }
 
+.flexGapIsSupported .screenshot__picture-container_1080_1080 .losses {
+  gap: 15px 30px;
+}
+
+.flexGapIsSupported .screenshot__picture-container_1080_1080 .losses__item {
+  margin: 0;
+}
+
 // ----------------- 940 * 788 Facebook -----------------
 
 .screenshot__picture-container_940_788 {
@@ -155,13 +182,14 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px 20px;
+    gap: 0;
     
-    margin: 0 5%;
+    margin: 0 0 0 20px;
   }
 
   .losses__item {
     flex-basis: 112px;
+    margin: 0 10px 10px 0;
   }
 
   .losses__item:hover {
@@ -198,4 +226,12 @@
   .losses__text-caption {
     font-size: 6px;
   }
+}
+
+.flexGapIsSupported .screenshot__picture-container_940_788 .losses {
+  gap: 10px 20px;
+}
+
+.flexGapIsSupported .screenshot__picture-container_940_788 .losses__item {
+  margin: 0;
 }

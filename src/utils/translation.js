@@ -138,6 +138,7 @@ export default {
       copied: 'Copied!',
       downloadingImg: 'If the image was downloaded with errors, please try again, download it using a laptop or another browser',
       errorDownloadingImg: 'Error downloading infographic',
+      errorGettingLosses: 'We were not able to get losses data =(. Please try again later',
     },
   },
   ua: {
@@ -279,6 +280,8 @@ export default {
       copied: 'Скопійовано!',
       downloadingImg: 'Якщо картинка завантажилася з помилкою, спробуйте ще раз, завантажте з комп\'ютера або у іншому браузері',
       errorDownloadingImg: 'Помилка завантаження інфографіки',
+      errorGettingLosses: 'Ми не змогли отримати дані втрат =(. Будь ласка, через певний час спробуйте ще раз',
+
     },
   },
 };

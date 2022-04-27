@@ -6,14 +6,17 @@
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
-    gap: 30px;
+    gap: 0;
     margin: 0 10px 10px;
   }
 
   .dateList__item {
     width: 110px;
-    margin: 0;
     padding: 5px;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin: 0 30px 0 0;
   }
 
   .dateList__item--start {
@@ -45,6 +48,14 @@
   }
 }
 
+.flexGapIsSupported .screenshot__picture-container_1024_512 .dateList {
+  gap: 0 30px;
+}
+
+.flexGapIsSupported .screenshot__picture-container_1024_512 .dateList__item {
+  margin: 0;
+}
+
 // ----------------- 1080 * 1920 Facebook stories -----------------
 
 .screenshot__picture-container_1080_1920 {
@@ -53,13 +64,16 @@
     align-items: stretch;
     justify-content: center;
     margin: 0 20px 40px;
-    gap: 20px 20px;
+    gap: 0;
   }
 
   .dateList__item {
     width: 129px;
-    margin: 0;
     padding: 12px;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin: 0 30px 0 0;
   }
 
   .dateList__important-text--bigger {
@@ -82,6 +96,14 @@
   }
 }
 
+.flexGapIsSupported .screenshot__picture-container_1080_1920 .dateList {
+  gap: 20px 20px;
+}
+
+.flexGapIsSupported .screenshot__picture-container_1080_1920 .dateList__item {
+  margin: 0;
+}
+
 // ----------------- 1080 * 1080 Instagram -----------------
 
 .screenshot__picture-container_1080_1080 {
@@ -90,13 +112,17 @@
     justify-content: center;
     align-items: stretch;
     margin: 0 20px 20px;
-    gap: 20px 20px;
+    gap: 0;
   }
 
   .dateList__item {
     width: 136px;
     padding: 17px;
     margin: 0;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin: 0 20px 0 0;
   }
 
   .dateList__important-text--bigger {
@@ -116,6 +142,14 @@
   }
 }
 
+.flexGapIsSupported .screenshot__picture-container_1080_1080 .dateList {
+  gap: 20px 20px;
+}
+
+.flexGapIsSupported .screenshot__picture-container_1080_1080 .dateList__item {
+  margin: 0;
+}
+
 // ----------------- 940 * 788 Facebook -----------------
 
 .screenshot__picture-container_940_788 {
@@ -124,7 +158,7 @@
     justify-content: center;
     align-items: stretch;
     margin: 0 10px 15px;
-    gap: 22px;
+    gap: 0;
   }
 
   .dateList__item {
@@ -132,6 +166,10 @@
     padding: 5px;
     margin: 0;
     border: 1px solid #000000;
+  }
+
+  .dateList__item:not(:last-child) {
+    margin: 0 22px 0 0;
   }
 
   .dateList__important-text--bigger {
@@ -148,5 +186,13 @@
 
   .dateList__caption {
     font-size: 7px;
+  }
+
+  .flexGapIsSupported .screenshot__picture-container_940_788 .dateList {
+    gap: 22px;
+  }
+
+  .flexGapIsSupported .screenshot__picture-container_940_788 .dateList__item {
+    margin: 0;
   }
 }

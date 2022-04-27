@@ -1,4 +1,3 @@
-// import losses from './losses';
 import { getWordWithBigFirstLetter } from './helpers';
 import translation from './translation';
 

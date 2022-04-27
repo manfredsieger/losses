@@ -35,7 +35,7 @@ export default function Screenshot({ losses }) {
   const {
     downloadBtn, noDownload, header, warning,
   } = translation[websiteLanguage].screenshot;
-  const { modal } = translation[websiteLanguage];
+  const { downloadingImg, errorDownloadingImg } = translation[websiteLanguage].modal;
 
   // Config for infographics
   const config = {
@@ -46,14 +46,13 @@ export default function Screenshot({ losses }) {
   };
 
   function capture() {
-    dispatch(setModalWindowText(modal.downloadingImg));
+    dispatch(setModalWindowText(downloadingImg));
     htmlToImage.toJpeg(document.querySelector('.scrollable'), config)
       .then((dataUrl) => {
-        // dispatch(setModalWindowText(modal.downloadingImg));
         download(dataUrl, 'losses.jpeg');
       })
       .catch(() => {
-        dispatch(setModalWindowText(modal.errorDownloadingImg));
+        dispatch(setModalWindowText(errorDownloadingImg));
       });
   }
 

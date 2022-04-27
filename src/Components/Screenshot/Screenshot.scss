@@ -37,10 +37,8 @@
   text-align: center;
 }
 
-@supports(gap: 15px) {
-  .screenshot__sizes-wrapper {
-    gap: 15px;
-  }
+.flexGapIsSupported .screenshot__sizes-wrapper {
+  gap: 15px;
 }
 
 .screenshot__download-btn {

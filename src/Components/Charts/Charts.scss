@@ -26,20 +26,16 @@
   padding: 0 0 30px 0;
 }
 
-@supports(gap: 15px) {
-  .charts__container {
-    gap: 50px 0;
-  }
+.flexGapIsSupported .charts__container {
+  gap: 50px 0;
 }
 
 .charts__container > *:not(:last-child) {
   margin-bottom: 50px;
 }
 
-@supports(gap: 15px) {
-  .charts__container > *:not(:last-child) {
-    margin-bottom: 0;
-  }
+.flexGapIsSupported .charts__container > *:not(:last-child) {
+  margin-bottom: 0;
 }
 
 .charts__config {
@@ -54,10 +50,8 @@
   box-sizing: border-box;
 }
 
-@supports(gap: 15px) {
-  .charts__config {
-    gap: 10px;
-  }
+.flexGapIsSupported .charts__config {
+  gap: 10px;
 }
 
 .charts__canvas-wrapper {
@@ -72,20 +66,16 @@
 
 @media(max-width: 1150px) {
 
-  @supports(gap: 15px) {
-    .charts__container {
-      gap: 30px 0;
-    }
+  .flexGapIsSupported .charts__container {
+    gap: 30px 0;
   }
 
   .charts__container > *:not(:last-child) {
     margin-bottom: 30px;
   }
 
-  @supports(gap: 15px) {
-    .charts__container > *:not(:last-child) {
-      margin-bottom: 0;
-    }
+  .flexGapIsSupported .charts__container > *:not(:last-child) {
+    margin-bottom: 0;
   }
 }
 

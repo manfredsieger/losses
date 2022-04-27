@@ -2,8 +2,10 @@ import React, { Suspense, useState, useEffect } from 'react';
 import {
   Routes, Route, Navigate,
 } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
+
+// components
 import { Loader } from 'semantic-ui-react';
 import MainPage from './Components/MainPage/MainPage';
 import Footer from './Components/Footer/Footer';
@@ -11,7 +13,15 @@ import Logo from './Components/Logo/Logo';
 import Navigation from './Components/Navigation/Navigation';
 import BurgerButton from './Components/BurgerButton/BurgerButton';
 import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButton';
+import ModalMessage from './Components/ModalMessage/ModalMessage';
+
+// utils
+import translation from './utils/translation';
+
+// redux
+import { setModalWindowText } from './redux/modalWindow';
 import { pages, stylePages } from './redux/activePage';
+import { isFlexGapSupported } from './utils/helpers';
 
 // To split the bundle.js and make the dom content load faster
 const Donate = React.lazy(() => import('./Components/Donate/Donate'));
@@ -23,11 +33,20 @@ export default function App() {
   const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
   const [losses, setLosses] = useState([]);
 
+  const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
+  const { errorGettingLosses } = translation[websiteLanguage].modal;
+  const { modalWindowText } = useSelector((state) => state.modalWindowText);
+  const dispatch = useDispatch();
+
   // Getting the array with all losses from the database
   useEffect(async () => {
     await fetch('https://api.invadersnotwelcome.in.ua/los')
       .then((res) => res.json())
-      .then((data) => setLosses(data));
+      .then((data) => setLosses(data))
+      .catch((error) => {
+        dispatch(setModalWindowText(errorGettingLosses));
+        console.error(error.message);
+      });
   }, []);
 
   /**
@@ -43,7 +62,14 @@ export default function App() {
   }, [isSliderMenuShown]);
 
   return (
-    <div className={stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-pink'}>
+    <div className={
+      `${stylePages.red.includes(activePage) ? 'website-background-red' : 'website-background-pink'}
+      ${isFlexGapSupported() ? 'flexGapIsSupported' : ''}`
+    }
+    >
+
+      {modalWindowText ? <ModalMessage displayTime={6000} showCloseBtn /> : null}
+
       <div className="website__grid">
 
         <div className="website__grid-left">
