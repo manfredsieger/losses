@@ -50,9 +50,14 @@
   width: 70px;
 }
 
+ /**
+ Do not make line-height for the .configBtn__config-text
+ since it would break the way these buttons look
+  */
 .configBtn__config-text {
   margin: 0;
   
   font-size: 14px;
   text-align: center;
+  line-height: 0.95;
 }

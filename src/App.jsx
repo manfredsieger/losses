@@ -21,6 +21,14 @@ const Screenshot = React.lazy(() => import('./Components/Screenshot/Screenshot')
 export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
   const [isSliderMenuShown, setIsSliderMenuShown] = useState(false);
+  const [losses, setLosses] = useState([]);
+
+  // Getting the array with all losses from the database
+  useEffect(async () => {
+    await fetch('https://api.invadersnotwelcome.in.ua/los')
+      .then((res) => res.json())
+      .then((data) => setLosses(data));
+  }, []);
 
   /**
    * For website body to stop scrolling when slider menu is open.
@@ -52,10 +60,10 @@ export default function App() {
         <div className={`website__grid-center ${activePage === pages.screenshot.name ? 'website__grid-center--overflow-hidden' : ''}`}>
           <Suspense fallback={<Loader size="big" />}>
             <Routes>
-              <Route path="/" element={<MainPage />} />
+              <Route path="/" element={<MainPage losses={losses} />} />
               <Route path="/donate" element={<Donate />} />
-              <Route path="/charts" element={<Charts />} />
-              <Route path="/screenshot" element={<Screenshot />} />
+              <Route path="/charts" element={<Charts losses={losses} />} />
+              <Route path="/screenshot" element={<Screenshot losses={losses} />} />
               <Route path="*" element={<Navigate replace to="/" />} />
             </Routes>
           </Suspense>

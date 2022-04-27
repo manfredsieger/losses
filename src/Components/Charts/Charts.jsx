@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Line } from 'react-chartjs-2';
+import PropsTypes from 'prop-types';
 import Chart from 'chart.js/auto';
 // components
 import ConfigBtn from './ConfigBtn/ConfigBtn';
@@ -8,7 +9,6 @@ import RotateWarning from './RotateWarning/RotateWarning';
 import ChartModeButton from './ChartModeButton/ChartModeButton';
 import './Charts.scss';
 // utils
-import losses from '../../utils/losses';
 import { getLatestLossesObject } from '../../utils/helpers';
 import translation from '../../utils/translation';
 import {
@@ -34,7 +34,7 @@ const SMALL_LANDSCAPE_SCREEN = 300;
 const CHART_TO_GROW_SCREEN_WIDTH = 800;
 const DEFAULT_ACTIVE_CONFIG_BTNS = ['aircrafts', 'helicopters', 'uav'];
 
-export default function Charts() {
+export default function Charts({ losses }) {
   const latestLossesObject = getLatestLossesObject(losses);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -77,12 +77,15 @@ export default function Charts() {
   }, [selectedChartMode]);
 
   const data = {
-    labels: getLabels(),
-    datasets: getDatasets(lossesToDisplay, websiteLanguage),
+    labels: getLabels(losses),
+    datasets: getDatasets(lossesToDisplay, websiteLanguage, losses),
   };
 
-  // FIXME: rewrite the function so that it returns a component
+  // TODO: rewrite the function so that it returns a component
   function renderConfigBtns() {
+    if (losses.length === 0) {
+      return null;
+    }
     return Object.entries(latestLossesObject).map((item) => {
       const itemName = item[0]; const
         itemTranslation = translation[websiteLanguage].main.losses[itemName];
@@ -137,3 +140,27 @@ export default function Charts() {
     </main>
   );
 }
+
+Charts.propTypes = {
+  losses: PropsTypes.arrayOf(PropsTypes.shape({
+    date: PropsTypes.string,
+    personnel: PropsTypes.number,
+    aircrafts: PropsTypes.number,
+    helicopters: PropsTypes.number,
+    armoredVehicles: PropsTypes.number,
+    vehicles: PropsTypes.number,
+    tanks: PropsTypes.number,
+    artillery: PropsTypes.number,
+    mlrs: PropsTypes.number,
+    cisterns: PropsTypes.number,
+    antiAir: PropsTypes.number,
+    uav: PropsTypes.number,
+    vessels: PropsTypes.number,
+    specialVehicle: PropsTypes.number,
+    srmb: PropsTypes.number,
+  })),
+};
+
+Charts.defaultProps = {
+  losses: {},
+};

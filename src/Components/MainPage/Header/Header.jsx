@@ -1,16 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import PropsTypes from 'prop-types';
+// css
 import './Header.scss';
 import '../../../screenshotSCSS/screenshotHeader.scss';
 import '../../../screenshotSCSS/screenshotCommon.scss';
-import { useSelector } from 'react-redux';
 // utils
-import { getPastDataUpdateDate, getFullDate } from '../../../utils/helpers';
-import losses from '../../../utils/losses';
+import { getFullDate } from '../../../utils/helpers';
 import translation from '../../../utils/translation';
 
-export default function Header() {
+export default function Header({ losses }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
-  const lastDataUpdateDate = getPastDataUpdateDate(losses, -1);
+  const lastDataUpdateDate = losses.length !== 0 ? losses[0].date : '';
   const {
     header, updateDate, warning, language, numbersProvided, genStaff,
   } = translation[websiteLanguage].main.header;
@@ -46,3 +47,27 @@ export default function Header() {
     </header>
   );
 }
+
+Header.propTypes = {
+  losses: PropsTypes.arrayOf(PropsTypes.shape({
+    date: PropsTypes.string,
+    personnel: PropsTypes.number,
+    aircrafts: PropsTypes.number,
+    helicopters: PropsTypes.number,
+    armoredVehicles: PropsTypes.number,
+    vehicles: PropsTypes.number,
+    tanks: PropsTypes.number,
+    artillery: PropsTypes.number,
+    mlrs: PropsTypes.number,
+    cisterns: PropsTypes.number,
+    antiAir: PropsTypes.number,
+    uav: PropsTypes.number,
+    vessels: PropsTypes.number,
+    specialVehicle: PropsTypes.number,
+    srmb: PropsTypes.number,
+  })),
+};
+
+Header.defaultProps = {
+  losses: {},
+};

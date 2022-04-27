@@ -39,6 +39,7 @@ export function getPastDataUpdateDate(losses, dateFromEnd) {
   return datesArray[datesArray.length + dateFromEnd];
 }
 
+// TODO: rewrite the caption
 /**
  * Provides an object with the last recorded losses.
  * @param {object} losses is the object containing all losses in the war.
@@ -46,7 +47,15 @@ export function getPastDataUpdateDate(losses, dateFromEnd) {
  * @returns the object with last recorded losses.
  */
 export function getLatestLossesObject(losses) {
-  return losses[getPastDataUpdateDate(losses, -1)];
+  if (losses.length === 0) {
+    return {};
+  }
+  return Object.entries(losses[0]).reduce((acc, [key, value]) => {
+    if (!Object.prototype.toString.call(value).includes('Number')) {
+      return acc;
+    }
+    return { ...acc, [key]: value };
+  }, {});
 }
 
 /**
@@ -64,14 +73,14 @@ export function getImage(imgName) {
 
 /**
  * Checks whether user agent is Safari or not. This is important
- * since the package used for image dowload (html-to-image)
+ * since the package used for image download (html-to-image)
  * does not work with Safari.
  * @returns true if user agent is Safari
  */
 export function isUserAgentSafari() {
   const browser = detect();
   if (browser && browser.name) {
-    return browser.name === 'safari';
+    return browser.name === 'safari' || (navigator.userAgent.match(/safari/i) && !window.chrome);
   }
   return false;
 }

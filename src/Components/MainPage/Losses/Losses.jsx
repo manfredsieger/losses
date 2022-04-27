@@ -1,27 +1,19 @@
 import React from 'react';
+import PropsTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 // css
 import './Losses.scss';
 import '../../../screenshotSCSS/screenshotLosses.scss';
 import '../../../screenshotSCSS/screenshotCommon.scss';
 // utils
-import losses from '../../../utils/losses';
 import translation from '../../../utils/translation';
-import {
-  getPastDataUpdateDate,
-  getImage,
-  getWordWithBigFirstLetter,
-} from '../../../utils/helpers';
+import { getImage, getWordWithBigFirstLetter, getLatestLossesObject } from '../../../utils/helpers';
 
-export default function Losses() {
+export default function Losses({ losses }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
 
-  function getLatestLossesObject() {
-    return losses[getPastDataUpdateDate(losses, -1)];
-  }
-
   function getDayBeforeLossesObject() {
-    return losses[getPastDataUpdateDate(losses, -2)];
+    return losses[1];
   }
 
   function getLossesNumberDifference(todayNumber, lossesType) {
@@ -60,7 +52,31 @@ export default function Losses() {
 
   return (
     <ul className="losses">
-      {renderLossesItems(getLatestLossesObject())}
+      {losses.length > 0 ? renderLossesItems(getLatestLossesObject(losses)) : null}
     </ul>
   );
 }
+
+Losses.propTypes = {
+  losses: PropsTypes.arrayOf(PropsTypes.shape({
+    date: PropsTypes.string,
+    personnel: PropsTypes.number,
+    aircrafts: PropsTypes.number,
+    helicopters: PropsTypes.number,
+    armoredVehicles: PropsTypes.number,
+    vehicles: PropsTypes.number,
+    tanks: PropsTypes.number,
+    artillery: PropsTypes.number,
+    mlrs: PropsTypes.number,
+    cisterns: PropsTypes.number,
+    antiAir: PropsTypes.number,
+    uav: PropsTypes.number,
+    vessels: PropsTypes.number,
+    specialVehicle: PropsTypes.number,
+    srmb: PropsTypes.number,
+  })),
+};
+
+Losses.defaultProps = {
+  losses: {},
+};

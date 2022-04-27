@@ -29,7 +29,7 @@ export default function Dates() {
     const daysOfAggressionString = daysOfAggression.toString();
 
     if (websiteLanguage === languages.ua && daysPassed.includes('днів')) {
-      switch (daysOfAggressionString.at(-1)) {
+      switch (daysOfAggressionString[daysOfAggressionString.length - 1]) {
         case '1':
           return daysPassed.replace('днів', 'день');
         case '2':

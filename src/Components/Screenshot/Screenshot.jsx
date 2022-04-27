@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import PropsTypes from 'prop-types';
 import * as htmlToImage from 'html-to-image';
 import download from 'downloadjs';
 import './Screenshot.scss';
@@ -15,7 +16,7 @@ import { isUserAgentSafari } from '../../utils/helpers';
 import { setActivePage, pages } from '../../redux/activePage';
 import { setModalWindowText } from '../../redux/modalWindow';
 
-export default function Screenshot() {
+export default function Screenshot({ losses }) {
   const dispatch = useDispatch();
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const { modalWindowText } = useSelector((state) => state.modalWindowText);
@@ -95,9 +96,34 @@ export default function Screenshot() {
         <ScreenshotPicture
           width={selectedSize.width / 2}
           height={selectedSize.height / 2}
+          losses={losses}
         />
       </main>
 
     </article>
   );
 }
+
+Screenshot.propTypes = {
+  losses: PropsTypes.arrayOf(PropsTypes.shape({
+    date: PropsTypes.string,
+    personnel: PropsTypes.number,
+    aircrafts: PropsTypes.number,
+    helicopters: PropsTypes.number,
+    armoredVehicles: PropsTypes.number,
+    vehicles: PropsTypes.number,
+    tanks: PropsTypes.number,
+    artillery: PropsTypes.number,
+    mlrs: PropsTypes.number,
+    cisterns: PropsTypes.number,
+    antiAir: PropsTypes.number,
+    uav: PropsTypes.number,
+    vessels: PropsTypes.number,
+    specialVehicle: PropsTypes.number,
+    srmb: PropsTypes.number,
+  })),
+};
+
+Screenshot.defaultProps = {
+  losses: {},
+};
