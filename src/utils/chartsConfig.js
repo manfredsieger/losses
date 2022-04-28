@@ -77,7 +77,7 @@ function getData(item, losses) {
 // TODO add comment
 export function getDatasets(lossesTypes, websiteLanguage, losses) {
   return lossesTypes.map((item, index) => ({
-    label: getWordWithBigFirstLetter(translation[websiteLanguage].main.losses[item]),
+    label: getWordWithBigFirstLetter(translation[websiteLanguage].main.losses[item].name),
     data: getData(item, losses),
     borderColor: '#000000',
     borderWidth: 1,

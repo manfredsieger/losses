@@ -87,8 +87,8 @@ export default function Charts({ losses }) {
       return null;
     }
     return Object.entries(latestLossesObject).map((item) => {
-      const itemName = item[0]; const
-        itemTranslation = translation[websiteLanguage].main.losses[itemName];
+      const itemName = item[0];
+      const itemTranslation = translation[websiteLanguage].main.losses[itemName].name;
 
       return (
         <ConfigBtn

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import Tooltip from './Tooltip/Tooltip';
 // css
 import './Losses.scss';
 import '../../../screenshotSCSS/screenshotLosses.scss';
@@ -26,7 +27,8 @@ export default function Losses({ losses }) {
     return Object.entries(objectToRender).map((item) => {
       const itemName = item[0];
       const itemNumber = item[1];
-      const itemTranslation = translation[websiteLanguage].main.losses[itemName];
+      const itemTranslation = translation[websiteLanguage].main.losses[itemName].name;
+      const itemDescription = translation[websiteLanguage].main.losses[itemName].descr;
 
       return (
         <li key={itemName} className="losses__item">
@@ -43,7 +45,10 @@ export default function Losses({ losses }) {
               <span className="losses__text-number">{`${itemName === 'personnel' ? '~' : ''}${itemNumber.toLocaleString(websiteLanguage)}`}</span>
               <span className="losses__text-number-difference">{getLossesNumberDifference(itemNumber, itemName)}</span>
             </p>
-            <p className="losses__text-caption">{getWordWithBigFirstLetter(itemTranslation)}</p>
+            <p className="losses__text-caption">
+              {getWordWithBigFirstLetter(itemTranslation)}
+              {itemDescription ? <Tooltip itemDescription={itemDescription} /> : null}
+            </p>
           </div>
         </li>
       );

@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+.screenshot__picture-container.screenshot__picture-container_1024_512 .tooltip__info-btn,
+.screenshot__picture-container.screenshot__picture-container_1080_1920 .tooltip__info-btn,
+.screenshot__picture-container.screenshot__picture-container_1080_1080 .tooltip__info-btn,
+.screenshot__picture-container.screenshot__picture-container_940_788 .tooltip__info-btn {
+  display: none;
+}
+
 // padding for the whole picture depending on the specific infographic
 
 // ----------------- 1024 * 512 Twitter -----------------

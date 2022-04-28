@@ -23,20 +23,51 @@ export default {
         today: 'Today',
       },
       losses: {
-        personnel: 'soldiers',
-        aircrafts: 'fighter jets',
-        helicopters: 'helicopters',
-        armoredVehicles: 'armored vehicles',
-        vehicles: 'vehicles',
-        tanks: 'tanks',
-        artillery: 'artillery pieces',
-        mlrs: 'multiple launch rocket systems',
-        cisterns: 'fuel cisterns',
-        antiAir: 'anti-aircraft warfare systems',
-        uav: 'UAV operational-tactical level',
-        vessels: 'vessels',
-        specialVehicle: 'special equipment',
-        srmb: 'mobile SRMB system',
+        personnel: {
+          name: 'soldiers',
+        },
+        aircrafts: {
+          name: 'fighter jets',
+        },
+        helicopters: {
+          name: 'helicopters',
+        },
+        armoredVehicles: {
+          name: 'armored vehicles',
+        },
+        vehicles: {
+          name: 'vehicles',
+        },
+        tanks: {
+          name: 'tanks',
+        },
+        artillery: {
+          name: 'artillery pieces',
+        },
+        mlrs: {
+          name: 'MLRS',
+          descr: 'multiple launch rocket systems',
+        },
+        cisterns: {
+          name: 'fuel cisterns',
+        },
+        antiAir: {
+          name: 'anti-aircraft warfare systems',
+        },
+        uav: {
+          name: 'UAV operational-tactical level',
+          descr: 'unmanned aerial vehicles',
+        },
+        vessels: {
+          name: 'vessels',
+        },
+        specialVehicle: {
+          name: 'special equipment',
+        },
+        srmb: {
+          name: 'mobile SRMB system',
+          descr: 'short-range ballistic missiles',
+        },
       },
     },
     donate: {
@@ -165,20 +196,53 @@ export default {
         today: 'Сьогодні',
       },
       losses: {
-        personnel: 'військові',
-        aircrafts: 'літаки',
-        helicopters: 'гелікоптери',
-        armoredVehicles: 'бойові броньовані машини',
-        vehicles: 'автомобілі',
-        tanks: 'танки',
-        artillery: 'артилерійські системи',
-        mlrs: 'реактивні системи залпового вогню',
-        cisterns: 'цистерни з ПММ',
-        antiAir: 'засоби ППО',
-        uav: 'БПЛА оперативно-тактичного рівня',
-        vessels: 'кораблі',
-        specialVehicle: 'спеціальна техніка',
-        srmb: 'ПУ ОТРК / ТРК',
+        personnel: {
+          name: 'військові',
+        },
+        aircrafts: {
+          name: 'літаки',
+        },
+        helicopters: {
+          name: 'гелікоптери',
+        },
+        armoredVehicles: {
+          name: 'бойові броньовані машини',
+        },
+        vehicles: {
+          name: 'автомобілі',
+        },
+        tanks: {
+          name: 'танки',
+        },
+        artillery: {
+          name: 'артилерійські системи',
+        },
+        mlrs: {
+          name: 'РСЗВ',
+          descr: 'реактивні системи залпового вогню',
+        },
+        cisterns: {
+          name: 'цистерни з ПММ',
+          descr: 'паливно-мастильні матеріали',
+        },
+        antiAir: {
+          name: 'засоби ППО',
+          descr: 'протиповітряна оборона',
+        },
+        uav: {
+          name: 'БПЛА оперативно-тактичного рівня',
+          descr: 'безпілотні літальні апарати',
+        },
+        vessels: {
+          name: 'кораблі',
+        },
+        specialVehicle: {
+          name: 'спеціальна техніка',
+        },
+        srmb: {
+          name: 'пускові установки ОТРК / ТРК',
+          descr: 'оперативно-тактичні ракетні комплекси / тактичні ракетні комплекси',
+        },
       },
     },
     donate: {
