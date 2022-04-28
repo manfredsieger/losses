@@ -43,15 +43,15 @@ export default function App() {
     await fetch('https://api.invadersnotwelcome.in.ua/los')
       .then((res) => res.json())
       .then((data) => setLosses(data))
-      .catch((error) => {
+      .catch((err) => {
         dispatch(setModalWindowText(errorGettingLosses));
-        console.error(error.message);
+        console.error(err.message);
       });
   }, []);
 
   /**
    * For website body to stop scrolling when slider menu is open.
-   * Otherwise, it creates unnecessary scrolling
+   * Otherwise, it creates unnecessary scrolling.
    */
   useEffect(() => {
     if (isSliderMenuShown) {

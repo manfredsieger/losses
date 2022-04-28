@@ -127,7 +127,7 @@ export default {
     },
     footer: {
       developedBy: 'Developed by the',
-      fund: 'Come Back Alive Fund',
+      fund: 'Come Back Alive Foundation',
       team: 'team',
       design: 'Design of this page inspired by the similar reports of the',
       mfa: 'Ukrainian MFA',

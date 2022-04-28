@@ -78,13 +78,18 @@ export function getImage(imgName) {
  * @returns true if user agent is Safari
  */
 export function isUserAgentSafari() {
-  const browser = detect();
-  if (browser && browser.name) {
-    return browser.name === 'safari' || (navigator.userAgent.match(/safari/i) && !window.chrome);
+  const userAgent = detect();
+  if (userAgent && userAgent.name) {
+    return userAgent.name === 'safari' || (navigator.userAgent.match(/safari/i) && !window.chrome);
   }
   return false;
 }
 
+/**
+ * The function checks whether user's browser supports flex gaps (css property).
+ * Depending on this different styles will be applied.
+ * @returns {boolean} true if supports flex gap.
+ */
 export function isFlexGapSupported() {
   // create flex container with row-gap set
   const flex = document.createElement('div');

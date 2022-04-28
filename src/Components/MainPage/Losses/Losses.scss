@@ -7,10 +7,12 @@
   flex-wrap: wrap;
 
   @include list_reset;
+  margin-right: -50px;
 }
 
 .flexGapIsSupported .losses {
   gap: 80px 40px;
+  margin-right: 0;
 }
 
 .losses__item {
@@ -164,6 +166,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin-right: 0;
   }
 
   .losses__item {
