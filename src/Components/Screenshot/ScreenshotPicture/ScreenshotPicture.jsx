@@ -14,6 +14,7 @@ export default function ScreenshotPicture({ width, height, losses }) {
       <Logo />
       <Dates />
       <Losses losses={losses} />
+      <p className="screenshot__link">invadersnotwelcome.in.ua</p>
     </div>
   );
 }

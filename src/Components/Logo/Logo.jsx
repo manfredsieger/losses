@@ -13,8 +13,8 @@ export default function Logo() {
         <img
           className="logo__image"
           src={require(`../../img/logo_CBA_${websiteLanguage}.svg`)}
-          alt="Logo of the Come Back Alive Fund"
-          title="Logo of the Come Back Alive Fund"
+          alt="Logo of the Come Back Alive Foundation"
+          title="Logo of the Come Back Alive Foundation"
         />
       </a>
     </p>

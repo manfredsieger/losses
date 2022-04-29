@@ -51,7 +51,7 @@ export function getLabels(losses) {
   return losses
     .map((item) => {
       const dateObj = new Date(item.date);
-      const month = (dateObj.getMonth().toString().length === 1 ? `0${dateObj.getMonth()}` : dateObj.getMonth()) + 1;
+      const month = (dateObj.getMonth().toString().length === 1 ? `0${dateObj.getMonth() + 1}` : dateObj.getMonth() + 1);
       const date = dateObj.getDate().toString().length === 1 ? `0${dateObj.getDate()}` : dateObj.getDate();
       return `${date}.${month}`;
     })

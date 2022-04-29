@@ -17,8 +17,8 @@ export default function Tooltip({ itemDescription }) {
       className="tooltip__text"
       content={getWordWithBigFirstLetter(itemDescription)}
       trigger={(
-        <button className="tooltip__info-btn" type="button">
-          <img className="tooltip__info-img" src={infoSvg} alt="Info button" width="10" />
+        <button className="tooltip__info-btn" type="button" aria-label="Shows description of the abbreviation">
+          <img className="tooltip__info-img" src={infoSvg} alt="Button shows description of the abbreviation" width="10" />
         </button>
       )}
       style={style}

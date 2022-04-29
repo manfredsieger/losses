@@ -79,7 +79,7 @@ export default {
       military: {
         header: 'Supporting Defenders of Ukraine',
         comeBackAlive: {
-          orgName: 'Come Back Alive Fund.',
+          orgName: 'Come Back Alive Foundation.',
           donationsOutside: {
             header: 'Donations from abroad:',
             fondy: {

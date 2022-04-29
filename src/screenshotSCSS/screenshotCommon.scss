@@ -21,6 +21,12 @@
   position: relative;
 
   padding: 15px;
+
+  .screenshot__link {
+    bottom: 5px;
+
+    font-size: 5px;
+  }
 }
 
 // ----------------- 1080 * 1920 Facebook stories -----------------
@@ -29,6 +35,10 @@
   position: relative;
 
   padding: 45px 35px;
+
+  .screenshot__link {
+    font-size: 10px;
+  }
 }
 
 // ----------------- 1080 * 1080 Instagram -----------------
@@ -37,6 +47,10 @@
   position: relative;
 
   padding: 22px;
+
+  .screenshot__link {
+    font-size: 7px;
+  }
 }
 
 // ----------------- 940 * 788 Facebook -----------------
@@ -45,5 +59,9 @@
   position: relative;
 
   padding: 20px;
+
+  .screenshot__link {
+    font-size: 6px;
+  }
 }
 
