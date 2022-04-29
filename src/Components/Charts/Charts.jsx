@@ -82,7 +82,7 @@ export default function Charts({ losses }) {
   };
 
   // TODO: rewrite the function so that it returns a component
-  function renderConfigBtns() {
+  function renderConfigButtons() {
     if (losses.length === 0) {
       return null;
     }
@@ -133,7 +133,7 @@ export default function Charts({ losses }) {
         />
 
         <ul className="charts__config">
-          {renderConfigBtns()}
+          {renderConfigButtons()}
         </ul>
       </article>
 

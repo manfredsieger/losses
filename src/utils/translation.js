@@ -24,7 +24,7 @@ export default {
       },
       losses: {
         personnel: {
-          name: 'soldiers',
+          name: 'personnel',
         },
         aircrafts: {
           name: 'fighter jets',
@@ -33,7 +33,7 @@ export default {
           name: 'helicopters',
         },
         armoredVehicles: {
-          name: 'armored vehicles',
+          name: 'armoured personnel vehicles',
         },
         vehicles: {
           name: 'vehicles',
@@ -42,14 +42,14 @@ export default {
           name: 'tanks',
         },
         artillery: {
-          name: 'artillery pieces',
+          name: 'artillery systems',
         },
         mlrs: {
           name: 'MLRS',
           descr: 'multiple launch rocket systems',
         },
         cisterns: {
-          name: 'fuel cisterns',
+          name: 'fuel tanks',
         },
         antiAir: {
           name: 'anti-aircraft warfare systems',
@@ -65,12 +65,13 @@ export default {
           name: 'special equipment',
         },
         srmb: {
-          name: 'mobile SRMB system',
+          name: 'mobile SRBM system',
           descr: 'short-range ballistic missiles',
         },
       },
     },
     donate: {
+      header: 'How can I help',
       copyIconTitle: 'Copy text',
       expandBtn: {
         open: 'Open section',
@@ -246,6 +247,7 @@ export default {
       },
     },
     donate: {
+      header: 'Як я можу допомогти',
       copyIconTitle: 'Копіювати текст',
       expandBtn: {
         open: 'Розгорнути',

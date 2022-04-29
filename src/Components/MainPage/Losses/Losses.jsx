@@ -20,7 +20,10 @@ export default function Losses({ losses }) {
   function getLossesNumberDifference(todayNumber, lossesType) {
     const prevDayLosses = getDayBeforeLossesObject();
     const difference = todayNumber - (prevDayLosses[lossesType] ?? 0);
-    return `+${difference}`;
+    if (difference === 0) {
+      return null;
+    }
+    return <span className="losses__text-number-difference">{`+${difference}`}</span>;
   }
 
   function renderLossesItems(objectToRender) {
@@ -43,7 +46,7 @@ export default function Losses({ losses }) {
           <div className={`losses__text-container ${itemName === 'personnel' ? 'losses__text-container--wide' : ''}`}>
             <p className="losses__text-number-container">
               <span className="losses__text-number">{`${itemName === 'personnel' ? '~' : ''}${itemNumber.toLocaleString(websiteLanguage)}`}</span>
-              <span className="losses__text-number-difference">{getLossesNumberDifference(itemNumber, itemName)}</span>
+              {getLossesNumberDifference(itemNumber, itemName)}
             </p>
             <p className="losses__text-caption">
               {getWordWithBigFirstLetter(itemTranslation)}
