@@ -14,12 +14,14 @@ export default function DonateBottomButton() {
       className="donate-bottom-button"
       aria-label="Link to donate section"
     >
-      <img
-        className="donate-bottom-button__icon"
-        src={heart}
-        alt="Heart icon"
-      />
-      <span className="donate-bottom-button__text">{translation[websiteLanguage].nav.donate}</span>
+      <div className="donate-bottom-button__wrapper">
+        <img
+          className="donate-bottom-button__icon"
+          src={heart}
+          alt="Heart icon"
+        />
+        <span className="donate-bottom-button__text">{translation[websiteLanguage].nav.donate}</span>
+      </div>
     </Link>
   );
 }

@@ -60,6 +60,7 @@ export default function App() {
       document.body.style.overflow = 'scroll';
     }
   }, [isSliderMenuShown]);
+  console.log(activePage !== pages.donate.name && !isSliderMenuShown);
 
   return (
     <div className={
@@ -94,12 +95,6 @@ export default function App() {
             </Routes>
           </Suspense>
 
-          {
-            activePage !== pages.donate.name && !isSliderMenuShown
-              ? <DonateBottomButton />
-              : null
-          }
-
           <Footer />
         </div>
 
@@ -107,8 +102,14 @@ export default function App() {
           <div className="website__fake-element" />
           <Logo />
         </div>
-
       </div>
+
+      {
+        activePage !== pages.donate.name && !isSliderMenuShown
+          ? <DonateBottomButton />
+          : null
+      }
+
     </div>
   );
 }

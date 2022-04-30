@@ -12,18 +12,29 @@
     bottom: 0;
     transform: translate3d(0,0,0);
 
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 20px 58px;
+    height: 65px;
+    width: 100vw;
     border: 1px solid #000000;
 
     background-color: $yellow;
     text-decoration: none;
+  }
+
+  .donate-bottom-button__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: calc(100% - 1px);
+    width: 100%;
+
+    z-index: 1;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
   .donate-bottom-button__icon {
