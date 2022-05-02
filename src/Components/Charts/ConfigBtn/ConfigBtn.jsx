@@ -2,6 +2,7 @@ import React from 'react';
 import './ConfigBtn.scss';
 import PropsTypes from 'prop-types';
 import { getImage, getWordWithBigFirstLetter } from '../../../utils/helpers';
+import { chartModes } from '../../../utils/chartsConfig';
 
 export default function ConfigBtn({
   itemName,
@@ -9,7 +10,6 @@ export default function ConfigBtn({
   setLossesToDisplay,
   itemTranslation,
   selectedChartMode,
-  chartModes,
 }) {
   function addItemMultipleMode(item) {
     if (!lossesToDisplay.includes(item)) {
@@ -62,8 +62,4 @@ ConfigBtn.propTypes = {
   setLossesToDisplay: PropsTypes.func.isRequired,
   itemTranslation: PropsTypes.string.isRequired,
   selectedChartMode: PropsTypes.string.isRequired,
-  chartModes: PropsTypes.shape({
-    multiple: PropsTypes.string.isRequired,
-    showOne: PropsTypes.string.isRequired,
-  }).isRequired,
 };

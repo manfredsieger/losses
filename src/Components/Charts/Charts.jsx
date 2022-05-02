@@ -12,9 +12,9 @@ import './Charts.scss';
 import { getLatestLossesObject } from '../../utils/helpers';
 import translation from '../../utils/translation';
 import {
-  options, getLabels, getDatasets,
+  options, getLabels, getDatasets, chartModes,
 } from '../../utils/chartsConfig';
-import lossesToAvoid from '../../utils/lossesToAvoid';
+import lossesNames from '../../utils/lossesConfig';
 // redux
 import { setActivePage, pages } from '../../redux/activePage';
 
@@ -26,14 +26,14 @@ import { setActivePage, pages } from '../../redux/activePage';
 */
 const SMALL_LANDSCAPE_SCREEN = 300;
 /*
-  The chart`s width and height maintains aspect ratio automatically.
+  The chart's width and height maintains aspect ratio automatically.
   But when one has a device with small screen width the chart gets too small.
-  That is why the chart shall be handled differently before and after user`s
+  That is why the chart shall be handled differently before and after user's
   screen is 800px wide.
   One came up with the number 800 by testing.
 */
 const CHART_TO_GROW_SCREEN_WIDTH = 800;
-const DEFAULT_ACTIVE_CONFIG_BTNS = ['aircrafts', 'helicopters', 'uav'];
+const DEFAULT_ACTIVE_CONFIG_BTNS = [lossesNames.aircrafts.name, lossesNames.helicopters.name, lossesNames.uav.name];
 
 export default function Charts({ losses }) {
   const latestLossesObject = getLatestLossesObject(losses);
@@ -45,11 +45,6 @@ export default function Charts({ losses }) {
 
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const [hasUserSmallScreen, setUserScreenValidity] = useState(false);
-
-  const chartModes = {
-    multiple: 'multiple',
-    showOne: 'showOne',
-  };
   const [selectedChartMode, setSelectedChartMode] = useState(chartModes.multiple);
 
   function hasUserValidScreenSize() {
@@ -82,7 +77,7 @@ export default function Charts({ losses }) {
     datasets: getDatasets(lossesToDisplay, websiteLanguage, losses),
   };
 
-  // TODO: rewrite the function so that it returns a component
+  // TODO rewrite the function so that it returns a component
   function renderConfigButtons() {
     if (losses.length === 0) {
       return null;
@@ -90,7 +85,7 @@ export default function Charts({ losses }) {
     return Object.entries(latestLossesObject).map((item) => {
       const itemName = item[0];
 
-      if (lossesToAvoid.includes(itemName)) {
+      if (!lossesNames[itemName]?.display) {
         return null;
       }
 
@@ -103,7 +98,6 @@ export default function Charts({ losses }) {
           setLossesToDisplay={setLossesToDisplay}
           itemTranslation={itemTranslation}
           selectedChartMode={selectedChartMode}
-          chartModes={chartModes}
           key={item}
         />
       );
@@ -135,7 +129,6 @@ export default function Charts({ losses }) {
         <ChartModeButton
           selectedChartMode={selectedChartMode}
           setSelectedChartMode={setSelectedChartMode}
-          chartModes={chartModes}
         />
 
         <ul className="charts__config">

@@ -38,9 +38,24 @@ export const options = {
   },
 };
 
-// Colors for the lines on the chart
+/**
+ * Colors for the lines on the chart
+ */
 const colors = ['#f1c40f', '#27ae60', '#ecf0f1', '#9b59b6', '#e74c3c', '#1abc9c', '#f39c12', '#7f8c8d', '#2c3e50',
   '#2980b9', '#bdc3c7'];
+
+/**
+ * The modes for the chart to show items.
+ * If 'showOne' is selected, the chart can show
+ * only one line at a time. If 'multiple' is
+ * selected, multiple lines can be rendered
+ * on the chart at once.
+ * @type {{showOne: string, multiple: string}}
+ */
+export const chartModes = {
+  multiple: 'multiple',
+  showOne: 'showOne',
+};
 
 /**
  * Creates an array of labels - dates to be rendered on the horizontal bottom line of the chart.

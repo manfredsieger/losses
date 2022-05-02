@@ -9,18 +9,38 @@ import '../../../screenshotSCSS/screenshotCommon.scss';
 // utils
 import translation from '../../../utils/translation';
 import { getImage, getLatestLossesObject } from '../../../utils/helpers';
-import lossesToAvoid from '../../../utils/lossesToAvoid';
+import lossesNames from '../../../utils/lossesConfig';
 
 export default function Losses({ losses }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
 
-  function getDayBeforeLossesObject() {
-    return losses[1];
+  /**
+   * This function looks for not the previous losses object
+   * prior to the today, but for the last losses object
+   * where a particular losses type had a number value
+   * and not a null / undefined.
+   * It is important since some values can have numbers,
+   * after that they can get 'null' and then numbers again.
+   * @param lossesType {string} is a type of losses as they
+   * are named in the lossesConfig.js file, 'lossesToRender'
+   * array
+   *
+   * @returns {number} the last numeric value this losses
+   * type had. If it did not have any numeric values, the
+   * function returns 0.
+   */
+  function getDayBeforeLossesObject(lossesType) {
+    for (let i = 1; i < losses.length; i++) {
+      if (!Number.isNaN(losses[i][lossesType])) {
+        return losses[i][lossesType];
+      }
+    }
+    return 0;
   }
 
   function getLossesNumberDifference(todayNumber, lossesType) {
-    const prevDayLosses = getDayBeforeLossesObject();
-    const difference = todayNumber - (prevDayLosses[lossesType] ?? 0);
+    const prevDayLossNumber = getDayBeforeLossesObject(lossesType);
+    const difference = todayNumber - prevDayLossNumber;
     if (difference === 0) {
       return null;
     }
@@ -31,7 +51,7 @@ export default function Losses({ losses }) {
     return Object.entries(objectToRender).map((item) => {
       const itemName = item[0];
 
-      if (lossesToAvoid.includes(itemName)) {
+      if (!lossesNames[itemName]?.display) {
         return null;
       }
 

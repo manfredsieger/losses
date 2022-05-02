@@ -54,7 +54,7 @@ export default function Footer() {
             activePage === pages.losses.name
               ? (
                 <>
-                  {`${design.designBasedOn} `}
+                  {`. ${design.designBasedOn} `}
                   <a
                     className="footer__link standardLink"
                     href={design.mfaLink}

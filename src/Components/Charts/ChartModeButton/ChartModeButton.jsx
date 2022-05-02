@@ -2,9 +2,11 @@ import React from 'react';
 import PropsTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import './ChartModeButton.scss';
+// utils
 import translation from '../../../utils/translation';
+import { chartModes } from '../../../utils/chartsConfig';
 
-export default function ChartModeButton({ selectedChartMode, setSelectedChartMode, chartModes }) {
+export default function ChartModeButton({ selectedChartMode, setSelectedChartMode }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const { showMultiple, showOne, header } = translation[websiteLanguage].charts.chartMode;
 
@@ -47,8 +49,4 @@ export default function ChartModeButton({ selectedChartMode, setSelectedChartMod
 ChartModeButton.propTypes = {
   selectedChartMode: PropsTypes.string.isRequired,
   setSelectedChartMode: PropsTypes.func.isRequired,
-  chartModes: PropsTypes.shape({
-    multiple: PropsTypes.string.isRequired,
-    showOne: PropsTypes.string.isRequired,
-  }).isRequired,
 };

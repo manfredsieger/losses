@@ -39,23 +39,19 @@ export function getPastDataUpdateDate(losses, dateFromEnd) {
   return datesArray[datesArray.length + dateFromEnd];
 }
 
-// TODO: rewrite the caption
 /**
  * Provides an object with the last recorded losses.
- * @param {object} losses is the object containing all losses in the war.
- * Find it here /Users/admin_mac/Desktop/losses/src/utils/losses.js.
- * @returns the object with last recorded losses.
+ * @param {object} losses is the object containing all losses in the war
+ * for all days. This object is received from server. Since it takes
+ * some time to get this object one shall return an empty object
+ * while waiting.
+ * @returns the object with last recorded losses or an empty object.
  */
 export function getLatestLossesObject(losses) {
   if (losses.length === 0) {
     return {};
   }
-  return Object.entries(losses[0]).reduce((acc, [key, value]) => {
-    if (!Object.prototype.toString.call(value).includes('Number')) {
-      return acc;
-    }
-    return { ...acc, [key]: value };
-  }, {});
+  return losses[0];
 }
 
 /**

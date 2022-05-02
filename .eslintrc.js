@@ -21,6 +21,7 @@ module.exports = {
         "jsx-a11y/no-noninteractive-element-interactions": 1,
         "jsx-a11y/click-events-have-key-events": 1,
         "eol-last": 0,
-        "max-len": [1, { "code": 120 }]
+        "max-len": [1, { "code": 120 }],
+        "no-plusplus": 0
     }
 }

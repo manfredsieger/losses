@@ -1,3 +1,5 @@
+import lossesNames from './lossesConfig';
+
 export default {
   eng: {
     nav: {
@@ -23,52 +25,52 @@ export default {
         today: 'Today',
       },
       losses: {
-        personnel: {
+        [lossesNames.personnel.name]: {
           name: 'Personnel',
         },
-        aircrafts: {
+        [lossesNames.aircrafts.name]: {
           name: 'Fighter jets',
         },
-        helicopters: {
+        [lossesNames.helicopters.name]: {
           name: 'Helicopters',
         },
-        armoredVehicles: {
+        [lossesNames.armoredVehicles.name]: {
           name: 'Armoured personnel vehicles',
         },
-        vehicles: {
+        [lossesNames.vehicles.name]: {
           name: 'Vehicles & fuel tanks',
         },
-        tanks: {
+        [lossesNames.tanks.name]: {
           name: 'Tanks',
         },
-        artillery: {
+        [lossesNames.artillery.name]: {
           name: 'Artillery systems',
         },
-        mlrs: {
+        [lossesNames.mlrs.name]: {
           name: 'MLRS',
           descr: 'Multiple launch rocket systems',
         },
-        cisterns: {
+        [lossesNames.cisterns.name]: {
           name: 'Fuel tanks',
         },
-        antiAir: {
+        [lossesNames.antiAir.name]: {
           name: 'Anti-aircraft warfare systems',
         },
-        uav: {
+        [lossesNames.uav.name]: {
           name: 'UAV operational-tactical level',
           descr: 'Unmanned aerial vehicles',
         },
-        vessels: {
+        [lossesNames.vessels.name]: {
           name: 'Vessels',
         },
-        specialVehicle: {
+        [lossesNames.specialVehicle.name]: {
           name: 'Special equipment',
         },
-        srmb: {
+        [lossesNames.srmb.name]: {
           name: 'Mobile SRBM system',
           descr: 'Short-range ballistic missiles',
         },
-        cruiseMissiles: {
+        [lossesNames.cruiseMissiles.name]: {
           name: 'Cruise missiles',
         },
       },
@@ -208,56 +210,56 @@ export default {
         today: 'Сьогодні',
       },
       losses: {
-        personnel: {
+        [lossesNames.personnel.name]: {
           name: 'Військові',
         },
-        aircrafts: {
+        [lossesNames.aircrafts.name]: {
           name: 'Літаки',
         },
-        helicopters: {
+        [lossesNames.helicopters.name]: {
           name: 'Гелікоптери',
         },
-        armoredVehicles: {
+        [lossesNames.armoredVehicles.name]: {
           name: 'ББМ',
           descr: 'Бойові броньовані машини',
         },
-        vehicles: {
+        [lossesNames.vehicles.name]: {
           name: 'Автомобілі та цистерни з ПММ',
           descr: 'Паливно-мастильні матеріали',
         },
-        tanks: {
+        [lossesNames.tanks.name]: {
           name: 'Танки',
         },
-        artillery: {
+        [lossesNames.artillery.name]: {
           name: 'Артилерійські системи',
         },
-        mlrs: {
+        [lossesNames.mlrs.name]: {
           name: 'РСЗВ',
           descr: 'Реактивні системи залпового вогню',
         },
-        cisterns: {
+        [lossesNames.cisterns.name]: {
           name: 'Цистерни з ПММ',
           descr: 'Паливно-мастильні матеріали',
         },
-        antiAir: {
+        [lossesNames.antiAir.name]: {
           name: 'Засоби ППО',
           descr: 'Протиповітряна оборона',
         },
-        uav: {
+        [lossesNames.uav.name]: {
           name: 'БПЛА оперативно-тактичного рівня',
           descr: 'Безпілотні літальні апарати',
         },
-        vessels: {
+        [lossesNames.vessels.name]: {
           name: 'Кораблі',
         },
-        specialVehicle: {
+        [lossesNames.specialVehicle.name]: {
           name: 'Спеціальна техніка',
         },
-        srmb: {
+        [lossesNames.srmb.name]: {
           name: 'Пускові установки ОТРК / ТРК',
           descr: 'Оперативно-тактичні ракетні комплекси / тактичні ракетні комплекси',
         },
-        cruiseMissiles: {
+        [lossesNames.cruiseMissiles.name]: {
           name: 'Крилаті ракети',
         },
       },
