@@ -1,10 +1,7 @@
 import React, { Suspense, useState, useEffect } from 'react';
-import {
-  Routes, Route, Navigate,
-} from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
-
 // components
 import { Loader } from 'semantic-ui-react';
 import MainPage from './Components/MainPage/MainPage';
@@ -14,10 +11,8 @@ import Navigation from './Components/Navigation/Navigation';
 import BurgerButton from './Components/BurgerButton/BurgerButton';
 import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButton';
 import ModalMessage from './Components/ModalMessage/ModalMessage';
-
 // utils
 import translation from './utils/translation';
-
 // redux
 import { setModalWindowText } from './redux/modalWindow';
 import { pages, stylePages } from './redux/activePage';
@@ -60,7 +55,6 @@ export default function App() {
       document.body.style.overflow = 'scroll';
     }
   }, [isSliderMenuShown]);
-  console.log(activePage !== pages.donate.name && !isSliderMenuShown);
 
   return (
     <div className={

@@ -14,6 +14,7 @@ import translation from '../../utils/translation';
 import {
   options, getLabels, getDatasets,
 } from '../../utils/chartsConfig';
+import lossesToAvoid from '../../utils/lossesToAvoid';
 // redux
 import { setActivePage, pages } from '../../redux/activePage';
 
@@ -88,6 +89,11 @@ export default function Charts({ losses }) {
     }
     return Object.entries(latestLossesObject).map((item) => {
       const itemName = item[0];
+
+      if (lossesToAvoid.includes(itemName)) {
+        return null;
+      }
+
       const itemTranslation = translation[websiteLanguage].main.losses[itemName].name;
 
       return (

@@ -8,9 +8,7 @@ import svgSources from '../../utils/svgSources';
 export default function Footer() {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
   const { activePage } = useSelector((state) => state.activePage);
-  const {
-    developedBy, team, design, mfa, facebook, iconsFrom, fund,
-  } = translation[websiteLanguage].footer;
+  const { developed, design, iconsFrom } = translation[websiteLanguage].footer;
 
   function renderSvgSources() {
     return Object.values(svgSources).map((source, index, arr) => (
@@ -36,30 +34,41 @@ export default function Footer() {
         <li
           className={`footer__text ${activePage === pages.losses.name ? 'footer__text--developed-by' : ''}`}
         >
-          {`${developedBy} `}
+          {`${developed.developedBy} `}
           <a
             className="footer__link standardLink"
             href="https://www.comebackalive.in.ua/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            {fund}
+            {developed.fund}
           </a>
-          {` ${team}`}
+          {` ${developed.team}`}
         </li>
-        {
-          activePage === pages.losses.name
-            ? (
-              <li className="footer__text">
-                {`${design} `}
-                <a className="footer__link standardLink" href="https://www.facebook.com/UkraineMFA" rel="noopener noreferrer" target="_blank">
-                  {mfa}
-                </a>
-                {` ${facebook}`}
-              </li>
-            )
-            : null
-        }
+        <li className="footer__text">
+          {`${design.designStr} `}
+          <a className="footer__link standardLink" href={design.authorLink} rel="noopener noreferrer" target="_blank">
+            {design.author}
+          </a>
+          {
+            activePage === pages.losses.name
+              ? (
+                <>
+                  {`${design.designBasedOn} `}
+                  <a
+                    className="footer__link standardLink"
+                    href={design.mfaLink}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {design.mfa}
+                  </a>
+                  {` ${design.facebook}`}
+                </>
+              )
+              : null
+          }
+        </li>
         <li className="footer__text">
           {`${iconsFrom} `}
           {renderSvgSources()}

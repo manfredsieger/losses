@@ -24,49 +24,52 @@ export default {
       },
       losses: {
         personnel: {
-          name: 'personnel',
+          name: 'Personnel',
         },
         aircrafts: {
-          name: 'fighter jets',
+          name: 'Fighter jets',
         },
         helicopters: {
-          name: 'helicopters',
+          name: 'Helicopters',
         },
         armoredVehicles: {
-          name: 'armoured personnel vehicles',
+          name: 'Armoured personnel vehicles',
         },
         vehicles: {
-          name: 'vehicles',
+          name: 'Vehicles & fuel tanks',
         },
         tanks: {
-          name: 'tanks',
+          name: 'Tanks',
         },
         artillery: {
-          name: 'artillery systems',
+          name: 'Artillery systems',
         },
         mlrs: {
           name: 'MLRS',
-          descr: 'multiple launch rocket systems',
+          descr: 'Multiple launch rocket systems',
         },
         cisterns: {
-          name: 'fuel tanks',
+          name: 'Fuel tanks',
         },
         antiAir: {
-          name: 'anti-aircraft warfare systems',
+          name: 'Anti-aircraft warfare systems',
         },
         uav: {
           name: 'UAV operational-tactical level',
-          descr: 'unmanned aerial vehicles',
+          descr: 'Unmanned aerial vehicles',
         },
         vessels: {
-          name: 'vessels',
+          name: 'Vessels',
         },
         specialVehicle: {
-          name: 'special equipment',
+          name: 'Special equipment',
         },
         srmb: {
-          name: 'mobile SRBM system',
-          descr: 'short-range ballistic missiles',
+          name: 'Mobile SRBM system',
+          descr: 'Short-range ballistic missiles',
+        },
+        cruiseMissiles: {
+          name: 'Cruise missiles',
         },
       },
     },
@@ -158,12 +161,20 @@ export default {
       warning: 'Please prefer downloading infographics using a laptop, not a tablet or a smartphone',
     },
     footer: {
-      developedBy: 'Developed by the',
-      fund: 'Come Back Alive Foundation',
-      team: 'team',
-      design: 'Design of this page inspired by the similar reports of the',
-      mfa: 'Ukrainian MFA',
-      facebook: 'on Facebook',
+      developed: {
+        developedBy: 'Developed by the',
+        fund: 'Come Back Alive Foundation',
+        team: 'team',
+      },
+      design: {
+        designStr: 'Design:',
+        author: 'Kyrylo Yermakov',
+        authorLink: 'https://yermakov-website.webflow.io',
+        designBasedOn: 'Design inspired by the reports of the',
+        mfa: 'Ukrainian MFA',
+        mfaLink: 'https://www.facebook.com/UkraineMFA',
+        facebook: 'on Facebook',
+      },
       iconsFrom: 'Icons: ',
     },
     modal: {
@@ -198,51 +209,56 @@ export default {
       },
       losses: {
         personnel: {
-          name: 'військові',
+          name: 'Військові',
         },
         aircrafts: {
-          name: 'літаки',
+          name: 'Літаки',
         },
         helicopters: {
-          name: 'гелікоптери',
+          name: 'Гелікоптери',
         },
         armoredVehicles: {
-          name: 'бойові броньовані машини',
+          name: 'ББМ',
+          descr: 'Бойові броньовані машини',
         },
         vehicles: {
-          name: 'автомобілі',
+          name: 'Автомобілі та цистерни з ПММ',
+          descr: 'Паливно-мастильні матеріали',
         },
         tanks: {
-          name: 'танки',
+          name: 'Танки',
         },
         artillery: {
-          name: 'артилерійські системи',
+          name: 'Артилерійські системи',
         },
         mlrs: {
           name: 'РСЗВ',
-          descr: 'реактивні системи залпового вогню',
+          descr: 'Реактивні системи залпового вогню',
         },
         cisterns: {
-          name: 'цистерни з ПММ',
-          descr: 'паливно-мастильні матеріали',
+          name: 'Цистерни з ПММ',
+          descr: 'Паливно-мастильні матеріали',
         },
         antiAir: {
-          name: 'засоби ППО',
-          descr: 'протиповітряна оборона',
+          name: 'Засоби ППО',
+          descr: 'Протиповітряна оборона',
         },
         uav: {
           name: 'БПЛА оперативно-тактичного рівня',
-          descr: 'безпілотні літальні апарати',
+          descr: 'Безпілотні літальні апарати',
         },
         vessels: {
-          name: 'кораблі',
+          name: 'Кораблі',
         },
         specialVehicle: {
-          name: 'спеціальна техніка',
+          name: 'Спеціальна техніка',
         },
         srmb: {
-          name: 'пускові установки ОТРК / ТРК',
-          descr: 'оперативно-тактичні ракетні комплекси / тактичні ракетні комплекси',
+          name: 'Пускові установки ОТРК / ТРК',
+          descr: 'Оперативно-тактичні ракетні комплекси / тактичні ракетні комплекси',
+        },
+        cruiseMissiles: {
+          name: 'Крилаті ракети',
         },
       },
     },
@@ -334,12 +350,20 @@ export default {
       warning: 'Інфографіку краще завантажувати з ноутбука ніж з планшета чи смартфона',
     },
     footer: {
-      developedBy: 'Розроблено командою фонду',
-      fund: 'Повернись Живим',
-      team: '',
-      design: 'Дизайн сторінки розроблений на основі відповідних звітів',
-      mfa: 'Міністерства закордонних справ України',
-      facebook: 'у фейсбуці',
+      developed: {
+        developedBy: 'Розроблено командою фонду',
+        fund: 'Повернись Живим',
+        team: '',
+      },
+      design: {
+        designStr: 'Дизайн:',
+        author: 'Kyrylo Yermakov',
+        authorLink: 'https://yermakov-website.webflow.io',
+        designBasedOn: 'Дизайн розроблено на основі звітів',
+        mfa: 'МЗС України',
+        mfaLink: 'https://www.facebook.com/UkraineMFA',
+        facebook: 'у Facebook',
+      },
       iconsFrom: 'Іконки взято з',
     },
     modal: {

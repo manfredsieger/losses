@@ -8,7 +8,8 @@ import '../../../screenshotSCSS/screenshotLosses.scss';
 import '../../../screenshotSCSS/screenshotCommon.scss';
 // utils
 import translation from '../../../utils/translation';
-import { getImage, getWordWithBigFirstLetter, getLatestLossesObject } from '../../../utils/helpers';
+import { getImage, getLatestLossesObject } from '../../../utils/helpers';
+import lossesToAvoid from '../../../utils/lossesToAvoid';
 
 export default function Losses({ losses }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
@@ -29,6 +30,11 @@ export default function Losses({ losses }) {
   function renderLossesItems(objectToRender) {
     return Object.entries(objectToRender).map((item) => {
       const itemName = item[0];
+
+      if (lossesToAvoid.includes(itemName)) {
+        return null;
+      }
+
       const itemNumber = item[1];
       const itemTranslation = translation[websiteLanguage].main.losses[itemName].name;
       const itemDescription = translation[websiteLanguage].main.losses[itemName].descr;
@@ -49,7 +55,7 @@ export default function Losses({ losses }) {
               {getLossesNumberDifference(itemNumber, itemName)}
             </p>
             <p className="losses__text-caption">
-              {getWordWithBigFirstLetter(itemTranslation)}
+              {itemTranslation}
               {itemDescription ? <Tooltip itemDescription={itemDescription} /> : null}
             </p>
           </div>
