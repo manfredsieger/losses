@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
 // components
-import { Loader } from 'semantic-ui-react';
 import MainPage from './Components/MainPage/MainPage';
 import Footer from './Components/Footer/Footer';
 import Logo from './Components/Logo/Logo';
@@ -11,6 +10,7 @@ import Navigation from './Components/Navigation/Navigation';
 import BurgerButton from './Components/BurgerButton/BurgerButton';
 import DonateBottomButton from './Components/DonateBottomButton/DonateBottomButton';
 import ModalMessage from './Components/ModalMessage/ModalMessage';
+import Loader from './Components/Loader/Loader';
 // utils
 import translation from './utils/translation';
 // redux
@@ -79,7 +79,7 @@ export default function App() {
         </div>
 
         <div className={`website__grid-center ${activePage === pages.screenshot.name ? 'website__grid-center--overflow-hidden' : ''}`}>
-          <Suspense fallback={<Loader size="big" />}>
+          <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<MainPage losses={losses} />} />
               <Route path="/donate" element={<Donate />} />

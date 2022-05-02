@@ -6,6 +6,7 @@ import './MainPage.scss';
 import Header from './Header/Header';
 import Dates from './Dates/Dates';
 import Losses from './Losses/Losses';
+import Loader from '../Loader/Loader';
 // redux
 import { setActivePage, pages } from '../../redux/activePage';
 
@@ -21,7 +22,9 @@ export default function MainPage({ losses }) {
     <main className="main__page-container page-container">
       <Header losses={losses} />
       <Dates />
-      <Losses losses={losses} />
+      {losses.length === 0
+        ? <Loader />
+        : <Losses losses={losses} />}
     </main>
   );
 }

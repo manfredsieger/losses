@@ -159,7 +159,7 @@ export default {
     screenshot: {
       header: 'Download infographics',
       downloadBtn: 'Download',
-      noDownload: 'Please download infographics using any other browser than Safari. For example, Google Chrome, Mozilla Firefox, Microsoft Edge, etc.',
+      noDownload: 'Please download infographics using Google Chrome, Mozilla Firefox or Microsoft Edge',
       warning: 'Please prefer downloading infographics using a laptop, not a tablet or a smartphone',
     },
     footer: {
@@ -348,7 +348,7 @@ export default {
     screenshot: {
       header: 'Завантажити інфографіку',
       downloadBtn: 'Завантажити',
-      noDownload: 'Завантажте інфографіку, будь ласка, у іншому браузері ніж Safari. Наприклад Google Chrome, Mozilla Firefox, Microsoft Edge тощо.',
+      noDownload: 'Завантажте інфографіку, будь ласка, у Google Chrome, Mozilla Firefox чи Microsoft Edge',
       warning: 'Інфографіку краще завантажувати з ноутбука ніж з планшета чи смартфона',
     },
     footer: {

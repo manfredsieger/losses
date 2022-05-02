@@ -47,9 +47,10 @@ export default function Footer() {
         </li>
         <li className="footer__text">
           {`${design.designStr} `}
-          <a className="footer__link standardLink" href={design.authorLink} rel="noopener noreferrer" target="_blank">
-            {design.author}
-          </a>
+          {design.author}
+          {/* <a className="footer__link standardLink" href={design.authorLink} rel="noopener noreferrer" target="_blank"> */}
+          {/*  {design.author} */}
+          {/* </a> */}
           {
             activePage === pages.losses.name
               ? (
