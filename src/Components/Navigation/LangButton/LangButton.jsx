@@ -10,6 +10,10 @@ export default function LangButton() {
 
   const dispatch = useDispatch();
 
+  /**
+   * CHecks whether user device supports localStorage.
+   * @returns {boolean} true if supports.
+   */
   function isLocaleStorageSupported() {
     try {
       return 'localStorage' in window && window.localStorage !== null;
@@ -18,6 +22,11 @@ export default function LangButton() {
     }
   }
 
+  /**
+   * Changes website language value in redux.
+   * Changing redux value triggers re-rendering
+   * of the webpage, not the value in the localStorage.
+   */
   function changeLanguageInRedux() {
     if (websiteLanguage === languages.eng) {
       dispatch(setWebsiteLanguage(languages.ua));
@@ -26,6 +35,12 @@ export default function LangButton() {
     }
   }
 
+  /**
+   * Writes / re-writes website language value to localStorage.
+   * @returns {boolean} true if localStorage was written successful
+   * and false if an error occurred. The website language value in
+   * redux will be nonetheless changed.
+   */
   function isWriteLangToLocalStorageSuccessfull() {
     try {
       if (localStorage.getItem('lang') === languages.ua) {
@@ -43,6 +58,10 @@ export default function LangButton() {
     }
   }
 
+  /**
+   * Changes the language of the website - first in the localStorage
+   * (if applicable), then in redux.
+   */
   function changeLanguage() {
     if (isLocaleStorageSupported() && isWriteLangToLocalStorageSuccessfull()) {
       dispatch(setWebsiteLanguage(localStorage.getItem('lang')));
@@ -51,6 +70,10 @@ export default function LangButton() {
     }
   }
 
+  /**
+   * Sets first website language value in the localStorage
+   * on the first website render.
+   */
   useEffect(() => {
     if (!isLocaleStorageSupported()) {
       return;

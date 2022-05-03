@@ -50,12 +50,12 @@ export default function Losses({ losses }) {
   function renderLossesItems(objectToRender) {
     return Object.entries(objectToRender).map((item) => {
       const itemName = item[0];
+      const itemNumber = item[1];
 
-      if (!lossesNames[itemName]?.display) {
+      if (!lossesNames[itemName]?.display || !itemNumber) {
         return null;
       }
 
-      const itemNumber = item[1];
       const itemTranslation = translation[websiteLanguage].main.losses[itemName].name;
       const itemDescription = translation[websiteLanguage].main.losses[itemName].descr;
 

@@ -51,13 +51,14 @@
   width: 35%;
 }
 
-/* color in a from of a filter generated here: https://codepen.io/sosuke/pen/Pjoqqp */
+/* color generated here: https://codepen.io/sosuke/pen/Pjoqqp */
 .losses__img {
   width: 80%;
   max-width: 100px;
   height: auto;
 
   @include object-fit;
+  // this is #333333
   filter: invert(18%) sepia(3%) saturate(151%) hue-rotate(52deg) brightness(92%) contrast(90%);
 }
 
