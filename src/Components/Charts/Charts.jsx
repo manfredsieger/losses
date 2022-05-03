@@ -77,8 +77,7 @@ export default function Charts({ losses }) {
     datasets: getDatasets(lossesToDisplay, websiteLanguage, losses),
   };
 
-  // TODO rewrite the function so that it returns a component
-  function renderConfigButtons() {
+  function ConfigButtons() {
     if (losses.length === 0) {
       return null;
     }
@@ -132,7 +131,7 @@ export default function Charts({ losses }) {
         />
 
         <ul className="charts__config">
-          {renderConfigButtons()}
+          <ConfigButtons />
         </ul>
       </article>
 
