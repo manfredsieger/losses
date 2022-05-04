@@ -2,9 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import './Map.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import Legend from './Legend/Legend';
+// utils
 import translation from '../../utils/translation';
-import { setActivePage } from '../../redux/activePage';
 import { pages } from '../../utils/pageNavConfig';
+import { scrollToTop } from '../../utils/helpers';
+// redux
+import { setActivePage } from '../../redux/activePage';
 
 export default function Map() {
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
@@ -24,6 +27,7 @@ export default function Map() {
 
   useEffect(() => {
     dispatch(setActivePage(pages.map.name));
+    scrollToTop();
     centerMapFullScreen(1000);
   }, []);
 

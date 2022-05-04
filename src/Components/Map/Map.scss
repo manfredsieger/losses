@@ -8,9 +8,9 @@
 
 .warnings__container {
   padding: 10px;
-  margin: 0 auto 20px;
+  margin: 0 auto 40px;
   max-width: 400px;
-  border: 5px solid $red;
+  border: 10px solid $red;
 }
 
 .warnings__list {
@@ -19,17 +19,17 @@
 
 .warnings__item {
   text-align: center;
-  font-style: italic;
+  //font-style: italic;
   line-height: 1.4;
 }
 
 .warnings__item:not(:last-child) {
   border-bottom: 1px solid #000000;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 .warnings__item:last-child {
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .map__btn-center {

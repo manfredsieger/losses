@@ -13,6 +13,7 @@ import {
   donationsVoicesOfChildren,
 } from '../../utils/donations';
 import translation from '../../utils/translation';
+import { scrollToTop } from '../../utils/helpers';
 // redux
 import { setActivePage } from '../../redux/activePage';
 import { pages } from '../../utils/pageNavConfig';
@@ -24,7 +25,7 @@ export default function Donate() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setActivePage(pages.donate.name));
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, []);
 
   function renderCopyField(objectToRender) {

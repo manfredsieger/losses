@@ -9,7 +9,7 @@ import RotateWarning from './RotateWarning/RotateWarning';
 import ChartModeButton from './ChartModeButton/ChartModeButton';
 import './Charts.scss';
 // utils
-import { getLatestLossesObject } from '../../utils/helpers';
+import { getLatestLossesObject, scrollToTop } from '../../utils/helpers';
 import translation from '../../utils/translation';
 import {
   options, getLabels, getDatasets, chartModes,
@@ -41,7 +41,7 @@ export default function Charts({ losses }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setActivePage(pages.charts.name));
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, []);
 
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);

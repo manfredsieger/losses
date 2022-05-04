@@ -104,3 +104,7 @@ export function isFlexGapSupported() {
 
   return isSupported;
 }
+
+export function scrollToTop() {
+  window.scrollTo(0, 0);
+}

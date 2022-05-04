@@ -10,13 +10,15 @@ import Loader from '../Loader/Loader';
 // redux
 import { setActivePage } from '../../redux/activePage';
 import { pages } from '../../utils/pageNavConfig';
+// utils
+import { scrollToTop } from '../../utils/helpers';
 
 export default function MainPage({ losses }) {
   const dispatch = useDispatch();
 
   useEffect(async () => {
     dispatch(setActivePage(pages.losses.name));
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, []);
 
   return (

@@ -11,7 +11,7 @@ import ModalMessage from '../ModalMessage/ModalMessage';
 // utils
 import translation from '../../utils/translation';
 import screenshotConfig from '../../utils/screenshotConfig';
-import { isUserAgentSafari } from '../../utils/helpers';
+import { isUserAgentSafari, scrollToTop } from '../../utils/helpers';
 import { pages } from '../../utils/pageNavConfig';
 // redux
 import { setActivePage } from '../../redux/activePage';
@@ -23,7 +23,7 @@ export default function Screenshot({ losses }) {
   const { modalWindowText } = useSelector((state) => state.modalWindowText);
   useEffect(() => {
     dispatch(setActivePage(pages.screenshot.name));
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, []);
 
   const [selectedSizeName, setSelectedSizeName] = useState(screenshotConfig.twitter.name);
