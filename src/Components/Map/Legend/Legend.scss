@@ -1,0 +1,93 @@
+@import '../../../common.scss';
+
+.legend__section {
+  margin: 0 0 20px 0;
+}
+
+.legend__header {
+  margin: 0 auto 20px;
+
+  text-align: center;
+  font-family: $serifFont;
+  font-size: 20px;
+}
+
+.legend__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 5px 20px;
+  justify-content: center;
+  align-content: start;
+  justify-items: start;
+  align-items: center;
+
+  @include list_reset;
+}
+
+.legend__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.legend__icon-round,
+.legend__icon-img {
+  margin-right: 10px;
+}
+
+.legend__icon-round,
+.legend__icon-img,
+.legend__dash {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.legend__icon-round {
+  min-width: 30px;
+  height: 30px;
+  border-width: 3px;
+  border-style: solid;
+
+  border-radius: 1000px;
+}
+
+.legend__icon-img {
+  min-width: 40px;
+  height: 40px;
+
+  @include object_fit
+}
+
+.legend__icon-arrow {
+  transform: rotate(-110deg);
+}
+
+.legend__caption {
+  font-family: $sansSerifFont;
+  font-size: 16px;
+}
+
+@media(max-width: 1300px) {
+  .legend__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 900px) {
+  .legend__list {
+    grid-gap: 5px 5px;
+  }
+}
+
+@media(max-width: 750px) {
+  .legend__list {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .legend__icon-img {
+    min-width: 30px;
+    height: 30px;
+  }
+}

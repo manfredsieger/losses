@@ -53,5 +53,5 @@ export const pages = {
  */
 export const stylePages = {
   red: [pages.losses.name, pages.charts.name],
-  white: [pages.donate.name, pages.screenshot.name],
+  white: [pages.donate.name, pages.screenshot.name, pages.map.name],
 };

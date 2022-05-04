@@ -22,6 +22,7 @@ import { isFlexGapSupported } from './utils/helpers';
 const Donate = React.lazy(() => import('./Components/Donate/Donate'));
 const Charts = React.lazy(() => import('./Components/Charts/Charts'));
 const Screenshot = React.lazy(() => import('./Components/Screenshot/Screenshot'));
+const Map = React.lazy(() => import('./Components/Map/Map'));
 
 export default function App() {
   const { activePage } = useSelector((state) => state.activePage);
@@ -85,6 +86,7 @@ export default function App() {
               <Route path="/donate" element={<Donate />} />
               <Route path="/charts" element={<Charts losses={losses} />} />
               <Route path="/screenshot" element={<Screenshot losses={losses} />} />
+              <Route path="/map" element={<Map />} />
               <Route path="*" element={<Navigate replace to="/" />} />
             </Routes>
           </Suspense>

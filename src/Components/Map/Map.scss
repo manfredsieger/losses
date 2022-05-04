@@ -1,0 +1,57 @@
+@import '../../common.scss';
+
+.map__header {
+  margin: 0 auto 40px;
+
+  text-align: center;
+}
+
+.warnings__container {
+  padding: 10px;
+  margin: 0 auto 20px;
+  max-width: 400px;
+  border: 5px solid $red;
+}
+
+.warnings__list {
+  @include list_reset;
+}
+
+.warnings__item {
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.warnings__item:not(:last-child) {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 4px;
+}
+
+.warnings__item:last-child {
+  margin-top: 5px;
+}
+
+.map__btn-center {
+  display: block;
+  margin: 0 auto 40px;
+  padding: 15px 25px;
+  border: 1px solid #000000;
+
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background-color: $light_red;
+  cursor: pointer;
+
+  @include scalableButtons0_05;
+  @include hoverSquareBoxShadow;
+}
+
+.map__iframe {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}

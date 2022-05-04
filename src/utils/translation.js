@@ -163,6 +163,30 @@ export default {
       noDownload: 'Please download infographics using Google Chrome, Mozilla Firefox or Microsoft Edge',
       warning: 'Please prefer downloading infographics using a laptop, not a tablet or a smartphone',
     },
+    map: {
+      header: 'Troop location map',
+      legend: {
+        legend: 'Legend',
+        terrLiberated: 'Liberated territories',
+        terrLiberatedMarchApril: 'Territories liberated in late March - early April',
+        terrToBeClarified: 'The status of the territory needs to be clarified',
+        terrSeized: 'Seized territories',
+        terrCrimea: 'Temporarily occupied territories of the Crimea, Donetsk and Luhansk regions',
+        terrTransnistria: 'Russian-occupied Transnistria',
+        unit: 'Occupier\'s unit',
+        staff: 'Occupier\'s headquarters',
+        airfield: 'Occupier\'s airfield',
+        fleet: 'Occupier\'s fleet',
+        attackDirection1: 'Occupier\'s directions of attacks',
+        attackDirection2: 'Occupier\'s directions of attacks',
+      },
+      centerBtn: 'Center map',
+      warnings: [
+        'Do not use this map to plan your evacuation routes. Follow the information on humanitarian corridors'
+        + ' reported by the authorities.',
+        'The map shows not exact but only approximate location of troops based on media reports.',
+      ],
+    },
     footer: {
       developed: {
         developedBy: 'Developed by the',
@@ -352,6 +376,30 @@ export default {
       downloadBtn: 'Завантажити',
       noDownload: 'Завантажте інфографіку, будь ласка, у Google Chrome, Mozilla Firefox чи Microsoft Edge',
       warning: 'Інфографіку краще завантажувати з ноутбука ніж з планшета чи смартфона',
+    },
+    map: {
+      header: 'Мапа розташування сил',
+      legend: {
+        legend: 'Легенда',
+        terrLiberated: 'Звільнені території',
+        terrLiberatedMarchApril: 'Території звільнені наприкінці березня - початку квітня',
+        terrToBeClarified: 'Статус території потребує уточнення',
+        terrSeized: 'Території захоплені окупантами',
+        terrCrimea: 'Тимчасово окуповані території Криму, Донецької та Луганської областей',
+        terrTransnistria: 'Окуповане Придністров\'я',
+        unit: 'Підрозділи окупантів',
+        staff: 'Штаби окупантів',
+        airfield: 'Аеродроми окупантів',
+        fleet: 'Флот окупантів',
+        attackDirection1: 'Напрями наступу окупантів',
+        attackDirection2: 'Напрями наступу окупантів',
+      },
+      centerBtn: 'Відцентрувати мапу',
+      warnings: [
+        'Не використовуйте цю мапу для планування маршрутів евакуації. Слідкуйте за інформацією про гуманітарні'
+        + ' коридори від органів влади.',
+        'Мапа показує не точні але лише приблизні розташування військ на основі повідомлень у медіа.',
+      ],
     },
     footer: {
       developed: {
