@@ -20,7 +20,7 @@ module.exports = {
         "global-require": 1,
         "jsx-a11y/no-noninteractive-element-interactions": 1,
         "jsx-a11y/click-events-have-key-events": 1,
-        "eol-last": 0,
+        "eol-last": 2,
         "max-len": [1, { "code": 120 }],
         "no-plusplus": 0
     }

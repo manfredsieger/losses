@@ -1,8 +1,9 @@
 import React from 'react';
 import './Footer.scss';
 import { useSelector } from 'react-redux';
+// utils
 import translation from '../../utils/translation';
-import { stylePages, pages } from '../../redux/activePage';
+import { stylePages, pages } from '../../utils/pageNavConfig';
 import svgSources from '../../utils/svgSources';
 
 export default function Footer() {

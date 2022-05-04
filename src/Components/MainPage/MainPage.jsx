@@ -8,7 +8,8 @@ import Dates from './Dates/Dates';
 import Losses from './Losses/Losses';
 import Loader from '../Loader/Loader';
 // redux
-import { setActivePage, pages } from '../../redux/activePage';
+import { setActivePage } from '../../redux/activePage';
+import { pages } from '../../utils/pageNavConfig';
 
 export default function MainPage({ losses }) {
   const dispatch = useDispatch();

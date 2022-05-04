@@ -16,7 +16,8 @@ import {
 } from '../../utils/chartsConfig';
 import lossesNames from '../../utils/lossesConfig';
 // redux
-import { setActivePage, pages } from '../../redux/activePage';
+import { setActivePage } from '../../redux/activePage';
+import { pages } from '../../utils/pageNavConfig';
 
 /*
   The chart is not suitable for to be rendered on small screens.

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Loader.scss';
-import translation from '../../utils/translation';
 
 export default function Loader() {
   return (

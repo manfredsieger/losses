@@ -15,7 +15,7 @@ import Loader from './Components/Loader/Loader';
 import translation from './utils/translation';
 // redux
 import { setModalWindowText } from './redux/modalWindow';
-import { pages, stylePages } from './redux/activePage';
+import { pages, stylePages } from './utils/pageNavConfig';
 import { isFlexGapSupported } from './utils/helpers';
 
 // To split the bundle.js and make the dom content load faster

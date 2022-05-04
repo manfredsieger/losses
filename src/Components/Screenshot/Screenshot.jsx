@@ -12,8 +12,9 @@ import ModalMessage from '../ModalMessage/ModalMessage';
 import translation from '../../utils/translation';
 import screenshotConfig from '../../utils/screenshotConfig';
 import { isUserAgentSafari } from '../../utils/helpers';
+import { pages } from '../../utils/pageNavConfig';
 // redux
-import { setActivePage, pages } from '../../redux/activePage';
+import { setActivePage } from '../../redux/activePage';
 import { setModalWindowText } from '../../redux/modalWindow';
 
 export default function Screenshot({ losses }) {

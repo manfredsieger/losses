@@ -14,7 +14,8 @@ import {
 } from '../../utils/donations';
 import translation from '../../utils/translation';
 // redux
-import { setActivePage, pages } from '../../redux/activePage';
+import { setActivePage } from '../../redux/activePage';
+import { pages } from '../../utils/pageNavConfig';
 
 export default function Donate() {
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);

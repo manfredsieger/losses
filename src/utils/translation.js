@@ -7,6 +7,7 @@ export default {
       donate: 'How can I help?',
       charts: 'Charts',
       screenshot: 'Download infographics',
+      map: 'Map',
     },
     main: {
       header: {
@@ -192,6 +193,7 @@ export default {
       donate: 'Як я можу допомогти?',
       charts: 'Графіки',
       screenshot: 'Зберегти інфографіку',
+      map: 'Мапа',
     },
     main: {
       header: {

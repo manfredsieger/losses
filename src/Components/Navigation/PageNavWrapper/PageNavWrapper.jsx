@@ -5,7 +5,7 @@ import './PageNavWrapper.scss';
 // components
 import PageNav from './PageNav/PageNav';
 // redux
-import { pages } from '../../../redux/activePage';
+import { pages } from '../../../utils/pageNavConfig';
 // utils
 import translation from '../../../utils/translation';
 
