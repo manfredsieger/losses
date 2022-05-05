@@ -8,6 +8,9 @@ The folder contains files that either contain function that are shared between m
 like, color of the grid etc. It also contains function which create sets of data for each type of losses and array 
 of dates to be displayed on the horizontal bottom line of the chart.
 
+### donations.js
+`donations.js` provides banking details of all charitable organizations that are mentioned on the website.
+
 ### helpers.js
 `helpers.js` contains function which are used by multiple react-components but are declared only once.
 
@@ -20,6 +23,13 @@ what reason, just in case).
 `lossesConfig.js` is very important file. It contains an object with:
 1. Names of losses that will be searched in the json received from server
 2. Statement whether this particular losses type shall be rendered or not.
+
+### mapConfig.js
+`mapConfig.js` contains information on which legend icons shall be rendered and whether they shall have an image or 
+a colored circle. 
+
+### pageNavConfig.js
+`pageNavConfig.js` contains configuration on what shall be the configuration buttons and which icons shall they have.
 
 ### screenshotConfig.js
 `screenshotConfig.js` holds configuration for buttons on the screenshot page which allow user to choose the type of 
