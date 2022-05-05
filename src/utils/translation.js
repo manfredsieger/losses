@@ -167,6 +167,8 @@ export default {
       header: 'Troop location map',
       legend: {
         legend: 'Legend',
+        seeAllIcons1: 'Click',
+        seeAllIcons2: 'on the map to see all icons',
         terrLiberated: 'Liberated territories',
         terrLiberatedMarchApril: 'Territories liberated in late March - early April',
         terrToBeClarified: 'The status of the territory needs to be clarified',
@@ -381,6 +383,8 @@ export default {
       header: 'Мапа розташування сил',
       legend: {
         legend: 'Легенда',
+        seeAllIcons1: 'Оберіть',
+        seeAllIcons2: 'на мапі щоб побачити всі іконки',
         terrLiberated: 'Звільнені території',
         terrLiberatedMarchApril: 'Території звільнені наприкінці березня - початку квітня',
         terrToBeClarified: 'Статус території потребує уточнення',

@@ -12,6 +12,25 @@
   font-size: 20px;
 }
 
+.legend__seeAllIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 0 20px 0;
+}
+
+.legend__seeAllIcons-text {
+  font-family: $sansSerifFont;
+  font-size: 12px;
+}
+
+.legend__seeAllIcons-icon {
+  display: inline-block;
+  width: 13px;
+  margin: 0 5px;
+}
+
 .legend__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
