@@ -196,7 +196,7 @@ export default {
         team: 'team',
       },
       design: {
-        designStr: 'Design:',
+        designStr: 'Designed by',
         author: 'Kyrylo Yermakov',
         authorLink: 'https://yermakov-website.webflow.io',
         designBasedOn: 'Design inspired by the reports of the',
