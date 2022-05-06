@@ -7,6 +7,7 @@ import Chart from 'chart.js/auto';
 import ConfigBtn from './ConfigBtn/ConfigBtn';
 import RotateWarning from './RotateWarning/RotateWarning';
 import ChartModeButton from './ChartModeButton/ChartModeButton';
+import Armies from './Armies/Armies';
 import './Charts.scss';
 // utils
 import { getLatestLossesObject, scrollToTop } from '../../utils/helpers';
@@ -37,16 +38,16 @@ const CHART_TO_GROW_SCREEN_WIDTH = 800;
 const DEFAULT_ACTIVE_CONFIG_BTNS = [lossesNames.aircrafts.name, lossesNames.helicopters.name, lossesNames.uav.name];
 
 export default function Charts({ losses }) {
-  const latestLossesObject = getLatestLossesObject(losses);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setActivePage(pages.charts.name));
-    scrollToTop();
-  }, []);
-
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const [hasUserSmallScreen, setUserScreenValidity] = useState(false);
   const [selectedChartMode, setSelectedChartMode] = useState(chartModes.multiple);
+  const [latestLossesObject, setLatestLossesObject] = useState({});
+  // const latestLossesObject = getLatestLossesObject(losses);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setLatestLossesObject(getLatestLossesObject(losses));
+  }, [losses]);
 
   function hasUserValidScreenSize() {
     if (window.innerWidth < SMALL_LANDSCAPE_SCREEN) {
@@ -56,6 +57,8 @@ export default function Charts({ losses }) {
   }
 
   useEffect(() => {
+    dispatch(setActivePage(pages.charts.name));
+    scrollToTop();
     hasUserValidScreenSize();
     window.addEventListener('resize', hasUserValidScreenSize);
 
@@ -82,6 +85,7 @@ export default function Charts({ losses }) {
     if (losses.length === 0) {
       return null;
     }
+
     return Object.entries(latestLossesObject).map((item) => {
       const itemName = item[0];
 
@@ -135,6 +139,9 @@ export default function Charts({ losses }) {
           <ConfigButtons />
         </ul>
       </article>
+
+      <hr style={{ width: '100%' }} />
+      <Armies personnelLosses={latestLossesObject.personnel} />
 
     </main>
   );

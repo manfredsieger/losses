@@ -1,0 +1,34 @@
+@import '../../../common.scss';
+
+.armies__article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.armies__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+
+  width: 300px;
+  height: calc(30px * 7);
+  border: 1px solid white;
+  overflow-y: scroll;
+
+  @include list_reset;
+}
+
+.armies__army {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 30px;
+}
+
+.armies__army-losses-of-ru {
+  background-color: yellow;
+  font-weight: 700;
+}
