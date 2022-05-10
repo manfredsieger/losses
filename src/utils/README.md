@@ -14,6 +14,10 @@ of dates to be displayed on the horizontal bottom line of the chart.
 ### helpers.js
 `helpers.js` contains function which are used by multiple react-components but are declared only once.
 
+### languagesConfig.js
+`languagesConfig.js` defines languages that are used to display the text on the website as well as languages used to 
+translate dates
+
 ### losses.js
 `losses.js` was used first as a local database and all data was imported from this file.
 After that the project got its own database. But I left the `losses.js` file just in case one needs it (not idea for 

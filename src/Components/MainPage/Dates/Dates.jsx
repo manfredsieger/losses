@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 // utils
 import { getFullDate } from '../../../utils/helpers';
 import translation from '../../../utils/translation';
-import { languages } from '../../../redux/changeLang';
+import websiteLanguages from '../../../utils/languagesConfig';
 
 const START_WAR_DATE = new Date('2022-02-24');
 
@@ -28,7 +28,7 @@ export default function Dates() {
   function getAdaptedSentenceIfLangIsUA() {
     const daysOfAggressionString = daysOfAggression.toString();
 
-    if (websiteLanguage === languages.ua && daysPassed.includes('днів')) {
+    if (websiteLanguage === websiteLanguages.ua && daysPassed.includes('днів')) {
       switch (daysOfAggressionString[daysOfAggressionString.length - 1]) {
         case '1':
           return daysPassed.replace('днів', 'день');

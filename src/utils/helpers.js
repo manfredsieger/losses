@@ -1,3 +1,6 @@
+import { datesLanguages } from './languagesConfig';
+import lossesConfig from './lossesConfig';
+
 const { detect } = require('detect-browser');
 
 /**
@@ -6,8 +9,8 @@ const { detect } = require('detect-browser');
  * @returns the same argument with first letter capitalized
  */
 export function getWordWithBigFirstLetter(word) {
-  if (!Object.prototype.toString.call(word).includes('String')) {
-    throw new Error('You provided not a string');
+  if (!Object.prototype.toString.call(word).includes('String') || word.length === 0) {
+    throw new Error('You provided wrong argument');
   }
   return `${word[0].toUpperCase()}${word.slice(1)}`;
 }
@@ -20,23 +23,16 @@ export function getWordWithBigFirstLetter(word) {
  * object in the /Users/admin_mac/Desktop/losses/src/redux/changeLang.js file.
  * @returns a string with the date in the following format 'January 1, 2022'
  */
-export function getFullDate(dateObject, language) {
+export function getFullDate(dateObject, language = datesLanguages.eng) {
   if (!Object.prototype.toString.call(dateObject).includes('Date')) {
-    throw new Error('You provided incorrect Date object');
+    throw new Error('You provided invalid date object');
   }
-  return `${getWordWithBigFirstLetter(dateObject.toLocaleString(language, { month: 'long' }))} ${dateObject.getDate()}, ${dateObject.getFullYear()}`;
-}
 
-/**
- * Provides the date of the n-added losses numbers as a string.
- * @param {object} losses is the object containing all losses in the war.
- * Find it here /Users/admin_mac/Desktop/losses/src/utils/losses.js.
- * @param {number} dateFromEnd is a negative number like -1 or -2.
- * @returns the date of the last added losses numbers as a string.
- */
-export function getPastDataUpdateDate(losses, dateFromEnd) {
-  const datesArray = Object.keys(losses);
-  return datesArray[datesArray.length + dateFromEnd];
+  if (!Object.values(datesLanguages).includes(language)) {
+    throw new Error('You provided invalid language string');
+  }
+
+  return `${getWordWithBigFirstLetter(dateObject.toLocaleString(language, { month: 'long' }))} ${dateObject.getDate()}, ${dateObject.getFullYear()}`;
 }
 
 /**
@@ -48,9 +44,18 @@ export function getPastDataUpdateDate(losses, dateFromEnd) {
  * @returns the object with last recorded losses or an empty object.
  */
 export function getLatestLossesObject(losses) {
+  if (!Object.prototype.toString.call(losses).includes('Array')) {
+    throw new Error('You provided not an array');
+  }
   if (losses.length === 0) {
     return {};
   }
+  Object.entries(lossesConfig).forEach((lossesType) => {
+    if (lossesType[1].display && !(lossesType[0] in losses[0])) {
+      throw new Error(`The object provided does not match the expected object - missing ${lossesType[0]} property`);
+    }
+  });
+
   return losses[0];
 }
 

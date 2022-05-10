@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import './LangButton.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { setWebsiteLanguage, languages } from '../../../redux/changeLang';
+import { setWebsiteLanguage } from '../../../redux/changeLang';
+import languages from '../../../utils/languagesConfig';
 import { pages } from '../../../utils/pageNavConfig';
 
 export default function LangButton() {

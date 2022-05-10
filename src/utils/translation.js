@@ -1,4 +1,5 @@
 import lossesNames from './lossesConfig';
+import { datesLanguages } from './languagesConfig';
 
 export default {
   eng: {
@@ -20,7 +21,7 @@ export default {
       },
       dates: {
         start: 'Start of the full-scale aggression',
-        language: 'en-us',
+        language: datesLanguages.eng,
         daysPassed: 'days of the russian full-scale aggression',
         endOfWar: 'End of the war',
         today: 'Today',
@@ -232,7 +233,7 @@ export default {
       },
       dates: {
         start: 'Початок повномасштабної агресії',
-        language: 'uk-Ua',
+        language: datesLanguages.ua,
         daysPassed: 'днів повномасштабної агресії росії',
         endOfWar: 'Кінець війни',
         today: 'Сьогодні',
@@ -412,7 +413,7 @@ export default {
         team: '',
       },
       design: {
-        designStr: 'Дизайн:',
+        designStr: 'Дизайн',
         author: 'Kyrylo Yermakov',
         authorLink: 'https://yermakov-website.webflow.io',
         designBasedOn: 'Дизайн розроблено на основі звітів',

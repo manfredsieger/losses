@@ -1,9 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-export const languages = {
-  eng: 'eng',
-  ua: 'ua',
-};
+import languages from '../utils/languagesConfig';
 
 export const languageSlice = createSlice({
   name: 'websiteLanguage',
