@@ -414,7 +414,7 @@ export default {
       },
       design: {
         designStr: 'Дизайн',
-        author: 'Kyrylo Yermakov',
+        author: 'Кирило Єрмаков',
         authorLink: 'https://yermakov-website.webflow.io',
         designBasedOn: 'Дизайн розроблено на основі звітів',
         mfa: 'МЗС України',
