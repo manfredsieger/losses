@@ -199,7 +199,7 @@ export default {
       design: {
         designStr: 'Designed by',
         author: 'Kyrylo Yermakov',
-        authorLink: 'https://yermakov-website.webflow.io',
+        authorLink: 'https://yermakov.webflow.io',
         designBasedOn: 'Design inspired by the reports of the',
         mfa: 'Ukrainian MFA',
         mfaLink: 'https://www.facebook.com/UkraineMFA',
@@ -415,7 +415,7 @@ export default {
       design: {
         designStr: 'Дизайн',
         author: 'Кирило Єрмаков',
-        authorLink: 'https://yermakov-website.webflow.io',
+        authorLink: 'https://yermakov.webflow.io',
         designBasedOn: 'Дизайн розроблено на основі звітів',
         mfa: 'МЗС України',
         mfaLink: 'https://www.facebook.com/UkraineMFA',
@@ -428,7 +428,6 @@ export default {
       downloadingImg: 'Якщо картинка завантажилася з помилкою, спробуйте ще раз, завантажте з комп\'ютера або у іншому браузері',
       errorDownloadingImg: 'Помилка завантаження інфографіки',
       errorGettingLosses: 'Ми не змогли отримати дані втрат =(. Будь ласка, через певний час спробуйте ще раз',
-
     },
   },
 };
