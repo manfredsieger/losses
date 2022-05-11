@@ -110,9 +110,9 @@ export default function Charts({ losses }) {
 
   return (
     <main className="charts__page-container page-container">
-      <h1 className="charts__header standardHeader">{translation[websiteLanguage].charts.header}</h1>
+      <h1 className="visually-hidden">{translation[websiteLanguage].charts.header}</h1>
       <article className="charts__container">
-        <h2 className="visually-hidden">Charts and buttons allowing to customize charts output</h2>
+        <h2 className="charts__header standardHeader">{translation[websiteLanguage].charts.chartDynamics.header}</h2>
 
         <section className="charts__canvas-wrapper">
           <h3 className="visually-hidden">Chart displaying russian invaders` losses in Ukraine</h3>
@@ -140,7 +140,6 @@ export default function Charts({ losses }) {
         </ul>
       </article>
 
-      <hr style={{ width: '100%' }} />
       <Armies personnelLosses={latestLossesObject.personnel} />
 
     </main>

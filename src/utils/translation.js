@@ -149,8 +149,19 @@ export default {
     },
     charts: {
       mainPageBtn: 'Home page',
-      header: 'Dynamics of russia`s losses in Ukraine',
+      header: 'Charts and infographics showing russia`s losses in Ukraine',
       rotateWarning: 'Please rotate your screen to the landscape mode or use device with screen wider than 300 px',
+      chartDynamics: {
+        header: 'Dynamics of russia`s losses in Ukraine',
+      },
+      chartCompareArmies: {
+        header: 'russia\'s losses in Ukraine',
+        subHeader: 'compared to the active armed forces personnel in countries around the world',
+        data: 'Data:',
+        dataProvided: 'IISS, The Military Balance 2021',
+        link: 'https://www.iiss.org/publications/the-military-balance/the-military-balance-2021',
+        centerBtn: 'Center russia\'s losses',
+      },
       chartMode: {
         header: 'How many lines to show on the chart:',
         showMultiple: 'Multiple lines at a time',
@@ -365,8 +376,19 @@ export default {
     },
     charts: {
       mainPageBtn: 'Головна сторінка',
-      header: 'Динамика втрат росії в України',
+      header: 'Графіки та інфографіки, що показують втрати росії в Україні',
       rotateWarning: 'Будь ласка, поверніть екран горизонтально або використовуйте пристрій з шириною екрану більше 300 px',
+      chartDynamics: {
+        header: 'Динаміка втрат росії в Україні',
+      },
+      chartCompareArmies: {
+        header: 'Втрати росії в Україні',
+        subHeader: 'порівняно з чисельністю збройних сил країн світу',
+        data: 'Джерело:',
+        dataProvided: 'IISS, The Military Balance 2021',
+        link: 'https://www.iiss.org/publications/the-military-balance/the-military-balance-2021',
+        centerBtn: 'Відцентрувати втрати росії',
+      },
       chartMode: {
         header: 'Скільки ліній показувати на графіку:',
         showMultiple: 'Декілька ліній',
