@@ -51,11 +51,15 @@ export default function Armies({ personnelLosses }) {
     }
   }, [personnelLosses]);
 
-  useEffect(centerOccupier);
-
   useEffect(() => {
-    setWidestNumberElementWidth(widestNumberElement.current.offsetWidth);
-  }, []);
+    centerOccupier();
+
+    [...document.querySelectorAll('.armies__army-name-wrapper')].forEach((elem) => {
+      if (elem.offsetWidth > elem.querySelector('span').offsetWidth) {
+        elem.style.width = `${elem.querySelector('span').offsetWidth}px`;
+      }
+    });
+  });
 
   return (
     <article className="armies__article">
@@ -88,7 +92,7 @@ export default function Armies({ personnelLosses }) {
       </p>
 
       <button
-        className="armies__center"
+        className="armies__center-btn"
         type="button"
         onClick={centerOccupier}
       >
@@ -121,7 +125,9 @@ export default function Armies({ personnelLosses }) {
                       )
                   }
                 </div>
-                <span className="armies__army-name">{army.name}</span>
+                <span id={army.name === 'Losses of russia' ? 'rrr' : ''} className="armies__army-name-wrapper">
+                  <span>{army.name}</span>
+                </span>
                 <span className="armies__dots" />
                 <span
                   className="armies__army-number"

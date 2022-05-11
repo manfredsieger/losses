@@ -160,7 +160,7 @@ export default {
         data: 'Data:',
         dataProvided: 'IISS, The Military Balance 2021',
         link: 'https://www.iiss.org/publications/the-military-balance/the-military-balance-2021',
-        centerBtn: 'Center russia\'s losses',
+        centerBtn: 'Center losses',
       },
       chartMode: {
         header: 'How many lines to show on the chart:',
@@ -383,11 +383,11 @@ export default {
       },
       chartCompareArmies: {
         header: 'Втрати росії в Україні',
-        subHeader: 'порівняно з чисельністю збройних сил країн світу',
+        subHeader: 'порівняно з кількістю діючих військовослужбовців збройних сил країн світу',
         data: 'Джерело:',
         dataProvided: 'IISS, The Military Balance 2021',
         link: 'https://www.iiss.org/publications/the-military-balance/the-military-balance-2021',
-        centerBtn: 'Відцентрувати втрати росії',
+        centerBtn: 'Відцентрувати втрати',
       },
       chartMode: {
         header: 'Скільки ліній показувати на графіку:',
