@@ -94,6 +94,9 @@
   margin: 44px 0;
   padding: 0 75px;
   overflow-y: scroll;
+
+  scrollbar-color: #bd4641 transparent;
+  scrollbar-width: 5px;
 }
 
 .armies__list::-webkit-scrollbar {
@@ -108,12 +111,6 @@
 }
 
 .armies__army {
-  //display: grid;
-  //grid-template-columns: auto auto minmax(40px, 1fr) auto;
-  //grid-auto-flow: column;
-  //column-gap: 15px;
-  //align-content: center;
-  //align-items: center;
   display: flex;
   justify-content: flex-start;
   align-items: center;

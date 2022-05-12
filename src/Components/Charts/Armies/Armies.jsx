@@ -12,6 +12,10 @@ export default function Armies({ personnelLosses }) {
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
 
   const [russiaIndexInArray, setRussiaIndexInArray] = useState(0);
+  /**
+   * Use 'setWidestNumberElementWidth' function if you want all flex items with
+   * numbers of armed forces personnel to have equal width
+   */
   const [widestNumberElementWidth, setWidestNumberElementWidth] = useState(null);
 
   const { chartCompareArmies } = translation[websiteLanguage].charts;
@@ -23,9 +27,23 @@ export default function Armies({ personnelLosses }) {
     </svg>
   );
 
-  function mapThroughArmies(losses, isIndexToBeSet) {
+  /**
+   * Sets the actual number of russia's losses as a value of
+   * 'activeArmedForces' key of the 'Losses of russia' object
+   * in the array with numbers of active servicemen in all
+   * countries around the world. This is needed for the
+   * losses to be compared with these numbers and displayed.
+   * @param setRuPersonnelLosses {boolean} defines whether the
+   * function has to set the number of russia's losses based on
+   * the daily reports or not.
+   * @param isIndexToBeSet {boolean} defines whether the function shall
+   * set the index of russia's losses in the armies array or not.
+   * This index is used for center-button to know how far shall
+   * it scroll to center russia losses in the list with all armies.
+   */
+  function insertRuLossesIntoArmiesArray(setRuPersonnelLosses, isIndexToBeSet) {
     armies.forEach((army, index) => {
-      if (losses && army.name === 'Losses of russia') {
+      if (setRuPersonnelLosses && army.name === 'Losses of russia') {
         army.activeArmedForces = personnelLosses;
       }
 
@@ -35,8 +53,36 @@ export default function Armies({ personnelLosses }) {
     });
   }
 
+  /**
+   * Each army item in the list is a flex-container which consists of country
+   * flag, name, dots and number of the country's active servicemen. Some
+   * countries' names consist of multiple words. These names can be rendered
+   * differently on different screen sizes. But a flex-item inside a flex-container
+   * has a strange behaviour regarding flex-items with multiline text (when a
+   * country name consists of multiple words). Namely, the flex item has the
+   * width as if all its words are still rendered as one line, although in fact
+   * they are rendered using multiple lines and their de-facto width is smaller
+   * than the flex-item thinks it is. This is the problem since long countries'
+   * names are wrapped, the flex-item doesn't know that and renders all its words
+   * + empty space and this empty space makes the flex container render dots
+   * (dots are rendered in the middle of a country name and number of its servicemen)
+   * with a very small width. The idea is to remove all empty space and make the
+   * flex item with a country name inside it to have the same width as the text
+   * inside it has.
+   */
+  function adjustCountryNameFlexItemWidth() {
+    [...document.querySelectorAll('.armies__army-name-wrapper')].forEach((elem) => {
+      if (elem.offsetWidth > elem.querySelector('span').offsetWidth) {
+        elem.style.width = `${elem.querySelector('span').offsetWidth}px`;
+      }
+    });
+  }
+
+  /**
+   * Centers the list item with russia's losses.
+   */
   function centerOccupier() {
-    mapThroughArmies(null, true);
+    insertRuLossesIntoArmiesArray(false, true);
     const height = lossesRu.current.offsetHeight;
     armiesList.current.scrollTo({
       top: russiaIndexInArray * height - 3 * height,
@@ -46,19 +92,14 @@ export default function Armies({ personnelLosses }) {
 
   useEffect(() => {
     if (personnelLosses) {
-      mapThroughArmies(personnelLosses, true);
+      insertRuLossesIntoArmiesArray(personnelLosses, true);
       armies.sort((a, b) => b.activeArmedForces - a.activeArmedForces);
     }
   }, [personnelLosses]);
 
   useEffect(() => {
     centerOccupier();
-
-    [...document.querySelectorAll('.armies__army-name-wrapper')].forEach((elem) => {
-      if (elem.offsetWidth > elem.querySelector('span').offsetWidth) {
-        elem.style.width = `${elem.querySelector('span').offsetWidth}px`;
-      }
-    });
+    adjustCountryNameFlexItemWidth();
   });
 
   return (
@@ -125,7 +166,7 @@ export default function Armies({ personnelLosses }) {
                       )
                   }
                 </div>
-                <span id={army.name === 'Losses of russia' ? 'rrr' : ''} className="armies__army-name-wrapper">
+                <span className="armies__army-name-wrapper">
                   <span>{army.name}</span>
                 </span>
                 <span className="armies__dots" />
