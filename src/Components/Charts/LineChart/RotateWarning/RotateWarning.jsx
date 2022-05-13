@@ -1,8 +1,8 @@
 import React from 'react';
 import './RotateWarning.scss';
 import { useSelector } from 'react-redux';
-import translation from '../../../utils/translation';
-import rotateImg from '../../../img/rotate.svg';
+import translation from '../../../../utils/translation';
+import rotateImg from '../../../../img/rotate.svg';
 
 export default function RotateWarning() {
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);

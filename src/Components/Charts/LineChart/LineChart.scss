@@ -1,0 +1,86 @@
+@import '../../../common';
+
+.lineChart__header {
+  margin: 0 auto 40px auto;
+}
+
+.lineChart__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  padding: 0 0 160px 0;
+}
+
+.flexGapIsSupported .lineChart__container {
+  gap: 50px 0;
+}
+
+.lineChart__container > *:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.flexGapIsSupported .lineChart__container > *:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.lineChart__config {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  @include list_reset;
+  box-sizing: border-box;
+}
+
+.flexGapIsSupported .lineChart__config {
+  gap: 10px;
+}
+
+.lineChart__canvas-wrapper {
+  width: 100%;
+}
+
+.lineChart__canvas {
+  max-width: 100% !important;
+
+  background-color: transparent;
+}
+
+@media(max-width: 1150px) {
+
+  .flexGapIsSupported .lineChart__container {
+    gap: 30px 0;
+  }
+
+  .lineChart__container > *:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .flexGapIsSupported .lineChart__container > *:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+@media(max-width: 800px) {
+  .lineChart__canvas-wrapper {
+    height: 300px;
+  }
+}
+
+@media(max-width: 545px) {
+  .lineChart__config {
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media(max-width: 480px) {
+  .lineChart__header {
+    margin-bottom: 20px;
+  }
+}

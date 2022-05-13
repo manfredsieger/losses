@@ -1,8 +1,8 @@
 import React from 'react';
 import './ConfigBtn.scss';
 import PropsTypes from 'prop-types';
-import { getImage, getWordWithBigFirstLetter } from '../../../utils/helpers';
-import { chartModes } from '../../../utils/chartsConfig';
+import { getImage, getWordWithBigFirstLetter } from '../../../../utils/helpers';
+import { chartModes } from '../../../../utils/chartsConfig';
 
 export default function ConfigBtn({
   itemName,
