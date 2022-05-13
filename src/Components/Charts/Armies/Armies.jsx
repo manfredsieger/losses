@@ -1,22 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropsTypes from 'prop-types';
-import './Armies.scss';
 import { useSelector } from 'react-redux';
-import armies from '../../../utils/armies2';
+import ArmiesItem from './ArmiesItem/ArmiesItem';
+import './Armies.scss';
+import armies from '../../../utils/armies';
 import translation from '../../../utils/translation';
 
 export default function Armies({ personnelLosses }) {
   const lossesRu = useRef();
   const armiesList = useRef();
-  const widestNumberElement = useRef();
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
+  const NUM_OF_SKULLS_TO_RENDER = 3;
 
   const [russiaIndexInArray, setRussiaIndexInArray] = useState(0);
-  /**
-   * Use 'setWidestNumberElementWidth' function if you want all flex items with
-   * numbers of armed forces personnel to have equal width
-   */
-  const [widestNumberElementWidth, setWidestNumberElementWidth] = useState(null);
 
   const { chartCompareArmies } = translation[websiteLanguage].charts;
   const skullImg = (
@@ -107,15 +103,13 @@ export default function Armies({ personnelLosses }) {
       <h2 className="armies__header standardHeader">{chartCompareArmies.header}</h2>
 
       <ul className="armies__skulls">
-        <li className="armies__skull-wrapper">
-          {skullImg}
-        </li>
-        <li className="armies__skull-wrapper">
-          {skullImg}
-        </li>
-        <li className="armies__skull-wrapper">
-          {skullImg}
-        </li>
+        {
+          [...Array(NUM_OF_SKULLS_TO_RENDER)].map(() => (
+            <li className="armies__skull-wrapper" key={Math.random()}>
+              {skullImg}
+            </li>
+          ))
+        }
       </ul>
 
       <p className="armies__subheader">{chartCompareArmies.subHeader}</p>
@@ -145,41 +139,12 @@ export default function Armies({ personnelLosses }) {
           armies
             .sort((a, b) => b.activeArmedForces - a.activeArmedForces)
             .map((army) => (
-              <li
-                className={`armies__army ${army.name === 'Losses of russia' ? 'armies__army-losses-of-ru' : ''}`}
-                key={army.name}
-                ref={army.name === 'Losses of russia' ? lossesRu : null}
-              >
-                <div
-                  className={`armies__img-wrapper ${army.name === 'Losses of russia' ? 'armies__img-wrapper-ru' : ''}`}
-                >
-                  {
-                    army.name === 'Losses of russia'
-                      ? skullImg
-                      : (
-                        <img
-                          className="armies__img"
-                          src={`https://flagcdn.com/${army.code}.svg`}
-                          width="47"
-                          alt={`Flag of ${army.name}`}
-                        />
-                      )
-                  }
-                </div>
-                <span className="armies__army-name-wrapper">
-                  <span>{army.name}</span>
-                </span>
-                <span className="armies__dots" />
-                <span
-                  className="armies__army-number"
-                  ref={army.name === 'China' ? widestNumberElement : null}
-                  style={{ width: widestNumberElementWidth ? `${widestNumberElementWidth}px` : 'auto' }}
-                >
-                  {typeof army.activeArmedForces === 'number' && !Number.isNaN(army.activeArmedForces)
-                    ? army.activeArmedForces.toLocaleString('de-CH')
-                    : 0}
-                </span>
-              </li>
+              <ArmiesItem
+                army={army}
+                skullImg={skullImg}
+                lossesRu={lossesRu}
+                key={army.code}
+              />
             ))
         }
       </ul>

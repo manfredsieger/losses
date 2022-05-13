@@ -162,6 +162,7 @@ export default {
         dataProvided: 'IISS, The Military Balance 2021',
         link: 'https://www.iiss.org/publications/the-military-balance/the-military-balance-2021',
         centerBtn: 'Center losses',
+        ruLosses: 'Losses of russia',
       },
       chartMode: {
         header: 'How many lines to show on the chart:',
@@ -389,6 +390,7 @@ export default {
         dataProvided: 'IISS, The Military Balance 2021',
         link: 'https://www.iiss.org/publications/the-military-balance/the-military-balance-2021',
         centerBtn: 'Відцентрувати втрати',
+        ruLosses: 'Втрати росії',
       },
       chartMode: {
         header: 'Скільки ліній показувати на графіку:',
