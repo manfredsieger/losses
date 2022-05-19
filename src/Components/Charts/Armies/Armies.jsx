@@ -3,6 +3,7 @@ import PropsTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import ArmiesItem from './ArmiesItem/ArmiesItem';
 import './Armies.scss';
+// utils
 import armies from '../../../utils/armies';
 import translation from '../../../utils/translation';
 
