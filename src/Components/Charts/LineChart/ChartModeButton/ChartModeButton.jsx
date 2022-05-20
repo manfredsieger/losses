@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import './ChartModeButton.scss';
 // utils
 import translation from '../../../../utils/translation';
-import { chartModes } from '../../../../utils/chartsConfig';
+import { chartModes } from '../../../../utils/lineChartConfig';
 
 export default function ChartModeButton({ selectedChartMode, setSelectedChartMode }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);

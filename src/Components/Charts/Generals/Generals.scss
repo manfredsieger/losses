@@ -1,0 +1,25 @@
+@import '../../../common.scss';
+
+.generals__item-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @include list_reset;
+}
+
+.generals__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.generals__img {
+  display: block;
+  width: 75px;
+}
+
+.generals__text-container {
+  @include list_reset;
+}

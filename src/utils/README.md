@@ -3,11 +3,6 @@
 The folder contains files that either contain function that are shared between multiple files or functions / 
    configs that I wanted to store somewhere else to keep my react-components clean and small
 
-### chartsConfig.js
-`chartsConfig.js` provides configuration for the chart on the charts page. It determines how the chart should look 
-like, color of the grid etc. It also contains function which create sets of data for each type of losses and array 
-of dates to be displayed on the horizontal bottom line of the chart.
-
 ### donations.js
 `donations.js` provides banking details of all charitable organizations that are mentioned on the website.
 
@@ -17,6 +12,11 @@ of dates to be displayed on the horizontal bottom line of the chart.
 ### languagesConfig.js
 `languagesConfig.js` defines languages that are used to display the text on the website as well as languages used to 
 translate dates
+
+### lineChartConfig.js
+`lineChartConfig.js` provides configuration for the chart on the charts page. It determines how the chart should look 
+like, color of the grid etc. It also contains function which create sets of data for each type of losses and array 
+of dates to be displayed on the horizontal bottom line of the chart.
 
 ### losses.js
 `losses.js` was used first as a local database and all data was imported from this file.

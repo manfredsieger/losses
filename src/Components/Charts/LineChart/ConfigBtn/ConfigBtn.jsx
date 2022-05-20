@@ -2,7 +2,7 @@ import React from 'react';
 import './ConfigBtn.scss';
 import PropsTypes from 'prop-types';
 import { getImage, getWordWithBigFirstLetter } from '../../../../utils/helpers';
-import { chartModes } from '../../../../utils/chartsConfig';
+import { chartModes } from '../../../../utils/lineChartConfig';
 
 export default function ConfigBtn({
   itemName,

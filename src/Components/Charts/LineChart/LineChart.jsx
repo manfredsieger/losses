@@ -11,7 +11,7 @@ import ChartModeButton from './ChartModeButton/ChartModeButton';
 // utils
 import {
   chartModes, getDatasets, getLabels, options,
-} from '../../../utils/chartsConfig';
+} from '../../../utils/lineChartConfig';
 import lossesNames from '../../../utils/lossesConfig';
 import translation from '../../../utils/translation';
 import { scrollToTop } from '../../../utils/helpers';
