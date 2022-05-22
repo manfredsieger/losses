@@ -4,6 +4,7 @@ import PropsTypes from 'prop-types';
 // components
 import LineChart from './LineChart/LineChart';
 import Armies from './Armies/Armies';
+import Generals from './Generals/Generals';
 import './Charts.scss';
 // utils
 import { getLatestLossesObject } from '../../utils/helpers';
@@ -32,6 +33,8 @@ export default function Charts({ losses }) {
       <LineChart losses={losses} latestLossesObject={latestLossesObject} />
 
       <Armies personnelLosses={latestLossesObject.personnel} />
+
+      <Generals />
 
     </main>
   );

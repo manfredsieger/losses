@@ -1,25 +1,77 @@
 @import '../../../common.scss';
 
-.generals__item-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-
-  @include list_reset;
-}
-
-.generals__item {
+.generals__article {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+
+  width: 100%;
 }
 
-.generals__img {
+.generals__header {
+  padding: 0;
+  margin: 0 auto 30px;
+}
+
+.generals__header.standardHeader {
+  padding: 0;
+}
+
+.generals__subheader {
+  max-width: 575px;
+  margin: 0 0 44px 0;
+  padding: 0;
+
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+  font-family: $serifFont;
+  font-weight: normal;
+}
+
+.generals__stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include list_reset;
+  margin-bottom: 30px;
+}
+
+.generals__star-wrapper {
+  width: 29px;
+  height: 29px;
+}
+
+.generals__star-wrapper:not(:last-child) {
+  margin-right: 24px;
+}
+
+.generals__star-svg {
   display: block;
-  width: 75px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.generals__text-container {
+.generals__star-svg-rect-1 {
+  fill: white;
+  fill-opacity: 0;
+  pointer-events: none;
+}
+
+.generals__star-svg-rect-2 {
+  fill: white; fill-opacity: 0; pointer-events: none;
+}
+
+.generals__star-svg-path {
+  fill-opacity: 1;
+}
+
+.generals__items-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 40px 20px;
+
   @include list_reset;
 }

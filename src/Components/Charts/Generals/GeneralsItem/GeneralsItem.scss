@@ -1,0 +1,40 @@
+@import '../../../../common.scss';
+
+.generalsItem__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.generalsItem__img-container {
+  display: flex;
+  align-items: center;
+  //width: 100px;
+  padding: 0 40px;
+}
+
+.generalsItem__img {
+  display: block;
+  width: 50px;
+}
+
+.generalsItem__description-container {
+  border-collapse: collapse;
+}
+
+.generalsItem__text-line:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.generalsItem__caption {
+  display: inline-block;
+  margin: 0 5px 0 0;
+
+  font-weight: 600;
+}
+
+
+//tr, td {
+//  border: 1px solid black;
+//}

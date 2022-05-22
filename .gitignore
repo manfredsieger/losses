@@ -16,4 +16,4 @@ sketch
 script.sh
 
 # temporarily
-src/utils/armies.js
+#src/utils/armies.js
