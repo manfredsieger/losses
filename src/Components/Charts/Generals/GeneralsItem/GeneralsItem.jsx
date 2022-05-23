@@ -49,7 +49,14 @@ export default function GeneralsItem({
               {`${chartGenerals.killed}: `}
             </td>
             <td className="generalsItem__text generalsItem__deathDate-text">
-              {getFullDate(new Date(deathDate), language)}
+              <a
+                className="generalsItem__source standardLink"
+                href={source}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {getFullDate(new Date(deathDate), language)}
+              </a>
             </td>
           </tr>
 
@@ -71,18 +78,18 @@ export default function GeneralsItem({
             </td>
           </tr>
 
-          <tr className="generalsItem__text-line">
-            <td>
-              <a
-                className="generalsItem__caption generalsItem__source standardLink"
-                href={source}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {chartGenerals.source}
-              </a>
-            </td>
-          </tr>
+          {/* <tr className="generalsItem__text-line"> */}
+          {/*  <td> */}
+          {/*    <a */}
+          {/*      className="generalsItem__caption generalsItem__source standardLink" */}
+          {/*      href={source} */}
+          {/*      target="_blank" */}
+          {/*      rel="noreferrer" */}
+          {/*    > */}
+          {/*      {chartGenerals.source} */}
+          {/*    </a> */}
+          {/*  </td> */}
+          {/* </tr> */}
         </tbody>
 
       </table>

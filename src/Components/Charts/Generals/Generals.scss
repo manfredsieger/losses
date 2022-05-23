@@ -75,3 +75,9 @@
 
   @include list_reset;
 }
+
+@media (max-width: 830px) {
+  .generals__items-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
