@@ -7,47 +7,81 @@
   align-items: stretch;
 }
 
-.generalsItem__img-container {
+.generalsItem__img-and-name-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0 0 10px 0;
-  padding: 10px 20px;
-
-  background: linear-gradient(-45deg,
-          transparent 0%, transparent 10%,
-          $red_dark 10%, $red_dark 20%,
-          transparent 20%, transparent 30%,
-          $red_dark 30%, $red_dark 40%,
-          transparent 40%, transparent 50%,
-          $red_dark 50%, $red_dark 60%,
-          transparent 60%, transparent 70%,
-          $red_dark 70%, $red_dark 80%,
-          transparent 80%, transparent 90%,
-          $red_dark 90%, $red_dark 100%);
+  margin: 0 0 55px 0;
 }
 
 .generalsItem__img {
   display: block;
-  width: 35px;
+  width: 38px;
+  margin: 0 26px 0 0;
+}
+
+.generalsItem__name {
+  margin: 0;
+
+  font-family: $sansSerifFont;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  word-spacing: 100vw;
 }
 
 .generalsItem__description-container {
-  border-collapse: collapse;
+  @include list_reset;
 }
 
 .generalsItem__text-line {
+  display: flex;
+  align-items: center;
+
   text-align: left;
   line-height: 1.5;
 }
 
-.generalsItem__caption {
-  display: inline-block;
-  margin: 0 25px 0 0;
-
-  font-weight: 600;
+.generalsItem__text-line:not(:last-child) {
+  margin-bottom: 18px;
 }
 
+.generalsItem__caption-and-dots-container {
+  display: flex;
+  align-items: center;
+  margin: 0 15px 0 0;
+  min-width: 135px;
+}
+
+.generalsItem__caption {
+  margin: 0 15px 0 0;
+
+  font-family: $sansSerifFont;
+  font-size: 17px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+}
+
+.generalsItem__points {
+  flex-grow: 1;
+  height: 12px;
+  border-bottom: 1px dashed black;
+}
+
+.generalsItem__rank-text {
+  font-family: $serifFont;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+}
 
 .generalsItem__source.standardLink:link {
   font-weight: normal;

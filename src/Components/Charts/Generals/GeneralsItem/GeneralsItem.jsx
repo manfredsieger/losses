@@ -14,85 +14,78 @@ export default function GeneralsItem({
 
   return (
     <li className="generalsItem__item">
-      <div className="generalsItem__img-container">
+
+      <div className="generalsItem__img-and-name-container">
         <img
           className="generalsItem__img"
           src={require(`../../../../img/${chartGenerals.shoulderMarks[rank]}`)}
           alt={`Shoulder mark of a ${chartGenerals.ranks[rank]}`}
           title={`${chartGenerals.shoulderMarkCaption} ${chartGenerals.ranks[rank]}`}
         />
+        <p className="generalsItem__name">
+          {name}
+        </p>
       </div>
 
-      <table className="generalsItem__description-container">
+      <ul className="generalsItem__description-container">
 
-        <tbody>
-          <tr className="generalsItem__text-line">
-            <td className="generalsItem__caption generalsItem__name-caption">
-              {`${chartGenerals.name}: `}
-            </td>
-            <td className="generalsItem__text generalsItem__name-text">
-              {name}
-            </td>
-          </tr>
+        <li className="generalsItem__text-line">
+          <p className="generalsItem__caption-and-dots-container">
+            <span className="generalsItem__caption generalsItem__rank-caption">
+              {chartGenerals.ranks.header}
+            </span>
+            <span className="generalsItem__points" />
+          </p>
+          <span className="generalsItem__text generalsItem__rank-text">
+            {chartGenerals.ranks[rank]}
+          </span>
+        </li>
 
-          <tr className="generalsItem__text-line">
-            <td className="generalsItem__caption generalsItem__rank-caption">
-              {`${chartGenerals.ranks.header}: `}
-            </td>
-            <td className="generalsItem__text generalsItem__rank-text">
-              {chartGenerals.ranks[rank]}
-            </td>
-          </tr>
+        <li className="generalsItem__text-line">
+          <p className="generalsItem__caption-and-dots-container">
+            <span className="generalsItem__caption generalsItem__deathDate-caption">
+              {chartGenerals.killed}
+            </span>
+            <span className="generalsItem__points" />
+          </p>
+          <span className="generalsItem__text generalsItem__deathDate-text">
+            <a
+              className="generalsItem__source standardLink"
+              href={source}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {getFullDate(new Date(deathDate), language)}
+            </a>
+          </span>
+        </li>
 
-          <tr className="generalsItem__text-line">
-            <td className="generalsItem__caption generalsItem__deathDate-caption">
-              {`${chartGenerals.killed}: `}
-            </td>
-            <td className="generalsItem__text generalsItem__deathDate-text">
-              <a
-                className="generalsItem__source standardLink"
-                href={source}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {getFullDate(new Date(deathDate), language)}
-              </a>
-            </td>
-          </tr>
+        <li className="generalsItem__text-line">
+          <p className="generalsItem__caption-and-dots-container">
+            <span className="generalsItem__caption generalsItem__position-caption">
+              {chartGenerals.position}
+            </span>
+            <span className="generalsItem__points" />
+          </p>
+          <span className="generalsItem__text generalsItem__position-text">
+            {position}
+          </span>
+        </li>
 
-          <tr className="generalsItem__text-line">
-            <td className="generalsItem__caption generalsItem__position-caption">
-              {`${chartGenerals.position}: `}
-            </td>
-            <td className="generalsItem__text generalsItem__position-text">
-              {position}
-            </td>
-          </tr>
+        <li className="generalsItem__text-line">
+          <p className="generalsItem__caption-and-dots-container">
+            <span className="generalsItem__caption generalsItem__status-caption">
+              {chartGenerals.statuses.header}
+            </span>
+            <span className="generalsItem__points" />
+          </p>
+          <span className="generalsItem__text generalsItem__status-text">
+            {chartGenerals.statuses[status]}
+          </span>
+        </li>
 
-          <tr className="generalsItem__text-line">
-            <td className="generalsItem__caption generalsItem__status-caption">
-              {`${chartGenerals.statuses.header}: `}
-            </td>
-            <td className="generalsItem__text generalsItem__status-text">
-              {chartGenerals.statuses[status]}
-            </td>
-          </tr>
+      </ul>
 
-          {/* <tr className="generalsItem__text-line"> */}
-          {/*  <td> */}
-          {/*    <a */}
-          {/*      className="generalsItem__caption generalsItem__source standardLink" */}
-          {/*      href={source} */}
-          {/*      target="_blank" */}
-          {/*      rel="noreferrer" */}
-          {/*    > */}
-          {/*      {chartGenerals.source} */}
-          {/*    </a> */}
-          {/*  </td> */}
-          {/* </tr> */}
-        </tbody>
-
-      </table>
     </li>
   );
 }

@@ -52,7 +52,7 @@ export default function Generals() {
         {`${chartGenerals.subHeader.part1} `}
         <a
           href={chartGenerals.subHeader.source}
-          className="standardLink"
+          className="standardLink generals__subheader-link"
           target="_blank"
           rel="noreferrer"
         >
