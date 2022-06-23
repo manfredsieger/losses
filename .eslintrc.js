@@ -23,5 +23,12 @@ module.exports = {
         "eol-last": 2,
         "max-len": [1, { "code": 120 }],
         "no-plusplus": 0
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx"]
+            }
+        }
     }
 }

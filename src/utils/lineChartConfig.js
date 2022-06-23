@@ -42,6 +42,11 @@ export const options = {
       },
     },
   },
+  // elements: { // Remove circles from the lines
+  //   point: {
+  //     radius: 0,
+  //   },
+  // },
 };
 
 /**
@@ -100,9 +105,9 @@ export function getDatasets(lossesTypes, websiteLanguage, losses) {
   return lossesTypes.map((item, index) => ({
     label: getWordWithBigFirstLetter(translation[websiteLanguage].main.losses[item].name),
     data: getData(item, losses),
-    borderColor: '#000000',
-    borderWidth: 1,
-    backgroundColor: colors[index],
+    borderColor: '#000000', // line color
+    borderWidth: 1, // line width
+    backgroundColor: colors[index], // circles on the line color
     tension: 0.2,
     fill: false,
   }));
