@@ -73,7 +73,7 @@
   border-bottom: 1px dashed black;
 }
 
-.generalsItem__rank-text {
+.generalsItem__text {
   font-family: $serifFont;
   font-size: 17px;
   font-weight: normal;
@@ -83,10 +83,64 @@
   letter-spacing: normal;
 }
 
+.generalsItem__source.standardLink {
+  font-family: $serifFont;
+}
+
 .generalsItem__source.standardLink:link {
   font-weight: normal;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
+  .generalsItem__img-and-name-container {
+    //justify-content: center;
+  }
 
+  .generalsItem__description-container {
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+    //flex-direction: column;
+  }
+
+  .generalsItem__text-line {
+    //width: 80%;
+  }
+
+  .generalsItem__name {
+    //word-spacing: initial;
+  }
+
+  .generalsItem__caption-and-dots-container {
+    min-width: 250px;
+  }
+
+  .generalsItem__text {
+    //max-width: 40%;
+  }
+}
+
+@media (max-width: 800px) {
+  .generalsItem__caption-and-dots-container {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 750px) {
+  .generalsItem__caption-and-dots-container {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 500px) {
+  .generalsItem__text,
+  .generalsItem__caption {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .generalsItem__caption-and-dots-container {
+    min-width: 100px;
+  }
 }
