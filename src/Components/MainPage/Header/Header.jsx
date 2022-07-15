@@ -11,9 +11,9 @@ import translation from '../../../utils/translation';
 
 export default function Header({ losses }) {
   const { websiteLanguage } = useSelector((state) => state.websiteLanguage);
-  const lastDataUpdateDate = losses.length !== 0 ? losses[0].date : '';
+  const lastDataUpdateDate = losses.length !== 0 ? losses[0].date : null;
   const {
-    header, updateDate, warning, language, numbersProvided, genStaff,
+    header, updateDate, warning, language, numbersProvided, genStaff, calculating,
   } = translation[websiteLanguage].main.header;
 
   // Kept svg code right in the file in order to change the color of the svg directly
@@ -22,7 +22,9 @@ export default function Header({ losses }) {
       <h1 className="header__header standardHeader">{header}</h1>
       <p className="header__text header__update">
         {`${updateDate} `}
-        <span className="header__update-date">{getFullDate(new Date(lastDataUpdateDate), language)}</span>
+        <span className="header__update-date">
+          {lastDataUpdateDate ? getFullDate(new Date(lastDataUpdateDate), language) : calculating}
+        </span>
       </p>
       <p className="header__text header__source">
         {numbersProvided}

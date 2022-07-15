@@ -18,6 +18,7 @@ export default {
         numbersProvided: 'Numbers provided by the ',
         genStaff: 'General Staff of the AFU',
         warning: 'Some numbers are approximate and cannot be verified due to the high intensity of combat actions',
+        calculating: '...calculating',
       },
       dates: {
         start: 'Start of the full-scale aggression',
@@ -273,6 +274,7 @@ export default {
         numbersProvided: 'Джерело: ',
         genStaff: 'Генеральний Штаб ЗСУ',
         warning: 'Дані уточнюються. Підрахунок ускладнюється високою інтенсивністю бойових дій',
+        calculating: '...рахую',
       },
       dates: {
         start: 'Початок повномасштабної агресії',
