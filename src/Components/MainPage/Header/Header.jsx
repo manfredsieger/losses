@@ -28,7 +28,14 @@ export default function Header({ losses }) {
       </p>
       <p className="header__text header__source">
         {numbersProvided}
-        <a className="header__source-link standardLink" href="https://twitter.com/GeneralStaffUA" target="_blank" rel="noreferrer noopener">{genStaff}</a>
+        <a
+          className="header__source-link standardLink"
+          href="https://twitter.com/GeneralStaffUA"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          {genStaff}
+        </a>
         <svg className="header__twitter-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 310 310">
           <path d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73
             c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783

@@ -34,7 +34,7 @@ export default function LineChart({ losses, latestLossesObject }) {
    One came up with the number 800 by testing.
    */
   const CHART_TO_GROW_SCREEN_WIDTH = 800;
-  const DEFAULT_ACTIVE_CONFIG_BTNS = [lossesNames.aircrafts.name, lossesNames.helicopters.name, lossesNames.uav.name];
+  const DEFAULT_ACTIVE_CONFIG_BTNS = [lossesNames.aircrafts.name, lossesNames.helicopters.name, lossesNames.cruiseMissiles.name];
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const [hasUserSmallScreen, setUserScreenValidity] = useState(false);
   const [selectedChartMode, setSelectedChartMode] = useState(chartModes.multiple);
