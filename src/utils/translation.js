@@ -153,27 +153,38 @@ export default {
       mainPageBtn: 'Home page',
       header: 'Charts and infographics showing russia`s losses in Ukraine',
       rotateWarning: 'Please rotate your screen to the landscape mode or use device with screen wider than 300 px',
-      chartDynamics: {
-        header: 'Dynamics of russia`s losses in Ukraine',
+      lineChart: {
+        header: 'Russia\'s losses in Ukraine',
+        chartMode: {
+          header: 'How many lines to show on the chart:',
+          showMultiple: 'Multiple lines at a time',
+          showOne: 'Only one line at a time',
+        },
+      },
+      barChart: {
+        header: {
+          month: 'Russia\'s monthly losses',
+          week: 'Russia\'s weekly losses',
+        },
+        chartMode: {
+          header: 'Choose period of time:',
+          month: 'Russia\'s monthly losses',
+          week: 'Russia\'s weekly losses',
+        },
       },
       chartCompareArmies: {
-        header: 'russia\'s losses in Ukraine',
+        header: 'Russia\'s losses in Ukraine',
         subHeader: 'compared to the active armed forces personnel in countries around the world',
         data: 'Data:',
         dataProvided: 'IISS, The Military Balance 2021',
         link: 'https://www.iiss.org/publications/the-military-balance/the-military-balance-2021',
         centerBtn: 'Center losses',
-        ruLosses: 'Losses of russia',
-      },
-      chartMode: {
-        header: 'How many lines to show on the chart:',
-        showMultiple: 'Multiple lines at a time',
-        showOne: 'Only one line at a time',
+        ruLosses: 'Losses of Russia',
       },
       chartGenerals: {
-        header: 'russian generals killed in Ukraine',
+        header: 'Russian generals killed in Ukraine',
         subHeader: {
-          part1: 'Overall up to 10 russian generals',
+          part1: 'Overall up to 10 Russian generals',
           part2: 'were killed',
           part3: 'in Ukraine as of May 10, 2022',
           source: 'https://edition.cnn.com/europe/live-news/russia-ukraine-war-news-05-10-22/h_5b27a015bfb714bf79b4e2986e4cadc3',
@@ -413,8 +424,24 @@ export default {
       mainPageBtn: 'Головна сторінка',
       header: 'Графіки та інфографіки, що показують втрати росії в Україні',
       rotateWarning: 'Будь ласка, поверніть екран горизонтально або використовуйте пристрій з шириною екрану більше 300 px',
-      chartDynamics: {
+      lineChart: {
         header: 'Динаміка втрат росії в Україні',
+        chartMode: {
+          header: 'Скільки ліній показувати на графіку:',
+          showMultiple: 'Декілька ліній',
+          showOne: 'Лише одну лінію',
+        },
+      },
+      barChart: {
+        header: {
+          month: 'Втрати росії по місяцям',
+          week: 'Втрати росії по тижням',
+        },
+        chartMode: {
+          header: 'Оберіть поділ на періоди:',
+          month: 'Втрати росії по місяцям',
+          week: 'Втрати росії по тижням',
+        },
       },
       chartCompareArmies: {
         header: 'Втрати росії в Україні',
@@ -424,11 +451,6 @@ export default {
         link: 'https://www.iiss.org/publications/the-military-balance/the-military-balance-2021',
         centerBtn: 'Відцентрувати втрати',
         ruLosses: 'Втрати росії',
-      },
-      chartMode: {
-        header: 'Скільки ліній показувати на графіку:',
-        showMultiple: 'Декілька ліній',
-        showOne: 'Лише одну лінію',
       },
       chartGenerals: {
         header: 'російські генерали знищені в Україні',

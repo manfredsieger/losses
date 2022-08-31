@@ -1,36 +1,17 @@
 import React from 'react';
-import './ConfigBtn.scss';
+import './BarChartLossTypeBtns.scss';
 import PropsTypes from 'prop-types';
 import { getImage, getWordWithBigFirstLetter } from '../../../../utils/helpers';
-import { chartModes } from '../../../../utils/lineChartConfig';
 
-export default function ConfigBtn({
+export default function BarChartLossTypeBtns({
   itemName,
   lossesToDisplay,
   setLossesToDisplay,
   itemTranslation,
-  selectedChartMode,
 }) {
-  function addItemMultipleMode(item) {
-    if (!lossesToDisplay.includes(item)) {
-      return setLossesToDisplay([...lossesToDisplay, item]);
-    }
-    const copyArr = [...lossesToDisplay];
-    copyArr.splice(copyArr.indexOf(item), 1);
-    return setLossesToDisplay(copyArr);
-  }
-
   function handleClick(evt) {
     const item = evt.currentTarget.getAttribute('data-name');
-
-    switch (selectedChartMode) {
-      case chartModes.showOne:
-        setLossesToDisplay([item]);
-        return;
-      case chartModes.multiple:
-      default:
-        addItemMultipleMode(item);
-    }
+    setLossesToDisplay([item]);
   }
 
   return (
@@ -56,10 +37,9 @@ export default function ConfigBtn({
   );
 }
 
-ConfigBtn.propTypes = {
+BarChartLossTypeBtns.propTypes = {
   itemName: PropsTypes.string.isRequired,
   lossesToDisplay: PropsTypes.arrayOf(PropsTypes.string).isRequired,
   setLossesToDisplay: PropsTypes.func.isRequired,
   itemTranslation: PropsTypes.string.isRequired,
-  selectedChartMode: PropsTypes.string.isRequired,
 };

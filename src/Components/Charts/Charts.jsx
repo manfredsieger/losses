@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropsTypes from 'prop-types';
 // components
 import LineChart from './LineChart/LineChart';
+import BarChart from './BarChart/BarChart';
 import Armies from './Armies/Armies';
 import Generals from './Generals/Generals';
 import './Charts.scss';
@@ -31,6 +32,8 @@ export default function Charts({ losses }) {
       <h1 className="visually-hidden">{translation[websiteLanguage].charts.header}</h1>
 
       <LineChart losses={losses} latestLossesObject={latestLossesObject} />
+
+      <BarChart losses={losses} latestLossesObject={latestLossesObject} />
 
       <Armies personnelLosses={latestLossesObject.personnel} />
 

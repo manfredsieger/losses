@@ -1,0 +1,66 @@
+@import '../../../../common';
+
+.configBtn__config-item {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px 10px 0;
+
+  @include scalableButtons0_05;
+  @include hoverSquareBoxShadow;
+}
+
+.flexGapIsSupported .configBtn__config-item {
+  margin: 0;
+}
+
+.configBtn__config-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  border: 1px solid rgb(0,0,0);
+
+  background-color: transparent;
+  cursor: pointer;
+  transition: ease-in-out 200ms;
+}
+
+.configBtn__config-wrapper--selected {
+  background-color: $yellow;
+
+  transition: ease-in-out 200ms;
+}
+
+.configBtn__config-itemImg {
+  width: 58px;
+  height: 32px;
+  margin: 0 0 5px 0;
+
+  @include object-fit;
+  filter: invert(18%) sepia(3%) saturate(151%) hue-rotate(52deg) brightness(92%) contrast(90%);
+}
+
+.configBtn__config-itemImg--helicopters,
+.configBtn__config-itemImg--tanks {
+  width: 70px;
+}
+
+.configBtn__config-itemImg--cruiseMissiles {
+  max-width: 30px;
+}
+
+ /**
+ Do not make line-height for the .configBtn__config-text
+ since it would break the way these buttons look
+  */
+.configBtn__config-text {
+  margin: 0;
+  
+  font-size: 14px;
+  text-align: center;
+  line-height: 0.95;
+}

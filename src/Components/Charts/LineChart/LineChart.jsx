@@ -6,12 +6,13 @@ import { useSelector } from 'react-redux';
 // components
 import Chart from 'chart.js/auto';
 import RotateWarning from './RotateWarning/RotateWarning';
-import ConfigBtn from './ConfigBtn/ConfigBtn';
-import ChartModeButton from './ChartModeButton/ChartModeButton';
+import LineChartLossTypeBtns from './LineChartLossTypeBtns/LineChartLossTypeBtns';
+import LineChartMode from './LineChartMode/LineChartMode';
 // utils
 import {
   chartModes, getDatasets, getLabels, options,
 } from '../../../utils/lineChartConfig';
+import { SMALL_LANDSCAPE_SCREEN, CHART_TO_GROW_SCREEN_WIDTH } from '../../../utils/commonChartConfig';
 import lossesNames from '../../../utils/lossesConfig';
 import translation from '../../../utils/translation';
 import { scrollToTop } from '../../../utils/helpers';
@@ -19,21 +20,6 @@ import { scrollToTop } from '../../../utils/helpers';
 import './LineChart.scss';
 
 export default function LineChart({ losses, latestLossesObject }) {
-  /*
-   The chart is not suitable for to be rendered on small screens.
-   If the screen is too small it won't be readable. That is why
-   one has to introduce such variable and not to render the chart
-   on way to small screens.
-   */
-  const SMALL_LANDSCAPE_SCREEN = 300;
-  /*
-   The chart's width and height maintains aspect ratio automatically.
-   But when one has a device with small screen width the chart gets too small.
-   That is why the chart shall be handled differently before and after user's
-   screen is 800px wide.
-   One came up with the number 800 by testing.
-   */
-  const CHART_TO_GROW_SCREEN_WIDTH = 800;
   const DEFAULT_ACTIVE_CONFIG_BTNS = [lossesNames.aircrafts.name, lossesNames.helicopters.name, lossesNames.cruiseMissiles.name];
   const { websiteLanguage } = useSelector((store) => store.websiteLanguage);
   const [hasUserSmallScreen, setUserScreenValidity] = useState(false);
@@ -51,7 +37,7 @@ export default function LineChart({ losses, latestLossesObject }) {
     return setUserScreenValidity(false);
   }
 
-  function ConfigButtons() {
+  function RenderLossTypeBtns() {
     if (losses.length === 0) {
       return null;
     }
@@ -66,7 +52,7 @@ export default function LineChart({ losses, latestLossesObject }) {
       const itemTranslation = translation[websiteLanguage].main.losses[itemName].name;
 
       return (
-        <ConfigBtn
+        <LineChartLossTypeBtns
           itemName={itemName}
           lossesToDisplay={lossesToDisplay}
           setLossesToDisplay={setLossesToDisplay}
@@ -104,7 +90,7 @@ export default function LineChart({ losses, latestLossesObject }) {
 
   return (
     <article className="lineChart__container">
-      <h2 className="lineChart__header standardHeader">{translation[websiteLanguage].charts.chartDynamics.header}</h2>
+      <h2 className="lineChart__header standardHeader">{translation[websiteLanguage].charts.lineChart.header}</h2>
 
       <section className="lineChart__canvas-wrapper">
         <h3 className="visually-hidden">Chart displaying russian invaders` losses in Ukraine</h3>
@@ -122,13 +108,13 @@ export default function LineChart({ losses, latestLossesObject }) {
         }
       </section>
 
-      <ChartModeButton
+      <LineChartMode
         selectedChartMode={selectedChartMode}
         setSelectedChartMode={setSelectedChartMode}
       />
 
       <ul className="lineChart__config">
-        <ConfigButtons />
+        <RenderLossTypeBtns />
       </ul>
     </article>
   );

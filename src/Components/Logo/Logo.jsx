@@ -9,7 +9,7 @@ export default function Logo() {
 
   return (
     <p className="logo__wrapper">
-      <a className="logo__link" href="https://www.comebackalive.in.ua/" target="_blank" rel="noreferrer noopener">
+      <a className="logo__link" href="https://savelife.in.ua/" target="_blank" rel="noreferrer noopener">
         <img
           className="logo__image"
           src={require(`../../img/logo_CBA_${websiteLanguage}.svg`)}

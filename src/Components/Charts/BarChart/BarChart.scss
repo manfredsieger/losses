@@ -1,0 +1,87 @@
+@import '../../../common';
+
+.barChart__header {
+  margin: 0 auto 40px auto;
+}
+
+.barChart__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  margin: 0 0 160px 0;
+  width: 100%;
+}
+
+.flexGapIsSupported .barChart__container {
+  gap: 50px 0;
+}
+
+.barChart__container > *:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.flexGapIsSupported .barChart__container > *:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.barChart__config {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  @include list_reset;
+  box-sizing: border-box;
+}
+
+.flexGapIsSupported .barChart__config {
+  gap: 10px;
+}
+
+.barChart__canvas-wrapper {
+  width: 100%;
+}
+
+.barChart__canvas {
+  max-width: 100% !important;
+
+  background-color: transparent;
+}
+
+@media(max-width: 1150px) {
+
+  .flexGapIsSupported .barChart__container {
+    gap: 30px 0;
+  }
+
+  .barChart__container > *:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .flexGapIsSupported .barChart__container > *:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+@media(max-width: 800px) {
+  .barChart__canvas-wrapper {
+    height: 300px;
+  }
+}
+
+@media(max-width: 545px) {
+  .barChart__config {
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media(max-width: 480px) {
+  .barChart__header {
+    margin-bottom: 20px;
+  }
+}
