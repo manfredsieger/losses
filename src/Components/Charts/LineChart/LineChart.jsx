@@ -69,7 +69,7 @@ export default function LineChart({ losses, latestLossesObject }) {
       labels: getLabels(losses),
       datasets: getDatasets(lossesToDisplay, websiteLanguage, losses),
     });
-  }, [losses, lossesToDisplay]);
+  }, [losses, lossesToDisplay, websiteLanguage]);
 
   useEffect(() => {
     if (selectedChartMode === chartModes.showOne) {
