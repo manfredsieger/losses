@@ -25,21 +25,42 @@ export default function Dates() {
     daysPassed, start, language, today, endOfWar,
   } = translation[websiteLanguage].main.dates;
 
+  /**
+   * Returns word 'дні' (days in UA) in the right form
+   * according to the amount of days specified.
+   * @returns {*|string|string}
+   */
   function getAdaptedSentenceIfLangIsUA() {
     const daysOfAggressionString = daysOfAggression.toString();
 
     if (websiteLanguage === websiteLanguages.ua && daysPassed.includes('днів')) {
-      switch (daysOfAggressionString[daysOfAggressionString.length - 1]) {
-        case '1':
-          return daysPassed.replace('днів', 'день');
-        case '2':
-        case '3':
-        case '4':
-          return daysPassed.replace('днів', 'дні');
-        default:
-          return daysPassed;
+      if (daysOfAggressionString.length === 1) {
+        switch (daysOfAggressionString) {
+          case '1':
+            return daysPassed.replace('днів', 'день');
+          case '2':
+          case '3':
+          case '4':
+            return daysPassed.replace('днів', 'дні');
+          default:
+            return daysPassed;
+        }
       }
+
+      const twoDigits = daysOfAggressionString.substring(daysOfAggressionString.length - 2);
+      const grammaticalCase1 = ['01', '21', '31', '41', '51', '61', '71', '81', '91'];
+      const grammaticalCase2 = ['02', '03', '04', '22', '23', '24', '32', '33', '34', '42', '43', '44', '52', '53',
+        '54', '62', '63', '64', '72', '73', '74', '82', '83', '84', '92', '93', '94'];
+
+      if (grammaticalCase1.includes(twoDigits)) {
+        return daysPassed.replace('днів', 'день');
+      }
+      if (grammaticalCase2.includes(twoDigits)) {
+        return daysPassed.replace('днів', 'дні');
+      }
+      return daysPassed;
     }
+
     return daysPassed;
   }
 

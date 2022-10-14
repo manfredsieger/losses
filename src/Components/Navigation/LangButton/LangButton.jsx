@@ -12,7 +12,7 @@ export default function LangButton() {
   const dispatch = useDispatch();
 
   /**
-   * CHecks whether user device supports localStorage.
+   * Checks whether user device supports localStorage.
    * @returns {boolean} true if supports.
    */
   function isLocaleStorageSupported() {
