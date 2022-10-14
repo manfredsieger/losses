@@ -42,11 +42,11 @@ export const options = {
       },
     },
   },
-  // elements: { // Remove circles from the lines
-  //   point: {
-  //     radius: 0,
-  //   },
-  // },
+  elements: {
+    point: {
+      radius: 0, // Remove circles from the lines because it's a 0
+    },
+  },
 };
 
 /**
@@ -105,9 +105,9 @@ export function getDatasets(lossesTypes, websiteLanguage, losses) {
   return lossesTypes.map((item, index) => ({
     label: getWordWithBigFirstLetter(translation[websiteLanguage].main.losses[item].name),
     data: getData(item, losses),
-    borderColor: '#000000', // line color
-    borderWidth: 1, // line width
-    backgroundColor: colors[index], // circles on the line color
+    borderColor: colors[index], // line color
+    borderWidth: 4, // line width
+    backgroundColor: colors[index], // circles on the line color. Currently, not applied cause ticks are removed
     tension: 0.2,
     fill: false,
   }));
